@@ -1,7 +1,7 @@
 ---
-page: achievements
+page: streaks
 ---
-A minimal, data-dense achievements page for jules.top. Competitive vibe with medals and progress tracking.
+A dedicated page to track and visualize developer "hot streaks" for consecutive shipping days.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -21,17 +21,6 @@ A minimal, data-dense achievements page for jules.top. Competitive vibe with med
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. **Header:** Teal icon + "Achievements" title, left-aligned, matching leaderboard style.
-2. **Badge Grid:** 3-column grid of achievement cards:
-   - Each card: Icon/emoji, badge name, description, unlock status
-   - Unlocked: White text, teal accent
-   - Locked: Muted gray, dimmed
-3. **Milestone Progress:** Horizontal progress bars showing ships to next milestone (10, 50, 100, 500, 1K).
-4. **Recent Unlocks:** Table matching leaderboard style - columns: USER (avatar + name) | BADGE | UNLOCKED
-5. **Pagination:** Centered, circular teal indicator for active page.
-
-**Specific Elements:**
-- Badge icons: Use emoji (🏆, 🔥, 🌙, 🌅, ⚡, 📅)
-- Progress bars: Teal fill on dark background
-- Timestamps: Muted gray, relative format ("2 hours ago")
-- No borders on cards, use subtle background contrast instead
+1. **Header:** "Active Streaks" title.
+2. **Featured Streak:** A prominent card for the user with the longest active streak, featuring a large flame emoji 🔥.
+3. **Streaks Table:** A table of all users with active streaks, with columns for RANK | DEVELOPER | STREAK LENGTH.

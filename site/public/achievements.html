@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Achievements Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2bd4bd",
+              "background-light": "#f6f8f8",
+              "background-dark": "#12201e",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0f1419;
+            color: #ffffff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-[#0f1419] group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+<!-- Page Heading -->
+<div class="flex items-center gap-3 p-4">
+<span class="material-symbols-outlined text-primary text-4xl">emoji_events</span>
+<h1 class="text-white text-4xl font-bold leading-tight tracking-[-0.033em]">Achievements</h1>
+</div>
+<!-- Badge Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#1a1f24] border border-gray-800">
+<span class="material-symbols-outlined text-4xl">military_tech</span>
+<div>
+<p class="text-white text-base font-medium leading-normal">First of Many</p>
+<p class="text-gray-400 text-sm font-normal leading-normal">Your first ship with Jules!</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#1a1f24] border border-gray-800">
+<span class="material-symbols-outlined text-4xl">local_fire_department</span>
+<div>
+<p class="text-white text-base font-medium leading-normal">Ship Streak</p>
+<p class="text-gray-400 text-sm font-normal leading-normal">Ship code for 5 consecutive days.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#1a1f24] border border-gray-800">
+<span class="material-symbols-outlined text-4xl">nights_stay</span>
+<div>
+<p class="text-white text-base font-medium leading-normal">Night Owl</p>
+<p class="text-gray-400 text-sm font-normal leading-normal">Ship code after 10 PM.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#1a1f24] border border-gray-800 opacity-50">
+<span class="material-symbols-outlined text-4xl">light_mode</span>
+<div>
+<p class="text-gray-400 text-base font-medium leading-normal">Early Bird</p>
+<p class="text-gray-500 text-sm font-normal leading-normal">Ship code before 6 AM.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#1a1f24] border border-gray-800 opacity-50">
+<span class="material-symbols-outlined text-4xl">bolt</span>
+<div>
+<p class="text-gray-400 text-base font-medium leading-normal">High Voltage</p>
+<p class="text-gray-500 text-sm font-normal leading-normal">Ship 10 times in a single day.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 rounded-lg bg-[#1a1f24] border border-gray-800 opacity-50">
+<span class="material-symbols-outlined text-4xl">calendar_month</span>
+<div>
+<p class="text-gray-400 text-base font-medium leading-normal">Centurion</p>
+<p class="text-gray-500 text-sm font-normal leading-normal">Reach 100 total ships.</p>
+</div>
+</div>
+</div>
+<!-- Milestone Progress -->
+<h2 class="text-gray-400 text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-8">Milestone Progress</h2>
+<div class="flex flex-col gap-5 p-4">
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-white text-base font-medium leading-normal">10 Ships</p>
+<p class="text-white text-sm font-normal leading-normal tabular-nums">10/10</p>
+</div>
+<div class="rounded-full bg-[#374151] h-2"><div class="h-2 rounded-full bg-primary" style="width: 100%;"></div></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-white text-base font-medium leading-normal">50 Ships</p>
+<p class="text-white text-sm font-normal leading-normal tabular-nums">38/50</p>
+</div>
+<div class="rounded-full bg-[#374151] h-2"><div class="h-2 rounded-full bg-primary" style="width: 76%;"></div></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-white text-base font-medium leading-normal">100 Ships</p>
+<p class="text-white text-sm font-normal leading-normal tabular-nums">38/100</p>
+</div>
+<div class="rounded-full bg-[#374151] h-2"><div class="h-2 rounded-full bg-primary" style="width: 38%;"></div></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-white text-base font-medium leading-normal">500 Ships</p>
+<p class="text-white text-sm font-normal leading-normal tabular-nums">38/500</p>
+</div>
+<div class="rounded-full bg-[#374151] h-2"><div class="h-2 rounded-full bg-primary" style="width: 7.6%;"></div></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-white text-base font-medium leading-normal">1K Ships</p>
+<p class="text-white text-sm font-normal leading-normal tabular-nums">38/1000</p>
+</div>
+<div class="rounded-full bg-[#374151] h-2"><div class="h-2 rounded-full bg-primary" style="width: 3.8%;"></div></div>
+</div>
+</div>
+<!-- Recent Unlocks -->
+<h2 class="text-gray-400 text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-8">Recent Unlocks</h2>
+<div class="w-full overflow-x-auto p-4">
+<table class="w-full text-left">
+<thead>
+<tr>
+<th class="py-2 px-4 text-gray-400 font-medium text-sm w-2/5">USER</th>
+<th class="py-2 px-4 text-gray-400 font-medium text-sm w-2/5">BADGE</th>
+<th class="py-2 px-4 text-gray-400 font-medium text-sm w-1/5 text-right">UNLOCKED</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-transparent">
+<td class="py-5 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border-2 border-gray-700" data-alt="Photo of a smiling man with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwFlALOwWKnstpSSiU0KysWhCmaWjnpYy-jptFzIU52E8lrLxYzEKQj8FWlGkzRzx2jdbm20dSnMiSHVWzS_gWIvYmtfnCx9xXeGa6cHtH2kKK2yD2hRx9XGYoVKKr-WA7_fJ3rA3-chx9GqszLAuL7O3oc8z0DU2kMZhRf_6HGX0sOeMKxKjwKTe0V7e5fFSWmKYEEliaanypstnt7Lie9TFTK4bTIsd1ZY1kPPHR_k89xZS2p5Dbktvhpi522ZrLQzxb-6jq6YG-"/>
+<span class="text-white">Alex Johnson</span>
+</div>
+</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span class="text-white">Ship Streak</span>
+</div>
+</td>
+<td class="py-5 px-4 text-gray-400 text-right tabular-nums">2 hours ago</td>
+</tr>
+<tr class="border-t border-transparent">
+<td class="py-5 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border-2 border-gray-700" data-alt="Portrait of a woman with curly hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYQlmPHGSv-ij0mdvgHbGVxzYJyWcwulrxL_pAGBbM3cFsKs8yiDeklPYp0NaMMMRmhW3Oh5n3u2yE1e-6QdoNZOwArnTqu0zUh9Z4QvLiDbTlsUogLUQbyDzoVEjj3GfewkUpCkqsDbeHRTOuQhQzWRgg40rbePuvmO0_SLH2uaOG97dtiqPg8lKiKAXzHJQCui4cW9dAD3V4lv0hcSRNL3vWa1cJX5tvpH_0Cn9gUo2Rs1Km1N-Nd73vjNOXrL4tIijc2H_gBLBF"/>
+<span class="text-white">Maria Garcia</span>
+</div>
+</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">nights_stay</span>
+<span class="text-white">Night Owl</span>
+</div>
+</td>
+<td class="py-5 px-4 text-gray-400 text-right tabular-nums">5 hours ago</td>
+</tr>
+<tr class="border-t border-transparent">
+<td class="py-5 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border-2 border-gray-700" data-alt="Man wearing a beanie and smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDONr6O2bSJw7pZxTba6zcVyGLbQRJLyfjwPL2S4a9HPE_ZSZS64K_BxYwrTFw4K-_ZA1I0hZVwR1aXM3FWIE0yw09YP5dwB2txF4iA9Z-smU8RDMIqwolKLsp3Rnr_2d-WzoH8GCvWjLJqmPSDKCcnC0q3aj-daR3bRUQY9VhYlZ_yl9PJ2lnRe0wG49X8FFs4H5lNS51SC-5NSklUEWdBg-rSl_gtNT0IN9JBPX87Kdq8LHeC7kcI6Gzm645eXpzNgJBuz-n_PkP4"/>
+<span class="text-white">David Smith</span>
+</div>
+</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span class="text-white">First of Many</span>
+</div>
+</td>
+<td class="py-5 px-4 text-gray-400 text-right tabular-nums">1 day ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 py-8">
+<a class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white" href="#">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</a>
+<a class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white" href="#">1</a>
+<a class="h-8 w-8 flex items-center justify-center rounded-full bg-primary text-black" href="#">2</a>
+<a class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white" href="#">3</a>
+<a class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white" href="#">...</a>
+<a class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white" href="#">8</a>
+<a class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white" href="#">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
