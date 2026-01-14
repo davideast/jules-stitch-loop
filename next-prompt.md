@@ -1,7 +1,7 @@
 ---
-page: hall-of-fame
+page: index
 ---
-A page to honor the all-time legends and retired champions of jules.top.
+A sparkline graph visualization to be added to the main leaderboard.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,6 +22,6 @@ A page to honor the all-time legends and retired champions of jules.top.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. **Header:** "Hall of Fame" title.
-2. **Featured Legend:** A prominent section for the #1 all-time developer.
-3. **Grid of Champions:** A grid of cards for other retired champions, showing their stats and achievements.
+1. **Existing Leaderboard:** The current leaderboard table.
+2. **New Graph Column:** A new column added to the table titled "SHIP GRAPH".
+3. **Sparkline:** A small, simple sparkline graph in the new column for each row, visualizing the developer's shipping activity over the last 30 days. The line should be the primary accent color.
