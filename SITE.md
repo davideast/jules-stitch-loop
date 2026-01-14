@@ -45,6 +45,7 @@
 * [x] `achievements.html` - Badges and milestones for developers.
 * [x] `streaks.html` - Hot streak tracking and flame badges for consecutive shipping days.
 * [x] `milestones.html` - Major milestone celebrations (1K commits, 10K lines, etc.)
+* [x] `hall-of-fame.html` - All-time legends and retired champions
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -74,7 +75,6 @@
 *Pick one, build it, then REMOVE it from this list. Add your new page to Section 4 (Sitemap).*
 
 **Gamification & Recognition:**
-- [ ] `hall-of-fame.html` - All-time legends and retired champions
 
 **Analytics & Insights:**
 - [ ] `stats.html` - Global platform statistics and trends

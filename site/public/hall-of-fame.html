@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hall of Fame</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bd4bd",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#12201e",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Jules</h2>
+</div>
+</header>
+<main class="flex-1">
+<div class="flex flex-wrap justify-between gap-3 p-4 pt-10">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Hall of Fame</p>
+</div>
+<section class="p-4">
+<h2 class="text-primary text-xl font-bold leading-tight tracking-[-0.015em] mb-4">Featured Legend</h2>
+<div class="flex flex-col gap-6 rounded-lg p-6 @container border border-white/10">
+<div class="flex w-full flex-col gap-6 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex flex-col items-center gap-6 @[520px]:flex-row @[520px]:items-start">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 shrink-0" data-alt="Portrait of a smiling software developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcUpw2ViejsLT9HfZoo6VEhXmeO1vl036sgUr9glpQOdzePW95bb3iCQL_V8H_GVBdbiKY06RjoClHbMTIpVPF9Zd5gtgXiMrrSCDGPT2ceurzSQIbUkVbqw0fdrW6WNKUztIGcfX4PGbRepFfitSZ4L2W7EoN-uOK48_MeoI8jEIkSGRUfEc-6G6lxQno1C4W93_7nBAX_SyGsJ5f6un--nWgvWjf9yMbKRaHnuxZ4X3J4IXvnAxWCK2nY6RkAk4ncxG7SBwaCmOS");'></div>
+<div class="flex flex-col justify-center text-center @[520px]:text-left">
+<p class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Alex Chen</p>
+<p class="text-primary text-base font-medium leading-normal">#1 All-Time Legend</p>
+<p class="text-white/60 text-base font-normal leading-normal mt-2 max-w-md">A short bio or quote about their legacy and unwavering commitment to shipping quality code.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row flex-wrap gap-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded p-4 border border-white/10 bg-white/5">
+<p class="text-white/60 text-sm font-medium leading-normal">Total Lines Shipped</p>
+<p class="text-primary tracking-tighter text-3xl font-bold leading-tight">25,409,123</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded p-4 border border-white/10 bg-white/5">
+<p class="text-white/60 text-sm font-medium leading-normal">Career Span</p>
+<p class="text-primary tracking-tighter text-3xl font-bold leading-tight">2021-2024</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded p-4 border border-white/10 bg-white/5">
+<p class="text-white/60 text-sm font-medium leading-normal">Most Notable Project</p>
+<p class="text-primary tracking-tighter text-3xl font-bold leading-tight">Jules v2.0 Kernel</p>
+</div>
+</div>
+</div>
+</section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-8">Retired Champions</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+<!-- Champion Card 1 -->
+<div class="flex flex-col gap-4 rounded border border-white/10 p-6">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 shrink-0" data-alt="Portrait photo of a female developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4-dDRF48CoS-eNcnfinsLm06Ek66Xt98mrEeENxszP6HdIgbJa7qPdLiSQ4g737DMEyV3xmE4WRgOb37_dbeAl-mUNxJ9NI1EbFNrs-Xz_8vvJ5xJhyZQA4-4Cpfw5juzTuMCJUGZ7k8ZZ_CIdDSAtz055nX_7XNrTenZFfubDWHzfMupNx5-vEpy399QESN8oo2n-9Vu3Dv9neJ_ElLyeQPpOspa0A6_oTVBgobRwFDzZlOEx9CW2p-mH2J46NbUXkqA8XYu1kJP");'></div>
+<div>
+<p class="text-white text-lg font-bold leading-tight">Maria Rodriguez</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Q3 2023 Champion</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Lines Shipped</p>
+<p class="text-primary text-xl font-bold">18.2M</p>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Peak Rank</p>
+<p class="text-primary text-xl font-bold">#1</p>
+</div>
+</div>
+</div>
+<!-- Champion Card 2 -->
+<div class="flex flex-col gap-4 rounded border border-white/10 p-6">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 shrink-0" data-alt="Portrait photo of a male developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHkPcTqKsE-39YEkiWgYmcl25T7lM_jR_nmWqBynp9pSZuuUBwZOglhKxetRlOq624NmQLm2xh4gR7S2TAYlyJ_Y1nEMfB-tWUBdVsclbdozKCkuSLh0UjKDI5xlwqHG9kGEI3eZD0MPO_Mtme3mUq-XPA3_cohlSo5XFEVdTHpXmVn3dvWdzbGVhlZFLpW1gbK5Zu-4M93bsLelSTmtDPxZY2iSZODgCOqieQapmkLViekKFuwe6QpGvtXRGH0qw_QcYK8Ao50V9d");'></div>
+<div>
+<p class="text-white text-lg font-bold leading-tight">David Kim</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Q2 2023 Champion</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Lines Shipped</p>
+<p class="text-primary text-xl font-bold">15.9M</p>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Peak Rank</p>
+<p class="text-primary text-xl font-bold">#1</p>
+</div>
+</div>
+</div>
+<!-- Champion Card 3 -->
+<div class="flex flex-col gap-4 rounded border border-white/10 p-6">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 shrink-0" data-alt="Portrait photo of a developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdIbaButrgL-64b02pGlM9VeXUZREXU4sGrS1Klle99e0dIK8AnUoj-RnInMOIZLZu9X-DwtQQzqqkySZl1XYjpXKD3cTZkeUCHEHHKcl0t6pXnEIkkpqwOi2GFH1ZUc-GShrFlrmTzt_nUp127sFHMFMP-tFzxa4t9TxuX9WTkbs3KvUPbjdjXNohnwkyd3Ebh8YaJzrSkKSoH1LkonFtAV-SQf0bw49j8Lx3-f8UsCgZZSocivFqmJHXJ6eGKTY5cV-IEWKM5Sin");'></div>
+<div>
+<p class="text-white text-lg font-bold leading-tight">Sofia Garcia</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Q1 2023 Champion</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Lines Shipped</p>
+<p class="text-primary text-xl font-bold">14.1M</p>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Peak Rank</p>
+<p class="text-primary text-xl font-bold">#1</p>
+</div>
+</div>
+</div>
+<!-- Champion Card 4 -->
+<div class="flex flex-col gap-4 rounded border border-white/10 p-6">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 shrink-0" data-alt="Portrait photo of a developer with glasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDk8Jud-VB3FJyY0O0mRJSSbQud7sqh8XcuTiGPwqzQ0WOUV0lQWnrlSJ80pOXopkoEWYAR5hyP3yd4nG3tar_8Ko3Ag1QFTiE76KyXUGk4PGEwEDJodvL115lYeeogviGbSeXLW5KvCoTqLvlQkCTsQC-97c75eqqf6P-yS7JX7n_wopIST0yfTVu6OWo9XxSm8ipyPg_mDbH9VH-nPrsuRhMG4GbUwcm-95joesiVhX8fW6L0Kz5SB4VhEI5n02nBikZpVIRsFaoo");'></div>
+<div>
+<p class="text-white text-lg font-bold leading-tight">James Smith</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Q4 2022 Champion</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Lines Shipped</p>
+<p class="text-primary text-xl font-bold">12.5M</p>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Peak Rank</p>
+<p class="text-primary text-xl font-bold">#1</p>
+</div>
+</div>
+</div>
+<!-- Champion Card 5 -->
+<div class="flex flex-col gap-4 rounded border border-white/10 p-6">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 shrink-0" data-alt="Portrait photo of a woman developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDenf_RAsfcd3CD7csqNQuNZAqYHUlUDbBiq0WGwHErVxQMtIJLfwph0pfuCcsZWujjxn_iZU2P7cP3En0_SvCwe5d53pTzllzCL-3gRbXc0poDeAXMdt1E6IqD0uLYV_WWriHRgH7Wl0NcegFVd7iKL4sFpxpKqzOWffLtZMq25NuKfY66GBO_tsDN9QLD07zKbvOnX0O6CDCVjnmq9JahqgCSXpDBX-Ojt7eA00y0qCjSkX_Pree3IeNn3CCtSrQRlaNboJwnBdy");'></div>
+<div>
+<p class="text-white text-lg font-bold leading-tight">Chloe Dubois</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Q3 2022 Champion</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Lines Shipped</p>
+<p class="text-primary text-xl font-bold">11.8M</p>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Peak Rank</p>
+<p class="text-primary text-xl font-bold">#1</p>
+</div>
+</div>
+</div>
+<!-- Champion Card 6 -->
+<div class="flex flex-col gap-4 rounded border border-white/10 p-6">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 shrink-0" data-alt="Portrait photo of a man in a beanie" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiOXMbOiV9QXeB0FY4inIiMh_XA6BuTenrt8rMgnxYkrPJ0KOTLv72_n3IX0Lo-n5PitNjZF3RcJUZhYRP43KxFQjN-Tvp6j7gWu0NJe7iWAAb8W0_FfqQpOpRwyyh2XM5nOH1JP5vS97s4HVfA3RftJCA0IDM6LxeHJztnR4GT-0A1nEXPjoQ1I17oZgod0OBSKfZLejwcK08zaVVROmelD-ys_4EhRExIb8ZPg95l75IlTkIlSdBUzIiqo3KftBAIB3lPqH0SQJK");'></div>
+<div>
+<p class="text-white text-lg font-bold leading-tight">Ben Carter</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Q2 2022 Champion</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Lines Shipped</p>
+<p class="text-primary text-xl font-bold">10.3M</p>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white/60 text-xs font-medium uppercase tracking-wider">Peak Rank</p>
+<p class="text-primary text-xl font-bold">#1</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
