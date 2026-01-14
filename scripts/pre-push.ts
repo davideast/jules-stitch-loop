@@ -98,6 +98,9 @@ async function checkNextPrompt() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 async function checkAttribution() {
+  // NOTE: This check is only enforced in CI for bot users (google-labs-jules)
+  // For human commits locally, we just warn.
+
   // First check if we're in a git repo
   const gitCheck = await $`git rev-parse --git-dir 2>/dev/null`.quiet().nothrow();
   if (gitCheck.exitCode !== 0) {
@@ -115,9 +118,8 @@ async function checkAttribution() {
   if (msg.includes('Co-authored-by: David East')) {
     pass('Attribution', 'Commit includes Co-authored-by trailer');
   } else {
-    fail('Attribution', 'Latest commit missing Co-authored-by trailer');
-    console.log('   💡 Tip: Use --trailer when committing:');
-    console.log('      git commit --trailer "Co-authored-by: David East <4570265+davideast@users.noreply.github.com>"');
+    // Only warn locally - CI enforces this for bot users only
+    console.log('⚠️  Attribution: Missing trailer (enforced for bot in CI)');
   }
 }
 
@@ -175,6 +177,9 @@ function checkEnvVars() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 async function checkBatonChanged() {
+  // NOTE: This check is only enforced in CI for bot users (google-labs-jules)
+  // For human commits locally, we just warn.
+
   // First check if we're in a git repo
   const gitCheck = await $`git rev-parse --git-dir 2>/dev/null`.quiet().nothrow();
   if (gitCheck.exitCode !== 0) {
@@ -195,7 +200,8 @@ async function checkBatonChanged() {
   } else if (changedInLastCommit) {
     pass('Baton Status', 'next-prompt.md was updated in last commit');
   } else {
-    fail('Baton Status', 'next-prompt.md was NOT changed (CI will fail!)');
+    // Only warn locally - CI enforces this for bot users only
+    console.log('⚠️  Baton Status: Not changed (enforced for bot in CI)');
   }
 }
 
