@@ -1,12 +1,13 @@
 ---
-page: profile
+page: feed
 ---
-A user profile page that continues the dark, terminal-inspired aesthetic of the leaderboard. The header should be consistent with the main page, featuring the "jules.top" logo, a search bar, and a "Live Feed" link.
+Create a real-time activity feed page that aligns with the dark, terminal-inspired aesthetic. The header should remain consistent with the other pages, showing the "jules.top" logo, a search bar, and navigation links.
 
-The main content area should be divided into three sections:
+The main content area should be a single, continuously updating column of events. Each event item should include:
 
-1.  **User Header:** Display a large circular avatar of the user. Next to it, show their username in a bold, sans-serif font. Include a "Hot Streak" badge, perhaps with a flame icon and the number of consecutive days shipping, highlighted in an electric yellow. Below the username, include a sparkline graph visualizing their commit activity over the last 30 days.
+1.  **Avatar & User:** A small circular user avatar next to their username. The username should be a clickable link to their profile page.
+2.  **Action Description:** A concise text description of the action, e.g., "Merged PR #1234 in `jules-ai/jules`". Use "Git Commit Green" for commit-related actions and "Merged Purple" for pull requests.
+3.  **Repository Link:** The repository name should be a clickable link.
+4.  **Timestamp:** A relative timestamp (e.g., "3 seconds ago") on the right-hand side of the event item.
 
-2.  **Key Statistics:** A grid of key metrics with large, monospaced numbers. Include "Total Commits," "PRs Merged," and "Lines Shipped." Use the "Git Commit Green" color for the numbers to indicate positive activity.
-
-3.  **Top Repositories:** A clean, bordered table listing the user's most active repositories. The table should have two columns: "Repository" (showing the repo name, e.g., "jules-ai/jules-stitch-loop") and "Commits" (showing the user's commit count for that repo).
+The feed should feel dynamic and live, with a subtle glow or animation for new items appearing at the top.
