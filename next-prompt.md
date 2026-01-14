@@ -2,7 +2,7 @@
 page: index
 ---
 
-A competitive, data-dense leaderboard dashboard for tracking developers who ship the most code with the Jules AI agent. Dark mode with a terminal/hacker aesthetic. GitHub-inspired color scheme: near-black background (#0d1117), bright white text for usernames and scores.
+A friendly, competitive, data-dense leaderboard dashboard for tracking developers who ship the most code with the Jules background coding agent. Dark mode with a terminal/hacker aesthetic. GitHub-inspired color scheme: near-black background (#0d1117), bright white text for usernames and scores.
 
 The main content is a dense table showing: Rank (with gold/silver/bronze badges for top 3), Avatar circle, Username, Total Ships count, and Last Active timestamp. Monospaced font for all numbers and data. Bold sans-serif for names and ranks.
 
