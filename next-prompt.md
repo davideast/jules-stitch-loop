@@ -1,7 +1,7 @@
 ---
-page: streaks
+page: milestones
 ---
-A dedicated page to track and visualize developer "hot streaks" for consecutive shipping days.
+A page to celebrate major developer milestones, like "1K commits" or "10K lines of code shipped."
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -16,11 +16,12 @@ A dedicated page to track and visualize developer "hot streaks" for consecutive 
 - Font: Clean sans-serif (Inter, SF Pro, or system default)
 - Avatars: Circular, ~40px, with subtle border
 - Table: No visible row borders, generous vertical padding (~20px per row)
+- Columns: RANK | DEVELOPER (avatar + name) | TOTAL SHIPS | LAST ACTIVE
 - Pagination: Circular active page indicator (teal), numbered pages
 - Layout: Centered content, max-width container, ample whitespace
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. **Header:** "Active Streaks" title.
-2. **Featured Streak:** A prominent card for the user with the longest active streak, featuring a large flame emoji 🔥.
-3. **Streaks Table:** A table of all users with active streaks, with columns for RANK | DEVELOPER | STREAK LENGTH.
+1. **Header:** "Milestones" title.
+2. **Featured Milestone:** A prominent card for the most recent major milestone achieved by any user.
+3. **Milestone Feed:** A chronological feed of all milestones achieved by all users.
