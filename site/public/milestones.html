@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Developer Milestones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bd4bd",
+            "background-light": "#f6f8f8",
+            "background-dark": "#12201e",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL'0, 'wght'400, 'GRAD'0, 'opsz'24;
+    }
+  </style>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-white/10 px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-5 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Jules</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Leaderboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Milestones</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/10 text-white/80 hover:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<span class="material-symbols-outlined text-xl">toggle_on</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/10 text-white/80 hover:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with a blue background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcyH427S0gYh1YsVxPijh-n3N1TWjsfX8RhJaq4D5R_G9zWWHe2TGDJlAOY08B7RXdPbgnUh3g0T2aiFAFxAyd_f2XlZu3y_4YTJEp1dZYFQAf92sxhjNfBfIg2JEYZDv6bdL73sGq7pCTLmTUmx19u9G9aj5nSo7kGnMIaoXY9GQjop_TqkA_cA0foVi57Y7kmChDvWvMym1VTEbt2j0fMu-QQfEuDmACi094-Lvt0mcae9PcTj6TJ58SnIryEndH9zi2eJDPMN9d");'></div>
+</div>
+</div>
+<button class="md:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/10 text-white/80 hover:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</header>
+<main class="flex flex-col gap-8 py-10">
+<div class="flex flex-wrap justify-between gap-3 px-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Milestones</p>
+<p class="text-white/60 text-base font-normal leading-normal">Celebrate major achievements from developers across the team.</p>
+</div>
+</div>
+<section class="flex flex-col gap-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Latest Milestone</h2>
+<div class="px-4">
+<div class="flex flex-col items-stretch justify-start rounded-lg bg-white/5 @container md:flex-row md:items-center">
+<div class="w-full md:w-1/3 bg-center bg-no-repeat aspect-[4/3] md:aspect-square bg-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none" data-alt="Abstract teal and dark green geometric pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6o_WD-lu03DZDCvLKNbH_fX1TjKwv0_F1A7oD_KpLIQqENAXKHnznCa4feNbVUqbPJSuLtycvtwIfg9THC85NFs8gVmdPzex-J3Vw-V0OzOIttxeWXEmjWCs2Xj1xQHTODhgxcKaD7VodKEpgG9SZDygF9V4rsJVz0jURUxDg90MaRtmH2v-UT9Hefk9Hcryi4KOyKRAkXdEQe4hkD-PiMktBdCwz6iJ_AJXWyN_MK_ZzyvLcIM7l3jHLKiTFbAHkFyCUn9fYj8DI");'></div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-4 p-6 @xl:px-8">
+<p class="text-primary text-sm font-bold tracking-widest leading-normal">FEATURED</p>
+<p class="text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Reached 1,000 Commits</p>
+<div class="flex items-center gap-3">
+<img alt="Alex Turing" class="size-10 rounded-full border-2 border-primary" data-alt="Portrait of developer Alex Turing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcntoNHy-wertUSytR7z1IX-Mi3byB3A0LJxVFv5mFT7zU0036BQStsWqsOx0d8x0OnA-Au_Rf4J11oWbv5hSmy_5-4i_d4wHvciYPka12GpUHd145KaUenSz5We0UNSFVQR57SBVfgIEFW6Qp98r68xP1LN9lzbB2-xMVJggxTyu9BofR9s9nfEsfjeikFR98pQnf3PvVLI2Bb8m0Iv9WOcYX3yrBqmWBgvpjHNECe6f0OR6hOmsM5_GUbUKuygY1GUfdewyoStkr"/>
+<div class="flex flex-col">
+<p class="text-white text-base font-medium leading-normal">Alex Turing</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Achieved on August 15, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">All Milestones</h2>
+<div class="overflow-x-auto">
+<div class="w-full min-w-[600px] border-collapse">
+<div class="grid grid-cols-12 px-4 py-3 text-sm font-bold uppercase tracking-wider text-white/60">
+<div class="col-span-5">Developer</div>
+<div class="col-span-5">Milestone</div>
+<div class="col-span-2 text-right">Date</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="grid grid-cols-12 items-center rounded-lg bg-white/5 px-4 py-4 transition-colors hover:bg-white/10">
+<div class="col-span-5 flex items-center gap-4">
+<img alt="User avatar" class="size-10 rounded-full" data-alt="Portrait of developer Ben Carter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSQhyVtO0NBjMZIXwCFa5HjRZqQuWmAOrRPXPBba2-ljl64I4oX_W0kZ7_tePyTILrL_BA7b-5jU2_hnNIDWmjXgt0Q8ouo-fH0gkWqn_Wpll8JRuEohJhqAWjhe4LIyvxNi536waW14mkB_Yu2PnnfNcI93gZi-5YKLAVpuPCMoApHN9fjvNHQuXrS8g-D9B5O183RNOm08nA-dEd2wFo1TYW7cQrihl7q1XhVi-tMeDTZ4bp_ZdhBVYf6cm3U9WHFfyCoSRtNmaT"/>
+<span class="font-medium text-white">Ben Carter</span>
+</div>
+<div class="col-span-5 text-white/80">Shipped 50,000 lines of code</div>
+<div class="col-span-2 text-right text-white/60">Jul 29, 2023</div>
+</div>
+<div class="grid grid-cols-12 items-center rounded-lg bg-white/5 px-4 py-4 transition-colors hover:bg-white/10">
+<div class="col-span-5 flex items-center gap-4">
+<img alt="User avatar" class="size-10 rounded-full" data-alt="Portrait of developer Casey Evans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAYuaXIuU1K2dxKt5XffilJXe--1WkmrT9lpzH6B4UWwmCyIDoxv08tcXs4lwYveVN7DkZT9rVzSOhjP92183fTuU0R4radCwriW0FttWVRvzxwiVvi_0omm6oQkLpBvX63zTAgjJS7DE6k5mORP538w-nxWk3haKEhC9QvK3NEE6qL3raq7SSGp6Lla8zolFZslCuetO6WWo79HZcUY3HOEERFUvxaVCp_A8vJ7qLrh-_w8g4GFGW18aoj-YTXL99gAgRdFaA90Tf"/>
+<span class="font-medium text-white">Casey Evans</span>
+</div>
+<div class="col-span-5 text-white/80">First Pull Request Merged</div>
+<div class="col-span-2 text-right text-white/60">Jul 21, 2023</div>
+</div>
+<div class="grid grid-cols-12 items-center rounded-lg bg-white/5 px-4 py-4 transition-colors hover:bg-white/10">
+<div class="col-span-5 flex items-center gap-4">
+<img alt="User avatar" class="size-10 rounded-full" data-alt="Portrait of developer Dana Scully" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiTVHlTj9sisA33w9HhDeb7KPyFYjTnhuRFJ2X4XAVwMrBe-iGNWYJO0jhiIoWzdJl8hN-NKKX_J5h_kzXqgUYSAUeU4a_GRxcuXBCS-pt9m0fjl8ozOewiZzM7NW8dg38c_oP0PE--Cugi4jOw2cOJyRPGkfeDiTLpcrm-iCha16U59IvMlGIp8PXTFL4vgnbrbghPAqmyv6AQn3pMEwWejSAybVHq_9Zy1XHd7HshdcIvbv2BQzaFhvd35vSrFy9kgSRGH4ATVuA"/>
+<span class="font-medium text-white">Dana Scully</span>
+</div>
+<div class="col-span-5 text-white/80">Completed 100 tickets</div>
+<div class="col-span-2 text-right text-white/60">Jul 15, 2023</div>
+</div>
+<div class="grid grid-cols-12 items-center rounded-lg bg-white/5 px-4 py-4 transition-colors hover:bg-white/10">
+<div class="col-span-5 flex items-center gap-4">
+<img alt="User avatar" class="size-10 rounded-full" data-alt="Portrait of developer Frank Miller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBILfQNtp301UG5aFapWHcUerpqpeovgc6TGONm4deYnCC_y1jEN7ik7RyjV6SoqL2xT_ZkPgPAqW8VzloIDTg9xLDxwK6BMLjds8eeCIuDh0DjhyZ3KjuutLiqV7_5HLFSOVnliDEf7D0hZY_YAh4mv_wXDVYIWNk8oJUvnd8gWkmxSdIzB5APTaWte0GWOvJ5YhHuZW2tBlFeKDcRXcQLn1sieEyrIBPvkibPkQEKjVGkCfzU-LpEisvhH_y2DusljNnFJFzbMTCh"/>
+<span class="font-medium text-white">Frank Miller</span>
+</div>
+<div class="col-span-5 text-white/80">1 Year Anniversary</div>
+<div class="col-span-2 text-right text-white/60">Jun 30, 2023</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<nav class="flex items-center justify-center gap-2 pt-8">
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-white/60 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">chevron_left</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-background-dark bg-primary font-bold text-lg">1</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-white/80 hover:bg-white/10 transition-colors font-bold text-lg">2</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-white/80 hover:bg-white/10 transition-colors font-bold text-lg">3</button>
+<span class="text-white/60">...</span>
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-white/80 hover:bg-white/10 transition-colors font-bold text-lg">9</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-white/60 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</button>
+</nav>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
