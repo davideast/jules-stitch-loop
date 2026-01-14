@@ -14,7 +14,7 @@ jobs:
         id: check_baton
         continue-on-error: true
         run: |
-          if git diff --name-only origin/\${{ github.base_ref }}...HEAD | grep -q "next-prompt.md"; then
+          if git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -q "next-prompt.md"; then
             echo "✅ Baton passed."
           else
             MSG="CRITICAL: You MUST update 'next-prompt.md'."
@@ -37,13 +37,13 @@ jobs:
       - name: Report Failures
         if: always() && (steps.check_baton.outcome == 'failure' || steps.check_attr.outcome == 'failure')
         env:
-          JULES_API_KEY: \${{ secrets.JULES_API_KEY }}
-          BRANCH_NAME: \${{ github.head_ref }}
-          BATON_LOG_B64: \${{ steps.check_baton.outputs.log }}
-          ATTR_LOG_B64: \${{ steps.check_attr.outputs.log }}
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          BRANCH_NAME: ${{ github.head_ref }}
+          BATON_LOG_B64: ${{ steps.check_baton.outputs.log }}
+          ATTR_LOG_B64: ${{ steps.check_attr.outputs.log }}
         run: bun run scripts/ci-report.ts
 
       - name: Fail Job
         if: always()
         run: |
-          if [ "\${{ steps.check_baton.outcome }}" == "failure" ] || [ "\${{ steps.check_attr.outcome }}" == "failure" ]; then exit 1; fi
+          if [ "${{ steps.check_baton.outcome }}" == "failure" ] || [ "${{ steps.check_attr.outcome }}" == "failure" ]; then exit 1; fi
