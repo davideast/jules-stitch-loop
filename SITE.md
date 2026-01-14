@@ -46,6 +46,7 @@
 * [x] `streaks.html` - Hot streak tracking and flame badges for consecutive shipping days.
 * [x] `milestones.html` - Major milestone celebrations (1K commits, 10K lines, etc.)
 * [x] `hall-of-fame.html` - All-time legends and retired champions
+* [ ] `compare.html` - Side-by-side developer comparison ("Battle Mode")
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -59,7 +60,6 @@
 - [x] **"Hot Streak" Badge:** Design a visual indicator for users who have shipped 5+ days in a row.
 
 ### Future Concepts (Low Priority)
-- [ ] "Battle Mode" comparison view (User A vs User B).
 - [ ] API Documentation page.
 - [ ] Settings/Preferences page.
 - [ ] Notifications page.
@@ -83,7 +83,6 @@
 - [ ] `insights.html` - AI-generated insights about shipping patterns
 
 **Social & Competition:**
-- [ ] `compare.html` - Side-by-side developer comparison ("Battle Mode")
 - [ ] `teams.html` - Team/organization leaderboards
 - [ ] `challenges.html` - Weekly/monthly shipping challenges
 - [ ] `rivals.html` - Head-to-head rivalry tracking
