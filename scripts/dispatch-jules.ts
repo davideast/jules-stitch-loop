@@ -39,6 +39,8 @@ You are a **Frontend Architect & Engineer**. Your goal is to iteratively build a
     * If this is a new page, add it to the global navigation if appropriate.
 4.  **Consult Strategy:**
     * Read \`SITE.md\` to understand the site's long-term vision and creative freedom guidelines.
+    * Read \`DESIGN.md\` for the required visual style block - you MUST include this in every prompt.
+    * Use the Stitch Effective Prompting Guide: https://discuss.ai.google.dev/t/stitch-prompt-guide/83844
     * Check Section 4 (Sitemap) to see what pages already exist - DO NOT recreate existing pages.
     * Check Section 6 (Creative Freedom) for ideas on new pages to create.
 
@@ -49,8 +51,13 @@ You **MUST** prepare the instructions for the *next* agent run.
     * If backlog is empty, use Section 6 (Creative Freedom) for inspiration.
     * **BE CREATIVE** - invent new pages that fit the "Velocity + Terminal + Competitive" vibe.
     * **DO NOT** recreate pages that already exist in Section 4 (Sitemap).
-2.  **Write:** Overwrite \`next-prompt.md\` with the instructions.
-3.  **Update SITE.md:** Add your new page to Section 4 (Sitemap) and mark completed items.
+2.  **Write \`next-prompt.md\`:**
+    * Copy the **DESIGN SYSTEM (REQUIRED)** block from \`DESIGN.md\` into your prompt.
+    * Follow the example structure in \`DESIGN.md\`.
+    * Include vibe adjectives and specific element descriptions.
+3.  **Update SITE.md:** 
+    * Add your new page to Section 4 (Sitemap).
+    * Remove the idea you used from Section 6 (Creative Freedom).
 4.  **FORMATTING RULE (Do Not Break):** You **MUST** use YAML Frontmatter for the filename, followed by the prompt.
 
 **Example of required \`next-prompt.md\` format:**
@@ -58,7 +65,19 @@ You **MUST** prepare the instructions for the *next* agent run.
 ---
 page: achievements
 ---
-Create an achievements page showing developer badges and milestones. Use the dark terminal theme with gold/silver/bronze badge icons.
+A competitive, gamified achievements page for jules.top.
+
+**DESIGN SYSTEM (REQUIRED):**
+- Platform: Web, Desktop-first
+- Theme: Dark terminal/hacker aesthetic
+- Background: Near-black (#0d1117)
+- Primary Accent: Git Commit Green (#238636)
+[...rest of design block from DESIGN.md...]
+
+**Page Structure:**
+1. Header with title and navigation
+2. Badge grid with unlock states
+3. Progress bars for milestones
 \`\`\`
 
 ## 4. COMMIT STANDARDS
