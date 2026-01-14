@@ -1,8 +1,14 @@
 import { StitchMCPClient } from '@google/stitch-sdk';
+import matter from 'gray-matter';
 
-const prompt = process.argv[2];
-const targetHtml = process.argv[3] || 'queue/index.html';
+// Read from next-prompt.md
+const promptFile = await Bun.file('next-prompt.md').text();
+const { content: prompt, data: frontmatter } = matter(promptFile);
+const page = frontmatter.page || 'index';
+
+const targetHtml = `queue/${page}.html`;
 const targetPng = targetHtml.replace('.html', '.png');
+
 
 if (!prompt) {
   console.error("❌ No prompt provided.");
