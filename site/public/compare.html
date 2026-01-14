@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Battle Mode Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bd4bd",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#13201f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-6xl px-4 md:px-10">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#274440] py-4">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Jules</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Leaderboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Battle Mode</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#13201f] text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Project</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWhUvAaMSAtGAPvBggmUjPd-gRgDoghh1Aft8jVFGMjunBb9WPR0LTSZHb6TiOklf3xsYfzvOVaD3pPNQc6JQS2ncv_slmv45Q9pZgv2zKVcQY5h6dsVDg_mx99sanbP0DJukc7nEkBTiosAnTTTKXzFO1lokqEdM4_BUDA5aqE-pEDN8PqWV7W2fvL-htJQsSEL9Y64hXtlBPPs-OfNqaLjWlx-7r6OUOstOv5n1NnXVvBnmfO70z14dMuggIyqUJGXc4Xeyxgyvn");'></div>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-8 md:gap-12 py-8 md:py-16">
+<div class="flex flex-col items-center gap-8">
+<div class="flex flex-col gap-3 text-center">
+<p class="text-white text-4xl lg:text-5xl font-bold leading-tight tracking-[-0.033em]">Battle Mode</p>
+<p class="text-[#97c3be] text-base font-normal leading-normal max-w-md">Select two developers for a side-by-side comparison of their key stats.</p>
+</div>
+<div class="flex w-full max-w-2xl flex-col sm:flex-row items-end gap-4">
+<label class="flex flex-col w-full">
+<p class="text-white text-base font-medium leading-normal pb-2">Player 1</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#38615c] bg-[#1c312e] focus:border-primary h-14 placeholder:text-[#97c3be] p-[15px] text-base font-normal leading-normal" placeholder="Select Player 1" value="Alex Chen"/>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-white text-base font-medium leading-normal pb-2">Player 2</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#38615c] bg-[#1c312e] focus:border-primary h-14 placeholder:text-[#97c3be] p-[15px] text-base font-normal leading-normal" placeholder="Select Player 2" value="Samantha Bee"/>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+<div class="flex w-full flex-col gap-6 rounded-lg bg-[#1c312e] p-6 border border-primary/50 shadow-[0_0_20px_0] shadow-primary/20">
+<div class="flex flex-col gap-4 items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-24 h-24 border-2 border-primary" data-alt="Avatar of developer Alex Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDM-54CuGQY6PSJ3tx65vX0scByjujCUaVoOqlWlYVJDs_hQBjsB1pYshSdCTJ1qTkZ1XT1qox2rlNTtJiEfu0hume7FtMWDC0qhzmrZ1ZgyAsBUkBye9xlaYIwlOecRes0uXtZG6QP-75vKCRF02e4p5Ge_eMtVoIJRm0niuJndYejfe7qg4iDcIYVRNdpJpTxp33XdqYe9wjzlAXCVtcM6Lk3er9hVoXGTw5TYVYQ23xhdlMH7CHNnpIhbumXwh1McGUUQHU1jrlv");'></div>
+<div class="absolute -bottom-2 -right-2 flex items-center justify-center size-8 bg-amber-400 text-black rounded-full text-sm font-bold border-2 border-[#1c312e]">
+<span class="material-symbols-outlined !text-xl" data-icon="military_tech">military_tech</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] text-center">Alex Chen</p>
+<p class="text-[#97c3be] text-base font-normal leading-normal text-center">Rank #5</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#38615c] p-4 items-center text-center">
+<p class="text-white tracking-tight text-4xl font-bold leading-tight">1,204</p>
+<p class="text-[#97c3be] text-sm font-normal leading-normal">Total Ships</p>
+</div>
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#38615c] p-4 items-center text-center">
+<p class="text-white tracking-tight text-4xl font-bold leading-tight">32</p>
+<p class="text-[#97c3be] text-sm font-normal leading-normal">Current Streak</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-lg border border-[#38615c] p-4">
+<p class="text-white/90 text-sm font-medium leading-normal">Ship Graph</p>
+<div class="w-full h-24">
+<svg class="w-full h-full" data-alt="A sparkline graph showing shipping activity" fill="none" viewbox="0 0 350 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 60 L25 50 L50 65 L75 55 L100 70 L125 60 L150 75 L175 65 L200 80 L225 70 L250 85 L275 75 L300 90 L325 80 L350 95" stroke="#2bd4bd" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="flex w-full flex-col gap-6 rounded-lg bg-[#1c312e] p-6 border border-[#38615c]">
+<div class="flex flex-col gap-4 items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-24 h-24 border-2 border-transparent" data-alt="Avatar of developer Samantha Bee" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC18kuyuq9VS40ZLZHb2eFrPE5moz-Pk7X1r-lb7MjmJSqWSTpGp6og4_IUBQK52Vtb_DT7L5epvl8QMj5i8bcp_VAJi2hRNPRYtixE4utrw_qjbWntAcmH8gehrwBzKXMtGIodIcXDRPFUydP_dqYLS4rBYdnenjDQTjohQpIfP-YBJRQ7a_2b02mrvYSSuHArOJlV48aRar42-ZAbMdzNnP5x79voGrHHlUVz2Ni_WlOcZoh-fohPrxrK7JsLoHJZsNTCUBUbokKW");'></div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] text-center">Samantha Bee</p>
+<p class="text-[#97c3be] text-base font-normal leading-normal text-center">Rank #12</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#38615c] p-4 items-center text-center">
+<p class="text-white tracking-tight text-4xl font-bold leading-tight">987</p>
+<p class="text-[#97c3be] text-sm font-normal leading-normal">Total Ships</p>
+</div>
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#38615c] p-4 items-center text-center">
+<p class="text-white tracking-tight text-4xl font-bold leading-tight">15</p>
+<p class="text-[#97c3be] text-sm font-normal leading-normal">Current Streak</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-lg border border-[#38615c] p-4">
+<p class="text-white/90 text-sm font-medium leading-normal">Ship Graph</p>
+<div class="w-full h-24">
+<svg class="w-full h-full" data-alt="A sparkline graph showing shipping activity" fill="none" viewbox="0 0 350 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 80 L25 75 L50 90 L75 80 L100 85 L125 70 L150 78 L175 68 L200 75 L225 65 L250 72 L275 62 L300 70 L325 60 L350 68" stroke="#2bd4bd" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
