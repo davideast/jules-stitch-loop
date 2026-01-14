@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Stats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+</div>
+</header>
+<main class="flex flex-col gap-4">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-white">Global Stats</p>
+<p class="text-base font-normal leading-normal text-white/60">An overview of platform-wide trends and aggregated data.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4 p-4 md:grid-cols-3">
+<div class="flex flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-6">
+<p class="text-base font-medium leading-normal text-white/80">Total Ships</p>
+<p class="tracking-light text-2xl font-bold leading-tight text-white">1,234,567</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-6">
+<p class="text-base font-medium leading-normal text-white/80">Active Developers</p>
+<p class="tracking-light text-2xl font-bold leading-tight text-white">8,910</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-6">
+<p class="text-base font-medium leading-normal text-white/80">Commits Today</p>
+<p class="tracking-light text-2xl font-bold leading-tight text-white">2,345</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4 px-4 py-6 lg:grid-cols-2">
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-6">
+<p class="text-base font-medium leading-normal text-white">Top 10 Languages</p>
+<div class="grid min-h-[180px] grid-flow-col items-end justify-items-center gap-6 px-3">
+<div class="w-full" style="background-color: #2dd4bf; height: 80%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 10%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 100%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 30%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 90%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 50%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 60%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 25%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 45%;"></div>
+<div class="w-full" style="background-color: #2dd4bf; height: 70%;"></div>
+</div>
+<div class="grid grid-flow-col justify-items-center gap-6 px-3">
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">JS</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">PY</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">TS</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">GO</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">RB</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">JAVA</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">C++</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">PHP</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">C#</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">RUST</p>
+</div>
+</div>
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-6">
+<p class="text-base font-medium leading-normal text-white">Shipping Activity (Last 30 Days)</p>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_1131_5935)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#2bd4bd" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_1131_5935" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#2bd4bd" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#2bd4bd" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-around">
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">1</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">5</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">10</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">15</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">20</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">25</p>
+<p class="text-[13px] font-bold leading-normal tracking-[0.015em] text-white/60">30</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4 px-4 py-3 lg:grid-cols-2">
+<div class="flex flex-col gap-4">
+<h3 class="px-4 text-base font-medium leading-normal text-white">Most Active Repositories</h3>
+<div class="overflow-hidden rounded-lg border border-white/10 bg-white/5">
+<table class="w-full">
+<thead>
+<tr class="bg-black/20">
+<th class="p-3 text-left text-sm font-medium text-white/80">Rank</th>
+<th class="p-3 text-left text-sm font-medium text-white/80">Repository</th>
+<th class="p-3 text-left text-sm font-medium text-white/80">Ships</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-t-white/10">
+<td class="p-3 text-sm font-normal leading-normal text-white/60">1</td>
+<td class="p-3 text-sm font-normal leading-normal text-white">jules/core</td>
+<td class="p-3 text-sm font-normal leading-normal text-white/60">2,456</td>
+</tr>
+<tr class="border-t border-t-white/10">
+<td class="p-3 text-sm font-normal leading-normal text-white/60">2</td>
+<td class="p-3 text-sm font-normal leading-normal text-white">next/next.js</td>
+<td class="p-3 text-sm font-normal leading-normal text-white/60">1,890</td>
+</tr>
+<tr class="border-t border-t-white/10">
+<td class="p-3 text-sm font-normal leading-normal text-white/60">3</td>
+<td class="p-3 text-sm font-normal leading-normal text-white">openai/gpt-3</td>
+<td class="p-3 text-sm font-normal leading-normal text-white/60">1,567</td>
+</tr>
+<tr class="border-t border-t-white/10">
+<td class="p-3 text-sm font-normal leading-normal text-white/60">4</td>
+<td class="p-3 text-sm font-normal leading-normal text-white">rust-lang/rust</td>
+<td class="p-3 text-sm font-normal leading-normal text-white/60">1,234</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="px-4 text-base font-medium leading-normal text-white">Fastest Growing Developers</h3>
+<div class="overflow-hidden rounded-lg border border-white/10 bg-white/5">
+<table class="w-full">
+<thead>
+<tr class="bg-black/20">
+<th class="p-3 text-left text-sm font-medium text-white/80">Rank</th>
+<th class="p-3 text-left text-sm font-medium text-white/80">Developer</th>
+<th class="p-3 text-left text-sm font-medium text-white/80">Growth</th>
+<th class="p-3 text-left text-sm font-medium text-white/80">Ships (7d)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-t-white/10">
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">1</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white">
+<div class="flex items-center gap-2">
+<div class="h-8 w-8 rounded-full bg-cover bg-center" data-alt="User avatar for Alex Doe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuyyOwAwwpFv1X17D_ziciTH78TWjj57Igz1JwtkF0guXFEvtpcZgiXd-pbRNpyzrOsu1z_0dTWPZU-zKSkZR3EFCv0nGQhhr9-7-OHdKP_IQq1k8qEUwXCiPqS8l-J-kRLzJql8yE3A9QUdH72LnEh4bmUdXTMafOPqJWH-DAKWqo7Gw7zbMv-PJ-85GnvDqTjUbvu2Cado9I29HVN_dCy7LOH9ykPREjV5HlL76LadHgguuVkjbzmaFwLoUXmcViOFWp2reCwiaX')"></div>
+<span>Alex Doe</span>
+</div>
+</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-primary">+215%</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">842</td>
+</tr>
+<tr class="border-t border-t-white/10">
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">2</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white">
+<div class="flex items-center gap-2">
+<div class="h-8 w-8 rounded-full bg-cover bg-center" data-alt="User avatar for Brenda Smith" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBzXRDZWo99dWEObr9nUVWbYbuZjWUUDilp-FiRBmcxupN0IZK9UxKu3XCTXekYBza3xQycjY5duqSTsfK_igRArPWwQ9rd7gOAyfZ0PrUDPBxu0ESIoNb-nlCUBweX_Z0Xha7NgLRtW7pFj8nAC6mt2iE8YWsxR-ittZS41EgaM7E4C04Qhl3fcvYpmu07V7oaEtx9yTznMtkipZRHjuwrboNS3bF39jkC8FhRLDSZCpRuqnhrY3eLFFb2gJdOHtLM78uZ4Y1kvjr')"></div>
+<span>Brenda Smith</span>
+</div>
+</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-primary">+188%</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">713</td>
+</tr>
+<tr class="border-t border-t-white/10">
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">3</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white">
+<div class="flex items-center gap-2">
+<div class="h-8 w-8 rounded-full bg-cover bg-center" data-alt="User avatar for Carl Johnson" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSwz4DomKWELC0tFfvHbljzWkhTr8ezGP45J3e5w6KQ2UeQu6TPhCyFgoX0T0G5Frogz9oE9mhrwdbVomL2hOcg114KrdOkGIGyV5UJcQSd4uok6PhHfTS2wSdUT8k4ZaDLkA51HY78sn_i4lmP4lxVOg0Ih_vk2dVo59qIURoqmles-8gXvh0dAGWeExeF-_2OGqJ00wrR8aW09RCwpEPkn3lWihDWkxL2eZK343xE0285v0Do0r-PyhbbCMzZgd1yeV4FFMXPCHA')"></div>
+<span>Carl Johnson</span>
+</div>
+</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-primary">+150%</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">698</td>
+</tr>
+<tr class="border-t border-t-white/10">
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">4</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white">
+<div class="flex items-center gap-2">
+<div class="h-8 w-8 rounded-full bg-cover bg-center" data-alt="User avatar for Diana King" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrRBmKNbPP5R2yX917anKC0N-eTOF4t76exWt6Kq4-KE1vB7443zxrqZWSCi4sMCtxN9qqCZkVeuuS7D59T4LVp8gflcTsxdzmlNuh78LguUdOZ1ZlWkCgrKSKXQBgrpxL8cMFoeoL_g4HZ2kPz8fnBpAIUXbzZ8WIQ9O1yu4HSYiboCA86UX-Tx6tMSlXbFq8TemN8RvdDSxE4pOV7NTsNXpFvcorbQwgqYdPZHgt8-2YEpqXgO62kDGPdYV1i5GAobnAE_Lm_BEA')"></div>
+<span>Diana King</span>
+</div>
+</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-primary">+123%</td>
+<td class="p-3 align-middle text-sm font-normal leading-normal text-white/60">560</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
