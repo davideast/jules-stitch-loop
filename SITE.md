@@ -1,6 +1,6 @@
 # Project Vision & Constitution
 
-> **AGENT INSTRUCTION:** Read this file before every iteration. It serves as the project's "Long-Term Memory." If `next-prompt.md` is empty, pick the highest priority item from Section 5.
+> **AGENT INSTRUCTION:** Read this file before every iteration. It serves as the project's "Long-Term Memory." If `next-prompt.md` is empty, pick the highest priority item from Section 5 OR invent a new page that fits the project vision.
 
 ## 1. Core Identity
 * **Project Name:** jules.top
@@ -17,16 +17,16 @@
     * *Tertiary:* **Competitive** (Ranks, badges, gold/silver/bronze hierarchy).
 
 * **Color Philosophy (Semantic):**
-    * **Backgrounds:** [e.g., Deepest void (GitHub Dark Mode inspired). High contrast layers.]
-    * **Accents:** [e.g., "Git Commit Green" for success/shipping. "Merged Purple" for PRs. Electric Yellow for "Top Rank".]
-    * **Text:** [e.g., Bright white for names/scores. Dimmed gray for metadata like timestamps.]
+    * **Backgrounds:** Deepest void (GitHub Dark Mode inspired). High contrast layers.
+    * **Accents:** "Git Commit Green" for success/shipping. "Merged Purple" for PRs. Electric Yellow for "Top Rank".
+    * **Text:** Bright white for names/scores. Dimmed gray for metadata like timestamps.
 
 * **Typography & Shape:**
-    * **Font Style:** [e.g., "Monospaced System Font" for all data and numbers. "Bold Sans-Serif" for names and ranks.]
-    * **Element Borders:** [e.g., "Thin, precise 1px borders. Subtle transparency. Tabular layouts."]
+    * **Font Style:** "Monospaced System Font" for all data and numbers. "Bold Sans-Serif" for names and ranks.
+    * **Element Borders:** "Thin, precise 1px borders. Subtle transparency. Tabular layouts."
 
 * **Imagery Direction:**
-    * [e.g., "Abstract data visualizations. Git contribution graphs. Avatars with status rings. No stock photos of people."]
+    * Abstract data visualizations. Git contribution graphs. Avatars with status rings. No stock photos of people.
 
 ## 3. Architecture & File Structure
 * **Root:** `site/public/`
@@ -38,28 +38,85 @@
 ## 4. Live Sitemap (Current State)
 *The Agent MUST update this section when a new page is successfully merged.*
 
-* [ ] `index.html` - The Main Leaderboard (Global Rank).
-* [ ] `profile.html` - Individual user stats (Commits vs PRs).
-* [ ] `feed.html` - Real-time stream of incoming commits.
-* [ ] `about.html` - How the tracking works.
+* [x] `index.html` - The Main Leaderboard (Global Rank).
+* [x] `profile.html` - Individual user stats (Commits vs PRs).
+* [x] `feed.html` - Real-time stream of incoming commits.
+* [x] `about.html` - How the tracking works.
 
 ## 5. The Roadmap (Backlog)
-*If `next-prompt.md` is empty or completed, pick the next task from here and update `next-prompt.md`.*
+*If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
 
 ### High Priority
-- [ ] **The Leaderboard Table:** Create a dense, highly readable table on `index.html`. Columns: Rank, User, Total Ships, Last Active.
+- [x] **The Leaderboard Table:** Create a dense, highly readable table on `index.html`.
 - [ ] **The "Ship" Graph:** Add a visual sparkline or contribution graph next to the top 3 users.
 
 ### Medium Priority
-- [ ] **Profile View:** Create a template for a user details page showing their top repositories.
+- [x] **Profile View:** Create a template for a user details page showing their top repositories.
 - [ ] **"Hot Streak" Badge:** Design a visual indicator for users who have shipped 5+ days in a row.
 
 ### Future Concepts (Low Priority)
 - [ ] "Battle Mode" comparison view (User A vs User B).
 - [ ] API Documentation page.
+- [ ] Settings/Preferences page.
+- [ ] Notifications page.
 
-## 6. Rules of Engagement (Constraints)
+## 6. Creative Freedom Guidelines
+*When the backlog is empty or you want to innovate, follow these guidelines:*
+
+1. **Stay On-Brand:** New pages must fit the "Velocity + Terminal + Competitive" vibe.
+2. **Enhance the Core:** New features should support the leaderboard mission (tracking, comparing, celebrating developers).
+3. **Naming Convention:** Use lowercase, descriptive filenames (e.g., `stats.html`, `compare.html`, `achievements.html`).
+
+### Ideas to Explore
+*Pick one, build it, then REMOVE it from this list. Add your new page to Section 4 (Sitemap).*
+
+**Gamification & Recognition:**
+- [ ] `achievements.html` - Badges and milestones for developers (First Commit, 100 Ships, Night Owl, etc.)
+- [ ] `streaks.html` - Hot streak tracking and flame badges for consecutive shipping days
+- [ ] `milestones.html` - Major milestone celebrations (1K commits, 10K lines, etc.)
+- [ ] `hall-of-fame.html` - All-time legends and retired champions
+
+**Analytics & Insights:**
+- [ ] `stats.html` - Global platform statistics and trends
+- [ ] `trends.html` - Rising stars and momentum charts
+- [ ] `history.html` - Historical data, time machine view of past leaderboards
+- [ ] `insights.html` - AI-generated insights about shipping patterns
+
+**Social & Competition:**
+- [ ] `compare.html` - Side-by-side developer comparison ("Battle Mode")
+- [ ] `teams.html` - Team/organization leaderboards
+- [ ] `challenges.html` - Weekly/monthly shipping challenges
+- [ ] `rivals.html` - Head-to-head rivalry tracking
+
+**Discovery & Exploration:**
+- [ ] `explore.html` - Discover developers by language, framework, or project type
+- [ ] `repos.html` - Top repositories by Jules activity
+- [ ] `languages.html` - Leaderboard by programming language
+- [ ] `search.html` - Advanced search and filtering
+
+**User Experience:**
+- [ ] `settings.html` - User preferences and notifications
+- [ ] `notifications.html` - Activity alerts and updates
+- [ ] `onboarding.html` - How to get started with Jules
+- [ ] `faq.html` - Frequently asked questions
+
+**Meta & Documentation:**
+- [ ] `changelog.html` - Platform updates and new features
+- [ ] `roadmap.html` - Public roadmap of upcoming features
+
+*Or invent something entirely new that fits the vibe!*
+
+### When You Complete a Page
+1. **Remove the idea** from the list above (delete the line).
+2. **Add the page** to Section 4 (Sitemap) with `[x]`.
+3. **Pick a NEW idea** for `next-prompt.md` - do not repeat.
+
+## 7. Rules of Engagement (Constraints)
 1.  **Data Density:** This is a leaderboard. Do not waste space with massive hero images. Prioritize the data table.
 2.  **Incremental Prompting:** Build the "Table Structure" first, then add "Filters" (Daily/Weekly/All Time) in the next turn.
 3.  **Mobile Optimisation:** Tables must be scrollable or collapse into cards on mobile.
 4.  **Consistency:** Use the "Git Green" accent consistently for positive actions (merges/commits).
+5.  **No Duplicates:** Before creating a page, check Section 4 to ensure it doesn't already exist.
+6.  **Keep the Loop Moving:** Always update `next-prompt.md` with the next task before completing your PR.
+7.  **No Regeneration:** Do NOT regenerate a page that already exists in Section 4 unless it's a complete overhaul (effectively a new screen). Minor tweaks should be done via code edits, not Stitch regeneration.
+8.  **Consume Ideas:** When you use an idea from Section 6, DELETE it from the list to prevent future agents from picking the same idea.

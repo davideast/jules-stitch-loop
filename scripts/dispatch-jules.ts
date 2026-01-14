@@ -38,21 +38,27 @@ You are a **Frontend Architect & Engineer**. Your goal is to iteratively build a
     * Update existing links (e.g., changing \`<a href="#">\` to \`<a href="/${fileName}.html">\`).
     * If this is a new page, add it to the global navigation if appropriate.
 4.  **Consult Strategy:**
-    * Read \`SITE.md\` (if it exists) to understand the site's long-term vision.
-    * Read the [Stitch Prompting Guide](https://discuss.ai.google.dev/t/stitch-prompt-guide/83844) to ensure your next prompt is high-quality.
+    * Read \`SITE.md\` to understand the site's long-term vision and creative freedom guidelines.
+    * Check Section 4 (Sitemap) to see what pages already exist - DO NOT recreate existing pages.
+    * Check Section 6 (Creative Freedom) for ideas on new pages to create.
 
 ## 3. THE LOOP (Critical)
 You **MUST** prepare the instructions for the *next* agent run.
-1.  **Decide:** What is the next logical page or feature? (e.g., "pricing", "contact", "feature-grid").
+1.  **Decide:** What is the next logical page or feature? 
+    * Check \`SITE.md\` Section 5 (Roadmap) for backlog items.
+    * If backlog is empty, use Section 6 (Creative Freedom) for inspiration.
+    * **BE CREATIVE** - invent new pages that fit the "Velocity + Terminal + Competitive" vibe.
+    * **DO NOT** recreate pages that already exist in Section 4 (Sitemap).
 2.  **Write:** Overwrite \`next-prompt.md\` with the instructions.
-3.  **FORMATTING RULE (Do Not Break):** You **MUST** use YAML Frontmatter for the filename, followed by the prompt.
+3.  **Update SITE.md:** Add your new page to Section 4 (Sitemap) and mark completed items.
+4.  **FORMATTING RULE (Do Not Break):** You **MUST** use YAML Frontmatter for the filename, followed by the prompt.
 
 **Example of required \`next-prompt.md\` format:**
 \`\`\`markdown
 ---
-page: pricing
+page: achievements
 ---
-Create a three-column pricing table. Use the 'Zinc' color palette from the guide. Make the 'Pro' plan feature a large CTA button.
+Create an achievements page showing developer badges and milestones. Use the dark terminal theme with gold/silver/bronze badge icons.
 \`\`\`
 
 ## 4. COMMIT STANDARDS
