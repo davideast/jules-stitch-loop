@@ -1,7 +1,7 @@
 ---
-page: index
+page: compare
 ---
-A "Ship" sparkline graph visualization to be added to the main leaderboard for the top 3 users.
+A "Battle Mode" developer comparison page. It should allow a user to select two developers from the leaderboard and see a side-by-side comparison of their key stats.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,6 +22,8 @@ A "Ship" sparkline graph visualization to be added to the main leaderboard for t
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. **Existing Leaderboard:** The current leaderboard table.
-2. **New "Ship" Graph Column:** A new column added to the table titled "SHIP GRAPH".
-3. **Graph:** A sparkline graph in the new column for the top 3 rows, visualizing the developer's shipping velocity.
+1.  **Header:** "Battle Mode" title, and two developer search/selection inputs.
+2.  **Comparison Cards:** Two large cards side-by-side, one for each developer.
+3.  **Card Content:** Each card should display the developer's avatar, name, rank, total ships, and current streak.
+4.  **Visualizations:** Include the "Ship Graph" sparkline for each developer in their respective card.
+5.  **"Winner" Highlight:** The developer with the higher "Total Ships" should have a subtle teal glow or border on their card to indicate they are "winning".
