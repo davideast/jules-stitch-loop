@@ -10,7 +10,8 @@ jobs:
     permissions: { contents: write, pull-requests: write }
     steps:
       - name: Merge
-        env: { GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        # UPDATED: Using GH_PAT ensures the merge triggers the next 'on: push' workflow
+        env: { GH_TOKEN: ${{ secrets.GH_PAT }} }
         run: |
           PR=$(gh pr list --head "${{ github.event.workflow_run.head_branch }}" --json number --jq '.[0].number')
           if [ -n "$PR" ]; then gh pr merge $PR --squash --auto --delete-branch; fi
