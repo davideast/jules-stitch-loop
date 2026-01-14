@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Streaks Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2bd4bd",
+              "background-light": "#f6f8f8",
+              "background-dark": "#13201f",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-b-[#274440] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-4 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Jules</h2>
+</div>
+<div class="hidden sm:flex flex-1 justify-center gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-primary text-sm font-medium leading-normal" href="#">Active Streaks</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal" href="#">Leaderboard</a>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-white/5 dark:bg-[#274440] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-white text-[20px]">settings</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-white/5 dark:bg-[#274440] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-white text-[20px]">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with a subtle gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNTm_7etwhBnqgBXOA4AYe7GMhUirU6sY5MxBRViv-jQesrsZJ7k7S8a3rasSFqZXXpGnHWuLAwFAdgooDbDcXubF3yvrZSg_H7wtKWYqmMTJhFhsyzNlruopPVsOsLV-ukTNYF0O9O3mDBxtRax7GPrs_IRxW6QwEKtnMC-E8TBmYY7U9Ktt11RWQECQZjOUgEbWoIykjFpitwvxHm9MlUTkYqcWSI8Mh98EWGMBLf0CDFakpdzmhLys5BeH3_aUptEwkXWLD5r5Q");'></div>
+</div>
+</header>
+<main class="flex flex-col gap-8 py-10">
+<div class="flex flex-wrap justify-between gap-3 px-4"><p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Active Streaks</p></div>
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-center gap-6 p-6 bg-white/5 dark:bg-[#1c312e]">
+<div class="flex-shrink-0">
+<div class="w-full @xl:w-40 bg-center bg-no-repeat aspect-square bg-cover rounded-xl border-2 border-primary" data-alt="Avatar of Olivia Chen, top streaker" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATz_w3z67VqFZIXwmfXrHAU5f2mg_S6gyF7l8mRDj7h1c6YySth41r3iLlWAb22F2HVOBy8gyoNDiDnuRrBMaQueHJRvLj-f-DenOZTgaSsmU0nWNPXnkUtpjmMBzlc7uVacB_YP-N3OKqYReE4jPsBftsIeFs8vpLJM8z8EnXY4uUuzT3JNoVCCsoS2Fxmay9VuK1ya5CZ6lNPiGhRDYdVT-S3BXFE6dDxk_BgXfPEjiRPHt_CcSaUdQtFZbeZnEIYZ1FQZSMEh39");'></div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 @xl:px-4">
+<div class="flex items-center gap-4">
+<p class="text-4xl">🔥</p>
+<p class="text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Olivia Chen</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#97c3be] text-sm font-normal leading-normal uppercase tracking-wider">LONGEST ACTIVE STREAK</p>
+<p class="text-white text-4xl font-bold leading-normal">58 days</p>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 py-3 @container">
+<div class="flex overflow-hidden rounded-xl bg-white/[0.02] dark:bg-[#13201f]">
+<table class="w-full">
+<thead>
+<tr class="bg-transparent">
+<th class="px-6 py-4 text-left text-white/50 dark:text-[#97c3be]/50 w-24 text-sm font-medium leading-normal tracking-wider">RANK</th>
+<th class="px-6 py-4 text-left text-white/50 dark:text-[#97c3be]/50 text-sm font-medium leading-normal tracking-wider">DEVELOPER</th>
+<th class="px-6 py-4 text-left text-white/50 dark:text-[#97c3be]/50 w-48 text-sm font-medium leading-normal tracking-wider">STREAK LENGTH</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-t-white/10 dark:border-t-[#38615c]">
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">1</td>
+<td class="h-[72px] px-6 py-2 text-white text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center" data-alt="Avatar of Olivia Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9fjgDZYHS3qJ81H_D6ETlz040h3HELcHPsfWfQPvragsNTAs-JlrUGkY74BBgpAAab3_mm5_YCuuySsFGhrMnxCNV27MOS-0eSZwIk9YSY_3WbBqEI6SyMZxXO9zzU8rBX4D6oMT-9K-o355NWolYxYSIPiHcCP_jMsIj2z69YJSy9hcUJwqO6qbuN5nqMnLphRBhK2-_2S3vm0_MTP0Qly1hd3kd9UBFpbjmkBQxMhswYd6ZskCsCS1HZ0DvyIffVzGFn-BpJkDr")'></div>
+<span>Olivia Chen</span>
+</div>
+</td>
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">58 days</td>
+</tr>
+<tr class="border-t border-t-white/10 dark:border-t-[#38615c]">
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">2</td>
+<td class="h-[72px] px-6 py-2 text-white text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center" data-alt="Avatar of Ben Carter" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdJzrUxthUCXcmW7utbUa-bXKPq7aSul2zlP6LLtsRvtDALpDvmf_IXdjvrgmp85lxlIidLiTP7Sa-cxcBigEwwKOwKofqnuj18ij0SvraPQ5_GKiKTmadqbw8wxwwHGxQwdK9jSekz-gvVybM5xYt9RYbfFX6L16vHHzZy-1dqYkOjicYy6Ywzi6pNm8c42FVriSmTUtowT3ird36pPRG7D7muvrikyY8IW7Dap4OL2VzNTs0UtX2w94GgPPXJgFFrATM2neVXe6d")'></div>
+<span>Ben Carter</span>
+</div>
+</td>
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">55 days</td>
+</tr>
+<tr class="border-t border-t-white/10 dark:border-t-[#38615c]">
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">3</td>
+<td class="h-[72px] px-6 py-2 text-white text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center" data-alt="Avatar of Aarav Sharma" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZUnUXeaoTEMZ4RTF0JrAOX1ZuECpZKG7uraLVlI9SoM0WSJwY0IcAhShLT-CHlPxVrKGLfpQWlwcnd8qdtib1kqxdPreuTpxA1h-ctHFylHXM4NIAGId2Orl5B2nKhzQ6G9wTzfdZ022kYyMjck3MITvFGwnVo3VX_VGhKCEXgTVDfv8GmTdaOjbRQ_ERkrTjCm5lSZZaCiJw0OWhbN5sWm2Eaet2N0JLf2zPX7fOFTfIz20hxNOtgDu5yIwoIr-G4gP8ge3nlfhc")'></div>
+<span>Aarav Sharma</span>
+</div>
+</td>
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">52 days</td>
+</tr>
+<tr class="border-t border-t-white/10 dark:border-t-[#38615c] bg-primary/10">
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">9</td>
+<td class="h-[72px] px-6 py-2 text-white text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-primary" data-alt="Avatar of David Miller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1g_IMl3I0LnDQZk6bQiVio9MURvxgPIVrgDlZmOvDf_RtoN62kInlVoFpbx5ONQ1nHwqNZ14s0gW8xrzZo7d0bHDCzKCFkFOZs9OQEWwC9MkmFvuLJJr4M3qtWO73j2Ln6y4-8d_fXagHDOfg1PRswZUISYte7h1ITuQRbuPt4V7jazj25gzC64G9p8C8bbIr5JIEIKB05nA8ORn8qoyLf046MtHwolfai5RpGYwyGxqo8sqvC6ahoGskuDS08XAfAL2QE3wc-5Wl")'></div>
+<span>David Miller (You)</span>
+</div>
+</td>
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">33 days</td>
+</tr>
+<tr class="border-t border-t-white/10 dark:border-t-[#38615c]">
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">10</td>
+<td class="h-[72px] px-6 py-2 text-white text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center" data-alt="Avatar of Sofia Garcia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFOetVHPRqaVCLspOPLffCoBYYusmX7fxnIhBBXjSnF1m0hE0Ok5yzNAhQDYg8pP2OmfW8BLwFmj8yPc2Pt4AW0ll9CFPx2GUPfD8PoBRs07gThi54nvYdIw2YcgnXeihQYSGn-FSfmgEXlqg96AxUH0m5Y6GIjeKDkWnmvQ6emrxvpUXSBwvL-Fqt7o62ugrB4zbVtssokDzkfCq5gCvTkGXuUgmy_vDEB6Sbl762dwiJL4aXni5FROVh_bBRjNCT9J6t5z8NXFtI")'></div>
+<span>Sofia Garcia</span>
+</div>
+</td>
+<td class="h-[72px] px-6 py-2 text-white dark:text-[#97c3be] text-sm font-normal leading-normal">30 days</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex items-center justify-center p-4">
+<a class="flex size-10 items-center justify-center text-white/50 hover:text-white" href="#">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</a>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-[#13201f] rounded-full bg-primary" href="#">1</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white/70 hover:text-white rounded-full" href="#">2</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white/70 hover:text-white rounded-full" href="#">3</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white/70 hover:text-white rounded-full" href="#">4</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white/70 hover:text-white rounded-full" href="#">5</a>
+<span class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white/50 rounded-full">...</span>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white/70 hover:text-white rounded-full" href="#">10</a>
+<a class="flex size-10 items-center justify-center text-white/50 hover:text-white" href="#">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
