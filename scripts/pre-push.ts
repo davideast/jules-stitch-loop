@@ -8,6 +8,7 @@
 
 import { $ } from 'bun';
 import matter from 'gray-matter';
+import YAML from 'yaml';
 
 const FIX_MODE = process.argv.includes('--fix');
 
@@ -149,6 +150,46 @@ async function checkTypescript() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// CHECK 5: YAML Workflow Validation
+// ─────────────────────────────────────────────────────────────────────────────
+
+async function checkYamlWorkflows() {
+  const glob = new Bun.Glob('**/*.yml');
+  const files: string[] = [];
+
+  for await (const file of glob.scan('.github/workflows')) {
+    files.push(`.github/workflows/${file}`);
+  }
+
+  if (files.length === 0) {
+    console.log('⚠️  YAML Workflows: No workflow files found');
+    return;
+  }
+
+  let allValid = true;
+  const errors: string[] = [];
+
+  for (const file of files) {
+    try {
+      const content = await Bun.file(file).text();
+      YAML.parse(content); // Will throw on invalid YAML
+    } catch (e: any) {
+      allValid = false;
+      const basename = file.split('/').pop();
+      errors.push(`${basename}: ${e.message?.split('\n')[0] || 'Invalid YAML'}`);
+    }
+  }
+
+  if (allValid) {
+    pass('YAML Workflows', `All ${files.length} workflow files valid`);
+  } else {
+    for (const err of errors) {
+      fail('YAML Workflows', err);
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CHECK 5: Environment Variables
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -170,6 +211,34 @@ function checkEnvVars() {
   } else {
     pass('Env Vars', 'All expected env vars set');
   }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CHECK 6: Jules Source Verification
+// ─────────────────────────────────────────────────────────────────────────────
+
+async function checkJulesSource() {
+  // Get the GitHub remote to determine the repo
+  const remoteResult = await $`git remote get-url origin 2>/dev/null`.quiet().nothrow();
+  if (remoteResult.exitCode !== 0) {
+    console.log('⚠️  Jules Source: No git remote configured');
+    return;
+  }
+
+  const remoteUrl = remoteResult.stdout.toString().trim();
+
+  // Extract owner/repo from GitHub URL (handles both HTTPS and SSH)
+  // git@github.com:owner/repo.git or https://github.com/owner/repo.git
+  const match = remoteUrl.match(/github\.com[:/]([^/]+\/[^/.]+)/);
+  if (!match) {
+    console.log('⚠️  Jules Source: Remote is not a GitHub repository');
+    return;
+  }
+
+  const repo = match[1];
+  console.log(`✅ Jules Source: Repository is ${repo}`);
+  console.log('   ℹ️  Ensure this repo is authorized in Jules:');
+  console.log(`      https://jules.google.com/sources → Add ${repo}`);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -219,7 +288,9 @@ async function main() {
   checkNextPrompt();
   await checkAttribution();
   await checkTypescript();
+  await checkYamlWorkflows();
   checkEnvVars();
+  await checkJulesSource();
   await checkBatonChanged();
 
   console.log('');
