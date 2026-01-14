@@ -1,7 +1,7 @@
 ---
 page: index
 ---
-A sparkline graph visualization to be added to the main leaderboard.
+A "Hot Streak" badge visualization to be added to the main leaderboard.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -23,5 +23,5 @@ A sparkline graph visualization to be added to the main leaderboard.
 
 **Page Structure:**
 1. **Existing Leaderboard:** The current leaderboard table.
-2. **New Graph Column:** A new column added to the table titled "SHIP GRAPH".
-3. **Sparkline:** A small, simple sparkline graph in the new column for each row, visualizing the developer's shipping activity over the last 30 days. The line should be the primary accent color.
+2. **New "Hot Streak" Column:** A new column added to the table titled "STREAK".
+3. **Badge:** A badge in the new column for each row, visualizing the developer's shipping streak. The badge should be a flame icon with the number of consecutive days next to it.
