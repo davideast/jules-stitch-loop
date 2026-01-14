@@ -214,6 +214,32 @@ function checkEnvVars() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// CHECK 6: Stitch Project ID
+// ─────────────────────────────────────────────────────────────────────────────
+
+async function checkStitchConfig() {
+  const stitchFile = Bun.file('stitch.json');
+  let config: { projectId?: string } = { projectId: '' };
+
+  if (await stitchFile.exists()) {
+    try {
+      config = await stitchFile.json();
+    } catch (e) {
+      fail('Stitch Config', 'Invalid JSON in stitch.json');
+      return;
+    }
+  }
+
+  if (config.projectId && config.projectId.length > 0) {
+    pass('Stitch Config', `Project ID: ${config.projectId.slice(0, 12)}...`);
+    return;
+  }
+
+  // No project ID - run-stitch.ts will auto-create when invoked
+  console.log('⚠️  Stitch Config: No projectId (will be created on first run-stitch.ts call)');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CHECK 6: Jules Source Verification
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -290,6 +316,7 @@ async function main() {
   await checkTypescript();
   await checkYamlWorkflows();
   checkEnvVars();
+  await checkStitchConfig();
   await checkJulesSource();
   await checkBatonChanged();
 

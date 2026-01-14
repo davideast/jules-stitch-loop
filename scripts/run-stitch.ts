@@ -35,13 +35,43 @@ try {
     console.log("🆕 No Project ID found in stitch.json. Creating new Project...");
 
     // Call the tool based on your API definition
-    const result = await client.callTool<{ id: string } | string>('create_project', {
+    const result = await client.callTool('create_project', {
       title: "Jules-Stitch Auto Loop"
     });
 
-    // Handle response variations
-    const newId = typeof result === 'string' ? result : result.id;
-    if (!newId) throw new Error("Failed to retrieve new Project ID.");
+    // Debug: Log the raw response to understand its structure
+    console.log("📦 create_project response:", JSON.stringify(result, null, 2));
+
+    // Handle various response formats
+    let newId: string | undefined;
+
+    if (typeof result === 'string') {
+      // Direct string response
+      newId = result;
+    } else if (result && typeof result === 'object') {
+      // Object response - check common ID field patterns
+      const res = result as Record<string, any>;
+      newId = res.id || res.projectId || res.name?.split('/').pop();
+
+      // If it has a 'content' array (MCP tool response format)
+      if (!newId && Array.isArray(res.content)) {
+        const textContent = res.content.find((c: any) => c.type === 'text');
+        if (textContent?.text) {
+          // Try to parse as JSON
+          try {
+            const parsed = JSON.parse(textContent.text);
+            newId = parsed.id || parsed.projectId || parsed.name?.split('/').pop();
+          } catch {
+            // Text might be the ID directly
+            newId = textContent.text;
+          }
+        }
+      }
+    }
+
+    if (!newId) {
+      throw new Error(`Failed to retrieve new Project ID. Response: ${JSON.stringify(result)}`);
+    }
 
     console.log(`✅ Project Created: ${newId}`);
 

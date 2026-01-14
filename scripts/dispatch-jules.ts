@@ -25,6 +25,7 @@ You are a **Frontend Architect & Engineer**. Your goal is to iteratively build a
 * **Design Prompt:** "${promptText}"
 
 ## 2. EXECUTION PROTOCOL
+0. **Install:** Run \`bun install\` to ensure all dependencies are installed.
 1.  **Generate Assets:**
     * Execute the Stitch tool: \`bun run scripts/run-stitch.ts "${promptText}" "queue/${fileName}.html"\`
     * *Note:* This generates \`queue/${fileName}.html\` and \`queue/${fileName}.png\`.
