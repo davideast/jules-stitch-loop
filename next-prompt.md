@@ -1,7 +1,7 @@
 ---
-page: compare
+page: stats
 ---
-A "Battle Mode" developer comparison page. It should allow a user to select two developers from the leaderboard and see a side-by-side comparison of their key stats.
+A data-rich global statistics page for jules.top, focusing on platform-wide trends and aggregated data.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,8 +22,11 @@ A "Battle Mode" developer comparison page. It should allow a user to select two 
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1.  **Header:** "Battle Mode" title, and two developer search/selection inputs.
-2.  **Comparison Cards:** Two large cards side-by-side, one for each developer.
-3.  **Card Content:** Each card should display the developer's avatar, name, rank, total ships, and current streak.
-4.  **Visualizations:** Include the "Ship Graph" sparkline for each developer in their respective card.
-5.  **"Winner" Highlight:** The developer with the higher "Total Ships" should have a subtle teal glow or border on their card to indicate they are "winning".
+1.  **Header:** "Global Stats" title and a brief description.
+2.  **Key Metrics:** A row of large stat cards for "Total Ships," "Active Developers," and "Commits Today."
+3.  **Charts:**
+    *   A bar chart showing "Top 10 Languages."
+    *   A line chart showing "Shipping Activity (Last 30 Days)."
+4.  **Data Tables:**
+    *   A table for "Most Active Repositories."
+    *   A table for "Fastest Growing Developers."

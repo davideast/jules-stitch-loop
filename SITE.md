@@ -46,7 +46,8 @@
 * [x] `streaks.html` - Hot streak tracking and flame badges for consecutive shipping days.
 * [x] `milestones.html` - Major milestone celebrations (1K commits, 10K lines, etc.)
 * [x] `hall-of-fame.html` - All-time legends and retired champions
-* [ ] `compare.html` - Side-by-side developer comparison ("Battle Mode")
+* [x] `compare.html` - Side-by-side developer comparison ("Battle Mode")
+* [ ] `stats.html` - Global platform statistics and trends
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -77,7 +78,6 @@
 **Gamification & Recognition:**
 
 **Analytics & Insights:**
-- [ ] `stats.html` - Global platform statistics and trends
 - [ ] `trends.html` - Rising stars and momentum charts
 - [ ] `history.html` - Historical data, time machine view of past leaderboards
 - [ ] `insights.html` - AI-generated insights about shipping patterns
