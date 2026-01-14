@@ -1,7 +1,7 @@
 ---
-page: stats
+page: trends
 ---
-A data-rich global statistics page for jules.top, focusing on platform-wide trends and aggregated data.
+A data visualization page for jules.top that shows rising stars and momentum charts.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,10 @@ A data-rich global statistics page for jules.top, focusing on platform-wide tren
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1.  **Header:** "Global Stats" title and a brief description.
-2.  **Key Metrics:** A row of large stat cards for "Total Ships," "Active Developers," and "Commits Today."
+1.  **Header:** "Trending Developers" title and a brief description.
+2.  **Key Metrics:** A row of stat cards for "Most Improved," "Highest Momentum," and "New & Noteworthy."
 3.  **Charts:**
-    *   A bar chart showing "Top 10 Languages."
-    *   A line chart showing "Shipping Activity (Last 30 Days)."
-4.  **Data Tables:**
-    *   A table for "Most Active Repositories."
-    *   A table for "Fastest Growing Developers."
+    *   A line chart showing "Top 5 Rising Developers (Last 30 Days)."
+    *   A bar chart showing "Most Active Developers by Language (Last 7 Days)."
+4.  **Data Table:**
+    *   A table for "Developers to Watch," with columns for Rank, Developer, Momentum Score, and Last Active.
