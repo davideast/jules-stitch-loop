@@ -3,158 +3,144 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Live Activity Feed</title>
+<title>Live Commit Feed</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#19e66f",
-                        "background-light": "#f6f8f7",
-                        "background-dark": "#112118",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#19e66f",
+              "background-light": "#f6f8f7",
+              "background-dark": "#112118",
             },
-        }
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
         }
     </style>
 </head>
-<body class="font-display bg-background-light dark:bg-[#111111] text-white">
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
 <div class="relative flex min-h-screen w-full flex-col">
-<div class="flex h-full grow flex-col">
-<div class="flex flex-1 justify-center px-4 sm:px-8 md:px-20 lg:px-40 py-5">
-<div class="flex w-full max-w-[960px] flex-1 flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-6 md:px-10 py-4 bg-[#1A1A1A] rounded-lg">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-4 text-primary">
-<div class="size-5">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-16 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<svg class="h-6 w-6 text-primary" data-alt="Abstract geometric logo shape" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"></path>
 </svg>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Jules</h2>
 </div>
-<h2 class="text-primary text-lg font-bold leading-tight tracking-[-0.015em]">jules.top</h2>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="/index.html">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="/feed.html">Live Activity Feed</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="/index.html">Leaderboard</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Settings</a>
 </div>
-<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
-<div class="text-white/50 flex border-none bg-white/5 items-center justify-center pl-4 rounded-l-lg border-r-0">
-<span class="material-symbols-outlined text-xl">search</span>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<span class="truncate">New Project</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with colorful gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAo8ansyDeasEs3xtq1c-0C_04KjA7NkXGO9vd5rA_vDN3A4x4NezzQzQTQcZPywFDFfxPzF7Hg0QBwBTWXpzKVZWYphmyOyTRbIvqG7V0haAq3Pnl1HwG8zMTZe0Lu6b4nUobUWn7AFonNfaUbpJQ6uf1ZufN9b-3RWopsFH-U90Ah5Z4asST6ioTJFIm26qXQqTSn5BQuYa1YQN6S1iWfkPj9VAPhjiJqjj_WCGal4HEkcIa8-2ZH31JQVqn2FnWM5QcxFj7ttfr_");'></div>
 </div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white/5 h-full placeholder:text-white/50 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search users or repos..." value=""/>
-</div>
-</label>
-</div>
-<div class="flex flex-1 justify-end gap-4 sm:gap-8">
-<div class="flex items-center gap-4 sm:gap-6 md:gap-9">
-<a class="text-white/70 hover:text-white text-sm font-medium leading-normal" href="#">Leaderboard</a>
-<a class="text-primary text-sm font-medium leading-normal" href="#">Activity Feed</a>
-<a class="text-white/70 hover:text-white text-sm font-medium leading-normal" href="#">Profile</a>
-</div>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBY3BtRmvYyDbcv8QMql5qwyUJhrzdi8QMu1HBktvss1z6rzEYL33_mS1ZFW4-LRZOGBMXbIxAXmy9dq8mCUKw8erpeSXlrMiAM6a3n81w9n-PwIg3JKe2PE5uSiZ6jIDau8x-NYS7thcCZ4kWB0LqjoccVz-r8dSfeL3oLPlsYEzi1FFnu13LvoDrJmGJYpKTQrJzkGIC7xCGXbd2eZl6uefnE09QjbnzMwjVhYbNPsIWEmQhwM8zJk6fkt1LPpemjQRQEh2mFN4TV");'></div>
-</div>
+<button class="md:hidden p-2 rounded-md text-white/70 hover:text-white hover:bg-white/10">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </header>
-<main class="mt-8 flex flex-col gap-2">
-<!-- New item with glow effect -->
-<div class="flex items-center gap-4 bg-[#1A1A1A] p-4 min-h-14 justify-between rounded-lg shadow-[0_0_15px_rgba(25,230,111,0.3)] ring-1 ring-primary/50">
+<main class="flex-1 mt-10 px-4 sm:px-6">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-center gap-4 py-4">
+<div class="flex flex-col gap-3">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Live Activity Feed</p>
+<p class="text-[#93c8a9] text-base font-normal leading-normal">A real-time stream of developer commits from the Jules coding agent.</p>
+</div>
+<div class="flex items-center gap-2 rounded-lg bg-primary/20 px-3 py-1.5 text-sm font-medium text-primary">
+<div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
+<span>LIVE</span>
+</div>
+</div>
+<!-- Feed Container -->
+<div class="mt-8 flex flex-col gap-2 rounded-lg border border-white/10 p-2 sm:p-4">
+<!-- ListItem 1 -->
+<div class="flex items-center gap-4 rounded-md px-4 min-h-[72px] py-2 justify-between hover:bg-white/5 transition-colors">
 <div class="flex items-center gap-4 overflow-hidden">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-10 w-10 flex-shrink-0" data-alt="Avatar for username1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNOPOeXfSYHAUxgpkA0BJnneF03czy3n-NkNWCnfLQWk5zi8w4xVIL7RYSPvIxgyfWHamnf4zeZ6s5rXRm8VG05hFrOyvUB0LY9EKS6vePIjqm-Aw4Gs4UDH_zv9KTPgBr38U-B-Y_tk-FfnxBjE6bY69719ycjDaTdSQnQSkvisfvzivWEdogPmCpv-w4ptxuDK81oolZM5YBur-bHG0qvCGZ1PfuUEO-fbE9CjyMn0gDSLTk3dR7IIKD9a663KzQmOAbNDdKXz45");'></div>
-<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
-<a class="font-semibold text-primary hover:underline truncate" href="#">username1</a>
-<span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-[#8A2BE2]/30 text-[#D0A9F5]">MERGED</span>
-<a class="text-white/80 hover:underline" href="#">#4567</a>
-<span class="text-white/60">in</span>
-<a class="text-primary hover:underline truncate" href="#">`jules-ai/jules-web`</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shrink-0" data-alt="Avatar of user Alex Turing" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNNptO7G9EyeOOZ3fMegkjk2KeO6uLoo44z-TbqTqQtSDQrVivS-fzQP09Z56En8ZX-8BiLmPMNnyJxF_w0LbhfQz0jfxhbVfkGhFnCNUxkMzfgdSJzG04clO8WIVfpf3AGm-fRFYPNbNsH60EGhNwOELC5_N6o4mlHF-eTQkW3BF5ha2bVJosvyyYxj5n0D4-JMki2-BQnTU4GaAhaVFoGTon1xGC6zzzvMDbUqDhCu9mKKbbgEe--VXQjPYW6ZJd7zLiGN21047f");'></div>
+<div class="flex flex-col justify-center overflow-hidden">
+<p class="text-white text-base font-medium leading-normal truncate">Alex Turing</p>
+<p class="text-[#93c8a9] text-sm font-normal leading-normal truncate">feat: Implement real-time feed updates with websockets</p>
 </div>
 </div>
-<div class="shrink-0"><p class="text-white/50 text-sm font-normal leading-normal">5s ago</p></div>
+<div class="shrink-0 ml-4"><p class="text-[#93c8a9] text-sm font-normal leading-normal">just now</p></div>
 </div>
-<div class="flex items-center gap-4 bg-[#1A1A1A] p-4 min-h-14 justify-between rounded-lg">
+<!-- ListItem 2 -->
+<div class="flex items-center gap-4 rounded-md px-4 min-h-[72px] py-2 justify-between hover:bg-white/5 transition-colors">
 <div class="flex items-center gap-4 overflow-hidden">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-10 w-10 flex-shrink-0" data-alt="Avatar for dev_guru" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgbWoSrTMOhYqn46NGjd-s0YtHrw6koNfN2suRlafd8YlZ_WkJNaY5az1s-3OAVd7nZYEGZaBoLa_kD4CPkMwxPnqwIr0joEI_yhmshbWH0W8GnGTltGQ_J2Us5zcB2BBpWR7_jkSC7b2NGgOLXkRpAAmhaRlFe-JkUs5hheqQhHtvykY8WEhLTIxaeM15IQtXHMpiDS7LmiuvDNOGi6rQRh526M7HzVYh5W34ILk_MgfouAIi2wNeXFvvpyt4qTU6ikPRN4DS425l");'></div>
-<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
-<a class="font-semibold text-primary hover:underline truncate" href="#">dev_guru</a>
-<span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-primary/30 text-primary">COMMIT</span>
-<a class="text-white/80 hover:underline" href="#">a8c3d2e</a>
-<span class="text-white/60">to</span>
-<a class="text-primary hover:underline truncate" href="#">`jules-ai/jules`</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shrink-0" data-alt="Avatar of user Ada Lovelace" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAz-PA5mAy0VhkcHvy8_-uwZ9_c1-JbcgE13aHRF3tVgxCF6mrvSqzIvSyj2kza-TzjihIGHhvqmWPv6V-LaYIFLo87JRFhSpwa4sk0ywm7RW_8l9hlMr9eur_BpUr0ppc-pY2wTJIIxRcX6EqAbPIjbcZxKhk198Xrk8KDAX6ySofziVi-RB7U2hPHTJd7sSiZyb-OAaqgkQUYNiWa9SCNkdb4yPCKqoRZGA0bbqyropGlxPesN9ZSE-XO1vRiHNr1W5pDNvAAY7b3");'></div>
+<div class="flex flex-col justify-center overflow-hidden">
+<p class="text-white text-base font-medium leading-normal truncate">Ada Lovelace</p>
+<p class="text-[#93c8a9] text-sm font-normal leading-normal truncate">fix: Corrected a critical bug in the authentication module</p>
 </div>
 </div>
-<div class="shrink-0"><p class="text-white/50 text-sm font-normal leading-normal">12s ago</p></div>
+<div class="shrink-0 ml-4"><p class="text-[#93c8a9] text-sm font-normal leading-normal">3s ago</p></div>
 </div>
-<div class="flex items-center gap-4 bg-[#1A1A1A] p-4 min-h-14 justify-between rounded-lg">
+<!-- ListItem 3 -->
+<div class="flex items-center gap-4 rounded-md px-4 min-h-[72px] py-2 justify-between hover:bg-white/5 transition-colors">
 <div class="flex items-center gap-4 overflow-hidden">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-10 w-10 flex-shrink-0" data-alt="Avatar for coder-x" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGf6y4KtsdeQv29ksIvomwMy-swhm0dmWIMs3Z3T6OhhgMOO6nY2uzhukgeRM4ECZy-tWQ-bc3SeDvaOJdEyaauzNa_7dWYGVyrA4YLAge1av8l_CmYdcF-h_iiX41Yykn4i6I0n9I_47vXKOxShtVdtqMcj280Jn2JtaQXqVCdyAimDyR_kk9u9Ac_n-JdmH_coKA1sYOjGjqAif4kqTnlH11RwFgS7TQ-cjlX4Kr4QoKK1rJKKMD6UeFCpVXgLE80SC-Xz3BHIVz");'></div>
-<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
-<a class="font-semibold text-primary hover:underline truncate" href="#">coder-x</a>
-<span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-[#8A2BE2]/30 text-[#D0A9F5]">MERGED</span>
-<a class="text-white/80 hover:underline" href="#">#1234</a>
-<span class="text-white/60">in</span>
-<a class="text-primary hover:underline truncate" href="#">`jules-ai/jules`</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shrink-0" data-alt="Avatar of user Grace Hopper" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByFxJeFinMqA2Nr_JxAVZvJ62ubYrYdVPiaBxYdu4TgEzRL5gnt9K2iL4PXCQfNW2IED_bmLJoTRWKp54JH91yl1S480gbQMVO24qazIcWFtFO7p7ZofWV_U0OOgQ1Tt-px2BfZE-kJdnrm1CfbBX3pnmlqaoQSdKCL5aGh8MWI5HJUZJus4_wYVbunbV47OWaF8A7aBWEiiSnIHCoZfBHpTBsVUqqUqrEpPhQz-s3LNPzLxWUep5XQvU66HOFUCrfuMhzyTlM0Wrz");'></div>
+<div class="flex flex-col justify-center overflow-hidden">
+<p class="text-white text-base font-medium leading-normal truncate">Grace Hopper</p>
+<p class="text-[#93c8a9] text-sm font-normal leading-normal truncate">docs: Update README with new setup instructions</p>
 </div>
 </div>
-<div class="shrink-0"><p class="text-white/50 text-sm font-normal leading-normal">45s ago</p></div>
+<div class="shrink-0 ml-4"><p class="text-[#93c8a9] text-sm font-normal leading-normal">12s ago</p></div>
 </div>
-<div class="flex items-center gap-4 bg-[#1A1A1A] p-4 min-h-14 justify-between rounded-lg">
+<!-- ListItem 4 -->
+<div class="flex items-center gap-4 rounded-md px-4 min-h-[72px] py-2 justify-between hover:bg-white/5 transition-colors">
 <div class="flex items-center gap-4 overflow-hidden">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-10 w-10 flex-shrink-0" data-alt="Avatar for git-ninja" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRFW7kR3dLDIXbU2Uek3a6ZG01P3LEBSCLDYHyR5clH4R9-rAlYKEIbg3fF-PgnMkIs5Z3TPvgr44OCz_OwnV4ft0X-TvBUNuguVVZyjP6nd_DTKibz-vNjHtYXg_stl8Syi4lbuTF12aDcF566SjrMJ8fwSMxPU_ymhjCa7iCmbSHwepE4iSeFgwztr21l8yeXcJ5C4NC56Q5piQK0rju1WecedmWhRpIMRYEBAGcK-UyBgOeJRt8D1i1m9OWcWV6v1HKMPYby9nO");'></div>
-<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
-<a class="font-semibold text-primary hover:underline truncate" href="#">git-ninja</a>
-<span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-primary/30 text-primary">COMMIT</span>
-<a class="text-white/80 hover:underline" href="#">b9f4e3f</a>
-<span class="text-white/60">to</span>
-<a class="text-primary hover:underline truncate" href="#">`jules-ai/jules-web`</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shrink-0" data-alt="Avatar of user John von Neumann" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3eQ8SNWODXHS4PtAabdfzRf5PBcUKdh0X7uTYKYpSQZU4FkhKpGDBn9mK03vAx39zSSFzLFgny3nYAt7Nd00qpdWE0atG85QnAm62J5bR4uf-mOvHVq8ET3Hm9afFb_eq9YJay3Y-3fCngH5DzkeX8VXoF1WEYAVqPmnPRBBBpcEef8U4GVr58d41cTfnfemLIImPXNVztTz26IIAfvyzF_YcVrx8G_kEPW9Lf8hzMUU5Pc8mdgD5jDkxJa3bkT50hFhCona3KyNv");'></div>
+<div class="flex flex-col justify-center overflow-hidden">
+<p class="text-white text-base font-medium leading-normal truncate">John von Neumann</p>
+<p class="text-[#93c8a9] text-sm font-normal leading-normal truncate">refactor: Optimize database query performance</p>
 </div>
 </div>
-<div class="shrink-0"><p class="text-white/50 text-sm font-normal leading-normal">1m ago</p></div>
+<div class="shrink-0 ml-4"><p class="text-[#93c8a9] text-sm font-normal leading-normal">28s ago</p></div>
 </div>
-<div class="flex items-center gap-4 bg-[#1A1A1A] p-4 min-h-14 justify-between rounded-lg">
+<!-- ListItem 5 -->
+<div class="flex items-center gap-4 rounded-md px-4 min-h-[72px] py-2 justify-between hover:bg-white/5 transition-colors">
 <div class="flex items-center gap-4 overflow-hidden">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-10 w-10 flex-shrink-0" data-alt="Avatar for username1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWrXCAsUnk-ZyHYXhPueNtBBNGx3RLUxY0cQkLs3fOTHoyqutSUfZeoVQTaYYumtPzFxtZwB0CSlYHboo4nwZ3zKvAXHMZACBx4DiTKfiJx2l21145kCcTte9wEb_Zhg2nS50JUVPuDYSt_V87MyC8L3TyzqPP-uUjHFG7N1quxYMEhc-4tVI_FJSlazUaVxpmaE9M6fJQtrg6CUwX4ZwaYWT21znHpUJ8t84JB0CU-31X3Sa6K-M6lGV7eVzD68BtIk3ZJVavBU9t");'></div>
-<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
-<a class="font-semibold text-primary hover:underline truncate" href="#">username1</a>
-<span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-primary/30 text-primary">COMMIT</span>
-<a class="text-white/80 hover:underline" href="#">c3a9b1d</a>
-<span class="text-white/60">to</span>
-<a class="text-primary hover:underline truncate" href="#">`jules-ai/jules-web`</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shrink-0" data-alt="Avatar of user Margaret Hamilton" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTIGIDFmtNGa0vi6pttTav5GpIP18CsgdDDS6q-DKrs1Xh1Ikm6hg8YlExDYXh6ef1tRS8v706898H0RlcRTngVG5kWdHqmGs0f-ZPP-bWzSfSoyDJZ1_TUHZjuBhQTSfvrGWFJlO9-LLJIdVyZkW6L6aFvZpDoc9ECeo3S706XawmiDFQva2_XHR9gcNbc1C95BeipmLooUqpqArB_O54g7L9C5I_LhNi04zo737EWh_fstiuLBzW8UmPnF1fpKGduTbnqXGKjQY4");'></div>
+<div class="flex flex-col justify-center overflow-hidden">
+<p class="text-white text-base font-medium leading-normal truncate">Margaret Hamilton</p>
+<p class="text-[#93c8a9] text-sm font-normal leading-normal truncate">test: Add unit tests for the new payment gateway integration</p>
 </div>
 </div>
-<div class="shrink-0"><p class="text-white/50 text-sm font-normal leading-normal">2m ago</p></div>
+<div class="shrink-0 ml-4"><p class="text-[#93c8a9] text-sm font-normal leading-normal">45s ago</p></div>
 </div>
-<div class="flex items-center gap-4 bg-[#1A1A1A] p-4 min-h-14 justify-between rounded-lg">
-<div class="flex items-center gap-4 overflow-hidden">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-10 w-10 flex-shrink-0" data-alt="Avatar for dev_guru" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTVgHtkyMhgKO8T0t_U8s-w8Z9IQVODXBBArjfKEtsmtZYlj5GZQH2y8FPi4rOXPXlyHvabSW_pxAO_J2cgB1nsCTv8QkypvXsUeYTbVJaNBY9sZ0cTmTVJdefQJ0LTz4FIXTLipPx_LQgJVxxW8amUlLv2UBXdco1Wtf58dbwVhueY2e0GZ36VSaD9pFywz3Kr7pFhUogCN2jxQtN-58um4EEScY2UFIfKpckbKoo-Ykw_0o1qUVrFiItlzz2nmfZ_g2eWjzcLxTm");'></div>
-<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
-<a class="font-semibold text-primary hover:underline truncate" href="#">dev_guru</a>
-<span class="inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-[#8A2BE2]/30 text-[#D0A9F5]">MERGED</span>
-<a class="text-white/80 hover:underline" href="#">#9876</a>
-<span class="text-white/60">in</span>
-<a class="text-primary hover:underline truncate" href="#">`jules-ai/docs`</a>
-</div>
-</div>
-<div class="shrink-0"><p class="text-white/50 text-sm font-normal leading-normal">5m ago</p></div>
+<!-- Empty State Example (can be shown when no data) -->
+<!--
+                            <div class="flex flex-col items-center justify-center gap-4 py-16 text-center">
+                                <p class="text-[#93c8a9]">Waiting for new commits...</p>
+                                <div class="w-1 h-5 bg-primary animate-pulse"></div>
+                            </div>
+                            -->
 </div>
 </main>
 </div>
