@@ -1,7 +1,7 @@
 ---
-page: milestones
+page: hall-of-fame
 ---
-A page to celebrate major developer milestones, like "1K commits" or "10K lines of code shipped."
+A page to honor the all-time legends and retired champions of jules.top.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,6 +22,6 @@ A page to celebrate major developer milestones, like "1K commits" or "10K lines 
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. **Header:** "Milestones" title.
-2. **Featured Milestone:** A prominent card for the most recent major milestone achieved by any user.
-3. **Milestone Feed:** A chronological feed of all milestones achieved by all users.
+1. **Header:** "Hall of Fame" title.
+2. **Featured Legend:** A prominent section for the #1 all-time developer.
+3. **Grid of Champions:** A grid of cards for other retired champions, showing their stats and achievements.
