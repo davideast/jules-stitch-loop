@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How Jules Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#19e66f",
+              "background-light": "#f6f8f7",
+              "background-dark": "#112118",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+</div>
+</header>
+<main class="flex flex-col gap-8 py-10 sm:py-16 px-4">
+<!-- Page Heading and Introduction -->
+<div class="flex flex-col gap-4">
+<h1 class="text-primary text-4xl sm:text-5xl font-black leading-tight tracking-[-0.033em]">The Protocol</h1>
+<p class="text-[#93c8a9] text-base font-normal leading-normal max-w-3xl">
+                                jules.top tracks developer activity via Git commits and Pull Requests made with the Jules agent. It's a friendly, competitive, data-dense leaderboard for tracking developers who ship the most code.
+                            </p>
+</div>
+<div class="flex flex-col gap-10">
+<!-- Data Source Section -->
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3">Data Source</h2>
+<div class="bg-black/30 p-4 sm:p-6 rounded-lg border border-white/10">
+<pre class="font-display text-sm sm:text-base text-white whitespace-pre-wrap"><code class="language-json"><span class="text-[#93c8a9]">// Data is sourced directly from GitHub events</span>
+{
+  <span class="text-primary">"source"</span>: <span class="text-white">"github.com"</span>,
+  <span class="text-primary">"events"</span>: [<span class="text-white">"push"</span>, <span class="text-white">"pull_request"</span>]
+}</code></pre>
+</div>
+</section>
+<!-- Scoring Section -->
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3">Scoring</h2>
+<p class="text-white text-base font-normal leading-normal">
+                                    Points, or 'Ships', are awarded for each Git commit and each merged Pull Request made using the Jules agent. Each action is weighted equally: 1 Commit = 1 Ship, and 1 Merged PR = 1 Ship.
+                                </p>
+</section>
+<!-- Fair Play Section -->
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3">Fair Play</h2>
+<p class="text-white text-base font-normal leading-normal">
+                                    Our protocol prioritizes data integrity. We have measures in place to monitor activity and prevent any manipulation of the leaderboard to ensure a fair and competitive environment for all developers.
+                                </p>
+</section>
+<!-- Call to Action Section -->
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-4">Get Started</h2>
+<a class="inline-flex items-center gap-2 rounded-lg bg-primary/20 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary/30" href="https://github.com/google/jules">
+<svg class="feather feather-github" data-alt="GitHub logo icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+<span>View the Jules Repository</span>
+</a>
+</section>
+</div>
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
