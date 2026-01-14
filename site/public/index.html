@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Developer Leaderboard Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="#">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+</div>
+</header>
+<main class="flex-1 p-2 sm:p-4">
+<div class="overflow-hidden">
+<div class="overflow-x-auto">
+<table class="min-w-full">
+<thead class="border-b border-gray-800">
+<tr>
+<th class="w-24 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Rank</th>
+<th class="min-w-[200px] px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Developer</th>
+<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Total Ships</th>
+<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Last Active</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-800 bg-electric-yellow/10 text-electric-yellow hover:bg-electric-yellow/20">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold">#1 🥇</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center border-2 border-electric-yellow" data-alt="Profile picture of developer Jules" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+</div>
+<div class="text-sm font-bold">Jules</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-primary">8,421</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 hours ago</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-900/50">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#2 🥈</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+</div>
+<div class="text-sm font-bold text-white">Alex</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,988</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 hour ago</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-900/50">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#3 🥉</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Sam" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+</div>
+<div class="text-sm font-bold text-white">Sam</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,501</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">5 hours ago</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-900/50">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#4</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Casey" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
+</div>
+<div class="text-sm font-bold text-white">Casey</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,340</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-900/50">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#5</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Morgan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
+</div>
+<div class="text-sm font-bold text-white">Morgan</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,112</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">3 hours ago</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-900/50">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#6</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Taylor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKd7TptbKFyq0tCAUFBIB1Z2bMaz02XGEt18pnEHsIDyx3asdQrfvtEm7JzTpMX6X9FCRTOi7a_StNVtBoVM9y2bDtUGXkdmoPxbNrk9MqvbledUMc4teDJGFP92rkKR0vRbQZI0_6qZiCYH99hMw50SNOWAqx1pudz1ULdiPLxAKBCyj-EU843TFqSJg9ztaoNDhrIeF89-rhSay7vwQM0FKXZ8FFVnUzOEY8tX1JCjjj-9T0TTSKnLasYNfMYJFJobkT9B1Kr8op");'></div>
+</div>
+<div class="text-sm font-bold text-white">Taylor</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,950</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">8 hours ago</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-900/50">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#7</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Jordan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKy3L63_SFQFXY2VEwz92Lpm1OUR8q_4SIFCYVKFhavURQWsJpyFu_XGHQ0vFkkpnYE-sRYpLEznmwa_d9wdV94GZah0DHiWEefoQb_yS08zqupatW5ra2iECsr62WBiOZxwq-EwP8VSI7tK56qK9uAL8WFk7lriL40UwLaHcxPL0Is0MBVKd7KMGRyHXQs_RDox5iaEm6At93Ltj_E3dKtl0Bb8XS7-bZ6ZxgwQTlLDlXcMLJoA9o39btCfTtGIiRrXXJxnXj6BZQ");'></div>
+</div>
+<div class="text-sm font-bold text-white">Jordan</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,873</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 days ago</td>
+</tr>
+<tr class="hover:bg-gray-900/50">
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#8</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex-shrink-0">
+<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Riley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx");'></div>
+</div>
+<div class="text-sm font-bold text-white">Riley</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,521</td>
+<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<a class="text-gray-400 hover:text-white" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
