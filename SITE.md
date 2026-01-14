@@ -56,7 +56,7 @@
 
 ### Medium Priority
 - [x] **Profile View:** Create a template for a user details page showing their top repositories.
-- [ ] **"Hot Streak" Badge:** Design a visual indicator for users who have shipped 5+ days in a row.
+- [x] **"Hot Streak" Badge:** Design a visual indicator for users who have shipped 5+ days in a row.
 
 ### Future Concepts (Low Priority)
 - [ ] "Battle Mode" comparison view (User A vs User B).
