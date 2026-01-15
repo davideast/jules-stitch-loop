@@ -1,7 +1,7 @@
 ---
-page: trends
+page: history
 ---
-A data visualization page for jules.top that shows rising stars and momentum charts.
+A historical data page for jules.top that allows users to view past leaderboards.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,10 +22,5 @@ A data visualization page for jules.top that shows rising stars and momentum cha
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1.  **Header:** "Trending Developers" title and a brief description.
-2.  **Key Metrics:** A row of stat cards for "Most Improved," "Highest Momentum," and "New & Noteworthy."
-3.  **Charts:**
-    *   A line chart showing "Top 5 Rising Developers (Last 30 Days)."
-    *   A bar chart showing "Most Active Developers by Language (Last 7 Days)."
-4.  **Data Table:**
-    *   A table for "Developers to Watch," with columns for Rank, Developer, Momentum Score, and Last Active.
+1.  **Header:** "Historical Leaderboard" title and a date picker to select a past date.
+2.  **Leaderboard Table:** A table displaying the leaderboard for the selected date.
