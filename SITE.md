@@ -48,6 +48,8 @@
 * [x] `hall-of-fame.html` - All-time legends and retired champions
 * [x] `compare.html` - Side-by-side developer comparison ("Battle Mode")
 * [x] `stats.html` - Global platform statistics and trends
+* [x] `trends.html` - Rising stars and momentum charts
+* [ ] `history.html` - Historical data, time machine view of past leaderboards
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -78,7 +80,6 @@
 **Gamification & Recognition:**
 
 **Analytics & Insights:**
-- [ ] `history.html` - Historical data, time machine view of past leaderboards
 - [ ] `insights.html` - AI-generated insights about shipping patterns
 
 **Social & Competition:**
