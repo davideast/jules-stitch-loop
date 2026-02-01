@@ -1,7 +1,7 @@
 ---
-page: challenges.html
+page: rivals
 ---
-A competitive page featuring weekly and monthly coding challenges for developers.
+A head-to-head rivalry tracking page for developers to compare stats and shipping velocity.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,7 +22,8 @@ A competitive page featuring weekly and monthly coding challenges for developers
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Active Challenges" with a countdown timer.
-2. Featured Challenge Hero: A large card for the current major event (e.g., "The Weekend Sprint") with a progress bar.
-3. Challenge Grid: Cards for other active challenges (e.g., "Bug Squasher", "Feature Factory").
-4. Leaderboard: A specific leaderboard for the current featured challenge.
+1. Header: "Rivalry Tracker" with a "VS" icon.
+2. Matchup Selector: Two search inputs side-by-side to select Developer A and Developer B.
+3. Comparison Hero: A split view showing the selected rivals, their avatars, and a large "Score Diff" number.
+4. Stat Breakdown: A table or grid comparing key metrics (Total Ships, Current Streak, PRs Merged).
+5. Head-to-Head History: A timeline showing who shipped more in the last 7 days.

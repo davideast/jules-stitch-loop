@@ -52,13 +52,14 @@
 * [x] `history.html` - Historical data, time machine view of past leaderboards
 * [x] `teams.html` - Team/organization leaderboards
 * [x] `insights.html` - AI-generated insights about shipping patterns
+* [x] `challenges.html` - Weekly/monthly shipping challenges
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
 
 ### High Priority
 - [x] **The Leaderboard Table:** Create a dense, highly readable table on `index.html`.
-- [ ] **The "Ship" Graph:** Add a visual sparkline or contribution graph next to the top 3 users.
+- [x] **The "Ship" Graph:** Add a visual sparkline or contribution graph next to the top 3 users.
 
 ### Medium Priority
 - [x] **Profile View:** Create a template for a user details page showing their top repositories.
@@ -84,7 +85,6 @@
 **Analytics & Insights:**
 
 **Social & Competition:**
-- [ ] `challenges.html` - Weekly/monthly shipping challenges
 - [ ] `rivals.html` - Head-to-head rivalry tracking
 
 **Discovery & Exploration:**
