@@ -1,7 +1,7 @@
 ---
-page: history
+page: teams
 ---
-A historical data page for jules.top that allows users to view past leaderboards. (Updated for primer verification)
+A competitive leaderboards page for engineering teams and organizations.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,5 +22,6 @@ A historical data page for jules.top that allows users to view past leaderboards
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1.  **Header:** "Historical Leaderboard" title and a date picker to select a past date.
-2.  **Leaderboard Table:** A table displaying the leaderboard for the selected date.
+1. Header: "Team Leaderboards" title with search input.
+2. Top Teams Grid: 3 cards showing the top 3 teams (Gold/Silver/Bronze) with their logo, total score, and active developer count.
+3. Teams Table: Rank | Team Name (with logo) | Members Count | Total Ships | Weekly Velocity (sparkline or number).
