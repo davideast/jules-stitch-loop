@@ -9,8 +9,6 @@
     "pre-push": "bun run scripts/pre-push.ts"
   },
   "dependencies": {
-    "@google/stitch": "https://stitch-sdk--v0-1-0-69678fd0-gidz6igm.web.app/google-stitch-0.1.0.tgz",
-    "@google/stitch-sdk": "https://stitch-sdk--v0-1-0-69678fd0-gidz6igm.web.app/google-stitch-sdk-0.1.0.tgz",
     "@modelcontextprotocol/sdk": "^1.0.1",
     "gray-matter": "^4.0.3",
     "modjules": "^0.4.1",

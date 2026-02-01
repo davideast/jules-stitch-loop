@@ -1,7 +1,7 @@
 ---
 page: history
 ---
-A historical data page for jules.top that allows users to view past leaderboards.
+A historical data page for jules.top that allows users to view past leaderboards. (Updated for primer verification)
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
