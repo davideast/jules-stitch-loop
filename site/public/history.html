@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Historical Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0f1419",
+              "electric-yellow": "#f0c800",
+              "surface": "#161b22",
+              "accent": "#2dd4bf",
+              "text-secondary": "#6b7280",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        /* Custom date picker styling */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<!-- Header will be integrated later, copying structure from index.html for now but simplified -->
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<a href="/" class="text-xl font-bold tracking-tight text-white font-mono hover:text-accent transition-colors">jules.top<span class="text-primary animate-pulse">_</span></a>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-white bg-gray-800" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+</div>
+</header>
+
+<main class="flex-1 p-2 sm:p-4">
+    <div class="flex flex-col gap-6">
+        <!-- Page Header & Date Picker -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-accent text-3xl">history</span>
+                <h1 class="text-2xl font-bold text-white">Historical Leaderboard</h1>
+            </div>
+
+            <div class="relative">
+                <div class="flex items-center gap-2 bg-surface border border-gray-800 rounded-md px-3 py-2">
+                    <span class="material-symbols-outlined text-gray-400">calendar_month</span>
+                    <input type="date" value="2023-10-24" class="bg-transparent border-none text-white focus:ring-0 p-0 text-sm font-mono placeholder-gray-500" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="overflow-hidden rounded-lg border border-gray-800 bg-surface/50">
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="border-b border-gray-800 bg-surface">
+                        <tr>
+                            <th class="w-24 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-text-secondary font-mono">Rank</th>
+                            <th class="min-w-[200px] px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-text-secondary font-mono">Developer</th>
+                            <th class="w-48 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-text-secondary font-mono">Total Ships</th>
+                            <th class="w-48 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-text-secondary font-mono">Last Active</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800/50">
+                        <!-- Rank 1 -->
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold">#1 🥇</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 flex-shrink-0">
+                                        <div class="aspect-square w-full rounded-full bg-cover bg-center border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">Jules</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">8,350</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-text-secondary">Oct 24, 2023</td>
+                        </tr>
+                        <!-- Rank 2 -->
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold">#2 🥈</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 flex-shrink-0">
+                                        <div class="aspect-square w-full rounded-full bg-cover bg-center border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">Alex</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">7,912</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-text-secondary">Oct 24, 2023</td>
+                        </tr>
+                        <!-- Rank 3 -->
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold">#3 🥉</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 flex-shrink-0">
+                                        <div class="aspect-square w-full rounded-full bg-cover bg-center border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">Sam</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">7,480</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-text-secondary">Oct 23, 2023</td>
+                        </tr>
+                        <!-- Rank 4 -->
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-medium text-text-secondary">#4</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 flex-shrink-0">
+                                        <div class="aspect-square w-full rounded-full bg-cover bg-center border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">Casey</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">7,210</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-text-secondary">Oct 23, 2023</td>
+                        </tr>
+                        <!-- Rank 5 -->
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-medium text-text-secondary">#5</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 flex-shrink-0">
+                                        <div class="aspect-square w-full rounded-full bg-cover bg-center border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">Morgan</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">7,005</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-text-secondary">Oct 24, 2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center gap-2 pt-4">
+            <button class="h-8 w-8 flex items-center justify-center rounded-full border border-gray-800 text-gray-400 hover:bg-surface hover:text-white">
+                <span class="material-symbols-outlined text-sm">chevron_left</span>
+            </button>
+            <button class="h-8 w-8 flex items-center justify-center rounded-full bg-accent text-white font-mono text-sm font-bold">1</button>
+            <button class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:bg-surface hover:text-white font-mono text-sm">2</button>
+            <button class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:bg-surface hover:text-white font-mono text-sm">3</button>
+            <span class="text-gray-600">...</span>
+            <button class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:bg-surface hover:text-white font-mono text-sm">12</button>
+            <button class="h-8 w-8 flex items-center justify-center rounded-full border border-gray-800 text-gray-400 hover:bg-surface hover:text-white">
+                <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </button>
+        </div>
+    </div>
+</main>
+
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>
