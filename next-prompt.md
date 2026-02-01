@@ -1,7 +1,7 @@
 ---
-page: repos.html
+page: languages.html
 ---
-A leaderboard of top repositories ranked by Jules shipping activity. Minimal, Data-dense, Terminal.
+A leaderboard ranking programming languages by popularity and shipping volume on Jules. Minimal, Data-dense, Terminal.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ A leaderboard of top repositories ranked by Jules shipping activity. Minimal, Da
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Top Repositories" with language filter dropdown.
-2. Top 3 Repos: Highlighted cards with sparklines and big numbers.
-3. Repos Table: Rank | Repo Name (w/ icon) | Language | Total Ships | Last Active | Contributors (stack of avatars).
-4. "Add Repo" Call to Action at the bottom.
+1. Header: "Top Languages" with a search/filter bar.
+2. Stats Overview: Total Languages, Most Active, Fastest Growing.
+3. Language Table: Rank | Language (Icon + Name) | Active Devs | Total Ships | Growth Trend (Sparkline).
+4. Footer.
 
 **Specific Elements:**
-- Repo icons (e.g. GitHub/GitLab logos or language logos).
-- Sparklines for activity trends in the table.
-- Contributor avatars stack in the table.
+- Language icons (e.g., JS/TS/Python logos or colored dots).
+- Sparklines for growth trends in the table.
+- Monospace font for all numerical data.
