@@ -55,6 +55,7 @@
 * [x] `challenges.html` - Weekly/monthly shipping challenges
 * [x] `rivals.html` - Head-to-head rivalry tracking
 * [x] `explore.html` - Discover developers by language, framework, or project type
+* [x] `repos.html` - Top repositories by Jules activity
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -89,7 +90,6 @@
 **Social & Competition:**
 
 **Discovery & Exploration:**
-- [ ] `repos.html` - Top repositories by Jules activity
 - [ ] `languages.html` - Leaderboard by programming language
 - [ ] `search.html` - Advanced search and filtering
 
