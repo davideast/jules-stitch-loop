@@ -1,7 +1,7 @@
 ---
-page: teams
+page: insights.html
 ---
-A competitive leaderboards page for engineering teams and organizations.
+An AI-powered insights dashboard analyzing developer shipping patterns.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,6 +22,7 @@ A competitive leaderboards page for engineering teams and organizations.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Team Leaderboards" title with search input.
-2. Top Teams Grid: 3 cards showing the top 3 teams (Gold/Silver/Bronze) with their logo, total score, and active developer count.
-3. Teams Table: Rank | Team Name (with logo) | Members Count | Total Ships | Weekly Velocity (sparkline or number).
+1. Header: "Shipping Insights" title with a "Generate Report" button (primary accent color).
+2. Key Metrics Grid: 4 cards showing "Velocity Score", "Peak Shipping Time", "Longest Streak", and "Code Quality Rating".
+3. AI Analysis Section: A terminal-like window displaying a typed-out analysis of recent trends (e.g., " > Analyzing commit history... pattern detected: weekend warrior.").
+4. Productivity Heatmap: A large contribution graph style visualization showing shipping intensity by day and hour.
