@@ -1,7 +1,7 @@
 ---
-page: explore
+page: repos.html
 ---
-A discovery page to explore developers by language, framework, and project type.
+A leaderboard of top repositories ranked by Jules shipping activity. Minimal, Data-dense, Terminal.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ A discovery page to explore developers by language, framework, and project type.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Explore" with search/filter bar.
-2. Categories Grid: Cards for languages (JS, Python, Go) and frameworks.
-3. Trending Projects: List of top repositories being shipped to.
-4. Developer Spotlight: A random high-velocity developer.
+1. Header: "Top Repositories" with language filter dropdown.
+2. Top 3 Repos: Highlighted cards with sparklines and big numbers.
+3. Repos Table: Rank | Repo Name (w/ icon) | Language | Total Ships | Last Active | Contributors (stack of avatars).
+4. "Add Repo" Call to Action at the bottom.
 
 **Specific Elements:**
-- Category cards with language icons/logos.
-- Search input with filter dropdowns (Language, Role, Location).
-- "Trending" section with sparklines.
+- Repo icons (e.g. GitHub/GitLab logos or language logos).
+- Sparklines for activity trends in the table.
+- Contributor avatars stack in the table.
