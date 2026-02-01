@@ -1,7 +1,7 @@
 ---
-page: rivals
+page: explore
 ---
-A head-to-head rivalry tracking page for developers to compare stats and shipping velocity.
+A discovery page to explore developers by language, framework, and project type.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,8 +22,12 @@ A head-to-head rivalry tracking page for developers to compare stats and shippin
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Rivalry Tracker" with a "VS" icon.
-2. Matchup Selector: Two search inputs side-by-side to select Developer A and Developer B.
-3. Comparison Hero: A split view showing the selected rivals, their avatars, and a large "Score Diff" number.
-4. Stat Breakdown: A table or grid comparing key metrics (Total Ships, Current Streak, PRs Merged).
-5. Head-to-Head History: A timeline showing who shipped more in the last 7 days.
+1. Header: "Explore" with search/filter bar.
+2. Categories Grid: Cards for languages (JS, Python, Go) and frameworks.
+3. Trending Projects: List of top repositories being shipped to.
+4. Developer Spotlight: A random high-velocity developer.
+
+**Specific Elements:**
+- Category cards with language icons/logos.
+- Search input with filter dropdowns (Language, Role, Location).
+- "Trending" section with sparklines.

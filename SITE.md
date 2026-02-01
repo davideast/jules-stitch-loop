@@ -53,6 +53,7 @@
 * [x] `teams.html` - Team/organization leaderboards
 * [x] `insights.html` - AI-generated insights about shipping patterns
 * [x] `challenges.html` - Weekly/monthly shipping challenges
+* [x] `rivals.html` - Head-to-head rivalry tracking
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -85,7 +86,6 @@
 **Analytics & Insights:**
 
 **Social & Competition:**
-- [ ] `rivals.html` - Head-to-head rivalry tracking
 
 **Discovery & Exploration:**
 - [ ] `explore.html` - Discover developers by language, framework, or project type
