@@ -1,7 +1,7 @@
 ---
-page: insights.html
+page: challenges.html
 ---
-An AI-powered insights dashboard analyzing developer shipping patterns.
+A competitive page featuring weekly and monthly coding challenges for developers.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,7 +22,7 @@ An AI-powered insights dashboard analyzing developer shipping patterns.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Shipping Insights" title with a "Generate Report" button (primary accent color).
-2. Key Metrics Grid: 4 cards showing "Velocity Score", "Peak Shipping Time", "Longest Streak", and "Code Quality Rating".
-3. AI Analysis Section: A terminal-like window displaying a typed-out analysis of recent trends (e.g., " > Analyzing commit history... pattern detected: weekend warrior.").
-4. Productivity Heatmap: A large contribution graph style visualization showing shipping intensity by day and hour.
+1. Header: "Active Challenges" with a countdown timer.
+2. Featured Challenge Hero: A large card for the current major event (e.g., "The Weekend Sprint") with a progress bar.
+3. Challenge Grid: Cards for other active challenges (e.g., "Bug Squasher", "Feature Factory").
+4. Leaderboard: A specific leaderboard for the current featured challenge.
