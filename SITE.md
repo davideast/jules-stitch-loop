@@ -51,6 +51,7 @@
 * [x] `trends.html` - Rising stars and momentum charts
 * [x] `history.html` - Historical data, time machine view of past leaderboards
 * [x] `teams.html` - Team/organization leaderboards
+* [x] `insights.html` - AI-generated insights about shipping patterns
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -81,7 +82,6 @@
 **Gamification & Recognition:**
 
 **Analytics & Insights:**
-- [ ] `insights.html` - AI-generated insights about shipping patterns
 
 **Social & Competition:**
 - [ ] `challenges.html` - Weekly/monthly shipping challenges
