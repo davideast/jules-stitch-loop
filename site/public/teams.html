@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Team Leaderboards - jules.top</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2dd4bf",
+              "primary-dark": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0f1419",
+              "surface-dark": "#161b22",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-6xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6 mb-8">
+<div class="flex items-center gap-4">
+<a href="/" class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary-dark animate-pulse">_</span></a>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-surface-dark py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search teams..." type="search"/>
+</div>
+<div class="hidden sm:flex w-full items-center gap-4 sm:w-auto">
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+</div>
+</div>
+</header>
+
+<main class="flex-1 p-2 sm:p-4">
+    <div class="flex flex-col gap-8">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-white mb-2">Team Leaderboards</h1>
+                <p class="text-gray-400">Top engineering organizations ranked by shipping velocity.</p>
+            </div>
+            <div class="flex gap-2">
+                <button class="px-4 py-2 bg-surface-dark border border-gray-700 rounded text-sm text-white hover:border-primary transition-colors">This Week</button>
+                <button class="px-4 py-2 bg-transparent border border-gray-800 rounded text-sm text-gray-400 hover:text-white transition-colors">All Time</button>
+            </div>
+        </div>
+
+        <!-- Top Teams Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Gold Team -->
+            <div class="bg-surface-dark border border-gray-800 rounded-lg p-6 relative overflow-hidden group hover:border-electric-yellow/50 transition-all">
+                <div class="absolute top-0 right-0 p-4 text-4xl opacity-20 group-hover:opacity-100 transition-opacity">🥇</div>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gray-800 border-2 border-electric-yellow flex items-center justify-center text-2xl font-bold text-white">V</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Vercel</h3>
+                        <p class="text-sm text-gray-400">@vercel</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Total Ships</p>
+                        <p class="text-2xl font-mono text-white">12,405</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Active Devs</p>
+                        <p class="text-2xl font-mono text-white">42</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Silver Team -->
+            <div class="bg-surface-dark border border-gray-800 rounded-lg p-6 relative overflow-hidden group hover:border-gray-400 transition-all">
+                <div class="absolute top-0 right-0 p-4 text-4xl opacity-20 group-hover:opacity-100 transition-opacity">🥈</div>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gray-800 border-2 border-gray-400 flex items-center justify-center text-2xl font-bold text-white">O</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">OpenAI</h3>
+                        <p class="text-sm text-gray-400">@openai</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Total Ships</p>
+                        <p class="text-2xl font-mono text-white">10,892</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Active Devs</p>
+                        <p class="text-2xl font-mono text-white">38</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bronze Team -->
+            <div class="bg-surface-dark border border-gray-800 rounded-lg p-6 relative overflow-hidden group hover:border-orange-700 transition-all">
+                <div class="absolute top-0 right-0 p-4 text-4xl opacity-20 group-hover:opacity-100 transition-opacity">🥉</div>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gray-800 border-2 border-orange-700 flex items-center justify-center text-2xl font-bold text-white">S</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Supabase</h3>
+                        <p class="text-sm text-gray-400">@supabase</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Total Ships</p>
+                        <p class="text-2xl font-mono text-white">9,120</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Active Devs</p>
+                        <p class="text-2xl font-mono text-white">25</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teams Table -->
+        <div class="overflow-hidden rounded-lg border border-gray-800 bg-surface-dark">
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="border-b border-gray-800 bg-background-dark">
+                        <tr>
+                            <th class="w-24 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Rank</th>
+                            <th class="min-w-[200px] px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Team</th>
+                            <th class="w-48 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Members</th>
+                            <th class="w-48 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Total Ships</th>
+                            <th class="w-48 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Weekly Velocity</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800">
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-electric-yellow">#1 🥇</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-8 w-8 rounded bg-gray-700 flex items-center justify-center text-xs font-bold">V</div>
+                                    <span class="font-bold text-white">Vercel</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-300">42</td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">12,405</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="h-8 w-24">
+                                    <svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 30">
+                                        <path class="text-primary" d="M0 20 L10 15 L20 25 L30 10 L40 18 L50 12 L60 22 L70 15 L80 5 L90 12 L100 8" vector-effect="non-scaling-stroke"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-gray-300">#2 🥈</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-8 w-8 rounded bg-gray-700 flex items-center justify-center text-xs font-bold">O</div>
+                                    <span class="font-bold text-white">OpenAI</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-300">38</td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">10,892</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="h-8 w-24">
+                                    <svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 30">
+                                        <path class="text-primary" d="M0 22 L10 18 L20 20 L30 15 L40 12 L50 18 L60 10 L70 14 L80 8 L90 5 L100 10" vector-effect="non-scaling-stroke"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                         <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-orange-700">#3 🥉</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-8 w-8 rounded bg-gray-700 flex items-center justify-center text-xs font-bold">S</div>
+                                    <span class="font-bold text-white">Supabase</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-300">25</td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">9,120</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="h-8 w-24">
+                                    <svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 30">
+                                        <path class="text-primary" d="M0 25 L10 22 L20 24 L30 20 L40 18 L50 22 L60 15 L70 12 L80 18 L90 10 L100 15" vector-effect="non-scaling-stroke"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#4</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-8 w-8 rounded bg-gray-700 flex items-center justify-center text-xs font-bold">G</div>
+                                    <span class="font-bold text-white">Google</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-300">850</td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">8,540</td>
+                             <td class="whitespace-nowrap px-6 py-4">
+                                <div class="h-8 w-24">
+                                    <svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 30">
+                                        <path class="text-primary" d="M0 28 L10 25 L20 26 L30 22 L40 20 L50 24 L60 18 L70 15 L80 20 L90 12 L100 18" vector-effect="non-scaling-stroke"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#5</td>
+                            <td class="whitespace-nowrap px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-8 w-8 rounded bg-gray-700 flex items-center justify-center text-xs font-bold">M</div>
+                                    <span class="font-bold text-white">Meta</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-300">620</td>
+                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,890</td>
+                             <td class="whitespace-nowrap px-6 py-4">
+                                <div class="h-8 w-24">
+                                    <svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 30">
+                                        <path class="text-primary" d="M0 20 L10 22 L20 20 L30 18 L40 25 L50 20 L60 18 L70 15 L80 12 L90 18 L100 15" vector-effect="non-scaling-stroke"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <div class="flex items-center justify-center border-t border-gray-800 bg-surface-dark px-4 py-3 sm:px-6">
+                <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                    <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-800 hover:bg-gray-800 focus:z-20 focus:outline-offset-0">
+                        <span class="sr-only">Previous</span>
+                        <span class="material-symbols-outlined text-sm">chevron_left</span>
+                    </a>
+                    <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-primary px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">1</a>
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-400 ring-1 ring-inset ring-gray-800 hover:bg-gray-800 focus:z-20 focus:outline-offset-0">2</a>
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-400 ring-1 ring-inset ring-gray-800 hover:bg-gray-800 focus:z-20 focus:outline-offset-0">3</a>
+                    <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-500 ring-1 ring-inset ring-gray-800 focus:outline-offset-0">...</span>
+                    <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-800 hover:bg-gray-800 focus:z-20 focus:outline-offset-0">
+                        <span class="sr-only">Next</span>
+                        <span class="material-symbols-outlined text-sm">chevron_right</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>
