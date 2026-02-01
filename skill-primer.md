@@ -21,7 +21,8 @@ Add the following dependencies to your `package.json`. If `package.json` does no
 
 ```bash
 bun add modjules gray-matter
-bun add @google/stitch-sdk@https://stitch-sdk--v0-1-0-69678fd0-gidz6igm.web.app/google-stitch-sdk-0.1.0.tgz
+# Replace the URL below with your private Stitch SDK tarball URL
+bun add @google/stitch-sdk@https://stitch-sdk-host.example.com/google-stitch-sdk-0.1.0.tgz
 ```
 
 ## Step 2: Create Scripts
