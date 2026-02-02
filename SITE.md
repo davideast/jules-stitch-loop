@@ -80,6 +80,7 @@
 * [x] quality.html.html - Code quality dashboard and technical debt metrics.
 * [x] matrix.html.html - Network graph of connections between developers and repos.
 * [x] predictions.html.html - AI-powered predictive analytics page forecasting future leaderboard rankings and shipping velocity.
+* [x] broadcast.html.html - "TV Mode" dashboard page designed for large screens/projectors.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
