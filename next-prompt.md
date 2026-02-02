@@ -1,7 +1,7 @@
 ---
-page: glitch.html.html
+page: singularity.html.html
 ---
-"The Glitch" - A dashboard tracking bugs, regressions, and hotfixes with a "digital decay" aesthetic.
+"The Singularity" - A dashboard visualizing the theoretical limit of developer velocity and the "event horizon" of maximum productivity.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ page: glitch.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "The Glitch" with a bug or warning icon.
-2. System Status Matrix: A grid of "services" showing status (Stable, Degraded, Critical) using blinking indicators.
-3. Bug Feed: A scrolling terminal-like list of reported issues with error codes.
-4. Patch Leaderboard: Who is fixing the most bugs.
+1. Header: "The Singularity" with a black hole or vortex icon.
+2. Event Horizon Gauge: A visual meter showing how close the platform is to "infinite velocity".
+3. Convergence Table: Top developers whose metrics are converging towards perfection.
+4. Time Dilation Metrics: Stats showing "time saved" vs "real time".
 
 **Specific Elements:**
-- Use Red (#ff0000) for critical errors and Green (#00ff00) for fixes.
-- "Matrix rain" or static noise visual effects in the background of headers.
-- Glitch text effects (random character replacement) on hover.
+- Use warping grid lines (canvas) in the background to simulate gravity wells.
+- High contrast, almost neon accents against deep black.
+- "Singularity Achieved" status indicators for top performers.
