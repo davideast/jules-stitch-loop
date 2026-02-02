@@ -1,7 +1,7 @@
 ---
-page: broadcast.html
+page: spotlight.html
 ---
-A "TV Mode" dashboard page designed for large screens/projectors. High contrast, massive typography, auto-cycling views between Leaderboard Top 5, Recent Big Ships, and Velocity Charts.
+A daily spotlight page featuring a single developer. Detailed breakdown of their velocity, preferred languages, and recent "Big Ships". Magazine-style layout but keeping the terminal aesthetic.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,13 @@ A "TV Mode" dashboard page designed for large screens/projectors. High contrast,
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Full-screen layout (no scrollbars).
-2. "On Air" indicator in the corner.
-3. Split view: Top Ranked Developer (Hero Card) vs Live Ticker.
-4. "Velocity Meter" gauge (Speedometer style).
+1. Header with date and "Daily Spotlight" title.
+2. Large Profile Card with avatar, bio, and total stats.
+3. "Signature Move" section (Favorite language/framework).
+4. "Recent Big Ships" list with impact scores.
+5. "Contribution Heatmap" (mini version).
 
 **Specific Elements:**
-- Massive font sizes for readability from a distance.
-- Auto-scroll or marquee effects.
-- Dark mode optimized for OLED screens.
+- Magazine-style typography for the name (big, bold).
+- "Share this profile" button.
+- Quote or "Motto" section.
