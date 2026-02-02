@@ -92,6 +92,7 @@
 * [x] `quiz.html.html` - A competitive, sudden-death technical quiz page.
 * [x] `interview.html.html.html` - A competitive mock interview practice arena.
 * [x] `debug.html.html` - Time-attack debugging challenge arena.
+* [x] `secrets.html.html` - Secure vault page containing encrypted secrets.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
