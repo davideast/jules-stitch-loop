@@ -1,7 +1,7 @@
 ---
-page: radar.html
+page: bounties.html
 ---
-A Tech Radar visualization page showing trending technologies among top developers.
+A terminal-styled board of open issues with XP rewards.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ A Tech Radar visualization page showing trending technologies among top develope
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Central Radar Visualization (Concentric circles: Adopt, Trial, Assess, Hold).
-2. Four Quadrants: Languages, Frameworks, Tools, Infrastructure.
-3. Sidebar/Panel list of items in each ring.
-4. Detail view when clicking a "blip" (usage stats, top users).
+1. Header with "Bounty Board" title and total XP available.
+2. Filter bar (Languages, Difficulty, Reward).
+3. List of bounties (rows similar to leaderboard but with issue details).
+4. Detail modal or expansion for bounty description.
 
 **Specific Elements:**
-- Radar Chart: CSS/SVG based, "Sonar" aesthetic (green scanning line animation optional).
-- Blips: Small colored dots with hover states.
-- List view: For accessibility and quick scanning.
+- Bounty Row: [Status Icon] [Issue Title] [Repo] [Difficulty Badge] [XP Reward].
+- XP Reward: Highlighted in Green or Gold.
+- Status: Open, In Progress, Closed.
