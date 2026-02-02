@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Jules CLI Documentation</title>
+<title>Sprint Dashboard - Sprint 42</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -12,7 +12,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#238636",
+              "primary": "#2dd4bf",
               "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
@@ -298,148 +298,203 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="flex flex-col gap-8 max-w-4xl mx-auto w-full">
-    <!-- Hero Section -->
-    <div class="flex flex-col items-center justify-center gap-6 py-12 text-center">
-        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Jules CLI</h1>
-        <p class="text-lg text-gray-400 max-w-2xl">The definitive terminal interface for the Jules platform. Ship code, track stats, and climb the leaderboard directly from your command line.</p>
+<main class="flex-1 p-4 sm:p-6 md:p-8">
 
-        <!-- Terminal Window -->
-        <div class="w-full max-w-2xl rounded-lg border border-gray-700 bg-[#1e1e1e] shadow-xl overflow-hidden mt-8 text-left">
-            <div class="flex items-center gap-2 bg-[#2d2d2d] px-4 py-2 border-b border-gray-700">
-                <div class="h-3 w-3 rounded-full bg-red-500"></div>
-                <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
-                <div class="h-3 w-3 rounded-full bg-green-500"></div>
-                <div class="ml-2 text-xs text-gray-400 font-mono">user@machine: ~</div>
+    <div class="mb-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between border-b border-gray-800 pb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-white mb-2">Sprint 42 <span class="text-primary text-lg font-mono ml-2">Active</span></h1>
+            <p class="text-gray-400 font-mono text-sm">Started Oct 12 • Ends Oct 26</p>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="text-right">
+                <div class="text-xs text-gray-500 uppercase tracking-wider">Time Remaining</div>
+                <div class="text-2xl font-mono text-white">3d 14h 22m</div>
             </div>
-            <div class="p-6 font-mono text-sm">
-                <div class="flex gap-2">
-                    <span class="text-green-500">➜</span>
-                    <span class="text-blue-400">~</span>
-                    <span class="text-white">npm install -g jules-cli</span>
+            <button class="bg-red-900/30 text-red-400 border border-red-900/50 hover:bg-red-900/50 px-4 py-2 rounded font-mono text-sm">Finish Sprint</button>
+        </div>
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <!-- Burndown -->
+        <div class="bg-gray-900/30 border border-gray-800 rounded p-4">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-gray-400 text-xs uppercase tracking-wider">Burndown</h3>
+                <span class="text-primary font-mono text-xs">-12% ahead</span>
+            </div>
+            <div class="h-24 w-full flex items-end gap-1">
+                 <!-- Simple SVG Sparkline visualization -->
+                 <svg class="w-full h-full" viewBox="0 0 100 50" preserveAspectRatio="none">
+                    <polyline points="0,0 10,5 20,10 30,8 40,15 50,25 60,20 70,35 80,40 90,45 100,50" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="4" opacity="0.5" />
+                    <polyline points="0,0 10,2 20,8 30,15 40,25 50,35 60,42 70,48" fill="none" stroke="#2dd4bf" stroke-width="2" />
+                 </svg>
+            </div>
+            <div class="mt-2 flex justify-between text-xs font-mono text-gray-500">
+                <span>Start</span>
+                <span>Ideal vs Actual</span>
+                <span>End</span>
+            </div>
+        </div>
+
+        <!-- Velocity -->
+        <div class="bg-gray-900/30 border border-gray-800 rounded p-4">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-gray-400 text-xs uppercase tracking-wider">Velocity</h3>
+                <span class="text-green-500 font-mono text-xs">112% of Avg</span>
+            </div>
+            <div class="flex items-center justify-center h-24">
+                <div class="text-center">
+                    <div class="text-4xl font-mono text-white font-bold">48</div>
+                    <div class="text-xs text-gray-500 mt-1">Story Points Completed</div>
                 </div>
-                <div class="mt-2 text-gray-400">
-                    + jules-cli@1.2.0<br>
-                    added 24 packages in 1.4s
+            </div>
+             <div class="w-full bg-gray-800 h-1 mt-2 rounded-full overflow-hidden">
+                <div class="bg-primary h-full" style="width: 75%"></div>
+            </div>
+        </div>
+
+        <!-- Blockers -->
+        <div class="bg-gray-900/30 border border-gray-800 rounded p-4 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-2">
+                <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-red-400 opacity-75 right-2 top-2"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </div>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-gray-400 text-xs uppercase tracking-wider">Blockers</h3>
+                <span class="text-red-400 font-mono text-xs">2 Critical</span>
+            </div>
+            <div class="space-y-3">
+                <div class="flex items-center gap-3 text-sm">
+                    <span class="text-red-400 material-symbols-outlined text-lg">error</span>
+                    <span class="text-gray-300 truncate">PR #402: API Rate Limiting</span>
                 </div>
-                <div class="flex gap-2 mt-4">
-                    <span class="text-green-500">➜</span>
-                    <span class="text-blue-400">~</span>
-                    <span class="text-white">jules login</span>
-                </div>
-                <div class="mt-2 text-white">
-                    Authenticating with GitHub... <span class="text-green-500">Success!</span><br>
-                    Welcome back, <span class="text-sparkline-color font-bold">@jules_dev</span>.
-                </div>
-                <div class="flex gap-2 mt-4">
-                    <span class="text-green-500">➜</span>
-                    <span class="text-blue-400">~</span>
-                    <span class="text-white animate-pulse">_</span>
+                <div class="flex items-center gap-3 text-sm">
+                    <span class="text-red-400 material-symbols-outlined text-lg">error</span>
+                    <span class="text-gray-300 truncate">Deploy: Production DB timeout</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Installation Section -->
-    <div class="flex flex-col gap-6">
-        <h2 class="text-2xl font-bold border-b border-gray-800 pb-2">Installation</h2>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-            <!-- NPM Tab -->
-            <div class="flex-1 rounded-lg border border-gray-800 bg-gray-900/30 p-6 hover:bg-gray-900/50 transition-colors">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-bold text-white">NPM</h3>
-                    <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-400">Recommended</span>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 h-full min-h-[500px]">
+        <!-- TODO Column -->
+        <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between pb-2 border-b border-gray-800">
+                <h3 class="font-mono text-sm text-gray-500 uppercase">Todo <span class="text-gray-600 ml-1">3</span></h3>
+            </div>
+            <!-- Card -->
+            <div class="bg-gray-900/50 border border-gray-800 p-3 rounded hover:border-gray-700 transition-colors group">
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-mono text-gray-500">#405</span>
+                    <div class="h-6 w-6 rounded-full bg-gray-800 border border-gray-700"></div>
                 </div>
-                <div class="relative group">
-                    <code class="block w-full rounded bg-black p-3 font-mono text-sm text-gray-300 border border-gray-800">npm install -g jules-cli</code>
-                    <button class="absolute right-2 top-2 p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-white" title="Copy">
-                        <span class="material-symbols-outlined text-sm">content_copy</span>
-                    </button>
+                <p class="text-sm text-gray-300 mb-3 group-hover:text-white">Implement User Auth Flow</p>
+                <div class="flex items-center justify-between">
+                     <span class="text-[10px] px-1.5 py-0.5 rounded border border-gray-700 text-gray-500">Backend</span>
+                     <span class="text-xs font-mono text-gray-500">3pts</span>
                 </div>
             </div>
-
-            <!-- Brew Tab -->
-            <div class="flex-1 rounded-lg border border-gray-800 bg-gray-900/30 p-6 hover:bg-gray-900/50 transition-colors">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-bold text-white">Homebrew</h3>
-                    <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-400">macOS</span>
+             <div class="bg-gray-900/50 border border-gray-800 p-3 rounded hover:border-gray-700 transition-colors group">
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-mono text-gray-500">#412</span>
+                    <div class="h-6 w-6 rounded-full bg-gray-800 border border-gray-700"></div>
                 </div>
-                <div class="relative group">
-                    <code class="block w-full rounded bg-black p-3 font-mono text-sm text-gray-300 border border-gray-800">brew install jules-cli</code>
-                    <button class="absolute right-2 top-2 p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-white" title="Copy">
-                        <span class="material-symbols-outlined text-sm">content_copy</span>
-                    </button>
+                <p class="text-sm text-gray-300 mb-3 group-hover:text-white">Optimize DB Queries</p>
+                 <div class="flex items-center justify-between">
+                     <span class="text-[10px] px-1.5 py-0.5 rounded border border-gray-700 text-gray-500">Perf</span>
+                     <span class="text-xs font-mono text-gray-500">5pts</span>
                 </div>
             </div>
+        </div>
 
-            <!-- Curl Tab -->
-            <div class="flex-1 rounded-lg border border-gray-800 bg-gray-900/30 p-6 hover:bg-gray-900/50 transition-colors">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-bold text-white">cURL</h3>
-                    <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-400">Linux</span>
+        <!-- IN PROGRESS Column -->
+        <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between pb-2 border-b border-gray-800">
+                <h3 class="font-mono text-sm text-primary uppercase">In Progress <span class="text-gray-600 ml-1">2</span></h3>
+            </div>
+             <div class="bg-gray-900/50 border border-primary/30 p-3 rounded hover:border-primary/50 transition-colors group relative">
+                <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-primary rounded-l"></div>
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-mono text-primary">#399</span>
+                     <div class="h-6 w-6 rounded-full bg-gray-800 border border-gray-700 bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
                 </div>
-                <div class="relative group">
-                    <code class="block w-full rounded bg-black p-3 font-mono text-sm text-gray-300 border border-gray-800">curl -sL jules.top/install | bash</code>
-                    <button class="absolute right-2 top-2 p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-white" title="Copy">
-                        <span class="material-symbols-outlined text-sm">content_copy</span>
-                    </button>
+                <p class="text-sm text-white mb-3">Refactor Navigation Component</p>
+                 <div class="flex items-center justify-between">
+                     <span class="text-[10px] px-1.5 py-0.5 rounded border border-primary/20 text-primary">Frontend</span>
+                     <div class="flex items-center gap-1">
+                        <span class="block w-2 h-2 bg-primary animate-pulse rounded-full"></span>
+                        <span class="text-xs font-mono text-gray-400">Active</span>
+                     </div>
+                </div>
+            </div>
+             <div class="bg-gray-900/50 border border-gray-800 p-3 rounded hover:border-gray-700 transition-colors group">
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-mono text-gray-500">#408</span>
+                     <div class="h-6 w-6 rounded-full bg-gray-800 border border-gray-700 bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+                </div>
+                <p class="text-sm text-gray-300 mb-3 group-hover:text-white">API Integration Tests</p>
+                 <div class="flex items-center justify-between">
+                     <span class="text-[10px] px-1.5 py-0.5 rounded border border-gray-700 text-gray-500">Testing</span>
+                     <span class="text-xs font-mono text-gray-500">2pts</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- REVIEW Column -->
+        <div class="flex flex-col gap-3">
+             <div class="flex items-center justify-between pb-2 border-b border-gray-800">
+                <h3 class="font-mono text-sm text-electric-yellow uppercase">Review <span class="text-gray-600 ml-1">1</span></h3>
+            </div>
+            <div class="bg-gray-900/50 border border-electric-yellow/30 p-3 rounded hover:border-electric-yellow/50 transition-colors group">
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-mono text-electric-yellow">#395</span>
+                    <div class="flex -space-x-2">
+                        <div class="h-6 w-6 rounded-full bg-gray-800 border border-gray-700 bg-cover z-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+                         <div class="h-6 w-6 rounded-full bg-gray-800 border border-gray-700 bg-cover z-0 grayscale opacity-50" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-300 mb-3 group-hover:text-white">Update Dependencies</p>
+                 <div class="flex items-center justify-between">
+                     <span class="text-[10px] px-1.5 py-0.5 rounded border border-gray-700 text-gray-500">Maint</span>
+                     <span class="text-xs font-mono text-gray-500">1pt</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DONE Column -->
+        <div class="flex flex-col gap-3">
+             <div class="flex items-center justify-between pb-2 border-b border-gray-800">
+                <h3 class="font-mono text-sm text-gray-500 uppercase">Done <span class="text-gray-600 ml-1">4</span></h3>
+            </div>
+            <div class="bg-gray-900/30 border border-gray-800 p-3 rounded opacity-75 hover:opacity-100 transition-opacity">
+                 <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-mono text-gray-600 line-through">#388</span>
+                     <div class="h-6 w-6 rounded-full bg-gray-800 border border-gray-700 bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                </div>
+                <p class="text-sm text-gray-500 mb-3 line-through">Setup CI Pipeline</p>
+                 <div class="flex items-center justify-between">
+                     <span class="text-[10px] px-1.5 py-0.5 rounded border border-gray-800 text-gray-600">DevOps</span>
+                     <span class="text-xs font-mono text-gray-600">8pts</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Commands Section -->
-    <div class="flex flex-col gap-6 mb-12">
-        <h2 class="text-2xl font-bold border-b border-gray-800 pb-2">Command Reference</h2>
+    </main>
 
-        <div class="overflow-hidden rounded-lg border border-gray-800">
-            <table class="min-w-full divide-y divide-gray-800">
-                <thead class="bg-gray-900/50">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Command</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Arguments</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Description</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-800 bg-background-dark">
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules login</td>
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">--token &lt;token&gt;</td>
-                        <td class="px-6 py-4 text-sm text-gray-300">Authenticate with GitHub or a personal access token.</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules ship</td>
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">[message]</td>
-                        <td class="px-6 py-4 text-sm text-gray-300">Record a new shipment (commit/PR) to the leaderboard.</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules status</td>
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">--user &lt;username&gt;</td>
-                        <td class="px-6 py-4 text-sm text-gray-300">Check your current rank, streak, and recent activity.</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules whoami</td>
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">-</td>
-                        <td class="px-6 py-4 text-sm text-gray-300">Display current authenticated user information.</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules top</td>
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">--limit &lt;n&gt;</td>
-                        <td class="px-6 py-4 text-sm text-gray-300">View the current top N developers on the leaderboard.</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules config</td>
-                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">set &lt;key&gt; &lt;val&gt;</td>
-                        <td class="px-6 py-4 text-sm text-gray-300">Manage local configuration settings.</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-800 p-2 z-50">
+        <div class="layout-container mx-auto flex items-center gap-4 text-xs font-mono text-gray-400 overflow-hidden whitespace-nowrap">
+            <span class="text-primary">LATEST SHIPS:</span>
+            <span>Jules merged PR #401 (Fix Auth)</span>
+            <span class="text-gray-600">|</span>
+            <span>Alex closed Issue #398 (Memory Leak)</span>
+             <span class="text-gray-600">|</span>
+             <span>Sam deployed release v2.4.0</span>
         </div>
     </div>
-</div>
-</main>
+
+
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">
