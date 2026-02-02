@@ -1,7 +1,7 @@
 ---
-page: tournament.html
+page: velocity.html
 ---
-"Code Colosseum" - A bracket-style tournament viewer for the season playoffs.
+"Velocity" - High-speed metrics and shipping momentum gauges.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,12 @@ page: tournament.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Code Colosseum" Banner with "Quarter-Finals" indicator.
-2. Bracket Visualization: A visual tree structure showing matchups (8 -> 4 -> 2 -> 1).
-3. Live Matchup: Detailed comparison card of the current active battle.
-4. Betting Station: UI to "Vote for Winner" with odds/percentages.
+1. Header: "Velocity" Title with a speedometer icon.
+2. Global Gauge: A large visual gauge showing the current "Global Shipping Velocity" (e.g., Commits/Hour).
+3. Momentum Table: A list of developers sorted by their current "Momentum" (acceleration of shipping).
+4. Peak Hours: A heatmap or chart showing the fastest shipping hours of the day.
 
 **Specific Elements:**
-- Connector lines between bracket nodes.
-- Developer avatars and scores in each bracket node.
-- "Live" indicator for ongoing matches.
-- Countdown timer for the next round.
+- Radial or Linear Gauges for velocity.
+- "G-Force" metric (shipping acceleration).
+- Sparklines for individual developer velocity.
