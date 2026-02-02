@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Search & Filter - jules.top</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2dd4bf",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+            <div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+                <header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+                    <div class="flex items-center gap-4">
+                        <a href="/" class="text-xl font-bold tracking-tight text-white font-mono decoration-none">jules.top<span class="text-primary animate-pulse">_</span></a>
+                    </div>
+                    <div class="flex w-full items-center gap-4 sm:w-auto">
+                        <div class="relative w-full sm:w-64">
+                            <span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+                            <input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+                        </div>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+                            <span class="material-symbols-outlined text-xl">search</span>
+                            <span>Search</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+                            <span class="material-symbols-outlined text-xl">explore</span>
+                            <span>Explore</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+                            <span class="material-symbols-outlined text-xl">dataset</span>
+                            <span>Repos</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+                            <span class="material-symbols-outlined text-xl">code</span>
+                            <span>Languages</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+                            <span class="material-symbols-outlined text-xl">emoji_events</span>
+                            <span>Achievements</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+                            <span class="material-symbols-outlined text-xl">bolt</span>
+                            <span>Challenges</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+                            <span class="material-symbols-outlined text-xl">groups</span>
+                            <span>Teams</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+                            <span class="relative flex h-2 w-2">
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+                            </span>
+                            <span>Live Feed</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+                            <span class="material-symbols-outlined text-xl">local_fire_department</span>
+                            <span>Streaks</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+                            <span class="material-symbols-outlined text-xl">flag</span>
+                            <span>Milestones</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+                            <span class="material-symbols-outlined text-xl">military_tech</span>
+                            <span>Hall of Fame</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+                            <span class="material-symbols-outlined text-xl">swords</span>
+                            <span>Battle Mode</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+                            <span class="material-symbols-outlined text-xl">compare_arrows</span>
+                            <span>Rivalry Tracker</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+                            <span class="material-symbols-outlined text-xl">trending_up</span>
+                            <span>Trends</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+                            <span class="material-symbols-outlined text-xl">history</span>
+                            <span>History</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+                            <span class="material-symbols-outlined text-xl">query_stats</span>
+                            <span>Stats</span>
+                        </a>
+                        <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+                            <span class="material-symbols-outlined text-xl">insights</span>
+                            <span>Insights</span>
+                        </a>
+                    </div>
+                </header>
+
+                <main class="flex-1 p-2 sm:p-4 flex flex-col gap-6">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-2xl font-bold text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">search</span>
+                            Search & Filter
+                        </h1>
+                        <div class="text-sm text-gray-400 font-mono">
+                            Searching across <span class="text-white">12,403</span> developers
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span class="text-primary font-mono text-lg">&gt;</span>
+                        </div>
+                        <input type="text"
+                               class="w-full bg-black border border-gray-700 rounded-lg py-4 pl-10 pr-32 text-white font-mono caret-primary focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none placeholder-gray-600 terminal-input"
+                               placeholder="lang:ts ships:>50 sort:rank"
+                               value="lang:ts ships:>50"
+                               autofocus>
+                        <div class="absolute inset-y-0 right-0 pr-4 flex items-center gap-2">
+                             <span class="text-xs text-gray-500 font-mono hidden sm:block">Press / to focus</span>
+                             <button class="bg-gray-800 hover:bg-gray-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors">Search</button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3 pb-4 border-b border-gray-800">
+                        <span class="text-sm text-gray-500 uppercase tracking-wider font-medium">Filters:</span>
+
+                        <div class="relative group">
+                            <button class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-700 bg-gray-900/50 text-sm text-gray-300 hover:border-primary hover:text-white transition-colors">
+                                <span>Language: TS</span>
+                                <span class="material-symbols-outlined text-base">close</span>
+                            </button>
+                        </div>
+
+                        <button class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-800 bg-gray-900/30 text-sm text-gray-400 hover:border-gray-600 hover:text-gray-200 transition-colors">
+                            <span>Timeframe: All</span>
+                            <span class="material-symbols-outlined text-base">expand_more</span>
+                        </button>
+
+                        <button class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-800 bg-gray-900/30 text-sm text-gray-400 hover:border-gray-600 hover:text-gray-200 transition-colors">
+                            <span>Rank: Top 100</span>
+                            <span class="material-symbols-outlined text-base">expand_more</span>
+                        </button>
+
+                        <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-dashed border-gray-700 text-sm text-gray-500 hover:border-gray-500 hover:text-gray-300 transition-colors">
+                            <span class="material-symbols-outlined text-base">add</span>
+                            <span>Add Filter</span>
+                        </button>
+                    </div>
+
+                    <div class="overflow-hidden rounded-lg border border-gray-800 bg-gray-900/20">
+                         <table class="min-w-full">
+                            <thead class="bg-gray-900/50 border-b border-gray-800">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Rank</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Developer</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Total Ships</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Last Active</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Relevance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-gray-800/50 transition-colors group">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-white">#42</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center gap-3">
+                                            <div class="h-8 w-8 rounded-full bg-gray-700 border border-gray-600 flex items-center justify-center text-xs font-bold text-gray-300">DX</div>
+                                            <span class="text-sm font-bold text-white group-hover:text-primary transition-colors">DevX_99</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-white">1,240</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">2h ago</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-mono">98%</td>
+                                </tr>
+                                <tr class="hover:bg-gray-800/50 transition-colors group">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-white">#108</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center gap-3">
+                                            <div class="h-8 w-8 rounded-full bg-gray-700 border border-gray-600 flex items-center justify-center text-xs font-bold text-gray-300">SJ</div>
+                                            <span class="text-sm font-bold text-white group-hover:text-primary transition-colors">SarahJ</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-white">892</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">5h ago</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-mono">95%</td>
+                                </tr>
+                                <tr class="hover:bg-gray-800/50 transition-colors group">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-white">#215</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center gap-3">
+                                            <div class="h-8 w-8 rounded-full bg-gray-700 border border-gray-600 flex items-center justify-center text-xs font-bold text-gray-300">M</div>
+                                            <span class="text-sm font-bold text-white group-hover:text-primary transition-colors">MikeCode</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-white">650</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">1d ago</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-mono">92%</td>
+                                </tr>
+                            </tbody>
+                         </table>
+                         <div class="flex items-center justify-between px-6 py-4 border-t border-gray-800 bg-gray-900/30">
+                            <span class="text-sm text-gray-500 font-mono">Showing 1-3 of 42 results</span>
+                            <div class="flex gap-2">
+                                <button class="p-1 rounded hover:bg-gray-800 text-gray-400 hover:text-white disabled:opacity-50">
+                                    <span class="material-symbols-outlined">chevron_left</span>
+                                </button>
+                                <button class="h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">1</button>
+                                <button class="h-8 w-8 rounded-full hover:bg-gray-800 text-gray-400 hover:text-white text-sm font-bold flex items-center justify-center">2</button>
+                                <button class="h-8 w-8 rounded-full hover:bg-gray-800 text-gray-400 hover:text-white text-sm font-bold flex items-center justify-center">3</button>
+                                <button class="p-1 rounded hover:bg-gray-800 text-gray-400 hover:text-white">
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </button>
+                            </div>
+                         </div>
+                    </div>
+                </main>
+
+                <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+                    <p>Built with Jules</p>
+                    <div class="flex items-center gap-4">
+                    <a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+                    <a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">GitHub</span>
+                    </a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

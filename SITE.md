@@ -57,6 +57,7 @@
 * [x] `explore.html` - Discover developers by language, framework, or project type
 * [x] `repos.html` - Top repositories by Jules activity
 * [x] `languages.html` - Leaderboard by programming language
+* [x] `search.html` - Advanced search and filtering interface
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -91,7 +92,6 @@
 **Social & Competition:**
 
 **Discovery & Exploration:**
-- [ ] `search.html` - Advanced search and filtering
 
 **User Experience:**
 - [ ] `settings.html` - User preferences and notifications
