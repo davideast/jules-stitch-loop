@@ -1,7 +1,7 @@
 ---
-page: bounties.html
+page: logs
 ---
-A terminal-styled board of open issues with XP rewards.
+A system log viewer page showing raw platform events in a terminal style.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,13 @@ A terminal-styled board of open issues with XP rewards.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "Bounty Board" title and total XP available.
-2. Filter bar (Languages, Difficulty, Reward).
-3. List of bounties (rows similar to leaderboard but with issue details).
-4. Detail modal or expansion for bounty description.
+1. Header with "System Logs" title and status indicators (e.g., "System Nominal").
+2. Filter controls (Log Level, Service, Search).
+3. A dense, monospaced table or list of log entries.
+4. Auto-scroll toggle.
 
 **Specific Elements:**
-- Bounty Row: [Status Icon] [Issue Title] [Repo] [Difficulty Badge] [XP Reward].
-- XP Reward: Highlighted in Green or Gold.
-- Status: Open, In Progress, Closed.
+- Log Row: [Timestamp] [Level Badge] [Service] [Message] [Trace ID].
+- Level Badges: INFO (Blue), WARN (Yellow), ERROR (Red), SUCCESS (Green).
+- Font: Entire log view should be monospaced.
+- Visuals: Blinking cursor or "live" indicator.
