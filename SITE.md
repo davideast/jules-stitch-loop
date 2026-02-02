@@ -67,6 +67,7 @@
 * [x] `roadmap.html` - Public roadmap of upcoming features
 * [x] `api.html` - API Documentation
 * [x] `cli.html` - Command Line Interface documentation
+* [x] `terminal.html` - Interactive terminal environment
 * [x] `embeds.html` - Embeddable widgets and badges for GitHub READMEs
 * [x] `map.html` - Real-time global command center map
 

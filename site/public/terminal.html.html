@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jules.top Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #0f1419;
+            color: #2dd4bf; /* Teal/Cyan as primary accent/text */
+            font-family: 'Roboto Mono', monospace;
+            overflow: hidden;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(45, 212, 191, 0.1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 10s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .terminal-text {
+            text-shadow: 0 0 2px #2dd4bf;
+        }
+        #output {
+            white-space: pre-wrap;
+        }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2dd4bf",
+              "background-dark": "#0f1419",
+            },
+            fontFamily: {
+              "mono": ["Roboto Mono", "monospace"]
+            },
+          },
+        },
+      }
+    </script>
+</head>
+<body class="h-screen w-screen flex flex-col p-4 md:p-8 relative">
+    <div class="scanline"></div>
+
+    <!-- Exit Button -->
+    <a href="/index.html" class="absolute top-4 right-4 border border-primary text-primary px-3 py-1 hover:bg-primary hover:text-black transition-colors z-20 text-sm uppercase tracking-wider">
+        Exit to GUI
+    </a>
+
+    <!-- Terminal Content -->
+    <div class="flex-1 overflow-y-auto scrollbar-hide" id="terminal-container" onclick="document.getElementById('cmd-input').focus()">
+        <div id="output" class="mb-2 text-sm md:text-base terminal-text"></div>
+
+        <div class="flex items-center text-sm md:text-base terminal-text">
+            <span class="mr-2">jules@top:~$</span>
+            <input type="text" id="cmd-input" class="bg-transparent border-none outline-none flex-1 text-primary caret-primary" autocomplete="off" autofocus>
+        </div>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        const input = document.getElementById('cmd-input');
+        const container = document.getElementById('terminal-container');
+
+        const asciiArt = `
+   JULES.TOP LEADERBOARD SYSTEM v1.0
+   ---------------------------------
+       __  __  __   _____  ____
+      / / / / / /  / ___/ / __/
+ __  / / / /_/ /  / /__  _\\ \\
+/ /_/ /  \\____/   \\___/ /___/
+\\____/
+
+   Type 'help' for available commands.
+`;
+
+        const commands = {
+            help: () => `Available commands:
+  help    - Show this help message
+  top     - Show leaderboard data
+  clear   - Clear the terminal screen
+  whoami  - Show current user session
+  status  - Show system status`,
+
+            top: () => `RANK | DEVELOPER       | SHIPS | LAST ACTIVE
+--------------------------------------------
+#1 🥇 | Jules           | 8,421 | 2 hours ago
+#2 🥈 | Alex            | 7,988 | 1 hour ago
+#3 🥉 | Sam             | 7,501 | 5 hours ago
+#4    | Casey           | 7,340 | 1 day ago
+#5    | Morgan          | 7,112 | 3 hours ago
+
+[Use GUI for full details]`,
+
+            whoami: () => `User: Guest
+Role: Observer
+Access: Read-only
+Session ID: ${Math.random().toString(36).substr(2, 9)}`,
+
+            status: () => `System Status: ONLINE
+Uptime: 99.99%
+Active Nodes: 1,337
+Latest Commit: 28 seconds ago
+Memory Usage: 12%`,
+
+            clear: () => {
+                output.innerText = '';
+                return null;
+            }
+        };
+
+        function print(text, isCommand = false) {
+            if (text === null) return;
+            const line = document.createElement('div');
+            if (isCommand) {
+                line.innerHTML = `<span class="opacity-75">jules@top:~$</span> ${text}`;
+            } else {
+                line.innerText = text;
+            }
+            output.appendChild(line);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // Initialize
+        print(asciiArt);
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = input.value.trim().toLowerCase();
+                print(input.value, true);
+                input.value = '';
+
+                if (cmd) {
+                    if (commands[cmd]) {
+                        print(commands[cmd]());
+                    } else {
+                        print(`Command not found: ${cmd}. Type 'help' for list.`);
+                    }
+                }
+            }
+        });
+
+        // Keep focus
+        document.addEventListener('click', () => input.focus());
+    </script>
+</body>
+</html>

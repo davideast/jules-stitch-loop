@@ -1,7 +1,7 @@
 ---
-page: terminal.html
+page: ticker.html
 ---
-An interactive, browser-based CLI terminal environment for querying leaderboard data.
+A real-time, financial-style scrolling ticker of code shipping activity.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,12 @@ An interactive, browser-based CLI terminal environment for querying leaderboard 
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Full-screen terminal interface (no standard header/footer).
-2. Command prompt: `jules@top:~$` with blinking cursor.
-3. Output area for command results.
-4. "Exit to GUI" button (floating or corner) to return to `index.html`.
+1. Large scrolling horizontal ticker tape at the top or center.
+2. Vertical list of recent "trades" (commits/ships).
+3. "Velocity" indicators (Green up arrows, Red down arrows).
+4. Market summary header (Total Ships, Active Devs).
 
 **Specific Elements:**
-- Input: functional text input that accepts commands.
-- Commands: `help` (list commands), `top` (show leaderboard), `clear` (clear screen), `whoami` (show user info), `status` (show system status).
-- Visuals: Retro terminal font (Green/Amber), slight scanline effect.
-- ASCII Art: Display "JULES.TOP" logo on load.
+- Ticker: Infinite scroll animation, symbols (e.g., "JS +2", "PY +1").
+- Trade Log: Monospaced list of latest events.
+- Charts: Sparklines for top languages.
