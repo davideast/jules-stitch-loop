@@ -1,7 +1,7 @@
 ---
-page: quiz.html
+page: interview.html.html
 ---
-A competitive, sudden-death technical quiz page for jules.top ("The 404 Quiz").
+A competitive mock interview practice arena with timer and scoring.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,13 @@ A competitive, sudden-death technical quiz page for jules.top ("The 404 Quiz").
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "The 404 Quiz" title and High Score.
-2. Quiz Arena: Central card with code question and multiple choice options.
-3. Live Stats: Current Streak, Time Remaining (countdown), Lives (Hearts/Skulls).
-4. Leaderboard: Top scores for the day.
+1. Header with title and current Interview Score.
+2. Interview Booth: A chat-like or card-based interface where "Interviewer" (AI) asks questions.
+3. Code/Answer Area: A text area or code editor for the user to type answers.
+4. Timer & Stress Meter: Visual indicators of pressure.
+5. Leaderboard: Top interview scores.
 
 **Specific Elements:**
-- "Sudden Death" mechanic: One wrong answer triggers a fake "404 Page Not Found" crash effect (screen glitch or overlay).
-- Timer bar that depletes rapidly (10-15s per question).
-- Syntax highlighted code blocks in questions.
-- "Respawn" button to try again after failure.
+- "Stress" mechanic: Visual noise or shaking as timer runs out.
+- "Hired/Rejected" stamp animation on completion.
+- Syntax highlighting for code questions.
