@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tech Radar | jules.top</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf",
+              "background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+        .radar-blip {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .radar-blip:hover {
+            r: 8;
+            stroke: white;
+            stroke-width: 2px;
+        }
+        .radar-ring {
+            fill: none;
+            stroke: #333;
+            stroke-width: 1;
+        }
+        .radar-axis {
+            stroke: #333;
+            stroke-width: 1;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+            <div class="layout-content-container flex w-full max-w-7xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>Repos</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Languages</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hackathon.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>Hackathons</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/map.html">
+<span class="material-symbols-outlined text-xl">public</span>
+<span>Live Map</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/ticker.html">
+<span class="material-symbols-outlined text-xl">show_chart</span>
+<span>Ticker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+<span class="material-symbols-outlined text-xl">compare_arrows</span>
+<span>Rivalry Tracker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/radar.html">
+<span class="material-symbols-outlined text-xl">radar</span>
+<span>Radar</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/roadmap.html">
+<span class="material-symbols-outlined text-xl">map</span>
+<span>Roadmap</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/cli.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>CLI</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/terminal.html">
+<span class="material-symbols-outlined text-xl">monitor</span>
+<span>Terminal</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/settings.html">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/notifications.html">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/embeds.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Embeds</span>
+</a>
+</div>
+</header>
+                <main class="flex-1 p-4 flex flex-col gap-8">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-3xl font-bold text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-4xl text-sparkline-color">radar</span>
+                            Tech Radar
+                        </h1>
+                        <p class="text-gray-400">Tracking trending technologies among top developers.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Radar Visualization -->
+                        <div class="lg:col-span-2 relative aspect-square bg-gray-900/30 rounded-xl border border-gray-800 p-4 flex items-center justify-center overflow-hidden">
+                            <svg viewBox="0 0 600 600" class="w-full h-full max-w-[600px] max-h-[600px]">
+                                <!-- Rings -->
+                                <circle cx="300" cy="300" r="280" class="radar-ring fill-gray-900/50"></circle> <!-- Hold -->
+                                <circle cx="300" cy="300" r="210" class="radar-ring fill-gray-900/50"></circle> <!-- Assess -->
+                                <circle cx="300" cy="300" r="140" class="radar-ring fill-gray-900/50"></circle> <!-- Trial -->
+                                <circle cx="300" cy="300" r="70" class="radar-ring fill-gray-900/50"></circle>  <!-- Adopt -->
+
+                                <!-- Axes -->
+                                <line x1="300" y1="20" x2="300" y2="580" class="radar-axis"></line>
+                                <line x1="20" y1="300" x2="580" y2="300" class="radar-axis"></line>
+
+                                <!-- Ring Labels -->
+                                <text x="305" y="65" class="fill-gray-500 text-xs font-mono uppercase">Hold</text>
+                                <text x="305" y="135" class="fill-gray-500 text-xs font-mono uppercase">Assess</text>
+                                <text x="305" y="205" class="fill-gray-500 text-xs font-mono uppercase">Trial</text>
+                                <text x="305" y="275" class="fill-sparkline-color text-xs font-mono uppercase font-bold">Adopt</text>
+
+                                <!-- Quadrant Labels -->
+                                <text x="50" y="50" class="fill-gray-400 text-lg font-bold uppercase">Tools</text>
+                                <text x="550" y="50" class="fill-gray-400 text-lg font-bold uppercase text-end">Languages</text>
+                                <text x="50" y="550" class="fill-gray-400 text-lg font-bold uppercase">Infrastructure</text>
+                                <text x="550" y="550" class="fill-gray-400 text-lg font-bold uppercase text-end">Frameworks</text>
+
+                                <!-- Blips (Sample Data) -->
+                                <!-- Languages (Top Right) -->
+                                <circle cx="360" cy="250" r="5" class="radar-blip fill-electric-yellow" data-id="rust"><title>Rust</title></circle>
+                                <circle cx="400" cy="200" r="5" class="radar-blip fill-electric-yellow" data-id="typescript"><title>TypeScript</title></circle>
+                                <circle cx="450" cy="150" r="5" class="radar-blip fill-electric-yellow" data-id="python"><title>Python</title></circle>
+
+                                <!-- Frameworks (Bottom Right) -->
+                                <circle cx="350" cy="350" r="5" class="radar-blip fill-sparkline-color" data-id="react"><title>React</title></circle>
+                                <circle cx="420" cy="400" r="5" class="radar-blip fill-sparkline-color" data-id="nextjs"><title>Next.js</title></circle>
+                                <circle cx="480" cy="480" r="5" class="radar-blip fill-sparkline-color" data-id="bun"><title>Bun</title></circle>
+
+                                <!-- Infrastructure (Bottom Left) -->
+                                <circle cx="250" cy="350" r="5" class="radar-blip fill-blue-500" data-id="docker"><title>Docker</title></circle>
+                                <circle cx="200" cy="420" r="5" class="radar-blip fill-blue-500" data-id="kubernetes"><title>Kubernetes</title></circle>
+
+                                <!-- Tools (Top Left) -->
+                                <circle cx="250" cy="250" r="5" class="radar-blip fill-purple-500" data-id="vscode"><title>VS Code</title></circle>
+                                <circle cx="180" cy="200" r="5" class="radar-blip fill-purple-500" data-id="git"><title>Git</title></circle>
+                            </svg>
+                        </div>
+
+                        <!-- Sidebar List -->
+                        <div class="bg-gray-900/30 rounded-xl border border-gray-800 p-6 flex flex-col gap-6">
+                            <div>
+                                <h3 class="text-electric-yellow font-bold uppercase mb-3 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-electric-yellow"></span> Languages
+                                </h3>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('rust')"><span>Rust</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">ADOPT</span></li>
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('typescript')"><span>TypeScript</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">ADOPT</span></li>
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('go')"><span>Go</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">TRIAL</span></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-sparkline-color font-bold uppercase mb-3 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-sparkline-color"></span> Frameworks
+                                </h3>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('react')"><span>React</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">ADOPT</span></li>
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('svelte')"><span>Svelte</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">TRIAL</span></li>
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('bun')"><span>Bun</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">ASSESS</span></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-blue-500 font-bold uppercase mb-3 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-blue-500"></span> Infrastructure
+                                </h3>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('docker')"><span>Docker</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">ADOPT</span></li>
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('supabase')"><span>Supabase</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">TRIAL</span></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-purple-500 font-bold uppercase mb-3 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-purple-500"></span> Tools
+                                </h3>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('vscode')"><span>VS Code</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">ADOPT</span></li>
+                                    <li class="flex justify-between hover:text-white cursor-pointer transition-colors" onclick="showDetail('git')"><span>Git</span> <span class="text-xs text-gray-500 border border-gray-700 px-1 rounded">ADOPT</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+                    <p>Built with Jules</p>
+                    <div class="flex items-center gap-4">
+                        <a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">GitHub</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="detail-modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 backdrop-blur-sm" onclick="if(event.target === this) closeDetail()">
+    <div class="bg-gray-900 border border-gray-700 rounded-xl p-6 max-w-md w-full m-4 shadow-2xl relative">
+        <button onclick="closeDetail()" class="absolute top-4 right-4 text-gray-400 hover:text-white material-symbols-outlined">close</button>
+        <div class="flex items-center gap-4 mb-6">
+            <div id="modal-icon" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-2xl">🚀</div>
+            <div>
+                <h2 id="modal-title" class="text-2xl font-bold text-white">Technology Name</h2>
+                <span id="modal-status" class="px-2 py-0.5 rounded text-xs font-mono uppercase border border-gray-600 text-gray-400">Status</span>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div>
+                <h3 class="text-sm font-bold text-gray-500 uppercase mb-2">Usage Stats</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-800">
+                        <div class="text-xs text-gray-400 mb-1">Total Ships</div>
+                        <div id="modal-ships" class="text-xl font-mono text-sparkline-color">0</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-800">
+                        <div class="text-xs text-gray-400 mb-1">Users</div>
+                        <div id="modal-users" class="text-xl font-mono text-white">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-bold text-gray-500 uppercase mb-2">Top Shippers</h3>
+                <div class="flex -space-x-2 overflow-hidden">
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-gray-900 bg-gray-800" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jules" alt=""/>
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-gray-900 bg-gray-800" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt=""/>
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-gray-900 bg-gray-800" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sam" alt=""/>
+                    <div class="h-8 w-8 rounded-full ring-2 ring-gray-900 bg-gray-800 flex items-center justify-center text-xs text-gray-400">+5</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-gray-800 flex justify-end">
+            <button onclick="closeDetail()" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded text-sm text-white transition-colors">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const data = {
+    rust: { name: "Rust", status: "Adopt", ships: "1,245", users: "89", color: "text-electric-yellow" },
+    typescript: { name: "TypeScript", status: "Adopt", ships: "3,421", users: "210", color: "text-electric-yellow" },
+    python: { name: "Python", status: "Adopt", ships: "2,100", users: "150", color: "text-electric-yellow" },
+    go: { name: "Go", status: "Trial", ships: "950", users: "60", color: "text-electric-yellow" },
+    react: { name: "React", status: "Adopt", ships: "4,500", users: "300", color: "text-sparkline-color" },
+    nextjs: { name: "Next.js", status: "Adopt", ships: "3,200", users: "250", color: "text-sparkline-color" },
+    bun: { name: "Bun", status: "Assess", ships: "850", users: "45", color: "text-sparkline-color" },
+    svelte: { name: "Svelte", status: "Trial", ships: "600", users: "30", color: "text-sparkline-color" },
+    docker: { name: "Docker", status: "Adopt", ships: "2,800", users: "180", color: "text-blue-500" },
+    kubernetes: { name: "Kubernetes", status: "Trial", ships: "1,100", users: "90", color: "text-blue-500" },
+    supabase: { name: "Supabase", status: "Trial", ships: "500", users: "20", color: "text-blue-500" },
+    vscode: { name: "VS Code", status: "Adopt", ships: "5,000+", users: "400", color: "text-purple-500" },
+    git: { name: "Git", status: "Adopt", ships: "10,000+", users: "800", color: "text-purple-500" }
+};
+
+function showDetail(id) {
+    const item = data[id] || { name: id, status: "Unknown", ships: "-", users: "-" };
+    document.getElementById('modal-title').textContent = item.name;
+    document.getElementById('modal-status').textContent = item.status;
+    document.getElementById('modal-ships').textContent = item.ships;
+    document.getElementById('modal-users').textContent = item.users;
+
+    const modal = document.getElementById('detail-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+}
+
+function closeDetail() {
+    const modal = document.getElementById('detail-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
+
+// Attach listeners to SVG circles
+document.querySelectorAll('.radar-blip').forEach(blip => {
+    blip.addEventListener('click', () => {
+        showDetail(blip.getAttribute('data-id'));
+    });
+});
+</script>
+
+</body>
+</html>

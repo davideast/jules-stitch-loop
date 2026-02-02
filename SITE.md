@@ -71,6 +71,7 @@
 * [x] `terminal.html` - Interactive terminal environment
 * [x] `embeds.html` - Embeddable widgets and badges for GitHub READMEs
 * [x] `map.html` - Real-time global command center map
+* [x] `radar.html` - Tech Radar visualization showing trending technologies.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
