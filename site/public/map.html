@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Global Shipping Map | jules.top</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf",
+              "background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+              "map-bg": "#0f1419",
+              "map-blip": "#2dd4bf",
+              "map-pr": "#8b5cf6",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            animation: {
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white overflow-hidden h-screen flex flex-col">
+    <!-- Header -->
+    <header class="flex-none flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6 z-50 bg-background-dark">
+        <div class="flex items-center gap-4">
+            <div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+            <div class="h-6 w-px bg-gray-800"></div>
+            <div class="text-sm font-bold text-gray-400 uppercase tracking-widest">Live Map</div>
+        </div>
+        <div class="flex w-full items-center gap-4 sm:w-auto overflow-x-auto scrollbar-hide">
+             <!-- Navigation Links (Copied and adapted from index.html) -->
+            <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/index.html">
+                <span class="material-symbols-outlined text-xl">leaderboard</span>
+                <span>Leaderboard</span>
+            </a>
+            <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-primary/50 bg-primary/10 px-4 py-2 text-sm text-primary hover:bg-primary/20" href="/map.html">
+                <span class="material-symbols-outlined text-xl">public</span>
+                <span>Live Map</span>
+            </a>
+            <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+                <span class="relative flex h-2 w-2">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+                </span>
+                <span>Live Feed</span>
+            </a>
+             <!-- Simplified Nav for space -->
+             <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+                <span class="material-symbols-outlined text-xl">search</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex overflow-hidden relative">
+
+        <!-- Stats Overlay -->
+        <div class="absolute top-6 left-6 z-20 flex flex-col gap-2">
+            <div class="bg-gray-900/80 backdrop-blur border border-gray-700 rounded-lg p-4 shadow-xl">
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Live Shippers</div>
+                <div class="text-3xl font-mono font-bold text-white">421</div>
+            </div>
+             <div class="bg-gray-900/80 backdrop-blur border border-gray-700 rounded-lg p-4 shadow-xl">
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Commits/Min</div>
+                <div class="text-3xl font-mono font-bold text-sparkline-color">85</div>
+            </div>
+        </div>
+
+        <!-- Map View -->
+        <div class="flex-1 bg-map-bg relative overflow-hidden flex items-center justify-center">
+            <!-- Grid Background -->
+            <div class="absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(#4b5563 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+            <!-- World Map SVG Placeholder -->
+            <svg viewBox="0 0 1000 500" class="w-full h-full opacity-30 stroke-gray-600 fill-none stroke-1">
+                 <!-- Rough approximation of continents for visual context -->
+                 <path d="M 150,150 Q 200,100 250,150 T 350,150 T 400,200 T 300,300 T 200,350 T 150,250 Z" /> <!-- Americas-ish -->
+                 <path d="M 450,100 Q 550,50 650,100 T 750,150 T 700,250 T 600,300 T 500,250 Z" /> <!-- Eurasia-ish -->
+                 <path d="M 500,300 Q 550,350 600,300 T 650,350 T 600,450 T 500,400 Z" /> <!-- Africa-ish -->
+                 <path d="M 750,300 Q 800,300 850,350 T 800,450 T 750,400 Z" /> <!-- Australia-ish -->
+            </svg>
+
+            <!-- Live Blips -->
+            <!-- Blip 1: US West -->
+            <div class="absolute top-[30%] left-[20%]">
+                 <span class="absolute inline-flex h-4 w-4 animate-ping rounded-full bg-map-blip opacity-75"></span>
+                 <span class="relative inline-flex h-4 w-4 rounded-full bg-map-blip"></span>
+            </div>
+             <!-- Blip 2: Europe -->
+             <div class="absolute top-[25%] left-[52%]">
+                 <span class="absolute inline-flex h-6 w-6 animate-ping rounded-full bg-map-pr opacity-75"></span>
+                 <span class="relative inline-flex h-6 w-6 rounded-full bg-map-pr"></span>
+            </div>
+             <!-- Blip 3: Japan -->
+             <div class="absolute top-[32%] left-[85%]">
+                 <span class="absolute inline-flex h-3 w-3 animate-ping rounded-full bg-map-blip opacity-75"></span>
+                 <span class="relative inline-flex h-3 w-3 rounded-full bg-map-blip"></span>
+            </div>
+
+            <!-- Footer: Active Regions (Overlay at bottom) -->
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-background-dark to-transparent p-6 z-10">
+                 <div class="max-w-4xl mx-auto flex gap-8 overflow-x-auto pb-2">
+                    <div class="flex flex-col">
+                        <span class="text-xs text-gray-500 uppercase">Top Region</span>
+                        <span class="text-lg font-bold text-white">San Francisco</span>
+                        <span class="text-xs font-mono text-primary">+124 ships</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-gray-500 uppercase">Runner Up</span>
+                        <span class="text-lg font-bold text-white">London</span>
+                        <span class="text-xs font-mono text-primary">+98 ships</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-gray-500 uppercase">Rising</span>
+                        <span class="text-lg font-bold text-white">Tokyo</span>
+                        <span class="text-xs font-mono text-primary">+67 ships</span>
+                    </div>
+                     <div class="flex flex-col">
+                        <span class="text-xs text-gray-500 uppercase">Active</span>
+                        <span class="text-lg font-bold text-white">Berlin</span>
+                        <span class="text-xs font-mono text-primary">+55 ships</span>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Sidebar: Incoming Signals -->
+        <div class="w-80 bg-gray-900/50 border-l border-gray-800 flex flex-col backdrop-blur-sm z-30">
+            <div class="p-4 border-b border-gray-800">
+                <h3 class="text-sm font-bold text-gray-300 uppercase tracking-widest flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm animate-pulse text-primary">wifi</span>
+                    Incoming Signals
+                </h3>
+            </div>
+            <div class="flex-1 overflow-y-auto p-4 space-y-4 font-mono text-xs">
+                <div class="text-gray-400">
+                    <span class="text-primary">></span> user <span class="text-white">davideast</span> shipped to <span class="text-gray-300">firebase/tools</span>
+                    <div class="text-gray-600 mt-1">2s ago • 12kb changed</div>
+                </div>
+                <div class="text-gray-400">
+                    <span class="text-map-pr">></span> user <span class="text-white">jules</span> opened PR on <span class="text-gray-300">google/stitch</span>
+                    <div class="text-gray-600 mt-1">5s ago • Feature: Map</div>
+                </div>
+                 <div class="text-gray-400">
+                    <span class="text-primary">></span> user <span class="text-white">sara</span> shipped to <span class="text-gray-300">vercel/next.js</span>
+                    <div class="text-gray-600 mt-1">12s ago • 4 files</div>
+                </div>
+                 <div class="text-gray-400">
+                    <span class="text-primary">></span> user <span class="text-white">alex</span> shipped to <span class="text-gray-300">facebook/react</span>
+                    <div class="text-gray-600 mt-1">24s ago • 2kb changed</div>
+                </div>
+                 <div class="text-gray-400">
+                    <span class="text-primary">></span> user <span class="text-white">chen</span> shipped to <span class="text-gray-300">vuejs/core</span>
+                    <div class="text-gray-600 mt-1">32s ago • Hotfix</div>
+                </div>
+                 <div class="text-gray-400">
+                    <span class="text-map-pr">></span> user <span class="text-white">max</span> merged PR on <span class="text-gray-300">denoland/deno</span>
+                    <div class="text-gray-600 mt-1">45s ago • v1.40</div>
+                </div>
+                 <div class="text-gray-400">
+                    <span class="text-primary">></span> user <span class="text-white">lisa</span> shipped to <span class="text-gray-300">microsoft/vscode</span>
+                    <div class="text-gray-600 mt-1">1m ago • 5 files</div>
+                </div>
+                 <div class="text-gray-400">
+                    <span class="text-primary">></span> user <span class="text-white">tom</span> shipped to <span class="text-gray-300">flutter/flutter</span>
+                    <div class="text-gray-600 mt-1">1m ago • UI update</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
