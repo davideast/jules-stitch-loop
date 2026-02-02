@@ -1,7 +1,10 @@
 ---
-page: signal.html.html
+page: orbit.html.html
 ---
-A high-fidelity dashboard analyzing the 'Signal-to-Noise Ratio' of developer contributions. It uses AI to filter out dependency bumps, typos, and formatting changes, highlighting only the most impactful architectural shifts and complex logic implementations.
+A solar system visualization where the central project is a glowing star, and developers are planets orbiting it.
+- **Distance from center:** Represents 'Recency' (closer = more recent activity).
+- **Planet Size:** Represents 'Total Impact/Commits' (larger = more ships).
+- **Orbit Speed:** Represents 'Current Velocity/Streak'.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +25,13 @@ A high-fidelity dashboard analyzing the 'Signal-to-Noise Ratio' of developer con
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Signal // Noise Analysis".
-2. "The Spectrum": A large real-time oscilloscope visualization showing code velocity vs impact.
-3. "High Signal Commits": List of recent high-impact changes (refactors, core logic).
-4. "Noise Floor": Stats on filtered low-impact activity (whitespace, deps).
-5. "Filter Array": Toggle switches for different languages or file types.
+1. Header: "Project Orbit // Gravity Well".
+2. Main View: Interactive 2D/3D solar system canvas.
+3. Sidebar/Overlay: Selected planet (developer) details.
+4. "Gravity Stats": List of top gravitational pulls (most influential devs).
 
 **Specific Elements:**
-- Animated sine waves/frequencies.
-- Neon green for Signal, dim gray/static for Noise.
-- "Gain" knobs or sliders.
-- Spectral density heatmaps.
+- Central glowing sun (The Monorepo).
+- Orbits drawn as faint rings.
+- Planets as user avatars clipped in circles.
+- Hover effects showing trajectory lines.

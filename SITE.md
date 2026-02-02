@@ -82,6 +82,7 @@
 * [x] quality.html.html - Code quality dashboard and technical debt metrics.
 * [x] matrix.html.html - Network graph of connections between developers and repos.
 * [x] predictions.html.html - AI-powered predictive analytics page forecasting future leaderboard rankings and shipping velocity.
+* [x] signal.html.html.html - A high-fidelity dashboard analyzing the 'Signal-to-Noise Ratio' of developer contributions.
 * [x] broadcast.html.html - "TV Mode" dashboard page designed for large screens/projectors.
 * [x] spotlight.html.html - Daily Spotlight page featuring a single developer and their recent achievements.
 * [x] events.html.html - Central calendar for hackathons, challenges, and community events.
