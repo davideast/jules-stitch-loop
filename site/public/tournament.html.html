@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Talent Scout Dashboard</title>
+<title>Developer Leaderboard Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -310,150 +310,273 @@
 
 </div>
 </header>
-
 <main class="flex-1 p-2 sm:p-4">
-    <div class="layout-content-container flex flex-col w-full max-w-5xl mx-auto gap-6">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="mb-12 text-center">
+        <h1 class="text-4xl font-bold text-white mb-2 tracking-tight">Code Colosseum</h1>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            <span class="text-xs font-mono font-bold uppercase tracking-wider">Quarter-Finals Live</span>
+        </div>
+    </div>
 
-        <!-- Header & Search -->
-        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-gray-800 pb-4">
-            <h1 class="text-2xl font-bold text-white flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary">visibility</span>
-                Talent Scout
-            </h1>
-            <div class="flex gap-2">
-                <button class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-opacity-90 transition-colors">
-                    Draft Selected
+    <!-- Bracket Visualization -->
+    <div class="mb-16 overflow-x-auto">
+        <div class="min-w-[1000px] flex justify-between items-center relative pl-8">
+             <!-- Quarter Finals (8 Participants, 4 Matches) -->
+            <div class="flex flex-col gap-8 w-64">
+                <!-- Match 1 -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 relative">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                             <span class="text-sm font-bold text-white">Jules</span>
+                        </div>
+                        <span class="font-mono text-sm text-primary">8,421</span>
+                    </div>
+                    <div class="flex items-center justify-between opacity-50">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx");'></div>
+                             <span class="text-sm font-bold text-white">Riley</span>
+                        </div>
+                        <span class="font-mono text-sm text-gray-400">6,521</span>
+                    </div>
+                    <div class="absolute right-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                    <div class="absolute right-[-32px] top-1/2 h-[calc(50%+16px)] w-[1px] bg-gray-800 translate-y-full origin-top"></div>
+                </div>
+                 <!-- Match 2 -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 relative">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
+                             <span class="text-sm font-bold text-white">Casey</span>
+                        </div>
+                        <span class="font-mono text-sm text-primary">7,340</span>
+                    </div>
+                    <div class="flex items-center justify-between opacity-50">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
+                             <span class="text-sm font-bold text-white">Morgan</span>
+                        </div>
+                        <span class="font-mono text-sm text-gray-400">7,112</span>
+                    </div>
+                     <div class="absolute right-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                     <div class="absolute right-[-32px] top-1/2 h-[calc(50%+16px)] w-[1px] bg-gray-800 -translate-y-full origin-bottom"></div>
+                </div>
+
+                 <!-- Match 3 -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 relative">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+                             <span class="text-sm font-bold text-white">Alex</span>
+                        </div>
+                        <span class="font-mono text-sm text-primary">7,988</span>
+                    </div>
+                    <div class="flex items-center justify-between opacity-50">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKy3L63_SFQFXY2VEwz92Lpm1OUR8q_4SIFCYVKFhavURQWsJpyFu_XGHQ0vFkkpnYE-sRYpLEznmwa_d9wdV94GZah0DHiWEefoQb_yS08zqupatW5ra2iECsr62WBiOZxwq-EwP8VSI7tK56qK9uAL8WFk7lriL40UwLaHcxPL0Is0MBVKd7KMGRyHXQs_RDox5iaEm6At93Ltj_E3dKtl0Bb8XS7-bZ6ZxgwQTlLDlXcMLJoA9o39btCfTtGIiRrXXJxnXj6BZQ");'></div>
+                             <span class="text-sm font-bold text-white">Jordan</span>
+                        </div>
+                        <span class="font-mono text-sm text-gray-400">6,873</span>
+                    </div>
+                    <div class="absolute right-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                     <div class="absolute right-[-32px] top-1/2 h-[calc(50%+16px)] w-[1px] bg-gray-800 translate-y-full origin-top"></div>
+                </div>
+
+                 <!-- Match 4 -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 relative">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+                             <span class="text-sm font-bold text-white">Sam</span>
+                        </div>
+                        <span class="font-mono text-sm text-primary">7,501</span>
+                    </div>
+                    <div class="flex items-center justify-between opacity-50">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKd7TptbKFyq0tCAUFBIB1Z2bMaz02XGEt18pnEHsIDyx3asdQrfvtEm7JzTpMX6X9FCRTOi7a_StNVtBoVM9y2bDtUGXkdmoPxbNrk9MqvbledUMc4teDJGFP92rkKR0vRbQZI0_6qZiCYH99hMw50SNOWAqx1pudz1ULdiPLxAKBCyj-EU843TFqSJg9ztaoNDhrIeF89-rhSay7vwQM0FKXZ8FFVnUzOEY8tX1JCjjj-9T0TTSKnLasYNfMYJFJobkT9B1Kr8op");'></div>
+                             <span class="text-sm font-bold text-white">Taylor</span>
+                        </div>
+                        <span class="font-mono text-sm text-gray-400">6,950</span>
+                    </div>
+                     <div class="absolute right-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                     <div class="absolute right-[-32px] top-1/2 h-[calc(50%+16px)] w-[1px] bg-gray-800 -translate-y-full origin-bottom"></div>
+                </div>
+            </div>
+
+            <!-- Semi Finals (4 Participants) -->
+             <div class="flex flex-col gap-24 w-64">
+                <!-- Semi 1 -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 relative">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                             <span class="text-sm font-bold text-white">Jules</span>
+                        </div>
+                         <span class="font-mono text-sm text-gray-400">-</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                         <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
+                             <span class="text-sm font-bold text-white">Casey</span>
+                        </div>
+                         <span class="font-mono text-sm text-gray-400">-</span>
+                    </div>
+                    <div class="absolute left-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                    <div class="absolute right-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                </div>
+                 <!-- Semi 2 -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 relative">
+                     <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+                             <span class="text-sm font-bold text-white">Alex</span>
+                        </div>
+                         <span class="font-mono text-sm text-gray-400">-</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                         <div class="flex items-center gap-2">
+                             <div class="h-6 w-6 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+                             <span class="text-sm font-bold text-white">Sam</span>
+                        </div>
+                         <span class="font-mono text-sm text-gray-400">-</span>
+                    </div>
+                     <div class="absolute left-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                     <div class="absolute right-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                </div>
+            </div>
+
+             <!-- Finals -->
+             <div class="flex flex-col gap-8 w-64">
+                 <div class="bg-gray-900 border border-primary/50 shadow-[0_0_15px_rgba(45,212,191,0.1)] rounded-lg p-6 relative">
+                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 px-2 text-xs font-bold text-primary uppercase tracking-widest">Grand Final</div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                             <div class="h-8 w-8 rounded-full bg-gray-700"></div>
+                             <span class="text-base font-bold text-white">TBD</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                         <div class="flex items-center gap-2">
+                             <div class="h-8 w-8 rounded-full bg-gray-700"></div>
+                             <span class="text-base font-bold text-white">TBD</span>
+                        </div>
+                    </div>
+                    <div class="absolute left-[-32px] top-1/2 w-8 h-[1px] bg-gray-800"></div>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <!-- Live Matchup & Betting -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Live Matchup -->
+        <div class="lg:col-span-2 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">swords</span>
+                Featured Matchup
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                 <!-- Player 1 -->
+                 <div class="flex flex-col items-center text-center">
+                      <div class="w-24 h-24 rounded-full bg-gray-800 mb-4 border-2 border-primary/50 relative">
+                           <div class="w-full h-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                      </div>
+                      <h3 class="text-2xl font-bold text-white">Jules</h3>
+                      <p class="text-primary font-mono text-lg mt-1">Rank #1</p>
+                      <div class="mt-4 space-y-2 text-sm text-gray-400">
+                          <p>Total Ships: <span class="text-white font-mono">8,421</span></p>
+                          <p>Win Rate: <span class="text-white font-mono">92%</span></p>
+                      </div>
+                 </div>
+
+                 <!-- VS -->
+                 <div class="flex flex-col items-center">
+                     <div class="text-4xl font-black text-gray-700 italic">VS</div>
+                     <div class="mt-2 px-3 py-1 rounded bg-red-500/10 text-red-500 text-xs font-bold uppercase tracking-wider">Live Now</div>
+                 </div>
+
+                 <!-- Player 2 -->
+                 <div class="flex flex-col items-center text-center">
+                      <div class="w-24 h-24 rounded-full bg-gray-800 mb-4 border-2 border-gray-700 relative">
+                           <div class="w-full h-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx");'></div>
+                      </div>
+                      <h3 class="text-2xl font-bold text-white">Riley</h3>
+                      <p class="text-gray-400 font-mono text-lg mt-1">Rank #8</p>
+                      <div class="mt-4 space-y-2 text-sm text-gray-400">
+                          <p>Total Ships: <span class="text-white font-mono">6,521</span></p>
+                          <p>Win Rate: <span class="text-white font-mono">78%</span></p>
+                      </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Betting Station -->
+        <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
+             <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">token</span>
+                Prediction Market
+            </h2>
+            <div class="space-y-6">
+                <div>
+                    <div class="flex justify-between text-sm mb-2">
+                        <span class="text-white">Jules wins</span>
+                        <span class="text-primary font-mono">1.4x</span>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 71%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>71% confidence</span>
+                        <span>$14,203 pool</span>
+                    </div>
+                </div>
+
+                 <div>
+                    <div class="flex justify-between text-sm mb-2">
+                        <span class="text-white">Riley wins</span>
+                        <span class="text-orange-500 font-mono">3.2x</span>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-orange-500 h-2 rounded-full" style="width: 29%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>29% confidence</span>
+                        <span>$5,800 pool</span>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-gray-800">
+                    <p class="text-xs text-gray-400 mb-4 text-center">Next Round Starts In:</p>
+                    <div class="flex justify-center gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-mono text-white bg-gray-800 rounded px-2 py-1">00</div>
+                            <div class="text-[10px] text-gray-500 mt-1 uppercase">Hours</div>
+                        </div>
+                         <div class="text-center">
+                            <div class="text-2xl font-mono text-white bg-gray-800 rounded px-2 py-1">45</div>
+                            <div class="text-[10px] text-gray-500 mt-1 uppercase">Mins</div>
+                        </div>
+                         <div class="text-center">
+                            <div class="text-2xl font-mono text-white bg-gray-800 rounded px-2 py-1">12</div>
+                            <div class="text-[10px] text-gray-500 mt-1 uppercase">Secs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="w-full py-3 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 rounded-lg font-bold transition-colors">
+                    Place Prediction
                 </button>
             </div>
         </div>
-
-        <!-- Filters -->
-        <div class="flex flex-wrap gap-2">
-            <button class="px-3 py-1.5 text-xs font-medium text-white bg-gray-800 border border-gray-700 rounded-full hover:border-primary transition-colors">High Velocity/Low Rank</button>
-            <button class="px-3 py-1.5 text-xs font-medium text-gray-400 bg-transparent border border-gray-800 rounded-full hover:text-white hover:border-gray-600 transition-colors">Sleeping Giants</button>
-            <button class="px-3 py-1.5 text-xs font-medium text-gray-400 bg-transparent border border-gray-800 rounded-full hover:text-white hover:border-gray-600 transition-colors">Night Owls</button>
-            <button class="px-3 py-1.5 text-xs font-medium text-gray-400 bg-transparent border border-gray-800 rounded-full hover:text-white hover:border-gray-600 transition-colors">Consistency Kings</button>
-        </div>
-
-        <!-- Scatter Plot Placeholder -->
-        <div class="w-full h-64 bg-gray-900/50 border border-gray-800 rounded-lg flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 flex items-center justify-center opacity-10">
-                <span class="material-symbols-outlined text-9xl">scatter_plot</span>
-            </div>
-            <div class="z-10 text-center">
-                <h3 class="text-lg font-medium text-white">Velocity vs. Rank Analysis</h3>
-                <p class="text-sm text-gray-500">Spotting outliers with high output but low visibility.</p>
-            </div>
-            <!-- Simulated data points -->
-            <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-            <div class="absolute top-1/2 left-1/3 w-2 h-2 bg-gray-600 rounded-full"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-4 h-4 bg-white rounded-full border-2 border-primary"></div>
-        </div>
-
-        <!-- Scout List Table -->
-        <div class="overflow-hidden border border-gray-800 rounded-lg bg-gray-900/20">
-            <div class="overflow-x-auto">
-                <table class="min-w-full">
-                    <thead class="border-b border-gray-800 bg-gray-900/50">
-                        <tr>
-                            <th class="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Rank</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Developer</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Total Ships</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Signal</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Growth</th>
-                            <th class="px-6 py-4 text-right text-xs font-medium uppercase tracking-wider text-gray-500">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-800">
-                        <!-- Row 1 -->
-                        <tr class="hover:bg-gray-800/50 transition-colors group">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 font-mono">#42</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                        <span class="text-xs font-bold text-white">JD</span>
-                                    </div>
-                                    <span class="text-sm font-bold text-white">J. Doe</span>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-white font-mono">1,240</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-end gap-0.5 h-4">
-                                    <div class="w-1 h-2 bg-primary"></div>
-                                    <div class="w-1 h-3 bg-primary"></div>
-                                    <div class="w-1 h-4 bg-primary"></div>
-                                    <div class="w-1 h-2 bg-gray-700"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-400 font-mono">+12%</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
-                                    Undervalued
-                                </span>
-                            </td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr class="hover:bg-gray-800/50 transition-colors group">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 font-mono">#88</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                        <span class="text-xs font-bold text-white">AK</span>
-                                    </div>
-                                    <span class="text-sm font-bold text-white">A. Key</span>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-white font-mono">980</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-end gap-0.5 h-4">
-                                    <div class="w-1 h-2 bg-primary"></div>
-                                    <div class="w-1 h-3 bg-primary"></div>
-                                    <div class="w-1 h-4 bg-gray-700"></div>
-                                    <div class="w-1 h-2 bg-gray-700"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-400 font-mono">+45%</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                                    Rising Star
-                                </span>
-                            </td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr class="hover:bg-gray-800/50 transition-colors group">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 font-mono">#102</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                        <span class="text-xs font-bold text-white">M0</span>
-                                    </div>
-                                    <span class="text-sm font-bold text-white">M. Zero</span>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-white font-mono">850</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-end gap-0.5 h-4">
-                                    <div class="w-1 h-2 bg-primary"></div>
-                                    <div class="w-1 h-3 bg-primary"></div>
-                                    <div class="w-1 h-4 bg-primary"></div>
-                                    <div class="w-1 h-3 bg-primary"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-400 font-mono">+8%</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
-                                    Consistency
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </div>
+</div>
 </main>
-
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">

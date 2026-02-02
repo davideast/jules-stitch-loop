@@ -106,6 +106,7 @@
 - [x] `scout.html.html` - Talent Scout dashboard for finding undervalued developers.
 - [x] `draft.html.html` - Fantasy Developer League Draft interface.
 - [x] `pass.html.html` - Season Pass progression system.
+- [x] `tournament.html.html` - Code Colosseum bracket-style tournament viewer.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
