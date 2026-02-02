@@ -12,7 +12,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#238636",
+              "primary": "#2dd4bf",
               "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
@@ -253,164 +253,262 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="overflow-hidden">
-<div class="overflow-x-auto">
-<table class="min-w-full">
-<thead class="border-b border-gray-800">
-<tr>
-<th class="w-24 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Rank</th>
-<th class="min-w-[200px] px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Developer</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Total Ships</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Streak</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Last Active</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Ship Graph</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border-b border-gray-800 bg-electric-yellow/10 text-electric-yellow hover:bg-electric-yellow/20">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold">#1 🥇</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center border-2 border-electric-yellow" data-alt="Profile picture of developer Jules" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
-</div>
-<a href="/profile.html" class="text-sm font-bold">Jules</a>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-primary">8,421</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 28</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 20 L10 18 L18 22 L26 15 L34 18 L42 25 L50 22 L58 16 L66 12 L74 18 L82 15 L90 10 L98 14 L106 20"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#2 🥈</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
-</div>
-<div class="text-sm font-bold text-white">Alex</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,988</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 14</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 hour ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 15 L10 18 L18 16 L26 20 L34 22 L42 18 L50 25 L58 20 L66 18 L74 15 L82 19 L90 23 L98 20 L106 18"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#3 🥉</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Sam" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Sam</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,501</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 12</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">5 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 25 L10 22 L18 20 L26 24 L34 20 L42 18 L50 15 L58 12 L66 18 L74 22 L82 20 L90 18 L98 15 L106 12"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#4</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Casey" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
-</div>
-<div class="text-sm font-bold text-white">Casey</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,340</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 5</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#5</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Morgan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
-</div>
-<div class="text-sm font-bold text-white">Morgan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,112</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 21</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">3 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#6</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Taylor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKd7TptbKFyq0tCAUFBIB1Z2bMaz02XGEt18pnEHsIDyx3asdQrfvtEm7JzTpMX6X9FCRTOi7a_StNVtBoVM9y2bDtUGXkdmoPxbNrk9MqvbledUMc4teDJGFP92rkKR0vRbQZI0_6qZiCYH99hMw50SNOWAqx1pudz1ULdiPLxAKBCyj-EU843TFqSJg9ztaoNDhrIeF89-rhSay7vwQM0FKXZ8FFVnUzOEY8tX1JCjjj-9T0TTSKnLasYNfMYJFJobkT9B1Kr8op");'></div>
-</div>
-<div class="text-sm font-bold text-white">Taylor</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,950</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 3</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">8 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#7</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Jordan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKy3L63_SFQFXY2VEwz92Lpm1OUR8q_4SIFCYVKFhavURQWsJpyFu_XGHQ0vFkkpnYE-sRYpLEznmwa_d9wdV94GZah0DHiWEefoQb_yS08zqupatW5ra2iECsr62WBiOZxwq-EwP8VSI7tK56qK9uAL8WFk7lriL40UwLaHcxPL0Is0MBVKd7KMGRyHXQs_RDox5iaEm6At93Ltj_E3dKtl0Bb8XS7-bZ6ZxgwQTlLDlXcMLJoA9o39btCfTtGIiRrXXJxnXj6BZQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Jordan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,873</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 2</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 days ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#8</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Riley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx");'></div>
-</div>
-<div class="text-sm font-bold text-white">Riley</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,521</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 6</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<main class="flex-1 p-2 sm:p-4 gap-8 flex flex-col">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-gray-800 pb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-white mb-2 flex items-center gap-3">
+                <span class="material-symbols-outlined text-4xl text-primary">rocket_launch</span>
+                Daily Briefing // TOP SECRET
+            </h1>
+            <p class="text-gray-400">Accept daily and weekly coding challenges. Earn XP. Rank up.</p>
+        </div>
+        <div class="flex items-center gap-4 bg-gray-900/50 border border-gray-800 px-6 py-3 rounded-lg">
+            <span class="material-symbols-outlined text-electric-yellow">timer</span>
+            <div class="flex flex-col items-end">
+                <span class="text-xs text-gray-400 uppercase tracking-wider">Mission Reset In</span>
+                <span id="global-timer" class="font-mono text-xl font-bold text-white">00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left Column: Active Mission & Board -->
+        <div class="lg:col-span-2 space-y-8">
+
+            <!-- Active Mission -->
+            <section class="relative overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-br from-gray-900 to-black p-8">
+                <div class="absolute top-0 right-0 p-4">
+                    <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 animate-pulse">
+                        ACTIVE MISSION
+                    </span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-white mb-2">Operation: Clean Code 🧹</h2>
+                    <p class="text-gray-400 mb-6 max-w-xl">
+                        Refactor 3 legacy functions to improve cognitive complexity score.
+                        Documentation is mandatory.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-gray-950 p-3 rounded border border-gray-800">
+                            <div class="text-xs text-gray-500 uppercase">Difficulty</div>
+                            <div class="text-yellow-400 font-bold">Medium</div>
+                        </div>
+                         <div class="bg-gray-950 p-3 rounded border border-gray-800">
+                            <div class="text-xs text-gray-500 uppercase">XP Reward</div>
+                            <div class="text-primary font-mono font-bold">500 XP</div>
+                        </div>
+                        <div class="bg-gray-950 p-3 rounded border border-gray-800">
+                             <div class="text-xs text-gray-500 uppercase">Time Limit</div>
+                             <div class="text-white font-mono">24h</div>
+                        </div>
+                         <div class="bg-gray-950 p-3 rounded border border-gray-800">
+                             <div class="text-xs text-gray-500 uppercase">Status</div>
+                             <div class="text-gray-300">Pending</div>
+                        </div>
+                    </div>
+
+                    <button onclick="confirmMission('Operation: Clean Code', 500)" class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-gray-900 hover:bg-primary/90 transition-colors">
+                        <span class="material-symbols-outlined">check_circle</span>
+                        ACCEPT MISSION
+                    </button>
+                </div>
+            </section>
+
+            <!-- Mission Board -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-gray-400">dashboard</span>
+                    Mission Board
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Mission Card 1 -->
+                    <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-5 hover:border-gray-700 transition-colors group">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="inline-flex items-center rounded-md bg-green-400/10 px-2 py-1 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-400/20">Easy</span>
+                            <span class="text-xs font-mono text-gray-500">Daily</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Fix a Typo</h4>
+                        <p class="text-sm text-gray-400 mb-4 h-10">Find and fix a typo in documentation or comments.</p>
+                        <div class="flex items-center justify-between border-t border-gray-800 pt-3">
+                             <span class="font-mono text-primary font-bold text-sm">+50 XP</span>
+                             <button onclick="confirmMission('Fix a Typo', 50)" class="text-xs text-gray-300 hover:text-white uppercase font-bold tracking-wider">Accept >></button>
+                        </div>
+                    </div>
+
+                    <!-- Mission Card 2 -->
+                    <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-5 hover:border-gray-700 transition-colors group">
+                         <div class="flex justify-between items-start mb-3">
+                            <span class="inline-flex items-center rounded-md bg-red-400/10 px-2 py-1 text-xs font-medium text-red-400 ring-1 ring-inset ring-red-400/20">Hard</span>
+                            <span class="text-xs font-mono text-gray-500">Weekly</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Zero Downtime Deploy</h4>
+                        <p class="text-sm text-gray-400 mb-4 h-10">Execute a migration with zero downtime.</p>
+                        <div class="flex items-center justify-between border-t border-gray-800 pt-3">
+                             <span class="font-mono text-primary font-bold text-sm">+1000 XP</span>
+                             <button onclick="confirmMission('Zero Downtime Deploy', 1000)" class="text-xs text-gray-300 hover:text-white uppercase font-bold tracking-wider">Accept >></button>
+                        </div>
+                    </div>
+
+                    <!-- Mission Card 3 -->
+                    <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-5 hover:border-gray-700 transition-colors group">
+                         <div class="flex justify-between items-start mb-3">
+                            <span class="inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-400 ring-1 ring-inset ring-yellow-400/20">Medium</span>
+                            <span class="text-xs font-mono text-gray-500">Daily</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Code Review Warrior</h4>
+                        <p class="text-sm text-gray-400 mb-4 h-10">Review 5 PRs with constructive feedback.</p>
+                        <div class="flex items-center justify-between border-t border-gray-800 pt-3">
+                             <span class="font-mono text-primary font-bold text-sm">+300 XP</span>
+                             <button onclick="confirmMission('Code Review Warrior', 300)" class="text-xs text-gray-300 hover:text-white uppercase font-bold tracking-wider">Accept >></button>
+                        </div>
+                    </div>
+
+                     <!-- Mission Card 4 -->
+                    <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-5 hover:border-gray-700 transition-colors group">
+                         <div class="flex justify-between items-start mb-3">
+                            <span class="inline-flex items-center rounded-md bg-green-400/10 px-2 py-1 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-400/20">Easy</span>
+                            <span class="text-xs font-mono text-gray-500">Daily</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Log Check</h4>
+                        <p class="text-sm text-gray-400 mb-4 h-10">Review system logs for anomalies.</p>
+                        <div class="flex items-center justify-between border-t border-gray-800 pt-3">
+                             <span class="font-mono text-primary font-bold text-sm">+75 XP</span>
+                             <button onclick="confirmMission('Log Check', 75)" class="text-xs text-gray-300 hover:text-white uppercase font-bold tracking-wider">Accept >></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: XP & History -->
+        <div class="space-y-8">
+            <!-- XP Progress -->
+            <div class="rounded-xl border border-gray-800 bg-gray-900/30 p-6 flex flex-col items-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6">Current Level</h3>
+
+                <div class="relative w-40 h-40 flex items-center justify-center mb-6">
+                    <!-- Circular Progress (SVG) -->
+                    <svg class="w-full h-full transform -rotate-90">
+                        <circle cx="50%" cy="50%" r="70" stroke="#1f2937" stroke-width="12" fill="transparent"></circle>
+                        <circle cx="50%" cy="50%" r="70" stroke="#2dd4bf" stroke-width="12" fill="transparent" stroke-dasharray="440" stroke-dashoffset="110" stroke-linecap="round"></circle>
+                    </svg>
+                    <div class="absolute flex flex-col items-center">
+                        <span class="text-4xl font-mono font-bold text-white">42</span>
+                        <span class="text-xs text-gray-500">LEVEL</span>
+                    </div>
+                </div>
+
+                <div class="w-full space-y-2">
+                    <div class="flex justify-between text-xs font-mono text-gray-400">
+                        <span>XP: 8,421</span>
+                        <span>Next: 10,000</span>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-2">
+                         <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <p class="text-center text-xs text-gray-500 mt-2">1,579 XP to Level 43</p>
+                </div>
+            </div>
+
+            <!-- Completed Missions -->
+            <div class="rounded-xl border border-gray-800 bg-gray-900/30 p-0 overflow-hidden">
+                <div class="p-4 border-b border-gray-800 bg-gray-900/50">
+                    <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-gray-400 text-lg">history</span>
+                        Mission Log
+                    </h3>
+                </div>
+                <div class="divide-y divide-gray-800">
+                    <div class="p-4 flex items-center justify-between hover:bg-gray-800/30 transition-colors">
+                        <div>
+                            <div class="text-sm font-medium text-white">Deploy to Prod</div>
+                            <div class="text-xs text-gray-500">Yesterday</div>
+                        </div>
+                        <span class="text-xs font-mono text-primary font-bold">+500 XP</span>
+                    </div>
+                     <div class="p-4 flex items-center justify-between hover:bg-gray-800/30 transition-colors">
+                        <div>
+                            <div class="text-sm font-medium text-white">Fix Login Bug</div>
+                            <div class="text-xs text-gray-500">2 days ago</div>
+                        </div>
+                        <span class="text-xs font-mono text-primary font-bold">+250 XP</span>
+                    </div>
+                     <div class="p-4 flex items-center justify-between hover:bg-gray-800/30 transition-colors">
+                        <div>
+                            <div class="text-sm font-medium text-white">Write Unit Tests</div>
+                            <div class="text-xs text-gray-500">3 days ago</div>
+                        </div>
+                        <span class="text-xs font-mono text-primary font-bold">+100 XP</span>
+                    </div>
+                </div>
+                <div class="p-3 bg-gray-900/50 text-center border-t border-gray-800">
+                    <a href="#" class="text-xs text-gray-400 hover:text-white transition-colors">View All History</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+<div id="confirm-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/80 backdrop-blur-sm">
+    <div class="w-full max-w-md border border-primary bg-gray-900 p-6 shadow-2xl shadow-primary/20 relative">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-white to-primary"></div>
+        <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2 font-mono">
+            <span class="material-symbols-outlined text-primary">terminal</span>
+            CONFIRM_MISSION
+        </h3>
+        <p class="text-gray-300 mb-6 font-mono text-sm">
+            Are you ready to accept mission: <br/>
+            <span id="modal-mission-name" class="text-primary font-bold"></span>?
+        </p>
+        <div class="flex justify-end gap-4">
+            <button onclick="closeModal()" class="px-4 py-2 text-sm text-gray-400 hover:text-white font-mono hover:bg-gray-800 rounded">CANCEL</button>
+            <button onclick="acceptMission()" class="px-4 py-2 text-sm bg-primary text-gray-900 font-bold font-mono hover:bg-primary/90 rounded">EXECUTE</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Countdown Timer
+    function updateTimer() {
+        const now = new Date();
+        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+        const diff = endOfDay - now;
+
+        const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+        document.getElementById('global-timer').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Modal Logic
+    let currentMission = '';
+    let currentXP = 0;
+
+    function confirmMission(name, xp) {
+        currentMission = name;
+        currentXP = xp;
+        document.getElementById('modal-mission-name').textContent = `"${name}" [${xp} XP]`;
+        document.getElementById('confirm-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('confirm-modal').classList.add('hidden');
+    }
+
+    function acceptMission() {
+        // Here we would call the backend
+        alert(`MISSION ACCEPTED: ${currentMission}
+Good luck, Agent.`);
+        closeModal();
+    }
+</script>
+
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">

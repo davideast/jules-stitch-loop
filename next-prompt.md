@@ -1,7 +1,7 @@
 ---
-page: missions.html
+page: forge.html.html
 ---
-A gamified missions page where developers can accept daily and weekly coding challenges to earn XP and badges.
+A high-tech crafting workshop where developers spend XP and resources earned from missions to forge custom badges, profile themes, and tool upgrades.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -16,20 +16,20 @@ A gamified missions page where developers can accept daily and weekly coding cha
 - Font: Clean sans-serif (Inter, SF Pro, or system default)
 - Avatars: Circular, ~40px, with subtle border
 - Table: No visible row borders, generous vertical padding (~20px per row)
-- Columns: RANK | DEVELOPER (avatar + name) | BUGS SQUASHED | SURVIVAL TIME
+- Columns: RANK | DEVELOPER (avatar + name) | TOTAL SHIPS | LAST ACTIVE
 - Pagination: Circular active page indicator (teal), numbered pages
 - Layout: Centered content, max-width container, ample whitespace
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header "Daily Briefing // TOP SECRET".
-2. "Active Mission": A featured card with a countdown timer.
-3. "Mission Board": A grid of available missions with difficulty ratings (Easy, Medium, Hard).
-4. "XP Progress": A circular progress bar showing level advancement.
-5. "Completed Missions": A log of past successes.
+1. Header: "The Forge // R&D Lab".
+2. "Resource Inventory": Grid of collected materials (e.g., "Bug Chitin", "Logic Gates", "Coffee Beans").
+3. "Schematics": List of craftable items with requirements.
+4. "The Anvil": Central interactive area to drag items.
+5. "Forge Button": Large, dangerous-looking button to initiate crafting.
 
 **Specific Elements:**
-- Countdown timers.
-- Difficulty badges (Green, Yellow, Red).
-- XP gain animations.
-- "Accept Mission" buttons with terminal-style confirm dialogs.
+- Industrial/Blueprint aesthetic overlays.
+- CSS animations for heat/glow during crafting.
+- Success probability gauges (risk/reward).
+- "Molten" effects using the primary accent color or a complementary orange.
