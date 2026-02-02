@@ -1,7 +1,7 @@
 ---
-page: predictions.html
+page: broadcast.html
 ---
-AI-powered predictive analytics page forecasting future leaderboard rankings and shipping velocity.
+A "TV Mode" dashboard page designed for large screens/projectors. High contrast, massive typography, auto-cycling views between Leaderboard Top 5, Recent Big Ships, and Velocity Charts.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ AI-powered predictive analytics page forecasting future leaderboard rankings and
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header "Oracle" or "Predictions" with a crystal ball or brain icon.
-2. "Leaderboard Forecast" table (Next Week's projected ranks vs current).
-3. "Velocity Probability" charts (Likelihood of hitting milestones).
-4. "Churn Risk" indicators (Developers at risk of stopping).
+1. Full-screen layout (no scrollbars).
+2. "On Air" indicator in the corner.
+3. Split view: Top Ranked Developer (Hero Card) vs Live Ticker.
+4. "Velocity Meter" gauge (Speedometer style).
 
 **Specific Elements:**
-- Probability percentages with confidence intervals (e.g., "85% chance of #1").
-- "Trending Up/Down" arrows with predicted magnitude.
-- AI commentary/reasoning for predictions (e.g., "Based on recent weekend activity...").
+- Massive font sizes for readability from a distance.
+- Auto-scroll or marquee effects.
+- Dark mode optimized for OLED screens.
