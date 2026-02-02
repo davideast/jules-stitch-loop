@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oracle Predictions - Jules</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            "FILL" 0,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/predictions.html.html">
+<span class="material-symbols-outlined text-xl">psychology</span>
+<span>Predictions</span>
+</a>
+</div>
+</header>
+<main class="flex-1 p-2 sm:p-4 space-y-8">
+
+  <!-- Header -->
+  <div class="flex flex-col items-center justify-center space-y-2 py-6">
+      <div class="rounded-full bg-gray-900 p-4 border border-gray-800">
+        <span class="material-symbols-outlined text-4xl text-sparkline-color">psychology</span>
+      </div>
+      <h1 class="text-3xl font-bold">Oracle Predictions</h1>
+      <p class="text-gray-400">AI-powered forecast of future rankings and velocity.</p>
+  </div>
+
+  <!-- Leaderboard Forecast -->
+  <div class="space-y-4">
+    <h2 class="text-xl font-bold flex items-center gap-2">
+      <span class="material-symbols-outlined text-sparkline-color">table_chart</span>
+      Leaderboard Forecast (Next Week)
+    </h2>
+    <div class="overflow-hidden border border-gray-800 rounded-lg">
+      <div class="overflow-x-auto">
+        <table class="min-w-full">
+          <thead class="border-b border-gray-800 bg-gray-900/50">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Predicted Rank</th>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Developer</th>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Current Rank</th>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Trend</th>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Probability</th>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Reasoning</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="hover:bg-gray-900/50">
+              <td class="px-6 py-4 font-mono text-sm font-bold text-electric-yellow">#1 🥇</td>
+              <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                      <div class="h-8 w-8 rounded-full bg-gray-700 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf" alt="Jules" class="h-full w-full object-cover">
+                      </div>
+                      <span class="font-bold">Jules</span>
+                  </div>
+              </td>
+              <td class="px-6 py-4 font-mono text-sm text-gray-400">#1</td>
+              <td class="px-6 py-4">
+                  <span class="flex items-center text-primary text-sm font-mono">
+                      <span class="material-symbols-outlined text-base">trending_flat</span> Stable
+                  </span>
+              </td>
+              <td class="px-6 py-4 font-mono text-sm text-sparkline-color">92%</td>
+              <td class="px-6 py-4 text-sm text-gray-400 italic">"Consistent weekend activity suggests dominance."</td>
+            </tr>
+            <tr class="hover:bg-gray-900/50">
+              <td class="px-6 py-4 font-mono text-sm font-bold text-gray-300">#2 🥈</td>
+               <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                      <div class="h-8 w-8 rounded-full bg-gray-700 overflow-hidden">
+                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J" alt="Alex" class="h-full w-full object-cover">
+                      </div>
+                      <span class="font-bold">Alex</span>
+                  </div>
+              </td>
+              <td class="px-6 py-4 font-mono text-sm text-gray-400">#2</td>
+               <td class="px-6 py-4">
+                  <span class="flex items-center text-primary text-sm font-mono">
+                      <span class="material-symbols-outlined text-base">trending_up</span> +5% Vel
+                  </span>
+              </td>
+              <td class="px-6 py-4 font-mono text-sm text-sparkline-color">78%</td>
+              <td class="px-6 py-4 text-sm text-gray-400 italic">"Spike in PR reviews indicates momentum."</td>
+            </tr>
+            <tr class="hover:bg-gray-900/50">
+              <td class="px-6 py-4 font-mono text-sm font-bold text-orange-400">#3 🥉</td>
+               <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                      <div class="h-8 w-8 rounded-full bg-gray-700 overflow-hidden">
+                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi" alt="Casey" class="h-full w-full object-cover">
+                      </div>
+                      <span class="font-bold">Casey</span>
+                  </div>
+              </td>
+              <td class="px-6 py-4 font-mono text-sm text-gray-400">#4</td>
+              <td class="px-6 py-4">
+                  <span class="flex items-center text-primary text-sm font-mono">
+                      <span class="material-symbols-outlined text-base">trending_up</span> Overtake
+                  </span>
+              </td>
+              <td class="px-6 py-4 font-mono text-sm text-sparkline-color">65%</td>
+              <td class="px-6 py-4 text-sm text-gray-400 italic">"High velocity on new feature branch."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Velocity Probability Charts -->
+  <div class="space-y-4">
+    <h2 class="text-xl font-bold flex items-center gap-2">
+        <span class="material-symbols-outlined text-sparkline-color">insights</span>
+        Velocity Probability Charts
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="border border-gray-800 rounded-lg p-6 bg-gray-900/20">
+          <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sparkline-color">show_chart</span>
+              Rank #1 Probability
+          </h3>
+          <div class="space-y-4">
+              <div>
+                  <div class="flex justify-between text-sm mb-1">
+                      <span>Jules</span>
+                      <span class="font-mono text-sparkline-color">85%</span>
+                  </div>
+                  <div class="w-full bg-gray-800 rounded-full h-2">
+                      <div class="bg-sparkline-color h-2 rounded-full" style="width: 85%"></div>
+                  </div>
+              </div>
+               <div>
+                  <div class="flex justify-between text-sm mb-1">
+                      <span>Alex</span>
+                      <span class="font-mono text-gray-400">12%</span>
+                  </div>
+                  <div class="w-full bg-gray-800 rounded-full h-2">
+                      <div class="bg-gray-600 h-2 rounded-full" style="width: 12%"></div>
+                  </div>
+              </div>
+              <div>
+                  <div class="flex justify-between text-sm mb-1">
+                      <span>Sam</span>
+                      <span class="font-mono text-gray-400">3%</span>
+                  </div>
+                  <div class="w-full bg-gray-800 rounded-full h-2">
+                      <div class="bg-gray-600 h-2 rounded-full" style="width: 3%"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Churn Risk -->
+      <div class="border border-gray-800 rounded-lg p-6 bg-gray-900/20">
+          <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-red-500">warning</span>
+              High Churn Risk
+          </h3>
+          <div class="space-y-4">
+               <div class="flex items-center justify-between p-3 border border-gray-800 rounded bg-gray-900/50">
+                   <div class="flex items-center gap-3">
+                       <div class="h-8 w-8 rounded-full bg-gray-700"></div>
+                       <div>
+                           <div class="font-bold text-sm">Jordan</div>
+                           <div class="text-xs text-gray-500">Last active: 2 days ago</div>
+                       </div>
+                   </div>
+                   <div class="text-right">
+                       <div class="text-red-500 font-mono font-bold">HIGH</div>
+                       <div class="text-xs text-gray-500">No recent commits</div>
+                   </div>
+               </div>
+               <div class="flex items-center justify-between p-3 border border-gray-800 rounded bg-gray-900/50">
+                   <div class="flex items-center gap-3">
+                       <div class="h-8 w-8 rounded-full bg-gray-700"></div>
+                       <div>
+                           <div class="font-bold text-sm">Riley</div>
+                           <div class="text-xs text-gray-500">Last active: 1 day ago</div>
+                       </div>
+                   </div>
+                   <div class="text-right">
+                       <div class="text-yellow-500 font-mono font-bold">MED</div>
+                       <div class="text-xs text-gray-500">Velocity dropping</div>
+                   </div>
+               </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="/api.html">API</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>
