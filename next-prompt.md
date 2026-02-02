@@ -1,7 +1,7 @@
 ---
-page: supernova.html.html.html
+page: fusion.html.html.html
 ---
-"Supernova" - A dashboard highlighting repositories and developers experiencing explosive, viral growth.
+"Fusion" - A dashboard visualizing high-impact Pull Request merges and team collaboration density.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ page: supernova.html.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Supernova" with a starburst or explosion icon.
-2. "Big Bang" Chart: A central burst visualization showing trending items radiating outward.
-3. Rising Stars Table: List of entities with highest current velocity.
-4. Critical Mass Alerts: Ticker of items breaking thresholds.
+1. Header: "Fusion" with a merge icon.
+2. "Fusion Core" Visualization: A central node graph showing teams merging code.
+3. Merged PRs Table: List of recently merged high-impact PRs.
+4. Collaboration Heatmap: Grid showing team interaction density.
 
 **Specific Elements:**
-- "Velocity Multiplier" metric (e.g., "10x Growth").
-- Sparklines showing sudden vertical spikes.
-- Radiant glow effects for top items (use CSS box-shadow).
+- "Reaction Efficiency" metric.
+- Pulsing connections between developer nodes.
+- Use Purple (#8250df) for "Merged" status indicators.

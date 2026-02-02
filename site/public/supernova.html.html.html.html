@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Review Velocity Dashboard</title>
+<title>Supernova - Viral Growth Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -12,7 +12,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#238636",
+              "primary": "#2dd4bf",
               "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
@@ -327,256 +327,285 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="overflow-hidden">
-    <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div class="flex items-center gap-4">
-            <div class="rounded-lg bg-gray-800/50 p-3">
-                <span class="material-symbols-outlined text-teal-400 text-2xl">rate_review</span>
-            </div>
-            <div>
-                <h1 class="text-2xl font-bold text-white">Review Velocity</h1>
-                <p class="text-sm text-gray-400">Tracking effective reviewers and approval speed</p>
-            </div>
+
+<main class="flex-1 p-4 sm:p-6 md:p-8 flex flex-col gap-8">
+    <!-- Header -->
+    <div class="flex items-center gap-4 border-b border-gray-800 pb-6">
+        <div class="p-3 rounded-full bg-primary/10 text-primary">
+            <span class="material-symbols-outlined text-4xl">emergency_home</span>
         </div>
-        <div class="flex gap-2">
-             <button class="rounded-md border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-700">Bug Fixes</button>
-             <button class="rounded-md border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-700">Features</button>
-             <button class="rounded-md border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-700">Refactors</button>
+        <div>
+            <h1 class="text-3xl font-bold tracking-tight text-white font-display">Supernova</h1>
+            <p class="text-gray-400 mt-1">Explosive viral growth tracking</p>
         </div>
     </div>
 
-    <!-- Stats Cards -->
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-8">
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500 uppercase tracking-wider mb-1">Total Reviews</div>
-            <div class="text-2xl font-mono text-white">1,248</div>
-            <div class="text-xs text-teal-400 mt-2">↑ 12% this week</div>
+    <!-- Top Section: Big Bang Chart & Critical Mass -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Big Bang Chart -->
+        <div class="lg:col-span-2 rounded-xl border border-gray-800 bg-gray-900/30 p-6 relative overflow-hidden">
+            <h3 class="text-sm font-medium uppercase tracking-wider text-gray-400 mb-4">Big Bang Visualization</h3>
+            <div class="relative w-full h-[300px]">
+                 <canvas id="bigBangChart" class="w-full h-full block"></canvas>
+            </div>
+            <div class="absolute top-6 right-6 flex items-center gap-2">
+                 <span class="flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                </span>
+                <span class="text-xs text-primary font-mono">LIVE</span>
+            </div>
         </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500 uppercase tracking-wider mb-1">Avg Merge Time</div>
-            <div class="text-2xl font-mono text-white">4h 12m</div>
-            <div class="text-xs text-teal-400 mt-2">↓ 8% faster</div>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500 uppercase tracking-wider mb-1">Nitpick Ratio</div>
-            <div class="text-2xl font-mono text-white">3.2</div>
-            <div class="text-xs text-gray-500 mt-2">Comments per PR</div>
+
+        <!-- Critical Mass Alerts -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/30 p-6 flex flex-col">
+            <h3 class="text-sm font-medium uppercase tracking-wider text-gray-400 mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-red-500">warning</span>
+                Critical Mass Alerts
+            </h3>
+            <div class="flex-1 overflow-hidden relative">
+                <div class="space-y-4" id="alertTicker">
+                    <div class="p-3 rounded-lg bg-gray-800/50 border border-gray-700 animate-pulse">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="font-bold text-white text-sm">react/react</span>
+                            <span class="text-xs font-mono text-primary">+450%</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Velocity spike detected > 100 stars/hr</p>
+                    </div>
+                     <div class="p-3 rounded-lg bg-gray-800/50 border border-gray-700">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="font-bold text-white text-sm">torvalds/linux</span>
+                            <span class="text-xs font-mono text-electric-yellow">CRITICAL</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Mass contribution event detected</p>
+                    </div>
+                     <div class="p-3 rounded-lg bg-gray-800/50 border border-gray-700">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="font-bold text-white text-sm">oven-sh/bun</span>
+                            <span class="text-xs font-mono text-primary">12x</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Growth multiplier exceeding limits</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Main Leaderboard -->
-        <div class="lg:col-span-2">
-            <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-gray-400">leaderboard</span> Top Reviewers
-            </h2>
-            <div class="overflow-x-auto rounded-lg border border-gray-800 bg-gray-900/30">
-                <table class="min-w-full">
-                    <thead class="border-b border-gray-800 bg-gray-900/50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Rank</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Developer</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Reviews</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Speed</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Nitpicks</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-800">
-                         <!-- Rank 1 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-yellow-400">#1 🥇</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Jules</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">142</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">1h 20m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 80%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">4.2</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Rank 2 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-gray-300">#2 🥈</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Alex</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">128</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">2h 15m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 60%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">3.1</span>
-                                </div>
-                            </td>
-                        </tr>
-                         <!-- Rank 3 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-orange-400">#3 🥉</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Sam</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">115</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">1h 45m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 45%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">2.4</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Rank 4 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-gray-500">#4</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Casey</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">98</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">3h 10m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 70%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">3.8</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Rank 5 -->
-                         <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-gray-500">#5</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Morgan</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">87</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">4h 05m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 90%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">4.5</span>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Rising Stars Table -->
+    <div class="rounded-xl border border-gray-800 bg-gray-900/30 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-800 flex justify-between items-center">
+             <h3 class="text-sm font-medium uppercase tracking-wider text-gray-400">Rising Stars</h3>
+             <div class="flex gap-2">
+                 <button class="px-3 py-1 rounded bg-gray-800 text-xs text-gray-300 hover:text-white">1H</button>
+                 <button class="px-3 py-1 rounded bg-primary/20 text-xs text-primary">24H</button>
+                 <button class="px-3 py-1 rounded bg-gray-800 text-xs text-gray-300 hover:text-white">7D</button>
+             </div>
         </div>
-
-        <!-- Sidebar -->
-        <div class="flex flex-col gap-6">
-            <!-- Speed Demons -->
-            <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-4">
-                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                    <span class="material-symbols-outlined text-teal-400">bolt</span> Speed Demons
-                </h3>
-                <div class="flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                             <div class="h-6 w-6 rounded-full bg-gray-700 border border-gray-600 overflow-hidden">
-                                  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf" class="h-full w-full object-cover">
-                             </div>
-                            <span class="text-sm text-white">Jules</span>
-                        </div>
-                        <span class="font-mono text-sm text-teal-400">12m avg</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                             <div class="h-6 w-6 rounded-full bg-gray-700 border border-gray-600 overflow-hidden">
-                                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ" class="h-full w-full object-cover">
-                             </div>
-                            <span class="text-sm text-white">Sam</span>
-                        </div>
-                        <span class="font-mono text-sm text-teal-400">15m avg</span>
-                    </div>
-                     <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                             <div class="h-6 w-6 rounded-full bg-gray-700 border border-gray-600 overflow-hidden">
-                                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi" class="h-full w-full object-cover">
-                             </div>
-                            <span class="text-sm text-white">Casey</span>
-                        </div>
-                        <span class="font-mono text-sm text-teal-400">22m avg</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Visual Diff Snippet -->
-            <div class="rounded-lg border border-gray-800 bg-gray-950 p-4 font-mono text-xs">
-                <h3 class="text-gray-500 mb-2">// Top Nitpick</h3>
-                <div class="text-gray-400">
-                    <span class="text-red-400">- const active = true;</span><br>
-                    <span class="text-green-400">+ const isActive = state === "ready";</span>
-                </div>
-                <div class="mt-2 text-purple-400">
-                    <span class="material-symbols-outlined text-xs align-middle">chat_bubble</span> "More descriptive naming"
-                </div>
-            </div>
-
-            <!-- Nitpick Chart -->
-            <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-4">
-                 <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Comments per PR</h3>
-                 <div class="flex items-end justify-between h-24 gap-1">
-                    <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 40%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 65%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 30%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 80%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 50%"></div>
-                    </div>
-                 </div>
-                 <div class="flex justify-between text-xs text-gray-500 mt-2">
-                    <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span>
-                 </div>
-            </div>
-
+        <div class="overflow-x-auto">
+            <table class="min-w-full">
+                <thead class="bg-gray-900/50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Rank</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Developer / Repo</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Velocity Multiplier</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Impact</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Trend</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800">
+                    <!-- Row 1 -->
+                    <tr class="group hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#1 🥇</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600 shadow-[0_0_15px_rgba(45,212,191,0.3)] group-hover:shadow-[0_0_25px_rgba(45,212,191,0.5)] transition-shadow">
+                                    <span class="text-xl">🚀</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">hyper-engine</div>
+                                    <div class="text-xs text-gray-500">rust-lang/hyper</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary text-sm">24.5x</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white text-sm">8,942</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="h-8 w-24">
+                                <!-- Sparkline SVG -->
+                                <svg class="w-full h-full text-primary" viewBox="0 0 100 30" preserveAspectRatio="none">
+                                    <path d="M0 25 L10 22 L20 26 L30 15 L40 18 L50 10 L60 12 L70 5 L80 8 L90 2 L100 0" fill="none" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </td>
+                    </tr>
+                     <!-- Row 2 -->
+                    <tr class="group hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#2 🥈</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
+                                    <span class="text-xl">⚡</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">flash-ui</div>
+                                    <div class="text-xs text-gray-500">web/frameworks</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary text-sm">18.2x</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white text-sm">6,210</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                             <div class="h-8 w-24">
+                                <svg class="w-full h-full text-primary" viewBox="0 0 100 30" preserveAspectRatio="none">
+                                    <path d="M0 20 L10 22 L20 20 L30 18 L40 22 L50 15 L60 18 L70 10 L80 12 L90 5 L100 8" fill="none" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="group hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#3 🥉</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
+                                    <span class="text-xl">💎</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">crystal-db</div>
+                                    <div class="text-xs text-gray-500">database/core</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary text-sm">12.8x</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white text-sm">5,400</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                             <div class="h-8 w-24">
+                                <svg class="w-full h-full text-primary" viewBox="0 0 100 30" preserveAspectRatio="none">
+                                    <path d="M0 28 L10 25 L20 22 L30 24 L40 20 L50 18 L60 15 L70 12 L80 10 L90 8 L100 5" fill="none" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </td>
+                    </tr>
+                     <!-- Row 4 -->
+                    <tr class="group hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#4</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
+                                    <span class="text-xl">🛠️</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">dev-ops-v2</div>
+                                    <div class="text-xs text-gray-500">infra/tools</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary text-sm">10.1x</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white text-sm">4,120</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                             <div class="h-8 w-24">
+                                <svg class="w-full h-full text-primary" viewBox="0 0 100 30" preserveAspectRatio="none">
+                                    <path d="M0 25 L10 20 L20 22 L30 18 L40 20 L50 15 L60 18 L70 12 L80 15 L90 8 L100 10" fill="none" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
 </main>
+<script>
+    // Big Bang Chart Visualization
+    const canvas = document.getElementById('bigBangChart');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        function resize() {
+            width = canvas.parentElement.clientWidth;
+            height = canvas.parentElement.clientHeight || 300;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        const particles = [];
+        const particleCount = 60;
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = width / 2;
+                this.y = height / 2;
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 3 + 1; // High velocity
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed;
+                this.life = Math.random() * 80 + 20;
+                this.size = Math.random() * 3 + 1;
+                // Colors: Teal, White, Yellow
+                const colors = ['#2dd4bf', '#ffffff', '#f0c800'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life--;
+
+                // Add some friction/gravity? No, explosive constant expansion
+
+                if (this.life <= 0 || this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.life / 100;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(13, 17, 23, 0.2)'; // Trail effect
+            ctx.fillRect(0, 0, width, height);
+
+            // Draw center burst
+            ctx.beginPath();
+            ctx.arc(width/2, height/2, 8, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowBlur = 30;
+            ctx.shadowColor = '#2dd4bf';
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+    }
+</script>
+
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">
