@@ -73,6 +73,7 @@
 * [x] `map.html` - Real-time global command center map
 * [x] `radar.html` - Tech Radar visualization showing trending technologies.
 * [x] `bounties.html.html` - A terminal-styled board of open issues with XP rewards.
+* [x] `logs.html` - System log viewer showing raw platform events.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
