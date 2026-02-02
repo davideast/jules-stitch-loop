@@ -1,7 +1,7 @@
 ---
-page: events.html
+page: market.html.html
 ---
-A central calendar and timeline for all upcoming events, hackathons, and shipping challenges.
+A real-time stock market interface where users can 'invest' in developers based on their shipping velocity.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,13 @@ A central calendar and timeline for all upcoming events, hackathons, and shippin
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "Upcoming Events" title and date filter.
-2. "Featured Event" hero card (e.g., "Speed Run Hackathon").
-3. Chronological list of events (Upcoming vs Past).
-4. Interactive Calendar View (mini grid).
+1. Header with "Dev Market" title and user's "Portfolio Value" display.
+2. Ticker Tape: Horizontal scrolling list of top market movers (e.g., "$JULES +5.2%").
+3. "Market Movers" Hero Section: Top Gainer and Top Loser cards.
+4. Main Market Table: Symbol (e.g. $NAME) | Price (Shipping Velocity) | 24h Change | Market Cap (Total Ships) | Actions (Buy/Sell).
 
 **Specific Elements:**
-- Countdown timers for nearest events.
-- "RSVP" or "Join" buttons with git-commit style status.
-- Tags for event types (e.g., "Sprint", "Marathon", "Bug Bash").
+- Green (Teal) for positive change, Red (Rose/Pink) for negative change.
+- Sparklines for 24h price history in the table.
+- "Buy" and "Sell" buttons with hover effects.
+- Monospaced font for all financial data ($ prices).

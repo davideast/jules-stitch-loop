@@ -82,6 +82,7 @@
 * [x] predictions.html.html - AI-powered predictive analytics page forecasting future leaderboard rankings and shipping velocity.
 * [x] broadcast.html.html - "TV Mode" dashboard page designed for large screens/projectors.
 * [x] spotlight.html.html - Daily Spotlight page featuring a single developer and their recent achievements.
+* [x] events.html.html - Central calendar for hackathons, challenges, and community events.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
