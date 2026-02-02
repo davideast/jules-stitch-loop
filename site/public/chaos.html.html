@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Review Velocity Dashboard</title>
+<title>Chaos Engineering Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -12,7 +12,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#238636",
+              "primary": "#2dd4bf",
               "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
@@ -294,256 +294,152 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="overflow-hidden">
-    <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div class="flex items-center gap-4">
-            <div class="rounded-lg bg-gray-800/50 p-3">
-                <span class="material-symbols-outlined text-teal-400 text-2xl">rate_review</span>
-            </div>
-            <div>
-                <h1 class="text-2xl font-bold text-white">Review Velocity</h1>
-                <p class="text-sm text-gray-400">Tracking effective reviewers and approval speed</p>
-            </div>
-        </div>
-        <div class="flex gap-2">
-             <button class="rounded-md border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-700">Bug Fixes</button>
-             <button class="rounded-md border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-700">Features</button>
-             <button class="rounded-md border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-700">Refactors</button>
-        </div>
-    </div>
 
-    <!-- Stats Cards -->
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-8">
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500 uppercase tracking-wider mb-1">Total Reviews</div>
-            <div class="text-2xl font-mono text-white">1,248</div>
-            <div class="text-xs text-teal-400 mt-2">↑ 12% this week</div>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500 uppercase tracking-wider mb-1">Avg Merge Time</div>
-            <div class="text-2xl font-mono text-white">4h 12m</div>
-            <div class="text-xs text-teal-400 mt-2">↓ 8% faster</div>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500 uppercase tracking-wider mb-1">Nitpick Ratio</div>
-            <div class="text-2xl font-mono text-white">3.2</div>
-            <div class="text-xs text-gray-500 mt-2">Comments per PR</div>
-        </div>
-    </div>
+<main class="flex-1 p-4 sm:p-6 md:p-8 overflow-y-auto">
+    <div class="max-w-7xl mx-auto space-y-6">
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Main Leaderboard -->
-        <div class="lg:col-span-2">
-            <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-gray-400">leaderboard</span> Top Reviewers
-            </h2>
-            <div class="overflow-x-auto rounded-lg border border-gray-800 bg-gray-900/30">
-                <table class="min-w-full">
-                    <thead class="border-b border-gray-800 bg-gray-900/50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Rank</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Developer</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Reviews</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Speed</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">Nitpicks</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-800">
-                         <!-- Rank 1 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-yellow-400">#1 🥇</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Jules</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">142</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">1h 20m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 80%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">4.2</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Rank 2 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-gray-300">#2 🥈</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Alex</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">128</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">2h 15m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 60%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">3.1</span>
-                                </div>
-                            </td>
-                        </tr>
-                         <!-- Rank 3 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-orange-400">#3 🥉</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Sam</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">115</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">1h 45m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 45%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">2.4</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Rank 4 -->
-                        <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-gray-500">#4</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Casey</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">98</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">3h 10m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 70%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">3.8</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Rank 5 -->
-                         <tr class="hover:bg-gray-800/50">
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-gray-500">#5</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600">
-                                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z" class="rounded-full h-full w-full object-cover">
-                                    </div>
-                                    <span class="font-medium text-white">Morgan</span>
-                                </div>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-white">87</td>
-                            <td class="whitespace-nowrap px-6 py-4 font-mono text-teal-400">4h 05m</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="h-1.5 w-16 bg-gray-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-purple-500" style="width: 90%"></div>
-                                    </div>
-                                    <span class="text-xs text-gray-400">4.5</span>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Top Row: DEFCON & Resilience -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- DEFCON Level -->
+            <div class="border border-gray-800 bg-gray-900/30 rounded-lg p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-red-500/5 animate-pulse"></div>
+                <h3 class="text-gray-400 text-sm font-mono uppercase tracking-widest z-10">System Defcon</h3>
+                <div class="text-5xl font-bold text-red-500 mt-2 font-mono z-10">3</div>
+                <div class="text-xs text-red-400 mt-2 font-mono z-10">ELEVATED RISK</div>
+            </div>
+
+            <!-- Resilience Score -->
+            <div class="border border-gray-800 bg-gray-900/30 rounded-lg p-6 flex flex-col items-center justify-center">
+                <h3 class="text-gray-400 text-sm font-mono uppercase tracking-widest">Resilience Score</h3>
+                <div class="text-5xl font-bold text-primary mt-2 font-mono">84%</div>
+                <div class="text-xs text-primary/70 mt-2 font-mono">STABLE - MONITORING</div>
+            </div>
+
+             <!-- Active Incidents -->
+            <div class="border border-gray-800 bg-gray-900/30 rounded-lg p-6 flex flex-col items-center justify-center">
+                <h3 class="text-gray-400 text-sm font-mono uppercase tracking-widest">Active Faults</h3>
+                <div class="text-5xl font-bold text-white mt-2 font-mono">2</div>
+                <div class="text-xs text-gray-500 mt-2 font-mono">LATENCY • PACKET LOSS</div>
             </div>
         </div>
 
-        <!-- Sidebar -->
-        <div class="flex flex-col gap-6">
-            <!-- Speed Demons -->
-            <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-4">
-                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                    <span class="material-symbols-outlined text-teal-400">bolt</span> Speed Demons
+        <!-- Middle Row: Attack Map & Blast Radius -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-96">
+            <!-- Attack Map -->
+            <div class="lg:col-span-2 border border-gray-800 bg-gray-900/30 rounded-lg p-6 flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-white font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">public</span>
+                        Attack Map
+                    </h3>
+                    <span class="text-xs font-mono text-gray-500">LIVE FEED</span>
+                </div>
+                <div class="flex-1 bg-black/50 rounded border border-gray-800 relative overflow-hidden flex items-center justify-center">
+                    <!-- Placeholder for Map Visualization -->
+                    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#2dd4bf 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+                    <!-- Nodes -->
+                    <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-primary rounded-full animate-ping"></div>
+                    <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-primary rounded-full"></div>
+
+                    <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+                    <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-red-500 rounded-full"></div>
+
+                    <div class="absolute top-1/2 left-1/2 w-3 h-3 bg-green-500 rounded-full"></div>
+
+                    <!-- Connections -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none">
+                        <line x1="25%" y1="25%" x2="50%" y2="50%" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.3" />
+                        <line x1="75%" y1="66%" x2="50%" y2="50%" stroke="#ef4444" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="4 4" />
+                    </svg>
+
+                    <div class="text-gray-600 font-mono text-xs">Simulating Region: us-east-1</div>
+                </div>
+            </div>
+
+            <!-- Blast Radius Graph -->
+            <div class="border border-gray-800 bg-gray-900/30 rounded-lg p-6 flex flex-col">
+                <h3 class="text-white font-bold flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-orange-500">track_changes</span>
+                    Blast Radius
                 </h3>
-                <div class="flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                             <div class="h-6 w-6 rounded-full bg-gray-700 border border-gray-600 overflow-hidden">
-                                  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf" class="h-full w-full object-cover">
-                             </div>
-                            <span class="text-sm text-white">Jules</span>
-                        </div>
-                        <span class="font-mono text-sm text-teal-400">12m avg</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                             <div class="h-6 w-6 rounded-full bg-gray-700 border border-gray-600 overflow-hidden">
-                                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ" class="h-full w-full object-cover">
-                             </div>
-                            <span class="text-sm text-white">Sam</span>
-                        </div>
-                        <span class="font-mono text-sm text-teal-400">15m avg</span>
-                    </div>
-                     <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                             <div class="h-6 w-6 rounded-full bg-gray-700 border border-gray-600 overflow-hidden">
-                                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi" class="h-full w-full object-cover">
-                             </div>
-                            <span class="text-sm text-white">Casey</span>
-                        </div>
-                        <span class="font-mono text-sm text-teal-400">22m avg</span>
-                    </div>
+                <div class="flex-1 flex items-end justify-between gap-2 px-2 pb-2">
+                    <!-- Bar Chart -->
+                    <div class="w-full bg-gray-800 rounded-t hover:bg-red-500/50 transition-colors h-[20%]"></div>
+                    <div class="w-full bg-gray-800 rounded-t hover:bg-red-500/50 transition-colors h-[45%]"></div>
+                    <div class="w-full bg-gray-800 rounded-t hover:bg-red-500/50 transition-colors h-[30%]"></div>
+                    <div class="w-full bg-gray-800 rounded-t hover:bg-red-500/50 transition-colors h-[80%] bg-red-500/20 border-t border-red-500"></div>
+                    <div class="w-full bg-gray-800 rounded-t hover:bg-red-500/50 transition-colors h-[60%]"></div>
+                    <div class="w-full bg-gray-800 rounded-t hover:bg-red-500/50 transition-colors h-[40%]"></div>
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 font-mono mt-2">
+                    <span>Svc A</span>
+                    <span>Svc B</span>
+                    <span>DB</span>
+                    <span>Cache</span>
+                    <span>API</span>
+                    <span>Auth</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Incident Log & Controls -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Incident Log -->
+            <div class="lg:col-span-2 border border-gray-800 bg-gray-900/30 rounded-lg p-6">
+                 <h3 class="text-white font-bold flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-gray-400">terminal</span>
+                    Incident Log
+                </h3>
+                <div class="bg-black border border-gray-800 rounded p-4 h-64 overflow-y-auto font-mono text-sm text-gray-300">
+                    <div class="mb-1"><span class="text-gray-500">[14:02:11]</span> <span class="text-blue-400">INFO</span> Initiating chaos experiment #492...</div>
+                    <div class="mb-1"><span class="text-gray-500">[14:02:15]</span> <span class="text-yellow-400">WARN</span> Latency injected (2000ms) to payment-service</div>
+                    <div class="mb-1"><span class="text-gray-500">[14:02:45]</span> <span class="text-red-500">ERR </span> Connection timeout: redis-primary</div>
+                    <div class="mb-1"><span class="text-gray-500">[14:03:00]</span> <span class="text-green-400">SUCC</span> Fallback mechanism triggered successfully</div>
+                    <div class="mb-1"><span class="text-gray-500">[14:03:10]</span> <span class="text-blue-400">INFO</span> Experiment continued. Increasing load...</div>
+                    <div class="mb-1"><span class="text-gray-500">[14:03:30]</span> <span class="text-yellow-400">WARN</span> CPU usage > 90% on node-worker-03</div>
+                    <div class="mb-1"><span class="text-gray-500">[14:04:00]</span> <span class="text-blue-400">INFO</span> Experiment #492 complete. Rolling back...</div>
                 </div>
             </div>
 
-            <!-- Visual Diff Snippet -->
-            <div class="rounded-lg border border-gray-800 bg-gray-950 p-4 font-mono text-xs">
-                <h3 class="text-gray-500 mb-2">// Top Nitpick</h3>
-                <div class="text-gray-400">
-                    <span class="text-red-400">- const active = true;</span><br>
-                    <span class="text-green-400">+ const isActive = state === "ready";</span>
+            <!-- Inject Fault Controls -->
+            <div class="border border-gray-800 bg-gray-900/30 rounded-lg p-6 flex flex-col gap-4">
+                <h3 class="text-white font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined text-red-500">warning</span>
+                    Inject Faults
+                </h3>
+
+                <div class="space-y-3">
+                    <button class="w-full flex items-center justify-between p-3 border border-red-900/50 bg-red-900/10 hover:bg-red-900/20 text-red-400 rounded transition-colors group">
+                        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">wifi_off</span> Network Latency</span>
+                        <span class="text-xs border border-red-900/50 px-2 py-0.5 rounded group-hover:bg-red-900/30">INJECT</span>
+                    </button>
+                    <button class="w-full flex items-center justify-between p-3 border border-red-900/50 bg-red-900/10 hover:bg-red-900/20 text-red-400 rounded transition-colors group">
+                        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">dns</span> Pod Kill</span>
+                        <span class="text-xs border border-red-900/50 px-2 py-0.5 rounded group-hover:bg-red-900/30">INJECT</span>
+                    </button>
+                    <button class="w-full flex items-center justify-between p-3 border border-red-900/50 bg-red-900/10 hover:bg-red-900/20 text-red-400 rounded transition-colors group">
+                        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">memory</span> CPU Stress</span>
+                        <span class="text-xs border border-red-900/50 px-2 py-0.5 rounded group-hover:bg-red-900/30">INJECT</span>
+                    </button>
+                     <button class="w-full flex items-center justify-between p-3 border border-red-900/50 bg-red-900/10 hover:bg-red-900/20 text-red-400 rounded transition-colors group">
+                        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">database</span> DB Lock</span>
+                        <span class="text-xs border border-red-900/50 px-2 py-0.5 rounded group-hover:bg-red-900/30">INJECT</span>
+                    </button>
                 </div>
-                <div class="mt-2 text-purple-400">
-                    <span class="material-symbols-outlined text-xs align-middle">chat_bubble</span> "More descriptive naming"
+
+                <div class="mt-auto pt-4 border-t border-gray-800">
+                    <div class="text-xs text-gray-500 font-mono text-center mb-2">SAFE MODE: OFF</div>
+                    <button class="w-full py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded flex items-center justify-center gap-2 transition-colors">
+                        <span class="material-symbols-outlined">dangerous</span>
+                        OMNICYDE PROTOCOL
+                    </button>
                 </div>
             </div>
-
-            <!-- Nitpick Chart -->
-            <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-4">
-                 <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Comments per PR</h3>
-                 <div class="flex items-end justify-between h-24 gap-1">
-                    <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 40%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 65%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 30%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 80%"></div>
-                    </div>
-                     <div class="w-full bg-teal-400/20 rounded-t hover:bg-teal-400/40 relative group h-full">
-                        <div class="absolute bottom-0 w-full bg-teal-500 rounded-t" style="height: 50%"></div>
-                    </div>
-                 </div>
-                 <div class="flex justify-between text-xs text-gray-500 mt-2">
-                    <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span>
-                 </div>
-            </div>
-
         </div>
     </div>
-</div>
 </main>
+
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">

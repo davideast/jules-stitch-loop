@@ -95,6 +95,7 @@
 * [x] `interview.html.html.html` - A competitive mock interview practice arena.
 * [x] `debug.html.html` - Time-attack debugging challenge arena.
 * [x] `secrets.html.html` - Secure vault page containing encrypted secrets.
+- [x] `chaos.html.html` - Chaos Engineering Dashboard for fault injection and resilience monitoring.
 * [x] `missions.html.html` - Gamified missions page with daily challenges and XP rewards.
 - [x] `forge.html.html.html` - The Forge // R&D Lab for crafting badges and upgrades.
 - [x] `orbit.html.html.html` - Solar system visualization of developer activity.

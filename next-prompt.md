@@ -1,7 +1,7 @@
 ---
-page: chaos.html
+page: sprint.html
 ---
-"Chaos Engineering Dashboard" - Control center for injecting faults and monitoring system resilience.
+"Sprint Dashboard" - High-velocity tracking of the current development cycle using Kanban and Burndown metrics.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,14 @@ page: chaos.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Chaos Control" and current system DEFCON level.
-2. Attack Map: Visualizing active fault injections (network latency, pod kills).
-3. Resilience Score: Real-time metric of system stability under stress.
-4. "Blast Radius" Graph: Impact analysis of current experiments.
-5. Incident Log: Stream of system alerts and recovery events.
+1. Header: "Sprint 42" status (Active - 3 Days Left) and Countdown Timer.
+2. Burndown Chart: Ideal vs Actual velocity sparklines using monospaced characters or SVG.
+3. Lane View: Todo | In Progress | Review | Done (Kanban style but minimal terminal aesthetic).
+4. Velocity Gauge: Team speed vs average (e.g., "112% of Avg").
+5. "Blocker" Alerts: Flashing red indicators for stalled PRs.
 
 **Specific Elements:**
-- "Inject Fault" buttons (Red/Danger).
-- Glitch effects or "unstable" visual indicators for stressed components.
-- Terminal output for chaos logs.
-- Status indicators (Healthy vs degraded).
+- Progress bars using block characters (█ ▌ ░).
+- Avatars assigned to cards.
+- "Finish Sprint" button.
+- Live ticker of completed tickets.
