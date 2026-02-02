@@ -53,6 +53,7 @@
 * [x] `teams.html` - Team/organization leaderboards
 * [x] `insights.html` - AI-generated insights about shipping patterns
 * [x] `challenges.html` - Weekly/monthly shipping challenges
+* [x] `hackathon.html` - Live coding events
 * [x] `rivals.html` - Head-to-head rivalry tracking
 * [x] `explore.html` - Discover developers by language, framework, or project type
 * [x] `repos.html` - Top repositories by Jules activity

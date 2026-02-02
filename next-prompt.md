@@ -1,7 +1,7 @@
 ---
-page: hackathon
+page: map
 ---
-A page for tracking live and upcoming coding hackathons (sprints, blitzes, marathons).
+A real-time global command center map visualizing where code is being shipped.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,13 @@ A page for tracking live and upcoming coding hackathons (sprints, blitzes, marat
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Hackathons" with global navigation.
-2. Active Event Hero: "WEEKEND WARRIOR BLITZ" with a large countdown timer.
-3. Live Leaderboard: Top shippers for the current event only.
-4. Upcoming Schedule: Calendar of future events (Blitz, Sprint, Marathon).
-5. Past Winners: Hall of fame for previous hackathons.
+1. Header: "Live Map" with global navigation.
+2. Main View: Large, dark vector world map with pulsing "blips" for live commits.
+3. Sidebar: "Incoming Signals" stream (scrolling terminal text of commits).
+4. Footer: "Active Regions" leaderboard (e.g., "San Francisco", "London", "Tokyo").
 
 **Specific Elements:**
-- Countdown: Big, monospaced digital clock style.
-- Event Status: "LIVE", "UPCOMING", "ENDED" badges.
-- Prize Pool: Simple text indicating the stakes (e.g., "Glory + Badge").
-- Register Button: prominent call to action for upcoming events.
+- Map: Dark outline, no labels, just data points.
+- Blips: Teal for commits, Purple for PRs, growing rings for impact.
+- Signal Feed: Monospaced, raw text style (e.g., `> user shipped to repo/xyz`).
+- Stats Overlay: "Live Shippers: 421", "Commits/Min: 85".
