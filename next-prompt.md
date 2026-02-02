@@ -1,7 +1,7 @@
 ---
-page: fusion.html.html.html
+page: vector.html.html
 ---
-"Fusion" - A dashboard visualizing high-impact Pull Request merges and team collaboration density.
+"Vector" - A dashboard visualizing the direction and magnitude of development velocity.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ page: fusion.html.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Fusion" with a merge icon.
-2. "Fusion Core" Visualization: A central node graph showing teams merging code.
-3. Merged PRs Table: List of recently merged high-impact PRs.
-4. Collaboration Heatmap: Grid showing team interaction density.
+1. Header: "Vector" with a direction icon.
+2. Velocity Vector Field: A canvas visualization showing development direction.
+3. Momentum Table: List of developers with high velocity.
+4. Acceleration Metrics: Graphs showing speed changes over time.
 
 **Specific Elements:**
-- "Reaction Efficiency" metric.
-- Pulsing connections between developer nodes.
-- Use Purple (#8250df) for "Merged" status indicators.
+- "Magnitude" score.
+- Arrows indicating trend direction.
+- Use Orange (#f97316) for high-velocity indicators.
