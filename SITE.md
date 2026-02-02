@@ -58,6 +58,7 @@
 * [x] `repos.html` - Top repositories by Jules activity
 * [x] `languages.html` - Leaderboard by programming language
 * [x] `search.html` - Advanced search and filtering interface
+* [x] `settings.html` - User preferences and notifications
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -72,7 +73,7 @@
 
 ### Future Concepts (Low Priority)
 - [ ] API Documentation page.
-- [ ] Settings/Preferences page.
+- [x] Settings/Preferences page.
 - [ ] Notifications page.
 
 ## 6. Creative Freedom Guidelines
@@ -94,7 +95,6 @@
 **Discovery & Exploration:**
 
 **User Experience:**
-- [ ] `settings.html` - User preferences and notifications
 - [ ] `notifications.html` - Activity alerts and updates
 - [ ] `onboarding.html` - How to get started with Jules
 - [ ] `faq.html` - Frequently asked questions

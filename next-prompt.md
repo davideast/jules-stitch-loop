@@ -1,7 +1,7 @@
 ---
-page: settings
+page: faq
 ---
-User settings and preferences page for jules.top. Manage profile, notifications, and API keys.
+Frequently Asked Questions (FAQ) page for jules.top. Clear, reading-focused layout with accordion-style questions.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,11 @@ User settings and preferences page for jules.top. Manage profile, notifications,
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Settings" with breadcrumbs.
-2. Layout: Two-column layout (Sidebar navigation vs Content area).
-3. Sections: Profile, Account, Notifications, API Access, Danger Zone.
+1. Header: "FAQ" / "Help" with global navigation.
+2. Layout: Centered column (~800px max-width) for readability.
+3. Sections: General, Scoring, Shipping, Technical.
 
 **Specific Elements:**
-- Sidebar navigation with active state indicators (teal border-left).
-- Form inputs styled like terminal command lines.
-- Toggle switches for notifications.
-- API Key section with "Copy" and "Regenerate" buttons.
-- "Danger Zone" with red border for account deletion.
+- Accordion details/summary elements for questions.
+- Clean typography, high contrast for text.
+- "Still need help?" contact section at the bottom.
