@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Roadmap - jules.top</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-7xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>Repos</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Languages</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+<span class="material-symbols-outlined text-xl">compare_arrows</span>
+<span>Rivalry Tracker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-primary px-4 py-2 text-sm text-white bg-gray-800" href="/roadmap.html">
+<span class="material-symbols-outlined text-xl">map</span>
+<span>Roadmap</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/settings.html">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/notifications.html">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span>Notifications</span>
+</a>
+</div>
+</header>
+<main class="flex-1 p-2 sm:p-4">
+    <div class="mb-8 flex items-center justify-between">
+        <div>
+            <h1 class="text-3xl font-bold text-white mb-2 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-4xl">map</span>
+                Product Roadmap
+            </h1>
+            <p class="text-gray-400">Tracking the future of jules.top. Vote on features you want to see next.</p>
+        </div>
+        <div class="flex items-center gap-4 text-sm text-gray-400 font-mono">
+            <span>Q3 Completion:</span>
+            <div class="h-2 w-32 rounded-full bg-gray-800 overflow-hidden">
+                <div class="h-full bg-primary w-2/3"></div>
+            </div>
+            <span>67%</span>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
+        <!-- PLANNED COLUMN -->
+        <div class="flex flex-col gap-4">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                <h2 class="text-sm font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
+                    <span class="h-2 w-2 rounded-full bg-blue-500"></span>
+                    Planned
+                </h2>
+                <span class="text-xs text-gray-500 font-mono">3 ITEMS</span>
+            </div>
+
+            <!-- Card 1 -->
+            <div class="group relative flex flex-col gap-3 rounded-lg border border-gray-800 bg-[#161b22] p-4 transition-all hover:border-gray-700">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white">API Documentation</h3>
+                    <div class="flex items-center gap-1 text-xs text-gray-500 bg-gray-900 px-2 py-1 rounded">
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_up</span>
+                        <span>128</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400">Public REST API for accessing leaderboard data and creating custom integrations.</p>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-900/30 text-blue-400 border border-blue-900">DEV</span>
+                </div>
+            </div>
+
+             <!-- Card 2 -->
+             <div class="group relative flex flex-col gap-3 rounded-lg border border-gray-800 bg-[#161b22] p-4 transition-all hover:border-gray-700">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white">Mobile App</h3>
+                    <div class="flex items-center gap-1 text-xs text-gray-500 bg-gray-900 px-2 py-1 rounded">
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_up</span>
+                        <span>94</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400">Native iOS and Android application for on-the-go tracking and notifications.</p>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-900/30 text-purple-400 border border-purple-900">PLATFORM</span>
+                </div>
+            </div>
+
+             <!-- Card 3 -->
+             <div class="group relative flex flex-col gap-3 rounded-lg border border-gray-800 bg-[#161b22] p-4 transition-all hover:border-gray-700">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white">Organization Dashboard</h3>
+                    <div class="flex items-center gap-1 text-xs text-gray-500 bg-gray-900 px-2 py-1 rounded">
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_up</span>
+                        <span>82</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400">Dedicated view for companies to manage their engineering team stats.</p>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-900/30 text-blue-400 border border-blue-900">B2B</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- IN PROGRESS COLUMN -->
+        <div class="flex flex-col gap-4">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                <h2 class="text-sm font-bold uppercase tracking-wider text-electric-yellow flex items-center gap-2">
+                    <span class="relative flex h-2 w-2">
+                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-electric-yellow opacity-75"></span>
+                      <span class="relative inline-flex h-2 w-2 rounded-full bg-electric-yellow"></span>
+                    </span>
+                    In Progress
+                </h2>
+                <span class="text-xs text-gray-500 font-mono">2 ITEMS</span>
+            </div>
+
+             <!-- Card 1 -->
+             <div class="group relative flex flex-col gap-3 rounded-lg border border-electric-yellow/30 bg-[#161b22] p-4 transition-all hover:border-electric-yellow/50">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white">Real-time Webhooks</h3>
+                    <div class="flex items-center gap-1 text-xs text-electric-yellow bg-electric-yellow/10 px-2 py-1 rounded border border-electric-yellow/20">
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_up</span>
+                        <span>245</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400">Event-driven webhooks for shipping events, achievements, and rank changes.</p>
+                <div class="w-full bg-gray-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-electric-yellow h-full w-[45%]"></div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group relative flex flex-col gap-3 rounded-lg border border-electric-yellow/30 bg-[#161b22] p-4 transition-all hover:border-electric-yellow/50">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white">Dark Mode 2.0</h3>
+                    <div class="flex items-center gap-1 text-xs text-electric-yellow bg-electric-yellow/10 px-2 py-1 rounded border border-electric-yellow/20">
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_up</span>
+                        <span>112</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400">Higher contrast theme options and custom syntax highlighting themes.</p>
+                <div class="w-full bg-gray-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-electric-yellow h-full w-[80%]"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHIPPED COLUMN -->
+        <div class="flex flex-col gap-4">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                <h2 class="text-sm font-bold uppercase tracking-wider text-primary flex items-center gap-2">
+                    <span class="h-2 w-2 rounded-full bg-primary"></span>
+                    Shipped
+                </h2>
+                <span class="text-xs text-gray-500 font-mono">4 ITEMS</span>
+            </div>
+
+             <!-- Card 1 -->
+             <div class="group relative flex flex-col gap-3 rounded-lg border border-primary/20 bg-[#161b22] p-4 opacity-75 hover:opacity-100 transition-all">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white line-through decoration-gray-500 decoration-2">Battle Mode</h3>
+                    <div class="flex items-center gap-1 text-xs text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                        <span class="material-symbols-outlined text-[14px]">check</span>
+                        <span>Done</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500">Head-to-head developer comparison tool with stat visualization.</p>
+            </div>
+
+            <!-- Card 2 -->
+             <div class="group relative flex flex-col gap-3 rounded-lg border border-primary/20 bg-[#161b22] p-4 opacity-75 hover:opacity-100 transition-all">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white line-through decoration-gray-500 decoration-2">GitHub Login</h3>
+                    <div class="flex items-center gap-1 text-xs text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                        <span class="material-symbols-outlined text-[14px]">check</span>
+                        <span>Done</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500">Seamless authentication and profile syncing via GitHub OAuth.</p>
+            </div>
+
+            <!-- Card 3 -->
+             <div class="group relative flex flex-col gap-3 rounded-lg border border-primary/20 bg-[#161b22] p-4 opacity-75 hover:opacity-100 transition-all">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white line-through decoration-gray-500 decoration-2">Profile Badges</h3>
+                    <div class="flex items-center gap-1 text-xs text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                        <span class="material-symbols-outlined text-[14px]">check</span>
+                        <span>Done</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500">Visual achievements for shipping streaks, total commits, and PRs.</p>
+            </div>
+             <!-- Card 4 -->
+             <div class="group relative flex flex-col gap-3 rounded-lg border border-primary/20 bg-[#161b22] p-4 opacity-75 hover:opacity-100 transition-all">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-white line-through decoration-gray-500 decoration-2">Global Feed</h3>
+                    <div class="flex items-center gap-1 text-xs text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                        <span class="material-symbols-outlined text-[14px]">check</span>
+                        <span>Done</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500">Real-time activity feed showing all shipping events across the platform.</p>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>

@@ -1,7 +1,7 @@
 ---
-page: roadmap
+page: api
 ---
-Public roadmap of upcoming features for jules.top. A Kanban-style board tracking the future of the platform.
+API Documentation for jules.top. Developer-focused page detailing public endpoints, authentication, and integration examples.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,11 @@ Public roadmap of upcoming features for jules.top. A Kanban-style board tracking
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Roadmap" with global navigation.
-2. Layout: Three distinct columns (Planned, In Progress, Shipped).
-3. Cards: Feature requests/ideas in each column.
+1. Header: "API Reference" with global navigation.
+2. Layout: Two-column layout (Sidebar navigation for endpoints, Main content area).
+3. Documentation: Clear sections for Authentication, Rate Limiting, and Endpoints.
 
 **Specific Elements:**
-- Status Indicators: "In Progress" (Pulsing Yellow/Orange), "Planned" (Gray/Blue), "Shipped" (Green).
-- Feature Cards: Minimal dark cards with title, short description, and "Upvote" count (e.g. "▲ 42").
-- Progress Bars: Overall completion percentage for the current quarter.
+- Code Blocks: Dark syntax highlighting for JSON response examples (e.g., `{ "rank": 1, "score": 8421 }`).
+- Methods: GET badges (Blue), POST badges (Green), DELETE badges (Red) for visual distinction.
+- Copy Button: Icon to copy code snippets to clipboard.
