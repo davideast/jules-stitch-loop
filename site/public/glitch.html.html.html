@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Real-time Deployment Pipeline</title>
+<title>The Glitch - Bug Tracking & Hotfixes</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -26,15 +26,58 @@
         },
       }
     </script>
+
 <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
-        }
-    </style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+    /* Glitch Effect */
+    .glitch-text {
+        position: relative;
+    }
+    .glitch-text:hover::before,
+    .glitch-text:hover::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #0d1117;
+        clip: rect(0, 0, 0, 0);
+    }
+    .glitch-text:hover::before {
+        left: -2px;
+        text-shadow: 1px 0 #ff0000;
+        animation: glitch-anim-1 2s infinite linear alternate-reverse;
+    }
+    .glitch-text:hover::after {
+        left: 2px;
+        text-shadow: -1px 0 #00ff00;
+        animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-anim-1 {
+        0% { clip: rect(20px, 9999px, 10px, 0); }
+        20% { clip: rect(60px, 9999px, 80px, 0); }
+        40% { clip: rect(10px, 9999px, 90px, 0); }
+        60% { clip: rect(80px, 9999px, 20px, 0); }
+        80% { clip: rect(40px, 9999px, 50px, 0); }
+        100% { clip: rect(70px, 9999px, 30px, 0); }
+    }
+    @keyframes glitch-anim-2 {
+        0% { clip: rect(80px, 9999px, 20px, 0); }
+        20% { clip: rect(10px, 9999px, 90px, 0); }
+        40% { clip: rect(50px, 9999px, 40px, 0); }
+        60% { clip: rect(20px, 9999px, 70px, 0); }
+        80% { clip: rect(90px, 9999px, 10px, 0); }
+        100% { clip: rect(30px, 9999px, 60px, 0); }
+    }
+
+    /* Terminal Scrollbar */
+    .terminal-scroll::-webkit-scrollbar { width: 8px; }
+    .terminal-scroll::-webkit-scrollbar-track { bg-gray-900; }
+    .terminal-scroll::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+    .terminal-scroll::-webkit-scrollbar-thumb:hover { background: #555; }
+</style>
+
 </head>
 <body class="bg-background-dark font-display text-white">
 <div class="relative flex h-auto min-h-screen w-full flex-col">
@@ -347,178 +390,169 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="flex flex-col gap-6">
-    <!-- Header Stats -->
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500">Success Rate</div>
-            <div class="mt-1 text-2xl font-mono text-white">98.5%</div>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500">Active Deploys</div>
-            <div class="mt-1 text-2xl font-mono text-primary">3</div>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500">Avg Duration</div>
-            <div class="mt-1 text-2xl font-mono text-white">4m 12s</div>
-        </div>
-        <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-            <div class="text-sm text-gray-500">Total Ships</div>
-            <div class="mt-1 text-2xl font-mono text-white">1,248</div>
-        </div>
-    </div>
 
-    <!-- Pipeline Visualizer -->
-    <div class="rounded-lg border border-gray-800 bg-gray-900/50 p-6">
-        <h2 class="mb-4 text-lg font-bold text-white flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary">schema</span>
-            Active Pipeline
-        </h2>
-        <div class="relative">
-            <!-- Swimlanes -->
-            <div class="grid grid-cols-4 gap-4">
-                <!-- Build Stage -->
-                <div class="relative">
-                    <div class="mb-2 flex items-center justify-between">
-                        <span class="text-sm font-bold text-gray-400">BUILD</span>
-                        <span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+<main class="flex-1 p-4 sm:p-6 md:p-8 relative">
+    <!-- Matrix Rain Canvas Background for Header Area -->
+    <canvas id="matrix-canvas" class="absolute top-0 left-0 w-full h-64 z-0 opacity-20 pointer-events-none"></canvas>
+
+    <div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col mx-auto relative z-10 gap-8">
+
+        <!-- Header -->
+        <div class="flex flex-col gap-2 mb-4">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-4xl text-primary animate-pulse">bug_report</span>
+                <h1 class="text-3xl font-bold text-white glitch-text" data-text="The Glitch">The Glitch</h1>
+            </div>
+            <p class="text-gray-400 max-w-2xl">Real-time tracking of critical regressions, hotfixes, and system decay.</p>
+        </div>
+
+        <!-- System Status Matrix -->
+        <section>
+            <h2 class="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">System Status Matrix</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Node 1 -->
+                <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-md flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500 font-mono">NODE_01</span>
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                     </div>
-                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-800">
-                        <div class="h-full w-full bg-green-500"></div>
-                    </div>
-                    <div class="mt-2 text-xs text-gray-500 font-mono">v2.4.0-rc1</div>
+                    <div class="text-lg font-mono text-white">API Gateway</div>
+                    <div class="text-xs text-green-400">STABLE</div>
                 </div>
-
-                <!-- Test Stage -->
-                <div class="relative">
-                    <div class="mb-2 flex items-center justify-between">
-                        <span class="text-sm font-bold text-gray-400">TEST</span>
-                        <span class="material-symbols-outlined text-primary animate-spin text-sm">progress_activity</span>
+                <!-- Node 2 -->
+                <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-md flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500 font-mono">NODE_02</span>
+                        <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
                     </div>
-                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-800">
-                        <div class="h-full w-3/4 animate-pulse bg-primary"></div>
-                    </div>
-                    <div class="mt-2 text-xs text-gray-500 font-mono">Running Unit Tests...</div>
+                    <div class="text-lg font-mono text-white">Auth Service</div>
+                    <div class="text-xs text-red-500">CRITICAL</div>
                 </div>
-
-                <!-- Stage Stage -->
-                <div class="relative">
-                    <div class="mb-2 flex items-center justify-between">
-                        <span class="text-sm font-bold text-gray-400">STAGE</span>
-                        <span class="material-symbols-outlined text-gray-600 text-sm">radio_button_unchecked</span>
+                <!-- Node 3 -->
+                <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-md flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500 font-mono">NODE_03</span>
+                        <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
                     </div>
-                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-800">
-                        <div class="h-full w-0 bg-gray-600"></div>
-                    </div>
-                    <div class="mt-2 text-xs text-gray-500 font-mono">Pending</div>
+                    <div class="text-lg font-mono text-white">Data Stream</div>
+                    <div class="text-xs text-yellow-500">DEGRADED</div>
                 </div>
-
-                <!-- Prod Stage -->
-                <div class="relative">
-                    <div class="mb-2 flex items-center justify-between">
-                        <span class="text-sm font-bold text-gray-400">PROD</span>
-                        <span class="material-symbols-outlined text-gray-600 text-sm">radio_button_unchecked</span>
+                <!-- Node 4 -->
+                <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-md flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500 font-mono">NODE_04</span>
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                     </div>
-                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-800">
-                        <div class="h-full w-0 bg-gray-600"></div>
-                    </div>
-                    <div class="mt-2 text-xs text-gray-500 font-mono">Scheduled</div>
+                    <div class="text-lg font-mono text-white">Storage</div>
+                    <div class="text-xs text-green-400">STABLE</div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Deployment History Table -->
-    <div class="rounded-lg border border-gray-800 bg-gray-900/50 overflow-hidden">
-        <div class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
-             <h2 class="text-lg font-bold text-white flex items-center gap-2">
-                <span class="material-symbols-outlined text-gray-400">history</span>
-                Deployment History
-            </h2>
-        </div>
-        <div class="overflow-x-auto">
-            <table class="min-w-full">
-                <thead class="border-b border-gray-800 bg-gray-900/50">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500" scope="col">Version</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500" scope="col">Commit</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500" scope="col">Author</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500" scope="col">Duration</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500" scope="col">Status</th>
-                        <th class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500" scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-800">
-                    <tr class="hover:bg-gray-800/50">
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-white">v2.3.9</td>
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">
-                            <a href="#" class="hover:underline">7a8b9c</a>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4">
-                            <div class="flex items-center gap-2">
-                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf" alt="" class="h-6 w-6 rounded-full border border-gray-700">
-                                <span class="text-sm text-gray-300">Jules</span>
-                            </div>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">3m 45s</td>
-                        <td class="whitespace-nowrap px-6 py-4">
-                            <span class="inline-flex items-center gap-1 rounded-full bg-green-900/30 px-2 py-0.5 text-xs font-medium text-green-400">
-                                <span class="material-symbols-outlined text-[14px]">check_circle</span> Success
-                            </span>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4 text-right">
-                            <button class="text-xs text-gray-500 hover:text-white">Log</button>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-gray-800/50">
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-white">v2.3.8</td>
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">
-                            <a href="#" class="hover:underline">2f3e4d</a>
-                        </td>
-                         <td class="whitespace-nowrap px-6 py-4">
-                            <div class="flex items-center gap-2">
-                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J" alt="" class="h-6 w-6 rounded-full border border-gray-700">
-                                <span class="text-sm text-gray-300">Alex</span>
-                            </div>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1m 12s</td>
-                        <td class="whitespace-nowrap px-6 py-4">
-                             <span class="inline-flex items-center gap-1 rounded-full bg-red-900/30 px-2 py-0.5 text-xs font-medium text-red-400">
-                                <span class="material-symbols-outlined text-[14px]">cancel</span> Failed
-                            </span>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4 text-right">
-                             <button class="rounded border border-red-900 bg-red-900/20 px-2 py-1 text-xs text-red-400 hover:bg-red-900/40">Rollback</button>
-                        </td>
-                    </tr>
-                     <tr class="hover:bg-gray-800/50">
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-white">v2.3.7</td>
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">
-                            <a href="#" class="hover:underline">9a0b1c</a>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4">
-                            <div class="flex items-center gap-2">
-                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ" alt="" class="h-6 w-6 rounded-full border border-gray-700">
-                                <span class="text-sm text-gray-300">Sam</span>
-                            </div>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">4m 05s</td>
-                        <td class="whitespace-nowrap px-6 py-4">
-                            <span class="inline-flex items-center gap-1 rounded-full bg-green-900/30 px-2 py-0.5 text-xs font-medium text-green-400">
-                                <span class="material-symbols-outlined text-[14px]">check_circle</span> Success
-                            </span>
-                        </td>
-                        <td class="whitespace-nowrap px-6 py-4 text-right">
-                            <button class="text-xs text-gray-500 hover:text-white">Log</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Bug Feed (Left Column) -->
+            <section class="lg:col-span-1 flex flex-col h-[500px]">
+                <h2 class="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">Live Bug Feed</h2>
+                <div class="flex-1 bg-black border border-gray-800 rounded-md p-4 font-mono text-xs overflow-y-auto terminal-scroll flex flex-col gap-3">
+                    <div class="text-red-500">[ERR] 0x4F2A NullReferenceException in /auth/login.ts</div>
+                    <div class="text-gray-500">>> Trace: user is undefined at line 42</div>
+                    <div class="border-b border-gray-900 my-1"></div>
+
+                    <div class="text-yellow-500">[WARN] High Latency detected in region us-east-1</div>
+                    <div class="text-gray-500">>> Ping: 450ms (Threshold: 200ms)</div>
+                    <div class="border-b border-gray-900 my-1"></div>
+
+                    <div class="text-green-500">[FIX] Hotfix applied to deployment #8821</div>
+                    <div class="text-gray-500">>> Reverted commit a7f2b1</div>
+                    <div class="border-b border-gray-900 my-1"></div>
+
+                    <div class="text-red-500">[ERR] Timeout waiting for DB connection pool</div>
+                    <div class="text-gray-500">>> Retry attempt 3/5 failed</div>
+                    <div class="border-b border-gray-900 my-1"></div>
+
+                    <div class="text-red-500">[ERR] Memory Leak detected in worker process</div>
+                    <div class="text-gray-500">>> Heap usage > 90%</div>
+                    <div class="border-b border-gray-900 my-1"></div>
+                     <div class="text-green-500">[FIX] Patch #442 deployed by User:Jules</div>
+                    <div class="text-gray-500">>> Resolved memory leak in worker</div>
+                </div>
+            </section>
+
+            <!-- Patch Leaderboard (Right 2 Columns) -->
+            <section class="lg:col-span-2">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-sm font-medium text-gray-400 uppercase tracking-wider">Patch Leaderboard</h2>
+                    <span class="text-xs text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">Active Cycle</span>
+                </div>
+
+                <div class="overflow-hidden bg-gray-900/30 border border-gray-800 rounded-md">
+                    <table class="min-w-full">
+                        <thead class="bg-gray-900/50 border-b border-gray-800">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rank</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Developer</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Patches</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Fix</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800">
+                            <!-- Rank 1 -->
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#1 🥇</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-full bg-gray-700 border border-gray-600"></div>
+                                        <div class="text-sm font-medium text-white glitch-text" data-text="Jules">Jules</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-primary">142</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">12m ago</td>
+                            </tr>
+                            <!-- Rank 2 -->
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#2 🥈</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-full bg-gray-700 border border-gray-600"></div>
+                                        <div class="text-sm font-medium text-white">Alex</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-primary">98</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">1h ago</td>
+                            </tr>
+                            <!-- Rank 3 -->
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#3 🥉</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-full bg-gray-700 border border-gray-600"></div>
+                                        <div class="text-sm font-medium text-white">Sam</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-primary">87</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">4h ago</td>
+                            </tr>
+                             <!-- Rank 4 -->
+                            <tr class="hover:bg-gray-800/50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#4</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-full bg-gray-700 border border-gray-600"></div>
+                                        <div class="text-sm font-medium text-white">Devon</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-primary">64</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">1d ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </div>
-</div>
 </main>
+
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">
@@ -538,4 +572,44 @@
 </div>
 </div>
 </div>
-</div></body></html>
+</div>
+<script>
+    // Matrix Rain Effect
+    const canvas = document.getElementById('matrix-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(13, 17, 23, 0.05)'; // Fade out
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#2dd4bf'; // Primary color
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+
+        window.addEventListener('resize', () => {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        });
+    }
+</script>
+</body>
+</html>
