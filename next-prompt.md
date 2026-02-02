@@ -1,10 +1,7 @@
 ---
-page: shop.html.html
+page: league.html
 ---
-A virtual store where developers can spend 'Commit Coins' (earned by shipping) on profile upgrades, themes, and power-ups.
-- **Inventory Grid:** Grid of purchasable items (Dark Mode+ Theme, Golden Border, etc.).
-- **Wallet:** Display of user's current Commit Coin balance.
-- **Purchase Flow:** Modal confirmation and "Equip" action.
+A competitive league system (Bronze -> Grandmaster) where developers are promoted/demoted based on weekly shipping performance.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -25,12 +22,12 @@ A virtual store where developers can spend 'Commit Coins' (earned by shipping) o
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "The Exchange // Black Market".
-2. Stats Bar: Current Balance, Lifetime Earnings.
-3. Filter Tabs: Themes, Badges, Boosters.
-4. Product Grid: Cards with icon, title, price, and "Buy" button.
+1. Header: Current League Status (e.g., "Diamond League - Rank #42").
+2. League Progress Bar: Points needed for promotion.
+3. The Ladder: List of developers in the current cohort (up/down arrows for movement).
+4. Promotion/Demotion Zones: Visual indicators for top 3 and bottom 3.
 
 **Specific Elements:**
-- "Commit Coin" icon (custom SVG or symbol).
-- 'Sold Out' or 'Owned' states for items.
-- Cyberpunk/Terminal aesthetic for the store interface.
+- League Icons (Shields/Badges) with metallic textures.
+- "Season Ends In: 2d 14h" countdown.
+- "Cutline" visual divider showing who is safe and who is at risk.

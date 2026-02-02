@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Developer Leaderboard Dashboard</title>
+<title>The Exchange // Black Market</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -272,128 +272,136 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4"><div class="flex flex-col gap-6 max-w-7xl mx-auto w-full">
-  <!-- Header -->
-  <div class="flex items-center justify-between border-b border-gray-800 pb-4">
-    <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-3xl text-primary">calendar_month</span>
-        <h1 class="text-2xl font-bold text-white">Upcoming Events</h1>
-    </div>
-    <div class="flex items-center gap-2">
-        <button class="rounded-md bg-gray-800 px-3 py-1.5 text-sm text-white hover:bg-gray-700">All</button>
-        <button class="rounded-md border border-gray-800 px-3 py-1.5 text-sm text-gray-400 hover:text-white">Hackathons</button>
-        <button class="rounded-md border border-gray-800 px-3 py-1.5 text-sm text-gray-400 hover:text-white">Challenges</button>
-    </div>
-  </div>
+<main class="flex-1 p-4 sm:p-6 md:p-8">
 
-  <!-- Featured Event -->
-  <div class="relative overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 p-6 sm:p-8">
-    <div class="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-            <div class="mb-2 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                <span class="relative flex h-2 w-2">
-                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-                  <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
-                </span>
-                LIVE NOW
+<div class="mb-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+        <h1 class="font-mono text-2xl font-bold text-white uppercase tracking-wider">The Exchange <span class="text-gray-600">//</span> <span class="text-primary">Black Market</span></h1>
+        <p class="mt-1 text-sm text-gray-400">Spend Commit Coins on upgrades and rare items.</p>
+    </div>
+    <div class="flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-900/50 p-4">
+        <div class="flex flex-col">
+            <span class="text-xs text-gray-500 uppercase">Current Balance</span>
+            <span class="font-mono text-xl font-bold text-primary">2,450 <span class="text-sm">CC</span></span>
+        </div>
+        <div class="h-8 w-px bg-gray-800"></div>
+        <div class="flex flex-col">
+            <span class="text-xs text-gray-500 uppercase">Lifetime</span>
+            <span class="font-mono text-sm text-white">15,200 <span class="text-xs text-gray-500">CC</span></span>
+        </div>
+    </div>
+</div>
+
+<div class="mb-8 border-b border-gray-800">
+    <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+        <button class="border-b-2 border-primary px-1 py-4 text-sm font-medium text-primary" aria-current="page">All Items</button>
+        <button class="border-b-2 border-transparent px-1 py-4 text-sm font-medium text-gray-400 hover:border-gray-700 hover:text-gray-300">Themes</button>
+        <button class="border-b-2 border-transparent px-1 py-4 text-sm font-medium text-gray-400 hover:border-gray-700 hover:text-gray-300">Badges</button>
+        <button class="border-b-2 border-transparent px-1 py-4 text-sm font-medium text-gray-400 hover:border-gray-700 hover:text-gray-300">Boosters</button>
+    </nav>
+</div>
+
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Item 1 -->
+    <div class="relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/20 transition hover:border-primary/50 group">
+        <div class="absolute right-2 top-2 rounded bg-green-900/30 px-2 py-0.5 text-xs font-medium text-green-400 border border-green-800">OWNED</div>
+        <div class="p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-primary">
+                <span class="material-symbols-outlined">dark_mode</span>
             </div>
-            <h2 class="text-3xl font-bold text-white">Speed Run Hackathon 2024</h2>
-            <p class="mt-2 max-w-xl text-gray-400">Build and ship a full-stack app in 24 hours. Top prize: 5000 XP + Gold Trophy.</p>
-            <div class="mt-4 flex items-center gap-4 text-sm text-gray-400">
-                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">group</span> 142 Joined</span>
-                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">timer</span> 12h 45m remaining</span>
+            <h3 class="text-lg font-bold text-white">OLED Black Theme</h3>
+            <p class="mt-2 text-sm text-gray-400">True black background for maximum contrast and battery saving.</p>
+            <div class="mt-6 flex items-center justify-between">
+                <span class="font-mono text-lg font-bold text-white">1,000 CC</span>
+                <button class="rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-gray-400 cursor-not-allowed opacity-50" disabled>Equipped</button>
             </div>
         </div>
-        <div class="flex flex-col gap-3">
-             <div class="text-center">
-                <div class="text-3xl font-mono font-bold text-white">12:45:02</div>
-                <div class="text-xs uppercase text-gray-500">Time Left</div>
-             </div>
-             <button class="flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-bold text-black hover:bg-primary/90">
+    </div>
+
+    <!-- Item 2 -->
+    <div class="relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/20 transition hover:border-primary/50 group">
+        <div class="p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-electric-yellow">
+                <span class="material-symbols-outlined">crop_free</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Golden Border</h3>
+            <p class="mt-2 text-sm text-gray-400">A shining golden border for your profile avatar. Flex on 'em.</p>
+            <div class="mt-6 flex items-center justify-between">
+                <span class="font-mono text-lg font-bold text-white">5,000 CC</span>
+                <button class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-black hover:bg-primary/90">Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/20 transition hover:border-primary/50 group">
+        <div class="p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-purple-400">
                 <span class="material-symbols-outlined">rocket_launch</span>
-                Join Event
-             </button>
-        </div>
-    </div>
-  </div>
-
-  <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-    <!-- Chronological List -->
-    <div class="lg:col-span-2">
-        <h3 class="mb-4 text-lg font-bold text-white">Schedule</h3>
-        <div class="flex flex-col gap-4">
-            <!-- Item 1 -->
-            <div class="group flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-900/20 p-4 hover:border-gray-700">
-                <div class="flex h-14 w-14 flex-col items-center justify-center rounded-md bg-gray-800 border border-gray-700">
-                    <span class="text-xs font-bold text-primary">OCT</span>
-                    <span class="text-xl font-bold text-white">24</span>
-                </div>
-                <div class="flex-1">
-                    <h4 class="text-base font-bold text-white group-hover:text-primary">Global Bug Bash</h4>
-                    <p class="text-sm text-gray-400">Squash bugs, earn bounties. 2x XP for P1 fixes.</p>
-                    <div class="mt-2 flex items-center gap-2">
-                         <span class="rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-300">Sprint</span>
-                         <span class="rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-300">Remote</span>
-                    </div>
-                </div>
-                <button class="rounded-md border border-gray-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gray-800">RSVP</button>
             </div>
-             <!-- Item 2 -->
-            <div class="group flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-900/20 p-4 hover:border-gray-700">
-                <div class="flex h-14 w-14 flex-col items-center justify-center rounded-md bg-gray-800 border border-gray-700">
-                    <span class="text-xs font-bold text-primary">NOV</span>
-                    <span class="text-xl font-bold text-white">01</span>
-                </div>
-                <div class="flex-1">
-                    <h4 class="text-base font-bold text-white group-hover:text-primary">November Shipping Marathon</h4>
-                    <p class="text-sm text-gray-400">Ship a feature every day for 30 days.</p>
-                     <div class="mt-2 flex items-center gap-2">
-                         <span class="rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-300">Marathon</span>
-                    </div>
-                </div>
-                <button class="rounded-md border border-gray-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gray-800">RSVP</button>
-            </div>
-             <!-- Item 3 -->
-            <div class="group flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-900/20 p-4 hover:border-gray-700 opacity-75">
-                <div class="flex h-14 w-14 flex-col items-center justify-center rounded-md bg-gray-800 border border-gray-700">
-                    <span class="text-xs font-bold text-gray-500">DEC</span>
-                    <span class="text-xl font-bold text-gray-400">15</span>
-                </div>
-                <div class="flex-1">
-                    <h4 class="text-base font-bold text-white group-hover:text-primary">End of Year Wrap-up</h4>
-                    <p class="text-sm text-gray-400">Celebration of top shippers of the year.</p>
-                     <div class="mt-2 flex items-center gap-2">
-                         <span class="rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-300">Social</span>
-                    </div>
-                </div>
-                <button class="rounded-md border border-gray-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gray-800">RSVP</button>
+            <h3 class="text-lg font-bold text-white">2x XP Booster</h3>
+            <p class="mt-2 text-sm text-gray-400">Double XP for all shipped commits for 24 hours.</p>
+            <div class="mt-6 flex items-center justify-between">
+                <span class="font-mono text-lg font-bold text-white">500 CC</span>
+                <button class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-black hover:bg-primary/90">Purchase</button>
             </div>
         </div>
     </div>
 
-    <!-- Mini Calendar -->
-    <div class="rounded-xl border border-gray-800 bg-gray-900/20 p-4 h-fit">
-        <h3 class="mb-4 text-lg font-bold text-white">October 2023</h3>
-        <div class="grid grid-cols-7 gap-1 text-center text-sm">
-            <div class="text-gray-500 text-xs py-1">S</div><div class="text-gray-500 text-xs py-1">M</div><div class="text-gray-500 text-xs py-1">T</div><div class="text-gray-500 text-xs py-1">W</div><div class="text-gray-500 text-xs py-1">T</div><div class="text-gray-500 text-xs py-1">F</div><div class="text-gray-500 text-xs py-1">S</div>
-
-            <!-- Dates (Mockup) -->
-            <div class="py-2 text-gray-600">29</div><div class="py-2 text-gray-600">30</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">1</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">2</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">3</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">4</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">5</div>
-             <div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">6</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">7</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">8</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">9</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">10</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">11</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">12</div>
-              <div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">13</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">14</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">15</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">16</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">17</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">18</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">19</div>
-               <div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">20</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">21</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">22</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">23</div>
-
-               <div class="relative py-2 font-bold text-primary hover:bg-gray-800 rounded cursor-pointer">
-                24
-                <span class="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-primary"></span>
-               </div>
-
-               <div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">25</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">26</div>
-               <div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">27</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">28</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">29</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">30</div><div class="py-2 text-white hover:bg-gray-800 rounded cursor-pointer">31</div>
+    <!-- Item 4 -->
+    <div class="relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/20 transition hover:border-primary/50 group">
+        <div class="p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-blue-400">
+                <span class="material-symbols-outlined">terminal</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Hacker Font Pack</h3>
+            <p class="mt-2 text-sm text-gray-400">Unlock 'Matrix', 'Terminal', and 'Retro' fonts for your dashboard.</p>
+            <div class="mt-6 flex items-center justify-between">
+                <span class="font-mono text-lg font-bold text-white">1,500 CC</span>
+                <button class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-black hover:bg-primary/90">Purchase</button>
+            </div>
         </div>
     </div>
-  </div>
-</div></main>
+
+    <!-- Item 5 -->
+    <div class="relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/20 transition hover:border-primary/50 group">
+         <div class="absolute right-2 top-2 rounded bg-red-900/30 px-2 py-0.5 text-xs font-medium text-red-400 border border-red-800">SOLD OUT</div>
+        <div class="p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-gray-400">
+                <span class="material-symbols-outlined">visibility_off</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Stealth Mode</h3>
+            <p class="mt-2 text-sm text-gray-400">Hide your online status while keeping your streak alive.</p>
+            <div class="mt-6 flex items-center justify-between">
+                <span class="font-mono text-lg font-bold text-white">2,000 CC</span>
+                <button class="rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed" disabled>Unavailable</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/20 transition hover:border-primary/50 group grayscale opacity-75">
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center backdrop-blur-sm">
+             <div class="text-center">
+                <span class="material-symbols-outlined text-3xl text-gray-500 mb-2">lock</span>
+                <p class="text-xs font-mono text-gray-400">REQUIRES LVL 10</p>
+             </div>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-yellow-400">
+                <span class="material-symbols-outlined">verified</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Verified Badge</h3>
+            <p class="mt-2 text-sm text-gray-400">Official verification badge next to your username.</p>
+            <div class="mt-6 flex items-center justify-between">
+                <span class="font-mono text-lg font-bold text-white">10,000 CC</span>
+                <button class="rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed" disabled>Locked</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">
