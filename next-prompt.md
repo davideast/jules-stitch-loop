@@ -1,7 +1,7 @@
 ---
-page: languages.html
+page: search
 ---
-A leaderboard ranking programming languages by popularity and shipping volume on Jules. Minimal, Data-dense, Terminal.
+Advanced search and filtering interface for jules.top. Minimal, Data-dense, Terminal.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ A leaderboard ranking programming languages by popularity and shipping volume on
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Top Languages" with a search/filter bar.
-2. Stats Overview: Total Languages, Most Active, Fastest Growing.
-3. Language Table: Rank | Language (Icon + Name) | Active Devs | Total Ships | Growth Trend (Sparkline).
-4. Footer.
+1. Header: "Search & Filter" with stats summary.
+2. Filter Bar: Facets for Language, Timeframe, Rank Range, Organization.
+3. Query Builder: Text input with "terminal" style syntax support (e.g. `lang:ts ships:>50`).
+4. Results Grid: Dense list of matching developers/repos.
 
 **Specific Elements:**
-- Language icons (e.g., JS/TS/Python logos or colored dots).
-- Sparklines for growth trends in the table.
-- Monospace font for all numerical data.
+- Terminal-like input field with blinking cursor style.
+- "Tag" style indicators for active filters.
+- Keyboard shortcuts hint (e.g., "Press / to search").
