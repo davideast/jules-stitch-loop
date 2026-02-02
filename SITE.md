@@ -59,6 +59,7 @@
 * [x] `languages.html` - Leaderboard by programming language
 * [x] `search.html` - Advanced search and filtering interface
 * [x] `settings.html` - User preferences and notifications
+* [x] `faq.html` - Frequently asked questions
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -97,7 +98,6 @@
 **User Experience:**
 - [ ] `notifications.html` - Activity alerts and updates
 - [ ] `onboarding.html` - How to get started with Jules
-- [ ] `faq.html` - Frequently asked questions
 
 **Meta & Documentation:**
 - [ ] `changelog.html` - Platform updates and new features
