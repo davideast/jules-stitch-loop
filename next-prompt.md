@@ -1,7 +1,7 @@
 ---
-page: draft.html
+page: pass.html
 ---
-"Fantasy Developer League Draft" - A competitive team-building interface for selecting developers for upcoming sprints.
+"Season Pass" - A tiered progression system for unlocking cosmetic rewards and boosters.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,13 @@ page: draft.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Season 5 Draft" status and Timer.
-2. Draft Board: Grid of available developers with stats (Cost, Role, Velocity).
-3. My Team: Selected roster slots (Tank, DPS/Coder, Support/Reviewer).
-4. Live Feed: Recent picks by other team captains.
+1. Header: Season 5 "Velocity" Banner with end date countdown.
+2. Progression Track: Horizontal scrolling list of levels (1-100).
+3. Reward Tiers: Dual rows for "Free" vs "Pro" pass rewards.
+4. Quest Log: Daily/Weekly missions that grant Season XP.
 
 **Specific Elements:**
-- "Draft" button for available players.
-- Salary Cap progress bar.
-- Role icons (Shield, Sword, Staff).
-- Confetti/Animation on successful draft pick.
+- "Claim All" button for unlocked rewards.
+- Locked/Unlocked status icons (Padlocks vs Checkmarks).
+- Animated progress bar showing current level.
+- "Upgrade to Pro" Call-to-Action card.
