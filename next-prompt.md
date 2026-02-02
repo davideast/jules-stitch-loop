@@ -1,7 +1,7 @@
 ---
-page: secrets.html
+page: missions.html
 ---
-A secure vault page containing encrypted secrets, easter eggs, and unlockable rewards for top developers.
+A gamified missions page where developers can accept daily and weekly coding challenges to earn XP and badges.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,14 @@ A secure vault page containing encrypted secrets, easter eggs, and unlockable re
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header "Jules Vault // TOP SECRET".
-2. "Access Terminal": A keypad or command line input for entering codes.
-3. "Locked Files": A grid of "files" with lock icons and encrypted names.
-4. "Decryption Progress": A visualization of a brute-force attack simulation.
-5. "Unlocked Artifacts": A list of rewards (wallpapers, badges) that have been unlocked.
+1. Header "Daily Briefing // TOP SECRET".
+2. "Active Mission": A featured card with a countdown timer.
+3. "Mission Board": A grid of available missions with difficulty ratings (Easy, Medium, Hard).
+4. "XP Progress": A circular progress bar showing level advancement.
+5. "Completed Missions": A log of past successes.
 
 **Specific Elements:**
-- Glitch effects on text.
-- "Access Denied" animations.
-- Sound effect toggles.
-- Hidden binary code in the background.
+- Countdown timers.
+- Difficulty badges (Green, Yellow, Red).
+- XP gain animations.
+- "Accept Mission" buttons with terminal-style confirm dialogs.
