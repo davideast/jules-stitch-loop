@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Developer Leaderboard Dashboard</title>
+<title>The Pulse - Real-time Platform Activity</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -13,9 +13,11 @@
           extend: {
             colors: {
               "primary": "#2dd4bf",
-              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "sparkline-color": "#2dd4bf",
+              "background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
+              "heartbeat": "#ef4444",
             },
             fontFamily: {
               "display": ["Space Grotesk", "sans-serif"],
@@ -29,10 +31,18 @@
 <style>
         .material-symbols-outlined {
             font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
+            "FILL" 0,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 24
+        }
+        @keyframes pulse-animation {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-heartbeat {
+            animation: pulse-animation 2s infinite ease-in-out;
         }
     </style>
 </head>
@@ -339,89 +349,114 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="flex flex-col items-center justify-center gap-8 py-10" id="focus-container">
-    <!-- Header Stats -->
-    <div id="focus-stats" class="flex w-full max-w-2xl items-center justify-between border-b border-gray-800 pb-4">
-        <h1 class="flex items-center gap-2 text-2xl font-bold text-white">
-            <span class="material-symbols-outlined text-primary">timer</span>
-            Focus Mode
-        </h1>
-        <div class="flex items-center gap-4 text-sm font-mono text-gray-400">
-            <span>Flow State: <span class="text-white">0h 0m</span></span>
-            <span>XP: <span class="text-primary" id="xp-display">+0</span></span>
+<main class="flex-1 p-2 sm:p-4 flex flex-col gap-8">
+
+    <!-- Header Section -->
+    <div class="flex items-center gap-4 border-b border-gray-800 pb-4">
+        <span class="material-symbols-outlined text-4xl text-heartbeat animate-heartbeat">monitor_heart</span>
+        <div>
+            <h1 class="text-3xl font-bold tracking-tight text-white">The Pulse</h1>
+            <p class="text-gray-400">Real-time platform activity visualization</p>
+        </div>
+        <div class="ml-auto flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-mono">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
+            LIVE
         </div>
     </div>
 
-    <!-- Timer Circle -->
-    <div class="relative flex h-80 w-80 items-center justify-center rounded-full border-4 border-gray-800 bg-gray-900/30">
-        <!-- Progress Ring (SVG) -->
-        <svg class="absolute inset-0 h-full w-full -rotate-90 transform p-2">
-            <circle cx="150" cy="150" r="145" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-800 translate-x-2 translate-y-2"></circle>
-            <circle cx="150" cy="150" r="145" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-dasharray="911" stroke-dashoffset="0" class="translate-x-2 translate-y-2 text-primary transition-all duration-1000 ease-linear" id="progress-ring"></circle>
+    <!-- The Heartbeat Chart -->
+    <div class="w-full h-64 bg-black/20 rounded-lg border border-gray-800 relative overflow-hidden flex items-center justify-center">
+        <!-- Simulated EKG Line -->
+        <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+            <path d="M0,128 L50,128 L60,100 L70,150 L80,128 L150,128 L160,80 L170,180 L180,128 L250,128 L260,110 L270,140 L280,128 L350,128 L360,90 L370,160 L380,128 L450,128 L460,100 L470,150 L480,128 L550,128 L560,80 L570,180 L580,128 L650,128 L660,110 L670,140 L680,128 L750,128 L760,90 L770,160 L780,128 L850,128 L860,100 L870,150 L880,128 L950,128"
+                  stroke="#ef4444" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"
+                  class="animate-[dash_5s_linear_infinite]"
+                  stroke-dasharray="1000" stroke-dashoffset="1000">
+                <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" repeatCount="indefinite" />
+            </path>
         </svg>
+        <div class="absolute inset-0 bg-gradient-to-r from-background-dark via-transparent to-transparent w-20"></div>
+    </div>
 
-        <!-- Digital Timer -->
-        <div class="flex flex-col items-center z-10">
-            <div class="font-mono text-6xl font-bold text-white tracking-widest" id="timer-display">25:00</div>
-            <div class="mt-2 text-sm text-gray-500 uppercase tracking-widest" id="timer-status">Ready</div>
+    <!-- Vital Signs Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- BPM -->
+        <div class="p-6 rounded-lg border border-gray-800 bg-gray-900/30 flex flex-col gap-2">
+            <div class="flex items-center justify-between text-gray-400 text-sm uppercase tracking-wider">
+                <span>Beats Per Minute</span>
+                <span class="material-symbols-outlined text-primary">speed</span>
+            </div>
+            <div class="text-4xl font-mono text-white font-bold">142</div>
+            <div class="text-xs text-primary">+12% from last hour</div>
+        </div>
+
+        <!-- Pressure -->
+        <div class="p-6 rounded-lg border border-gray-800 bg-gray-900/30 flex flex-col gap-2">
+            <div class="flex items-center justify-between text-gray-400 text-sm uppercase tracking-wider">
+                <span>Pressure (Backlog)</span>
+                <span class="material-symbols-outlined text-electric-yellow">compress</span>
+            </div>
+            <div class="text-4xl font-mono text-white font-bold">890 psi</div>
+            <div class="text-xs text-electric-yellow">High Load</div>
+        </div>
+
+        <!-- Temperature -->
+        <div class="p-6 rounded-lg border border-gray-800 bg-gray-900/30 flex flex-col gap-2">
+            <div class="flex items-center justify-between text-gray-400 text-sm uppercase tracking-wider">
+                <span>Temperature</span>
+                <span class="material-symbols-outlined text-heartbeat">thermostat</span>
+            </div>
+            <div class="text-4xl font-mono text-white font-bold">98.6°F</div>
+            <div class="text-xs text-gray-400">Stable</div>
         </div>
     </div>
 
-    <!-- Task Input -->
-    <div id="focus-task-container" class="w-full max-w-lg">
-        <div class="flex items-center gap-2 rounded-md border border-gray-700 bg-black px-4 py-3 font-mono text-sm">
-            <span class="text-primary">&gt;</span>
-            <input type="text" id="task-input" class="w-full bg-transparent text-white focus:outline-none placeholder-gray-600" placeholder="Enter current task..." value="Refactoring auth module_">
+    <!-- Activity Stream -->
+    <div class="flex-1 flex flex-col gap-2">
+        <h3 class="text-sm font-medium text-gray-400 uppercase tracking-wider">Activity Stream</h3>
+        <div class="w-full bg-black rounded-lg border border-gray-800 p-4 font-mono text-sm h-64 overflow-y-auto">
+            <div class="flex gap-4 text-gray-500 border-l-2 border-transparent pl-2 hover:bg-gray-900/50">
+                <span class="w-20">10:42:01</span>
+                <span class="text-primary">COMMIT</span>
+                <span class="text-white">feat(core): optimized rendering pipeline</span>
+                <span class="ml-auto text-gray-600">@jules</span>
+            </div>
+             <div class="flex gap-4 text-gray-500 border-l-2 border-transparent pl-2 hover:bg-gray-900/50">
+                <span class="w-20">10:41:55</span>
+                <span class="text-electric-yellow">MERGE</span>
+                <span class="text-white">PR #402: Fix collision detection</span>
+                <span class="ml-auto text-gray-600">@alex</span>
+            </div>
+             <div class="flex gap-4 text-gray-500 border-l-2 border-transparent pl-2 hover:bg-gray-900/50">
+                <span class="w-20">10:41:42</span>
+                <span class="text-blue-400">DEPLOY</span>
+                <span class="text-white">Production deployment started v2.1.0</span>
+                <span class="ml-auto text-gray-600">SYSTEM</span>
+            </div>
+             <div class="flex gap-4 text-gray-500 border-l-2 border-transparent pl-2 hover:bg-gray-900/50">
+                <span class="w-20">10:41:15</span>
+                <span class="text-primary">COMMIT</span>
+                <span class="text-white">docs: updated API reference</span>
+                <span class="ml-auto text-gray-600">@sam</span>
+            </div>
+             <div class="flex gap-4 text-gray-500 border-l-2 border-transparent pl-2 hover:bg-gray-900/50">
+                <span class="w-20">10:40:58</span>
+                <span class="text-heartbeat">ALERT</span>
+                <span class="text-white">High latency detected in us-east-1</span>
+                <span class="ml-auto text-gray-600">WATCHDOG</span>
+            </div>
+             <div class="flex gap-4 text-gray-500 border-l-2 border-transparent pl-2 hover:bg-gray-900/50">
+                <span class="w-20">10:40:22</span>
+                <span class="text-primary">COMMIT</span>
+                <span class="text-white">fix: resolved memory leak in worker</span>
+                <span class="ml-auto text-gray-600">@casey</span>
+            </div>
         </div>
     </div>
 
-    <!-- Controls -->
-    <div class="flex gap-4">
-        <button id="btn-start" class="rounded-md bg-primary px-8 py-3 text-sm font-bold text-black hover:bg-opacity-90 transition-colors">START FOCUS</button>
-        <button id="btn-short-break" class="rounded-md border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 hover:border-gray-500 hover:text-white transition-colors">SHORT BREAK</button>
-        <button id="btn-long-break" class="rounded-md border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 hover:border-gray-500 hover:text-white transition-colors">LONG BREAK</button>
-    </div>
-
-    <!-- Zen Mode Toggle -->
-    <div class="flex items-center gap-2 mt-4">
-        <button id="btn-zen-mode" class="flex items-center gap-2 text-xs text-gray-500 hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-sm">visibility_off</span>
-            Toggle Zen Mode
-        </button>
-    </div>
-
-    <!-- Session Log -->
-    <div id="focus-log" class="mt-8 w-full max-w-3xl">
-        <h3 class="mb-4 text-sm font-medium uppercase tracking-wider text-gray-500">Session Log</h3>
-        <div class="overflow-hidden rounded-lg border border-gray-800">
-            <table class="min-w-full text-left text-sm" id="session-log">
-                <thead class="bg-gray-900/50 text-xs uppercase text-gray-500">
-                    <tr>
-                        <th class="px-6 py-3 font-medium">Duration</th>
-                        <th class="px-6 py-3 font-medium">Task</th>
-                        <th class="px-6 py-3 font-medium">XP</th>
-                        <th class="px-6 py-3 font-medium">Time</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-800 text-gray-300">
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 font-mono">25m</td>
-                        <td class="px-6 py-4">Implemented focus timer logic</td>
-                        <td class="px-6 py-4 text-primary">+50 XP</td>
-                        <td class="px-6 py-4 text-gray-500">10:30 AM</td>
-                    </tr>
-                     <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 font-mono">25m</td>
-                        <td class="px-6 py-4">Fixed navigation bugs</td>
-                        <td class="px-6 py-4 text-primary">+50 XP</td>
-                        <td class="px-6 py-4 text-gray-500">09:45 AM</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
 </main>
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
@@ -442,175 +477,4 @@
 </div>
 </div>
 </div>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Elements
-        const timerDisplay = document.getElementById('timer-display');
-        const timerStatus = document.getElementById('timer-status');
-        const progressRing = document.getElementById('progress-ring');
-        const btnStart = document.getElementById('btn-start');
-        const btnShortBreak = document.getElementById('btn-short-break');
-        const btnLongBreak = document.getElementById('btn-long-break');
-        const btnZenMode = document.getElementById('btn-zen-mode');
-        const taskInput = document.getElementById('task-input');
-        const sessionLog = document.getElementById('session-log').querySelector('tbody');
-        const header = document.querySelector('header');
-        const footer = document.querySelector('footer');
-        const xpDisplay = document.getElementById('xp-display');
-
-        // State
-        let timeLeft = 25 * 60;
-        let initialTime = 25 * 60;
-        let timerId = null;
-        let isRunning = false;
-        let currentMode = 'focus'; // focus, short-break, long-break
-        let totalXP = 0;
-
-        // Constants
-        const CIRCUMFERENCE = 2 * Math.PI * 145; // r=145
-
-        // Init
-        progressRing.style.strokeDasharray = `${CIRCUMFERENCE} ${CIRCUMFERENCE}`;
-        progressRing.style.strokeDashoffset = 0;
-
-        function setProgress(percent) {
-            const offset = CIRCUMFERENCE - (percent / 100) * CIRCUMFERENCE;
-            progressRing.style.strokeDashoffset = offset;
-        }
-
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        function updateDisplay() {
-            timerDisplay.textContent = formatTime(timeLeft);
-            const percent = (timeLeft / initialTime) * 100;
-            setProgress(percent);
-        }
-
-        function startTimer() {
-            if (isRunning) return;
-
-            isRunning = true;
-            timerStatus.textContent = currentMode === 'focus' ? 'Flowing...' : 'Recharging...';
-            btnStart.textContent = 'PAUSE';
-            btnStart.classList.add('bg-opacity-75');
-
-            timerId = setInterval(() => {
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    updateDisplay();
-                } else {
-                    completeSession();
-                }
-            }, 1000);
-        }
-
-        function pauseTimer() {
-            if (!isRunning) return;
-
-            isRunning = false;
-            clearInterval(timerId);
-            timerStatus.textContent = 'Paused';
-            btnStart.textContent = 'RESUME';
-            btnStart.classList.remove('bg-opacity-75');
-        }
-
-        function resetTimer(mode, minutes) {
-            pauseTimer();
-            currentMode = mode;
-            initialTime = minutes * 60;
-            timeLeft = initialTime;
-            updateDisplay();
-            timerStatus.textContent = 'Ready';
-            btnStart.textContent = 'START ' + (mode === 'focus' ? 'FOCUS' : 'BREAK');
-
-            // Update active button styles
-            [btnStart, btnShortBreak, btnLongBreak].forEach(btn => btn.classList.remove('ring-2', 'ring-primary'));
-            if (mode === 'short-break') btnShortBreak.classList.add('ring-2', 'ring-primary');
-            else if (mode === 'long-break') btnLongBreak.classList.add('ring-2', 'ring-primary');
-            else btnStart.classList.add('ring-2', 'ring-primary');
-        }
-
-        function completeSession() {
-            pauseTimer();
-            timerStatus.textContent = 'Completed!';
-
-            if (currentMode === 'focus') {
-                const earnedXP = 50;
-                totalXP += earnedXP;
-                xpDisplay.textContent = `+${totalXP}`;
-                xpDisplay.classList.add('animate-bounce');
-                setTimeout(() => xpDisplay.classList.remove('animate-bounce'), 1000);
-
-                // Add to log
-                const row = document.createElement('tr');
-                row.className = 'hover:bg-gray-900/30 border-t border-gray-800';
-                const now = new Date();
-                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-
-                const durationCell = document.createElement('td');
-                durationCell.className = 'px-6 py-4 font-mono';
-                durationCell.textContent = (initialTime / 60) + 'm';
-
-                const taskCell = document.createElement('td');
-                taskCell.className = 'px-6 py-4';
-                taskCell.textContent = taskInput.value || 'Deep Work';
-
-                const xpCell = document.createElement('td');
-                xpCell.className = 'px-6 py-4 text-primary';
-                xpCell.textContent = '+' + earnedXP + ' XP';
-
-                const timeCell = document.createElement('td');
-                timeCell.className = 'px-6 py-4 text-gray-500';
-                timeCell.textContent = timeString;
-
-                row.appendChild(durationCell);
-                row.appendChild(taskCell);
-                row.appendChild(xpCell);
-                row.appendChild(timeCell);
-                sessionLog.insertBefore(row, sessionLog.firstChild);
-
-                // Play sound or notification (simulated)
-                alert('Session Completed! +50 XP');
-            }
-        }
-
-        // Event Listeners
-        btnStart.addEventListener('click', () => {
-            if (isRunning) pauseTimer();
-            else startTimer();
-        });
-
-        btnShortBreak.addEventListener('click', () => resetTimer('short-break', 5));
-        btnLongBreak.addEventListener('click', () => resetTimer('long-break', 15));
-
-        // Zen Mode
-        btnZenMode.addEventListener('click', () => {
-            header.classList.toggle('hidden');
-            footer.classList.toggle('hidden');
-
-            const stats = document.getElementById('focus-stats');
-            const log = document.getElementById('focus-log');
-            const taskContainer = document.getElementById('focus-task-container');
-
-            if (stats) stats.classList.toggle('hidden');
-            if (log) log.classList.toggle('hidden');
-            if (taskContainer) taskContainer.classList.toggle('hidden');
-
-            const isZen = header.classList.contains('hidden');
-            btnZenMode.innerHTML = isZen ?
-                '<span class="material-symbols-outlined text-sm">visibility</span> Exit Zen Mode' :
-                '<span class="material-symbols-outlined text-sm">visibility_off</span> Toggle Zen Mode';
-        });
-
-        // Init
-        resetTimer('focus', 25);
-    });
-</script>
-
-</body></html>
+</div></body></html>
