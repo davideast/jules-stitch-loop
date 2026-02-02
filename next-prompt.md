@@ -1,7 +1,7 @@
 ---
-page: matrix.html
+page: predictions.html
 ---
-A visual network graph (The Matrix) showing connections between developers, repos, and languages.
+AI-powered predictive analytics page forecasting future leaderboard rankings and shipping velocity.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,12 @@ A visual network graph (The Matrix) showing connections between developers, repo
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header "The Matrix" or "Network Graph".
-2. Main visual area: A canvas or SVG area representing nodes (Devs/Repos) and edges (Commits/PRs).
-3. "Node Details" sidebar or overlay.
-4. "Connection Strength" metrics.
+1. Header "Oracle" or "Predictions" with a crystal ball or brain icon.
+2. "Leaderboard Forecast" table (Next Week's projected ranks vs current).
+3. "Velocity Probability" charts (Likelihood of hitting milestones).
+4. "Churn Risk" indicators (Developers at risk of stopping).
 
 **Specific Elements:**
-- Interactive nodes (circles) with hover states.
-- Connecting lines with varying thickness based on activity.
-- "Pulse" animations for live activity.
-- Filters for "Dev-to-Dev", "Dev-to-Repo", "Repo-to-Repo".
+- Probability percentages with confidence intervals (e.g., "85% chance of #1").
+- "Trending Up/Down" arrows with predicted magnitude.
+- AI commentary/reasoning for predictions (e.g., "Based on recent weekend activity...").
