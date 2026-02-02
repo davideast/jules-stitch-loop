@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>API Documentation - jules.top</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2dd4bf",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0f1419",
+              "electric-yellow": "#f0c800",
+              "surface": "#161b22",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        /* Syntax highlighting */
+        .token.property { color: #7ee787; }
+        .token.string { color: #a5d6ff; }
+        .token.number { color: #79c0ff; }
+        .token.boolean { color: #ff7b72; }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-7xl flex-1 flex-col">
+
+<!-- HEADER START -->
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>Repos</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Languages</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+<span class="material-symbols-outlined text-xl">compare_arrows</span>
+<span>Rivalry Tracker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/roadmap.html">
+<span class="material-symbols-outlined text-xl">map</span>
+<span>Roadmap</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/settings.html">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/notifications.html">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span>Notifications</span>
+</a>
+</div>
+</header>
+<!-- HEADER END -->
+
+<main class="flex-1 p-2 sm:p-4 mt-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Sidebar Navigation -->
+        <aside class="md:col-span-1 hidden md:block">
+            <nav class="flex flex-col gap-2 sticky top-6">
+                <div class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Getting Started</div>
+                <a href="#authentication" class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors border-l-2 border-primary bg-gray-900/50">Authentication</a>
+                <a href="#rate-limiting" class="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded-md transition-colors">Rate Limiting</a>
+                <a href="#errors" class="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded-md transition-colors">Errors</a>
+
+                <div class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2 mt-6">Endpoints</div>
+                <a href="#get-leaderboard" class="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded-md transition-colors">Get Leaderboard</a>
+                <a href="#get-user" class="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded-md transition-colors">Get User</a>
+                <a href="#get-repos" class="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded-md transition-colors">Get Repos</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="md:col-span-3 space-y-12">
+            <div>
+                <h1 class="text-3xl font-bold text-white mb-4">API Reference</h1>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Welcome to the jules.top API. You can use our public endpoints to access developer rankings, user statistics, and repository data programmatically.
+                </p>
+                <div class="mt-6 flex items-center gap-2 text-sm text-gray-500 bg-gray-900/50 p-4 rounded-md border border-gray-800">
+                    <span class="material-symbols-outlined text-primary">info</span>
+                    <span>Base URL: <code class="text-white font-mono bg-black px-2 py-1 rounded">https://api.jules.top/v1</code></span>
+                </div>
+            </div>
+
+            <!-- Authentication -->
+            <section id="authentication" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">key</span>
+                    Authentication
+                </h2>
+                <p class="text-gray-400 mb-6">
+                    Authentication is required for some endpoints and to increase rate limits. Include your API key in the <code class="text-primary">Authorization</code> header.
+                </p>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+                    <div class="flex items-center justify-between px-4 py-2 bg-black border-b border-gray-800">
+                        <span class="text-xs font-mono text-gray-500">BASH</span>
+                        <button class="text-gray-500 hover:text-white" title="Copy to clipboard">
+                            <span class="material-symbols-outlined text-sm">content_copy</span>
+                        </button>
+                    </div>
+                    <pre class="p-4 overflow-x-auto text-sm font-mono text-gray-300"><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+     https://api.jules.top/v1/user/me</code></pre>
+                </div>
+            </section>
+
+            <!-- Rate Limiting -->
+            <section id="rate-limiting" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">speed</span>
+                    Rate Limiting
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-surface p-6 rounded-lg border border-gray-800">
+                        <div class="text-gray-400 text-sm uppercase mb-1">Unauthenticated</div>
+                        <div class="text-3xl font-mono text-white mb-2">60</div>
+                        <div class="text-gray-500 text-sm">requests per hour</div>
+                    </div>
+                    <div class="bg-surface p-6 rounded-lg border border-gray-800">
+                        <div class="text-gray-400 text-sm uppercase mb-1">Authenticated</div>
+                        <div class="text-3xl font-mono text-primary mb-2">5,000</div>
+                        <div class="text-gray-500 text-sm">requests per hour</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Endpoints -->
+            <section id="endpoints" class="scroll-mt-24">
+                <h2 class="text-2xl font-bold text-white mb-8 border-b border-gray-800 pb-4">Endpoints</h2>
+
+                <!-- Get Leaderboard -->
+                <div id="get-leaderboard" class="mb-12 scroll-mt-24">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-2 py-1 rounded bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">GET</span>
+                        <h3 class="text-xl font-mono text-white">/leaderboard</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Retrieve the current global leaderboard rankings.</p>
+
+                    <h4 class="text-sm font-bold text-gray-500 uppercase mb-2">Query Parameters</h4>
+                    <div class="overflow-x-auto mb-6">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-gray-800">
+                                    <th class="py-2 text-xs text-gray-400 font-medium">Param</th>
+                                    <th class="py-2 text-xs text-gray-400 font-medium">Type</th>
+                                    <th class="py-2 text-xs text-gray-400 font-medium">Default</th>
+                                    <th class="py-2 text-xs text-gray-400 font-medium">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-800/50">
+                                    <td class="py-3 font-mono text-sm text-primary">page</td>
+                                    <td class="py-3 text-sm text-gray-400">integer</td>
+                                    <td class="py-3 text-sm text-gray-500">1</td>
+                                    <td class="py-3 text-sm text-gray-400">Page number for pagination.</td>
+                                </tr>
+                                <tr class="border-b border-gray-800/50">
+                                    <td class="py-3 font-mono text-sm text-primary">limit</td>
+                                    <td class="py-3 text-sm text-gray-400">integer</td>
+                                    <td class="py-3 text-sm text-gray-500">50</td>
+                                    <td class="py-3 text-sm text-gray-400">Number of items per page (max 100).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-gray-500 uppercase mb-2">Response Example</h4>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+                        <div class="flex items-center justify-between px-4 py-2 bg-black border-b border-gray-800">
+                            <span class="text-xs font-mono text-gray-500">JSON</span>
+                            <button class="text-gray-500 hover:text-white">
+                                <span class="material-symbols-outlined text-sm">content_copy</span>
+                            </button>
+                        </div>
+                        <pre class="p-4 overflow-x-auto text-sm font-mono leading-relaxed"><code><span class="token property">"data"</span>: [
+  {
+    <span class="token property">"rank"</span>: <span class="token number">1</span>,
+    <span class="token property">"username"</span>: <span class="token string">"Jules"</span>,
+    <span class="token property">"avatar_url"</span>: <span class="token string">"https://..."</span>,
+    <span class="token property">"total_ships"</span>: <span class="token number">8421</span>,
+    <span class="token property">"last_active"</span>: <span class="token string">"2023-10-27T14:30:00Z"</span>
+  },
+  {
+    <span class="token property">"rank"</span>: <span class="token number">2</span>,
+    <span class="token property">"username"</span>: <span class="token string">"Alex"</span>,
+    <span class="token property">"total_ships"</span>: <span class="token number">7988</span>,
+    <span class="token property">"last_active"</span>: <span class="token string">"2023-10-27T15:45:00Z"</span>
+  }
+],
+<span class="token property">"meta"</span>: {
+  <span class="token property">"total"</span>: <span class="token number">1450</span>,
+  <span class="token property">"page"</span>: <span class="token number">1</span>,
+  <span class="token property">"pages"</span>: <span class="token number">29</span>
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Get User -->
+                <div id="get-user" class="mb-12 scroll-mt-24">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-2 py-1 rounded bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">GET</span>
+                        <h3 class="text-xl font-mono text-white">/users/{username}</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Get detailed statistics for a specific developer.</p>
+
+                    <h4 class="text-sm font-bold text-gray-500 uppercase mb-2">Response Example</h4>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+                        <pre class="p-4 overflow-x-auto text-sm font-mono leading-relaxed"><code>{
+  <span class="token property">"username"</span>: <span class="token string">"Jules"</span>,
+  <span class="token property">"rank"</span>: <span class="token number">1</span>,
+  <span class="token property">"stats"</span>: {
+    <span class="token property">"commits"</span>: <span class="token number">12450</span>,
+    <span class="token property">"prs_merged"</span>: <span class="token number">842</span>,
+    <span class="token property">"streak_days"</span>: <span class="token number">28</span>
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="/api.html">API</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>

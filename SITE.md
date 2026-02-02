@@ -64,6 +64,7 @@
 * [x] `onboarding.html` - How to get started with Jules
 * [x] `changelog.html` - Platform updates and new features
 * [x] `roadmap.html` - Public roadmap of upcoming features
+* [x] `api.html` - API Documentation
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -77,7 +78,6 @@
 - [x] **"Hot Streak" Badge:** Design a visual indicator for users who have shipped 5+ days in a row.
 
 ### Future Concepts (Low Priority)
-- [ ] API Documentation page.
 - [x] Settings/Preferences page.
 - [x] Notifications page.
 

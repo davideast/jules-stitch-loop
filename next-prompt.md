@@ -1,7 +1,7 @@
 ---
-page: api
+page: cli
 ---
-API Documentation for jules.top. Developer-focused page detailing public endpoints, authentication, and integration examples.
+Documentation for the Jules CLI tool. A developer-focused terminal interface for interacting with the Jules platform.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,12 @@ API Documentation for jules.top. Developer-focused page detailing public endpoin
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "API Reference" with global navigation.
-2. Layout: Two-column layout (Sidebar navigation for endpoints, Main content area).
-3. Documentation: Clear sections for Authentication, Rate Limiting, and Endpoints.
+1. Header: "Jules CLI" with global navigation.
+2. Hero: Ascii art logo or large terminal window showing installation command.
+3. Installation: Tabs for npm, brew, curl.
+4. Commands: List of available commands (e.g., `jules ship`, `jules status`, `jules whoami`) with examples.
 
 **Specific Elements:**
-- Code Blocks: Dark syntax highlighting for JSON response examples (e.g., `{ "rank": 1, "score": 8421 }`).
-- Methods: GET badges (Blue), POST badges (Green), DELETE badges (Red) for visual distinction.
-- Copy Button: Icon to copy code snippets to clipboard.
+- Terminal Window: A visual component mimicking a terminal with prompt string `user@machine:~$`.
+- Copy Buttons: For command snippets.
+- Command Reference: Table or list of flags and arguments.
