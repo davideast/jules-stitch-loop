@@ -42,35 +42,232 @@
 <div class="layout-container flex h-full grow flex-col">
 <div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-white/10 px-4 md:px-10 py-3">
-<div class="flex items-center gap-4 text-white">
-<div class="size-5 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
-</svg>
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
 </div>
-<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Jules</h2>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
 </div>
-<div class="hidden md:flex flex-1 justify-end gap-8">
-<div class="flex items-center gap-9">
-<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Dashboard</a>
-<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Leaderboard</a>
-<a class="text-primary text-sm font-bold leading-normal" href="#">Milestones</a>
-<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Profile</a>
-</div>
-<div class="flex items-center gap-2">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/10 text-white/80 hover:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
-<span class="material-symbols-outlined text-xl">toggle_on</span>
-</button>
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/10 text-white/80 hover:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>Repos</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/artifacts.html.html">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+<span>Artifacts</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Languages</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/missions.html.html">
+<span class="material-symbols-outlined text-xl">rocket_launch</span>
+<span>Missions</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/forge.html.html.html">
+<span class="material-symbols-outlined text-xl">build</span>
+<span>The Forge</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hackathon.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>Hackathons</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/events.html.html">
+<span class="material-symbols-outlined text-xl">calendar_month</span>
+<span>Events</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/bounties.html.html">
+<span class="material-symbols-outlined text-xl">assignment_turned_in</span>
+<span>Bounties</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/logs.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>System Logs</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/audit.html.html">
+<span class="material-symbols-outlined text-xl">security</span>
+<span>Audit</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/status.html.html">
+<span class="material-symbols-outlined text-xl">dns</span>
+<span>Status</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/matrix.html.html">
+<span class="material-symbols-outlined text-xl">hub</span>
+<span>The Matrix</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/map.html">
+<span class="material-symbols-outlined text-xl">public</span>
+<span>Live Map</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/ticker.html">
+<span class="material-symbols-outlined text-xl">show_chart</span>
+<span>Ticker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/market.html.html.html">
+<span class="material-symbols-outlined text-xl">currency_exchange</span>
+<span>Market</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/broadcast.html.html">
+<span class="material-symbols-outlined text-xl">cast</span>
+<span>TV Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/spotlight.html.html">
+<span class="material-symbols-outlined text-xl">star</span>
+<span>Daily Spotlight</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+<span class="material-symbols-outlined text-xl">compare_arrows</span>
+<span>Rivalry Tracker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/radar.html">
+<span class="material-symbols-outlined text-xl">radar</span>
+<span>Radar</span>
+</a>
+
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/orbit.html.html.html">
+<span class="material-symbols-outlined text-xl">adjust</span>
+<span>Orbit</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stack.html.html">
+<span class="material-symbols-outlined text-xl">layers</span>
+<span>Stacks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/typing.html.html">
+<span class="material-symbols-outlined text-xl">keyboard</span>
+<span>Typing</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/quiz.html.html">
+<span class="material-symbols-outlined text-xl">school</span>
+<span>Quiz</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/review.html.html">
+<span class="material-symbols-outlined text-xl">rate_review</span>
+<span>Reviews</span>
+</a>
+
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/quality.html.html">
+<span class="material-symbols-outlined text-xl">health_metrics</span>
+<span>Quality</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/signal.html.html.html">
+<span class="material-symbols-outlined text-xl">graphic_eq</span>
+<span>Signal</span>
+</a>
+
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/predictions.html.html">
+<span class="material-symbols-outlined text-xl">psychology</span>
+<span>Predictions</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/focus.html.html">
+<span class="material-symbols-outlined text-xl">timer</span>
+<span>Focus</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/roadmap.html">
+<span class="material-symbols-outlined text-xl">map</span>
+<span>Roadmap</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/cli.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>CLI</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/terminal.html">
+<span class="material-symbols-outlined text-xl">monitor</span>
+<span>Terminal</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/settings.html">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/notifications.html">
 <span class="material-symbols-outlined text-xl">notifications</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with a blue background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcyH427S0gYh1YsVxPijh-n3N1TWjsfX8RhJaq4D5R_G9zWWHe2TGDJlAOY08B7RXdPbgnUh3g0T2aiFAFxAyd_f2XlZu3y_4YTJEp1dZYFQAf92sxhjNfBfIg2JEYZDv6bdL73sGq7pCTLmTUmx19u9G9aj5nSo7kGnMIaoXY9GQjop_TqkA_cA0foVi57Y7kmChDvWvMym1VTEbt2j0fMu-QQfEuDmACi094-Lvt0mcae9PcTj6TJ58SnIryEndH9zi2eJDPMN9d");'></div>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/embeds.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Embeds</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/deploy.html.html">
+<span class="material-symbols-outlined text-xl">rocket_launch</span>
+<span>Deployments</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/interview.html.html.html">
+<span class="material-symbols-outlined text-xl">mic</span>
+<span>Interview</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/debug.html.html">
+<span class="material-symbols-outlined text-xl">bug_report</span>
+<span>Debug</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/secrets.html.html">
+<span class="material-symbols-outlined text-xl">lock</span>
+<span>Secrets</span>
+</a>
+
 </div>
-</div>
-<button class="md:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/10 text-white/80 hover:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
-<span class="material-symbols-outlined text-2xl">menu</span>
-</button>
 </header>
 <main class="flex flex-col gap-8 py-10">
 <div class="flex flex-wrap justify-between gap-3 px-4">

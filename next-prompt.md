@@ -1,10 +1,10 @@
 ---
-page: orbit.html.html
+page: shop.html.html
 ---
-A solar system visualization where the central project is a glowing star, and developers are planets orbiting it.
-- **Distance from center:** Represents 'Recency' (closer = more recent activity).
-- **Planet Size:** Represents 'Total Impact/Commits' (larger = more ships).
-- **Orbit Speed:** Represents 'Current Velocity/Streak'.
+A virtual store where developers can spend 'Commit Coins' (earned by shipping) on profile upgrades, themes, and power-ups.
+- **Inventory Grid:** Grid of purchasable items (Dark Mode+ Theme, Golden Border, etc.).
+- **Wallet:** Display of user's current Commit Coin balance.
+- **Purchase Flow:** Modal confirmation and "Equip" action.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -25,13 +25,12 @@ A solar system visualization where the central project is a glowing star, and de
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Project Orbit // Gravity Well".
-2. Main View: Interactive 2D/3D solar system canvas.
-3. Sidebar/Overlay: Selected planet (developer) details.
-4. "Gravity Stats": List of top gravitational pulls (most influential devs).
+1. Header: "The Exchange // Black Market".
+2. Stats Bar: Current Balance, Lifetime Earnings.
+3. Filter Tabs: Themes, Badges, Boosters.
+4. Product Grid: Cards with icon, title, price, and "Buy" button.
 
 **Specific Elements:**
-- Central glowing sun (The Monorepo).
-- Orbits drawn as faint rings.
-- Planets as user avatars clipped in circles.
-- Hover effects showing trajectory lines.
+- "Commit Coin" icon (custom SVG or symbol).
+- 'Sold Out' or 'Owned' states for items.
+- Cyberpunk/Terminal aesthetic for the store interface.
