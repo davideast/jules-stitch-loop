@@ -44,6 +44,7 @@
 * [x] `ticker.html` - Real-time scrolling ticker of code shipping activity.
 * [x] `about.html` - How the tracking works.
 * [x] `achievements.html` - Badges and milestones for developers.
+* [x] `academy.html.html` - Competitive training ground and LMS for developers.
 * [x] `streaks.html` - Hot streak tracking and flame badges for consecutive shipping days.
 * [x] `milestones.html` - Major milestone celebrations (1K commits, 10K lines, etc.)
 * [x] `hall-of-fame.html` - All-time legends and retired champions
