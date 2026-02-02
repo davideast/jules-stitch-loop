@@ -1,7 +1,7 @@
 ---
-page: shredder.html.html
+page: gravity.html.html
 ---
-"The Shredder" - A leaderboard dedicated to code deletion and refactoring.
+"Gravity" - A physics-based visualization of repository mass and developer attraction.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,11 @@ page: shredder.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "The Shredder" with a trash can or recycle icon.
-2. Net Negative Chart: A bar chart showing who has deleted the most code (net negative lines).
-3. Refactor Table: Developers ranked by "Code Removed" or "Debt Repaid".
+1. Header: "Gravity" with a planet or magnet icon.
+2. Physics Canvas: A central area where "Heavy" repos (large circles) attract "Developer" particles.
+3. Attraction Table: Repos ranked by "Pull Factor" (contributors + stars).
 
 **Specific Elements:**
-- "Trash Compactor" metric (compression ratio).
-- Negative numbers in red (or green, since deletion is good here?). Let's use Red for deletions but frame it positively.
-- "Debt Repaid" badge.
+- "Mass Index" metric.
+- "Escape Velocity" calculation.
+- Visual connection lines between developers and the repos they orbit.

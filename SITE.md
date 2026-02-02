@@ -108,6 +108,8 @@
 - [x] `pass.html.html` - Season Pass progression system.
 - [x] `tournament.html.html` - Code Colosseum bracket-style tournament viewer.
 * [x] `velocity.html.html` - High-speed metrics and shipping momentum gauges.
+* [x] `shredder.html.html.html` - A leaderboard dedicated to code deletion and refactoring.
+* [x]  - A leaderboard dedicated to code deletion and refactoring.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
