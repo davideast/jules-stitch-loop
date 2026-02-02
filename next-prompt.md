@@ -1,7 +1,7 @@
 ---
-page: sprint.html
+page: draft.html
 ---
-"Sprint Dashboard" - High-velocity tracking of the current development cycle using Kanban and Burndown metrics.
+"Fantasy Developer League Draft" - A competitive team-building interface for selecting developers for upcoming sprints.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,13 @@ page: sprint.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Sprint 42" status (Active - 3 Days Left) and Countdown Timer.
-2. Burndown Chart: Ideal vs Actual velocity sparklines using monospaced characters or SVG.
-3. Lane View: Todo | In Progress | Review | Done (Kanban style but minimal terminal aesthetic).
-4. Velocity Gauge: Team speed vs average (e.g., "112% of Avg").
-5. "Blocker" Alerts: Flashing red indicators for stalled PRs.
+1. Header: "Season 5 Draft" status and Timer.
+2. Draft Board: Grid of available developers with stats (Cost, Role, Velocity).
+3. My Team: Selected roster slots (Tank, DPS/Coder, Support/Reviewer).
+4. Live Feed: Recent picks by other team captains.
 
 **Specific Elements:**
-- Progress bars using block characters (█ ▌ ░).
-- Avatars assigned to cards.
-- "Finish Sprint" button.
-- Live ticker of completed tickets.
+- "Draft" button for available players.
+- Salary Cap progress bar.
+- Role icons (Shield, Sword, Staff).
+- Confetti/Animation on successful draft pick.
