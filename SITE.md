@@ -111,6 +111,7 @@
 * [x] `shredder.html.html.html` - A leaderboard dedicated to code deletion and refactoring.
 * [x]  - A leaderboard dedicated to code deletion and refactoring.
 
+- [x] `gravity.html.html.html` - A physics-based visualization of repository mass and developer attraction.
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
 

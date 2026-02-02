@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Developer Leaderboard Dashboard</title>
+<title>Gravity - Repository Attraction Visualization</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -12,7 +12,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#2dd4bf",
+              "primary": "#238636",
               "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
@@ -324,53 +324,110 @@
 </div>
 </header>
 
-<main class="flex-1 relative flex flex-col h-[calc(100vh-80px)] overflow-hidden bg-[#0f1419]">
-    <!-- Canvas Layer -->
-    <canvas id="orbit-canvas" class="absolute inset-0 w-full h-full block"></canvas>
+<main class="flex-1 p-2 sm:p-4">
+    <div class="layout-content-container flex flex-col max-w-5xl mx-auto w-full">
 
-    <!-- UI Overlay Layer -->
-    <div class="absolute inset-0 pointer-events-none z-10">
-        <!-- Header / Controls -->
-        <div class="absolute top-6 left-6 pointer-events-auto">
-             <div class="bg-[#0d1117]/90 backdrop-blur border border-gray-800 p-6 rounded-xl shadow-2xl">
-                <h1 class="text-3xl font-display font-bold text-white mb-2 flex items-center gap-3">
-                    <span class="material-symbols-outlined text-primary text-3xl">adjust</span>
-                    Project Orbit
-                </h1>
-                <div class="flex flex-col gap-1 text-xs font-mono text-gray-400">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-primary"></span>
-                        <span>DISTANCE = RECENCY</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-electric-yellow"></span>
-                        <span>SIZE = TOTAL IMPACT</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-                        <span>SPEED = VELOCITY</span>
-                    </div>
-                </div>
-             </div>
-        </div>
-
-        <!-- Sidebar / Stats -->
-        <div class="absolute top-6 right-6 w-80 bg-[#0d1117]/90 backdrop-blur border border-gray-800 rounded-xl flex flex-col max-h-[calc(100vh-48px)] pointer-events-auto shadow-2xl transition-all duration-300" id="stats-panel">
-            <div class="p-4 border-b border-gray-800 flex justify-between items-center bg-gray-900/50 rounded-t-xl">
-                <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2 font-display">
-                    <span class="material-symbols-outlined text-primary text-sm">public</span> Gravity Well
-                </h2>
-                <span class="text-[10px] font-mono text-gray-500">LIVE DATA</span>
+        <!-- Header Section -->
+        <div class="flex items-center gap-4 mb-8">
+            <div class="p-3 rounded-full bg-gray-900 border border-gray-800 text-primary">
+                <span class="material-symbols-outlined text-3xl">public</span>
             </div>
-
-            <div id="planet-details" class="hidden bg-primary/10 border-b border-primary/20 p-4 animate-in slide-in-from-right">
-                <!-- Injected via JS -->
-            </div>
-
-            <div class="overflow-y-auto flex-1 p-0 scrollbar-hide" id="gravity-list">
-                 <!-- Top devs list populated by JS -->
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-tight">Gravity</h1>
+                <p class="text-gray-400 mt-1">Physics-based visualization of repository mass and developer attraction.</p>
             </div>
         </div>
+
+        <!-- Metrics Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-gray-900/30 border border-gray-800 rounded-lg p-4">
+                <div class="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Total Mass Index</div>
+                <div class="text-2xl font-mono text-white font-bold">142.8M</div>
+            </div>
+            <div class="bg-gray-900/30 border border-gray-800 rounded-lg p-4">
+                <div class="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Escape Velocity</div>
+                <div class="text-2xl font-mono text-white font-bold">8.2 km/s</div>
+            </div>
+             <div class="bg-gray-900/30 border border-gray-800 rounded-lg p-4">
+                <div class="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Active Particles</div>
+                <div class="text-2xl font-mono text-white font-bold">4,129</div>
+            </div>
+        </div>
+
+        <!-- Physics Canvas Section -->
+        <div class="w-full bg-[#0f1419] border border-gray-800 rounded-lg mb-8 relative overflow-hidden" style="height: 500px;">
+            <canvas id="gravityCanvas" class="w-full h-full block"></canvas>
+            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur px-3 py-1 rounded text-xs text-gray-400 border border-gray-800">
+                Simulation Running
+            </div>
+        </div>
+
+        <!-- Attraction Table -->
+        <div class="overflow-hidden border border-gray-800 rounded-lg bg-[#0f1419]">
+            <div class="px-6 py-4 border-b border-gray-800 flex justify-between items-center bg-gray-900/20">
+                <h2 class="text-lg font-bold text-white">Attraction Table</h2>
+                <div class="text-xs text-gray-500 uppercase tracking-wider">Sorted by Pull Factor</div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="bg-gray-900/50 border-b border-gray-800">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Rank</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Repository (Attractor)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Mass Index</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Orbiting Devs</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400 font-mono">Pull Factor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800">
+                        <!-- Rows will be populated by JS or static for now -->
+                         <tr class="hover:bg-gray-800/30 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white font-mono">#1 🥇</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary border border-primary/50">
+                                        <span class="material-symbols-outlined text-sm">dns</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">google/jules</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-300">89,421</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-300">1,240</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-primary font-mono">98.4%</td>
+                        </tr>
+                         <tr class="hover:bg-gray-800/30 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white font-mono">#2 🥈</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 border border-blue-500/50">
+                                        <span class="material-symbols-outlined text-sm">library_books</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">react/react</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-300">76,102</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-300">890</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-primary font-mono">92.1%</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/30 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white font-mono">#3 🥉</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 border border-purple-500/50">
+                                        <span class="material-symbols-outlined text-sm">extension</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-white">bun/bun</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-300">62,550</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-300">650</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-primary font-mono">88.7%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 </main>
 
@@ -395,231 +452,167 @@
 </div>
 </div>
 <script>
-    const canvas = document.getElementById('orbit-canvas');
-    const ctx = canvas.getContext('2d');
-    const gravityList = document.getElementById('gravity-list');
-    const planetDetails = document.getElementById('planet-details');
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('gravityCanvas');
+        if (!canvas) return;
 
-    let width, height, centerX, centerY;
-    let hoveredPlanet = null;
-    let scale = 1;
+        const ctx = canvas.getContext('2d');
+        let width, height;
 
-    // Mock Data
-    const developers = [
-        { name: "Jules", rank: 1, ships: 8421, streak: 28, lastActive: "2h ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf" },
-        { name: "Alex", rank: 2, ships: 7988, streak: 14, lastActive: "1h ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J" },
-        { name: "Sam", rank: 3, ships: 7501, streak: 12, lastActive: "5h ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ" },
-        { name: "Casey", rank: 4, ships: 7340, streak: 5, lastActive: "1d ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi" },
-        { name: "Morgan", rank: 5, ships: 7112, streak: 21, lastActive: "3h ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z" },
-        { name: "Taylor", rank: 6, ships: 6950, streak: 3, lastActive: "8h ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKd7TptbKFyq0tCAUFBIB1Z2bMaz02XGEt18pnEHsIDyx3asdQrfvtEm7JzTpMX6X9FCRTOi7a_StNVtBoVM9y2bDtUGXkdmoPxbNrk9MqvbledUMc4teDJGFP92rkKR0vRbQZI0_6qZiCYH99hMw50SNOWAqx1pudz1ULdiPLxAKBCyj-EU843TFqSJg9ztaoNDhrIeF89-rhSay7vwQM0FKXZ8FFVnUzOEY8tX1JCjjj-9T0TTSKnLasYNfMYJFJobkT9B1Kr8op" },
-        { name: "Jordan", rank: 7, ships: 6873, streak: 2, lastActive: "2d ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKy3L63_SFQFXY2VEwz92Lpm1OUR8q_4SIFCYVKFhavURQWsJpyFu_XGHQ0vFkkpnYE-sRYpLEznmwa_d9wdV94GZah0DHiWEefoQb_yS08zqupatW5ra2iECsr62WBiOZxwq-EwP8VSI7tK56qK9uAL8WFk7lriL40UwLaHcxPL0Is0MBVKd7KMGRyHXQs_RDox5iaEm6At93Ltj_E3dKtl0Bb8XS7-bZ6ZxgwQTlLDlXcMLJoA9o39btCfTtGIiRrXXJxnXj6BZQ" },
-        { name: "Riley", rank: 8, ships: 6521, streak: 6, lastActive: "1d ago", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx" }
-    ];
-
-    // Initialize Planets
-    const planets = developers.map((dev, i) => {
-        // Impact = Size (mapped 10-30px)
-        const size = Math.max(10, Math.min(40, dev.ships / 300));
-
-        // Recency = Distance (Inner orbits are closer).
-        // We simulate recency by rank for now to make top devs closer?
-        // Or actually, prompt says: "Distance from center: Recency (closer = more recent activity)"
-        // Since we have lastActive string, let's map rank roughly to distance for visual clarity
-        const distance = 120 + (i * 60);
-
-        // Velocity = Speed (mapped)
-        const speed = 0.0005 + (dev.streak * 0.0001);
-
-        return {
-            ...dev,
-            size,
-            distance,
-            speed,
-            angle: Math.random() * Math.PI * 2,
-            x: 0,
-            y: 0,
-            color: i < 3 ? (i===0 ? '#f0c800' : (i===1 ? '#C0C0C0' : '#CD7F32')) : '#2dd4bf'
-        };
-    });
-
-    // Load Images
-    const images = {};
-    planets.forEach(p => {
-        const img = new Image();
-        img.src = p.avatar;
-        images[p.name] = img;
-    });
-
-    function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-        centerX = width / 2;
-        centerY = height / 2;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    // Interaction
-    canvas.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const mx = e.clientX - rect.left;
-        const my = e.clientY - rect.top;
-
-        let found = null;
-        planets.forEach(p => {
-            const dx = mx - (centerX + p.x);
-            const dy = my - (centerY + p.y);
-            if (dx*dx + dy*dy <= (p.size + 10)*(p.size + 10)) {
-                found = p;
-            }
-        });
-
-        hoveredPlanet = found;
-        canvas.style.cursor = found ? 'pointer' : 'default';
-
-        if (found) {
-            updateDetails(found);
-        } else {
-             // Optional: Hide details when not hovering?
-             // planetDetails.classList.add('hidden');
+        function resize() {
+            width = canvas.parentElement.clientWidth;
+            height = canvas.parentElement.clientHeight;
+            canvas.width = width;
+            canvas.height = height;
         }
-    });
 
-    function updateDetails(p) {
-        planetDetails.classList.remove('hidden');
-        planetDetails.innerHTML = `
-            <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full border-2 border-[${p.color}] bg-cover bg-center" style="background-image: url('${p.avatar}')"></div>
-                <div>
-                    <h3 class="text-white font-bold text-lg">${p.name} <span class="text-xs text-gray-400 font-mono">Rank #${p.rank}</span></h3>
-                    <div class="text-primary font-mono text-sm">${p.ships.toLocaleString()} Ships</div>
-                </div>
-            </div>
-            <div class="mt-3 grid grid-cols-2 gap-2 text-xs font-mono text-gray-400">
-                <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                    <div class="mb-1">VELOCITY</div>
-                    <div class="text-white">${p.streak} days</div>
-                </div>
-                <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                    <div class="mb-1">RECENCY</div>
-                    <div class="text-white">${p.lastActive}</div>
-                </div>
-            </div>
-        `;
-    }
+        window.addEventListener('resize', resize);
+        resize();
 
-    function renderList() {
-        gravityList.innerHTML = planets.map(p => `
-            <div class="p-4 border-b border-gray-800 hover:bg-gray-800/50 cursor-pointer transition-colors group" onmouseenter="highlightPlanet('${p.name}')">
-                <div class="flex items-center gap-3">
-                    <div class="text-xs font-mono text-gray-500 w-6">#${p.rank}</div>
-                    <div class="h-8 w-8 rounded-full bg-cover bg-center border border-gray-700 group-hover:border-primary transition-colors" style="background-image: url('${p.avatar}')"></div>
-                    <div class="flex-1 min-w-0">
-                        <div class="text-sm font-bold text-white truncate group-hover:text-primary transition-colors">${p.name}</div>
-                        <div class="text-xs text-gray-500 font-mono">${p.ships.toLocaleString()} ships</div>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-    }
+        // Constants
+        const G = 0.5;
+        const DAMPING = 0.98;
 
-    // Global function for list hover
-    window.highlightPlanet = (name) => {
-        hoveredPlanet = planets.find(p => p.name === name);
-        if (hoveredPlanet) updateDetails(hoveredPlanet);
-    };
-
-    function draw() {
-        // Background clear with trail effect? No, clean clear.
-        ctx.fillStyle = '#0f1419';
-        ctx.fillRect(0, 0, width, height);
-
-        // Draw Star (Monorepo)
-        const gradient = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, 60);
-        gradient.addColorStop(0, '#f0c800');
-        gradient.addColorStop(0.5, 'rgba(240, 200, 0, 0.2)');
-        gradient.addColorStop(1, 'rgba(240, 200, 0, 0)');
-
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, 60, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.fillStyle = '#fff';
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, 8, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Update & Draw Planets
-        planets.forEach(p => {
-            // Update Angle
-            p.angle += p.speed;
-            p.x = Math.cos(p.angle) * p.distance;
-            p.y = Math.sin(p.angle) * p.distance;
-
-            // Draw Orbit Ring
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, p.distance, 0, Math.PI * 2);
-            ctx.stroke();
-
-            // Draw Trajectory Line if hovered
-            if (hoveredPlanet === p) {
-                ctx.strokeStyle = p.color; // 'rgba(45, 212, 191, 0.5)';
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, p.distance, 0, Math.PI * 2);
-                ctx.stroke();
-
-                // Connection line
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(centerX + p.x, centerY + p.y);
-                ctx.stroke();
+        class Attractor {
+            constructor(x, y, mass, color, label) {
+                this.x = x;
+                this.y = y;
+                this.mass = mass;
+                this.radius = Math.sqrt(mass) * 2;
+                this.color = color;
+                this.label = label;
             }
 
-            // Draw Planet (Clip Avatar)
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(centerX + p.x, centerY + p.y, p.size, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.clip();
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
 
-            if (images[p.name] && images[p.name].complete) {
-                ctx.drawImage(images[p.name], centerX + p.x - p.size, centerY + p.y - p.size, p.size*2, p.size*2);
-            } else {
-                ctx.fillStyle = p.color;
+                // Glow
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+
+                // Label
+                ctx.fillStyle = 'white';
+                ctx.font = '12px "Roboto Mono"';
+                ctx.textAlign = 'center';
+                ctx.fillText(this.label, this.x, this.y + this.radius + 15);
+            }
+        }
+
+        class Particle {
+            constructor(x, y, vx, vy) {
+                this.x = x;
+                this.y = y;
+                this.vx = vx;
+                this.vy = vy;
+                this.color = Math.random() > 0.5 ? '#2dd4bf' : '#ffffff'; // Primary or White
+                this.size = Math.random() * 2 + 1;
+                this.trail = [];
+            }
+
+            update(attractors) {
+                for (let attractor of attractors) {
+                    let dx = attractor.x - this.x;
+                    let dy = attractor.y - this.y;
+                    let distSq = dx*dx + dy*dy;
+                    let dist = Math.sqrt(distSq);
+
+                    if (dist < 5) dist = 5; // prevent singularity
+
+                    let force = (G * attractor.mass) / distSq;
+                    let ax = (dx / dist) * force;
+                    let ay = (dy / dist) * force;
+
+                    this.vx += ax;
+                    this.vy += ay;
+                }
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Trail
+                this.trail.push({x: this.x, y: this.y});
+                if (this.trail.length > 10) this.trail.shift();
+            }
+
+            draw() {
+                // Draw trail
+                ctx.beginPath();
+                for (let i = 0; i < this.trail.length; i++) {
+                    let pos = this.trail[i];
+                    if (i === 0) ctx.moveTo(pos.x, pos.y);
+                    else ctx.lineTo(pos.x, pos.y);
+                }
+                ctx.strokeStyle = this.color + '44'; // Transparent
+                ctx.stroke();
+
+                // Draw particle
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
                 ctx.fill();
             }
-            ctx.restore();
+        }
 
-            // Planet Border
-            ctx.strokeStyle = (hoveredPlanet === p) ? '#ffffff' : p.color;
-            ctx.lineWidth = (hoveredPlanet === p) ? 3 : 2;
+        const attractors = [];
+        const particles = [];
+
+        function init() {
+            // Create Repos (Attractors)
+            attractors.push(new Attractor(width * 0.3, height * 0.5, 50, '#238636', 'google/jules'));
+            attractors.push(new Attractor(width * 0.7, height * 0.4, 40, '#3b82f6', 'react/react'));
+            attractors.push(new Attractor(width * 0.5, height * 0.8, 30, '#a855f7', 'bun/bun'));
+
+            // Create Developers (Particles)
+            for (let i = 0; i < 50; i++) {
+                let x = Math.random() * width;
+                let y = Math.random() * height;
+                let vx = (Math.random() - 0.5) * 2;
+                let vy = (Math.random() - 0.5) * 2;
+                particles.push(new Particle(x, y, vx, vy));
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw connections (lines between close particles) - Optional visual flair
             ctx.beginPath();
-            ctx.arc(centerX + p.x, centerY + p.y, p.size, 0, Math.PI * 2);
+            ctx.strokeStyle = '#2dd4bf11';
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    if (dx*dx + dy*dy < 2500) { // dist < 50
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                    }
+                }
+            }
             ctx.stroke();
 
-            // Trophy Emoji if top 3
-            if (p.rank <= 3) {
-                ctx.font = "20px Arial";
-                ctx.textAlign = "center";
-                ctx.textBaseline = "middle";
-                // ctx.fillText(p.rank === 1 ? '🥇' : (p.rank === 2 ? '🥈' : '🥉'), centerX + p.x + p.size, centerY + p.y - p.size);
+            for (let attractor of attractors) {
+                attractor.draw();
             }
-        });
 
-        requestAnimationFrame(draw);
-    }
+            for (let particle of particles) {
+                particle.update(attractors);
+                particle.draw();
+            }
 
-    renderList();
-    draw();
+            requestAnimationFrame(animate);
+        }
 
-    // Initial selection
-    updateDetails(planets[0]);
+        setTimeout(() => {
+             resize();
+             init();
+             animate();
+        }, 100);
+
+    });
 </script>
-</body>
 </body></html>
