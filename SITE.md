@@ -87,6 +87,7 @@
 * [x] market.html.html.html - Real-time developer stock market.
 * [x] deploy.html.html - Real-time deployment pipeline visualization.
 * [x] `focus.html.html` - Minimal productivity timer with flow state tracking.
+* [x] `typing.html.html` - Developer speed typing test page.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*

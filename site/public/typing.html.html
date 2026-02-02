@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Developer Leaderboard Dashboard</title>
+<title>Jules Speed Typing</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -12,7 +12,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#238636",
+              "primary": "#2dd4bf",
               "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
@@ -229,162 +229,293 @@
 </div>
 </header>
 <main class="flex-1 p-2 sm:p-4">
-<div class="overflow-hidden">
-<div class="overflow-x-auto">
-<table class="min-w-full">
-<thead class="border-b border-gray-800">
-<tr>
-<th class="w-24 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Rank</th>
-<th class="min-w-[200px] px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Developer</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Total Ships</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Streak</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Last Active</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Ship Graph</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border-b border-gray-800 bg-electric-yellow/10 text-electric-yellow hover:bg-electric-yellow/20">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold">#1 🥇</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center border-2 border-electric-yellow" data-alt="Profile picture of developer Jules" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+<div class="flex flex-col gap-6">
+  <!-- Header Stats -->
+  <div class="flex items-center justify-between rounded-lg border border-gray-800 bg-gray-900/50 p-6">
+      <div>
+          <h1 class="text-2xl font-bold text-white">Speed Typing</h1>
+          <p class="text-gray-400">Test your coding velocity.</p>
+      </div>
+      <div class="text-right">
+          <p class="text-sm text-gray-400">YOUR BEST WPM</p>
+          <p class="font-mono text-3xl font-bold text-primary">0</p>
+      </div>
+  </div>
+
+  <!-- Typing Arena -->
+  <div class="relative rounded-lg border border-gray-800 bg-black p-8 font-mono text-lg leading-relaxed text-gray-500 shadow-inner" id="typing-arena">
+      <div class="absolute right-4 top-4 flex gap-4 text-sm">
+          <div class="flex items-center gap-2">
+              <span class="text-gray-400">WPM:</span>
+              <span class="font-bold text-white" id="wpm-display">0</span>
+          </div>
+          <div class="flex items-center gap-2">
+              <span class="text-gray-400">ACC:</span>
+              <span class="font-bold text-white" id="acc-display">100%</span>
+          </div>
+          <div class="flex items-center gap-2">
+              <span class="text-gray-400">TIME:</span>
+              <span class="font-bold text-primary" id="time-display">60s</span>
+          </div>
+      </div>
+
+      <!-- Code Snippet -->
+      <div class="mt-8 select-none whitespace-pre-wrap" id="code-display">function calculateVelocity(distance, time) {
+  if (time <= 0) {
+    throw new Error("Time must be positive");
+  }
+  return distance / time;
+}</div>
+
+      <!-- Hidden Input -->
+      <textarea id="typing-input" class="absolute inset-0 h-full w-full opacity-0 cursor-text resize-none" spellcheck="false"></textarea>
+
+      <!-- Overlay for "Press Enter to Start" or Results -->
+      <div id="arena-overlay" class="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden">
+          <div class="text-center">
+              <h3 class="text-xl font-bold text-white mb-2">Result</h3>
+              <p class="text-4xl font-mono text-primary mb-4" id="final-wpm">0 WPM</p>
+              <div class="flex gap-4 justify-center">
+                  <button id="restart-btn" class="rounded bg-primary px-4 py-2 font-bold text-black hover:bg-teal-400">Try Again</button>
+                  <button id="share-btn" class="rounded border border-primary px-4 py-2 font-bold text-primary hover:bg-primary/10">Share Result</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+          <label class="flex items-center gap-2 text-sm text-gray-400">
+              <input type="checkbox" class="h-4 w-4 rounded border-gray-700 bg-gray-900 text-primary focus:ring-primary" id="sudden-death-toggle">
+              Sudden Death Mode (1 Mistake = Game Over)
+          </label>
+      </div>
+      <div class="flex gap-2">
+           <span class="rounded bg-gray-800 px-2 py-1 text-xs text-gray-400">JS</span>
+           <span class="rounded bg-gray-800 px-2 py-1 text-xs text-gray-400">TS</span>
+           <span class="rounded bg-gray-800 px-2 py-1 text-xs text-gray-400">PY</span>
+      </div>
+  </div>
+
+  <!-- Keyboard Heatmap Placeholder -->
+  <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-6">
+      <h3 class="mb-4 text-sm font-bold text-gray-400 uppercase tracking-wider">Missed Keys Heatmap</h3>
+      <div class="grid grid-cols-10 gap-1" id="keyboard-heatmap">
+          <!-- Keys will be generated by JS -->
+      </div>
+  </div>
+
+  <!-- Leaderboard -->
+  <div class="overflow-hidden rounded-lg border border-gray-800 bg-gray-900/30">
+      <div class="border-b border-gray-800 px-6 py-4">
+          <h3 class="text-lg font-bold text-white">Top Velocities</h3>
+      </div>
+      <div class="overflow-x-auto">
+          <table class="min-w-full text-left text-sm">
+              <thead class="border-b border-gray-800 bg-gray-900/50 text-xs uppercase text-gray-500">
+                  <tr>
+                      <th class="px-6 py-3 font-medium">Rank</th>
+                      <th class="px-6 py-3 font-medium">Developer</th>
+                      <th class="px-6 py-3 font-medium">WPM</th>
+                      <th class="px-6 py-3 font-medium">Accuracy</th>
+                      <th class="px-6 py-3 font-medium">Language</th>
+                  </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-800">
+                  <tr class="hover:bg-gray-800/50">
+                      <td class="px-6 py-4 font-medium text-white">#1 🥇</td>
+                      <td class="px-6 py-4 text-white">
+                          <div class="flex items-center gap-3">
+                              <div class="h-8 w-8 rounded-full bg-gray-700"></div>
+                              <span>TurboCoder</span>
+                          </div>
+                      </td>
+                      <td class="px-6 py-4 font-mono text-primary">142</td>
+                      <td class="px-6 py-4 text-gray-400">99.2%</td>
+                      <td class="px-6 py-4 text-gray-400">TypeScript</td>
+                  </tr>
+                  <tr class="hover:bg-gray-800/50">
+                      <td class="px-6 py-4 font-medium text-white">#2 🥈</td>
+                      <td class="px-6 py-4 text-white">
+                           <div class="flex items-center gap-3">
+                              <div class="h-8 w-8 rounded-full bg-gray-700"></div>
+                              <span>VimGod</span>
+                          </div>
+                      </td>
+                      <td class="px-6 py-4 font-mono text-primary">138</td>
+                      <td class="px-6 py-4 text-gray-400">98.5%</td>
+                      <td class="px-6 py-4 text-gray-400">Rust</td>
+                  </tr>
+                  <!-- More rows... -->
+              </tbody>
+          </table>
+      </div>
+  </div>
 </div>
-<a href="/profile.html" class="text-sm font-bold">Jules</a>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-primary">8,421</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 28</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 20 L10 18 L18 22 L26 15 L34 18 L42 25 L50 22 L58 16 L66 12 L74 18 L82 15 L90 10 L98 14 L106 20"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#2 🥈</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
-</div>
-<div class="text-sm font-bold text-white">Alex</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,988</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 14</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 hour ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 15 L10 18 L18 16 L26 20 L34 22 L42 18 L50 25 L58 20 L66 18 L74 15 L82 19 L90 23 L98 20 L106 18"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#3 🥉</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Sam" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Sam</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,501</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 12</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">5 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 25 L10 22 L18 20 L26 24 L34 20 L42 18 L50 15 L58 12 L66 18 L74 22 L82 20 L90 18 L98 15 L106 12"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#4</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Casey" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
-</div>
-<div class="text-sm font-bold text-white">Casey</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,340</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 5</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#5</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Morgan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
-</div>
-<div class="text-sm font-bold text-white">Morgan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,112</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 21</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">3 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#6</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Taylor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKd7TptbKFyq0tCAUFBIB1Z2bMaz02XGEt18pnEHsIDyx3asdQrfvtEm7JzTpMX6X9FCRTOi7a_StNVtBoVM9y2bDtUGXkdmoPxbNrk9MqvbledUMc4teDJGFP92rkKR0vRbQZI0_6qZiCYH99hMw50SNOWAqx1pudz1ULdiPLxAKBCyj-EU843TFqSJg9ztaoNDhrIeF89-rhSay7vwQM0FKXZ8FFVnUzOEY8tX1JCjjj-9T0TTSKnLasYNfMYJFJobkT9B1Kr8op");'></div>
-</div>
-<div class="text-sm font-bold text-white">Taylor</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,950</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 3</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">8 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#7</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Jordan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKy3L63_SFQFXY2VEwz92Lpm1OUR8q_4SIFCYVKFhavURQWsJpyFu_XGHQ0vFkkpnYE-sRYpLEznmwa_d9wdV94GZah0DHiWEefoQb_yS08zqupatW5ra2iECsr62WBiOZxwq-EwP8VSI7tK56qK9uAL8WFk7lriL40UwLaHcxPL0Is0MBVKd7KMGRyHXQs_RDox5iaEm6At93Ltj_E3dKtl0Bb8XS7-bZ6ZxgwQTlLDlXcMLJoA9o39btCfTtGIiRrXXJxnXj6BZQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Jordan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,873</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 2</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 days ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#8</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Riley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx");'></div>
-</div>
-<div class="text-sm font-bold text-white">Riley</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,521</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 6</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+
+<script>
+    // Minimal JS for interaction
+    const codeDisplay = document.getElementById('code-display');
+    const input = document.getElementById('typing-input');
+    const wpmDisplay = document.getElementById('wpm-display');
+    const accDisplay = document.getElementById('acc-display');
+    const timeDisplay = document.getElementById('time-display');
+    const overlay = document.getElementById('arena-overlay');
+    const restartBtn = document.getElementById('restart-btn');
+    const shareBtn = document.getElementById('share-btn');
+    const finalWpm = document.getElementById('final-wpm');
+    const suddenDeathToggle = document.getElementById('sudden-death-toggle');
+
+    const snippet = codeDisplay.textContent;
+    let startTime = null;
+    let timer = null;
+    let errors = 0;
+    let timeLeft = 60;
+    let isGameActive = false;
+    let missedKeys = {};
+
+    // Heatmap generation
+    const heatmap = document.getElementById('keyboard-heatmap');
+    const keys = "QWERTYUIOPASDFGHJKLZXCVBNM".split('');
+    keys.forEach(key => {
+        const k = document.createElement('div');
+        k.className = "flex h-10 items-center justify-center rounded border border-gray-700 bg-gray-800 text-xs font-bold text-gray-400 transition-colors";
+        k.textContent = key;
+        k.id = `key-${key}`;
+        heatmap.appendChild(k);
+    });
+
+    function updateHeatmap(char) {
+        const upper = char.toUpperCase();
+        if (!keys.includes(upper)) return;
+
+        missedKeys[upper] = (missedKeys[upper] || 0) + 1;
+
+        const count = missedKeys[upper];
+        const el = document.getElementById(`key-${upper}`);
+        if (el) {
+            if (count > 5) el.className = el.className.replace(/bg-gray-800|bg-red-\d00/g, 'bg-red-600 text-white');
+            else if (count > 2) el.className = el.className.replace(/bg-gray-800|bg-red-\d00/g, 'bg-red-800 text-white');
+            else el.className = el.className.replace(/bg-gray-800/g, 'bg-red-900/50 text-white');
+        }
+    }
+
+    function renderCode(val, isError) {
+        codeDisplay.replaceChildren();
+
+        const doneSpan = document.createElement('span');
+        doneSpan.className = 'text-primary';
+
+        if (isError) {
+             doneSpan.textContent = snippet.substring(0, val.length - 1);
+
+             const errSpan = document.createElement('span');
+             errSpan.className = 'bg-red-500/50 text-white';
+             errSpan.textContent = val.slice(-1); // What user typed
+
+             const restSpan = document.createElement('span');
+             restSpan.className = 'text-gray-500';
+             restSpan.textContent = snippet.substring(val.length);
+
+             codeDisplay.append(doneSpan, errSpan, restSpan);
+        } else {
+             doneSpan.textContent = val;
+
+             const restSpan = document.createElement('span');
+             restSpan.className = 'text-gray-500';
+             restSpan.textContent = snippet.substring(val.length);
+
+             codeDisplay.append(doneSpan, restSpan);
+        }
+    }
+
+    function endGame() {
+        isGameActive = false;
+        clearInterval(timer);
+        finalWpm.textContent = wpmDisplay.textContent + " WPM";
+        overlay.classList.remove('hidden');
+    }
+
+    function updateStats() {
+        const val = input.value;
+        const timeElapsed = (Date.now() - startTime) / 1000 / 60; // in minutes
+        const words = val.length / 5;
+        const wpm = Math.round(words / timeElapsed) || 0;
+        wpmDisplay.textContent = wpm;
+
+        const accuracy = Math.max(0, Math.round(((val.length - errors) / val.length) * 100)) || 100;
+        accDisplay.textContent = accuracy + "%";
+    }
+
+    input.addEventListener('input', (e) => {
+        if (!isGameActive && !startTime) {
+             startTime = Date.now();
+             isGameActive = true;
+             timer = setInterval(() => {
+                 timeLeft--;
+                 timeDisplay.textContent = timeLeft + "s";
+                 if (timeLeft <= 0) endGame();
+                 updateStats();
+             }, 1000);
+        }
+
+        if (!isGameActive) return;
+
+        const val = input.value;
+
+        // Basic error checking
+        if (snippet.startsWith(val)) {
+            renderCode(val, false);
+        } else {
+            errors++;
+
+            // Update Heatmap with the target character we missed
+            // logic: val.length-1 is the index of the character we just typed (and got wrong)
+            // So snippet[val.length-1] is what we *should* have typed.
+            const targetChar = snippet[val.length - 1];
+            if (targetChar) updateHeatmap(targetChar);
+
+            if (suddenDeathToggle.checked) {
+                endGame();
+            }
+            renderCode(val, true);
+        }
+
+        if (val === snippet) {
+            endGame();
+        }
+        updateStats();
+    });
+
+    restartBtn.addEventListener('click', () => {
+        input.value = '';
+        renderCode('', false);
+        wpmDisplay.textContent = '0';
+        accDisplay.textContent = '100%';
+        timeDisplay.textContent = '60s';
+        startTime = null;
+        timeLeft = 60;
+        errors = 0;
+        isGameActive = false;
+        missedKeys = {};
+        // Reset heatmap styles
+        document.querySelectorAll('#keyboard-heatmap > div').forEach(k => {
+             k.className = "flex h-10 items-center justify-center rounded border border-gray-700 bg-gray-800 text-xs font-bold text-gray-400 transition-colors";
+        });
+        overlay.classList.add('hidden');
+        input.focus();
+    });
+
+    shareBtn.addEventListener('click', () => {
+        const text = `I just typed ${wpmDisplay.textContent} WPM on jules.top! 🚀`;
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = shareBtn.textContent;
+            shareBtn.textContent = "Copied!";
+            setTimeout(() => shareBtn.textContent = originalText, 2000);
+        });
+    });
+</script>
 </main>
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
