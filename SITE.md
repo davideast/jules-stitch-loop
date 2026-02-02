@@ -94,6 +94,7 @@
 * [x] `debug.html.html` - Time-attack debugging challenge arena.
 * [x] `secrets.html.html` - Secure vault page containing encrypted secrets.
 * [x] `missions.html.html` - Gamified missions page with daily challenges and XP rewards.
+- [x] `forge.html.html.html` - The Forge // R&D Lab for crafting badges and upgrades.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
