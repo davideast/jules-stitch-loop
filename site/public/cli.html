@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jules CLI Documentation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>Repos</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Languages</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+<span class="material-symbols-outlined text-xl">compare_arrows</span>
+<span>Rivalry Tracker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/roadmap.html">
+<span class="material-symbols-outlined text-xl">map</span>
+<span>Roadmap</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/cli.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>CLI</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/settings.html">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/notifications.html">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span>Notifications</span>
+</a>
+</div>
+</header>
+<main class="flex-1 p-2 sm:p-4">
+<div class="flex flex-col gap-8 max-w-4xl mx-auto w-full">
+    <!-- Hero Section -->
+    <div class="flex flex-col items-center justify-center gap-6 py-12 text-center">
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Jules CLI</h1>
+        <p class="text-lg text-gray-400 max-w-2xl">The definitive terminal interface for the Jules platform. Ship code, track stats, and climb the leaderboard directly from your command line.</p>
+
+        <!-- Terminal Window -->
+        <div class="w-full max-w-2xl rounded-lg border border-gray-700 bg-[#1e1e1e] shadow-xl overflow-hidden mt-8 text-left">
+            <div class="flex items-center gap-2 bg-[#2d2d2d] px-4 py-2 border-b border-gray-700">
+                <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                <div class="ml-2 text-xs text-gray-400 font-mono">user@machine: ~</div>
+            </div>
+            <div class="p-6 font-mono text-sm">
+                <div class="flex gap-2">
+                    <span class="text-green-500">➜</span>
+                    <span class="text-blue-400">~</span>
+                    <span class="text-white">npm install -g jules-cli</span>
+                </div>
+                <div class="mt-2 text-gray-400">
+                    + jules-cli@1.2.0<br>
+                    added 24 packages in 1.4s
+                </div>
+                <div class="flex gap-2 mt-4">
+                    <span class="text-green-500">➜</span>
+                    <span class="text-blue-400">~</span>
+                    <span class="text-white">jules login</span>
+                </div>
+                <div class="mt-2 text-white">
+                    Authenticating with GitHub... <span class="text-green-500">Success!</span><br>
+                    Welcome back, <span class="text-sparkline-color font-bold">@jules_dev</span>.
+                </div>
+                <div class="flex gap-2 mt-4">
+                    <span class="text-green-500">➜</span>
+                    <span class="text-blue-400">~</span>
+                    <span class="text-white animate-pulse">_</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Installation Section -->
+    <div class="flex flex-col gap-6">
+        <h2 class="text-2xl font-bold border-b border-gray-800 pb-2">Installation</h2>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+            <!-- NPM Tab -->
+            <div class="flex-1 rounded-lg border border-gray-800 bg-gray-900/30 p-6 hover:bg-gray-900/50 transition-colors">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-white">NPM</h3>
+                    <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-400">Recommended</span>
+                </div>
+                <div class="relative group">
+                    <code class="block w-full rounded bg-black p-3 font-mono text-sm text-gray-300 border border-gray-800">npm install -g jules-cli</code>
+                    <button class="absolute right-2 top-2 p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-white" title="Copy">
+                        <span class="material-symbols-outlined text-sm">content_copy</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Brew Tab -->
+            <div class="flex-1 rounded-lg border border-gray-800 bg-gray-900/30 p-6 hover:bg-gray-900/50 transition-colors">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-white">Homebrew</h3>
+                    <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-400">macOS</span>
+                </div>
+                <div class="relative group">
+                    <code class="block w-full rounded bg-black p-3 font-mono text-sm text-gray-300 border border-gray-800">brew install jules-cli</code>
+                    <button class="absolute right-2 top-2 p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-white" title="Copy">
+                        <span class="material-symbols-outlined text-sm">content_copy</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Curl Tab -->
+            <div class="flex-1 rounded-lg border border-gray-800 bg-gray-900/30 p-6 hover:bg-gray-900/50 transition-colors">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-white">cURL</h3>
+                    <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-400">Linux</span>
+                </div>
+                <div class="relative group">
+                    <code class="block w-full rounded bg-black p-3 font-mono text-sm text-gray-300 border border-gray-800">curl -sL jules.top/install | bash</code>
+                    <button class="absolute right-2 top-2 p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-white" title="Copy">
+                        <span class="material-symbols-outlined text-sm">content_copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commands Section -->
+    <div class="flex flex-col gap-6 mb-12">
+        <h2 class="text-2xl font-bold border-b border-gray-800 pb-2">Command Reference</h2>
+
+        <div class="overflow-hidden rounded-lg border border-gray-800">
+            <table class="min-w-full divide-y divide-gray-800">
+                <thead class="bg-gray-900/50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Command</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Arguments</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Description</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800 bg-background-dark">
+                    <tr class="hover:bg-gray-900/30">
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules login</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">--token &lt;token&gt;</td>
+                        <td class="px-6 py-4 text-sm text-gray-300">Authenticate with GitHub or a personal access token.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-900/30">
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules ship</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">[message]</td>
+                        <td class="px-6 py-4 text-sm text-gray-300">Record a new shipment (commit/PR) to the leaderboard.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-900/30">
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules status</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">--user &lt;username&gt;</td>
+                        <td class="px-6 py-4 text-sm text-gray-300">Check your current rank, streak, and recent activity.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-900/30">
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules whoami</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">-</td>
+                        <td class="px-6 py-4 text-sm text-gray-300">Display current authenticated user information.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-900/30">
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules top</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">--limit &lt;n&gt;</td>
+                        <td class="px-6 py-4 text-sm text-gray-300">View the current top N developers on the leaderboard.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-900/30">
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-sparkline-color">jules config</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-gray-400">set &lt;key&gt; &lt;val&gt;</td>
+                        <td class="px-6 py-4 text-sm text-gray-300">Manage local configuration settings.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="/api.html">API</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>
