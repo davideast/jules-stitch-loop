@@ -61,6 +61,7 @@
 * [x] `settings.html` - User preferences and notifications
 * [x] `faq.html` - Frequently asked questions
 * [x] `notifications.html` - Activity alerts and updates
+* [x] `onboarding.html` - How to get started with Jules
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
@@ -97,7 +98,6 @@
 **Discovery & Exploration:**
 
 **User Experience:**
-- [ ] `onboarding.html` - How to get started with Jules
 
 **Meta & Documentation:**
 - [ ] `changelog.html` - Platform updates and new features
