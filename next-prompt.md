@@ -1,7 +1,7 @@
 ---
-page: boss.html
+page: scout.html
 ---
-A "Community Raid Boss" page where all developers work together to defeat a massive enemy by shipping code.
+A "Talent Scout" dashboard for finding undervalued developers and rising stars.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,13 @@ A "Community Raid Boss" page where all developers work together to defeat a mass
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: Boss Name (e.g., "The Monolith") and Level.
-2. Boss Visual: ASCII art or CSS shape representing the boss (animated/pulsing).
-3. Health Bar: Massive progress bar showing remaining HP (Lines of Code / Commits).
-4. Combat Log: Real-time scrolling log of "damage" (commits) being dealt by users.
-5. Leaderboard: "Top DPS" (Damage Per Second) - users who shipped the most today.
+1. Header: "Talent Scout" title and search filters.
+2. Filters: "High Velocity/Low Rank", "Sleeping Giants", "Night Owls", "Consistency Kings".
+3. Main Data Visualization: Scatter Plot (Rank vs Velocity) or similar graph to spot outliers.
+4. Scout List: Table of recommended developers matching the criteria.
+5. "Draft" Button: Action to "watch" or "draft" a developer (simulated).
 
 **Specific Elements:**
-- "Damage Numbers" popping up visually.
-- "Loot Table" showing potential rewards (badges) for defeating the boss.
-- Red/Danger color accents for the Boss UI (different from standard Teal).
+- "Signal Strength" indicator (bars like wifi).
+- "Growth Rate" percentage (green +%).
+- "Undervalued" label/tag.
