@@ -1,7 +1,7 @@
 ---
-page: pass.html
+page: tournament.html
 ---
-"Season Pass" - A tiered progression system for unlocking cosmetic rewards and boosters.
+"Code Colosseum" - A bracket-style tournament viewer for the season playoffs.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,13 @@ page: pass.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: Season 5 "Velocity" Banner with end date countdown.
-2. Progression Track: Horizontal scrolling list of levels (1-100).
-3. Reward Tiers: Dual rows for "Free" vs "Pro" pass rewards.
-4. Quest Log: Daily/Weekly missions that grant Season XP.
+1. Header: "Code Colosseum" Banner with "Quarter-Finals" indicator.
+2. Bracket Visualization: A visual tree structure showing matchups (8 -> 4 -> 2 -> 1).
+3. Live Matchup: Detailed comparison card of the current active battle.
+4. Betting Station: UI to "Vote for Winner" with odds/percentages.
 
 **Specific Elements:**
-- "Claim All" button for unlocked rewards.
-- Locked/Unlocked status icons (Padlocks vs Checkmarks).
-- Animated progress bar showing current level.
-- "Upgrade to Pro" Call-to-Action card.
+- Connector lines between bracket nodes.
+- Developer avatars and scores in each bracket node.
+- "Live" indicator for ongoing matches.
+- Countdown timer for the next round.
