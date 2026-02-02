@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Developer Leaderboard Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>Repos</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Languages</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hackathon.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>Hackathons</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/bounties.html.html">
+<span class="material-symbols-outlined text-xl">assignment_turned_in</span>
+<span>Bounties</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/logs.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>System Logs</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/status.html.html">
+<span class="material-symbols-outlined text-xl">dns</span>
+<span>Status</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/matrix.html.html">
+<span class="material-symbols-outlined text-xl">hub</span>
+<span>The Matrix</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/map.html">
+<span class="material-symbols-outlined text-xl">public</span>
+<span>Live Map</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/ticker.html">
+<span class="material-symbols-outlined text-xl">show_chart</span>
+<span>Ticker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+<span class="material-symbols-outlined text-xl">compare_arrows</span>
+<span>Rivalry Tracker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/radar.html">
+<span class="material-symbols-outlined text-xl">radar</span>
+<span>Radar</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stack.html.html">
+<span class="material-symbols-outlined text-xl">layers</span>
+<span>Stacks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/review.html.html">
+<span class="material-symbols-outlined text-xl">rate_review</span>
+<span>Reviews</span>
+</a>
+
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/quality.html.html">
+<span class="material-symbols-outlined text-xl">health_metrics</span>
+<span>Quality</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/roadmap.html">
+<span class="material-symbols-outlined text-xl">map</span>
+<span>Roadmap</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/cli.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>CLI</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/terminal.html">
+<span class="material-symbols-outlined text-xl">monitor</span>
+<span>Terminal</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/settings.html">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/notifications.html">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/embeds.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Embeds</span>
+</a>
+</div>
+</header>
+<main class="flex-1 p-2 sm:p-4 flex flex-col h-[calc(100vh-80px)]">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-teal-400 text-3xl">hub</span>
+            <h1 class="text-2xl font-bold text-white tracking-tight">The Matrix <span class="text-gray-500 text-lg font-normal ml-2">Network Graph</span></h1>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-900/50 p-1 rounded-lg border border-gray-800">
+            <button class="px-3 py-1.5 text-xs font-medium rounded-md bg-teal-500/10 text-teal-400 border border-teal-500/50 hover:bg-teal-500/20 transition-colors" data-filter="all">All Connections</button>
+            <button class="px-3 py-1.5 text-xs font-medium rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors" data-filter="dev-repo">Dev-Repo</button>
+            <button class="px-3 py-1.5 text-xs font-medium rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors" data-filter="dev-dev">Dev-Dev</button>
+            <button class="px-3 py-1.5 text-xs font-medium rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors" data-filter="repo-lang">Repo-Lang</button>
+        </div>
+    </div>
+
+    <div class="flex-1 relative border border-gray-800 rounded-xl bg-gray-900/30 overflow-hidden flex">
+        <!-- Main Graph Area -->
+        <div class="flex-1 relative" id="matrix-canvas-container">
+            <svg id="matrix-svg" class="w-full h-full cursor-grab active:cursor-grabbing">
+                <!-- Edges and Nodes will be injected here by JS -->
+                <defs>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="2" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                </defs>
+            </svg>
+
+            <!-- Matrix background effect -->
+            <div class="absolute inset-0 pointer-events-none opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiMzMzMiLz48L3N2Zz4=')]"></div>
+
+            <!-- Connection Strength Metrics (Floating) -->
+            <div class="absolute bottom-4 left-4 p-3 bg-gray-900/90 backdrop-blur-sm border border-gray-800 rounded-lg shadow-xl z-10 pointer-events-none">
+                <div class="text-xs text-gray-400 uppercase tracking-wider mb-2 font-mono">Network Vitality</div>
+                <div class="flex items-end gap-1">
+                    <span class="text-2xl font-bold text-white font-mono" id="total-connections">0</span>
+                    <span class="text-xs text-teal-400 mb-1">active links</span>
+                </div>
+                <div class="w-32 h-1 bg-gray-800 mt-2 rounded-full overflow-hidden">
+                    <div class="h-full bg-teal-500 animate-pulse w-3/4"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Node Details Sidebar (Overlay/Slide-over) -->
+        <div class="w-80 border-l border-gray-800 bg-gray-900/90 backdrop-blur-sm p-4 hidden md:flex flex-col gap-4 absolute right-0 top-0 bottom-0 z-20 transition-transform transform translate-x-full" id="details-panel">
+            <div class="flex items-start justify-between">
+                <h3 class="font-bold text-lg text-white" id="panel-title">Select a Node</h3>
+                <button class="text-gray-500 hover:text-white" id="close-panel">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto" id="panel-content">
+                <div class="text-gray-500 text-sm text-center mt-10">Hover or click on a node to reveal connection data.</div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    // Matrix Visualization Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const svg = document.getElementById('matrix-svg');
+        const container = document.getElementById('matrix-canvas-container');
+        const panel = document.getElementById('details-panel');
+        const panelTitle = document.getElementById('panel-title');
+        const panelContent = document.getElementById('panel-content');
+        const filterButtons = document.querySelectorAll('button[data-filter]');
+
+        let activeFilter = 'all';
+
+        // Mock Data
+        const nodes = [
+            { id: 'jules', type: 'dev', label: 'Jules', x: 50, y: 50, score: 98, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf' },
+            { id: 'alex', type: 'dev', label: 'Alex', x: 80, y: 20, score: 85, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J' },
+            { id: 'sam', type: 'dev', label: 'Sam', x: 20, y: 80, score: 78, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ' },
+            { id: 'repo1', type: 'repo', label: 'core-engine', x: 50, y: 50, score: 90 },
+            { id: 'repo2', type: 'repo', label: 'ui-kit', x: 30, y: 30, score: 60 },
+            { id: 'lang1', type: 'lang', label: 'TypeScript', x: 60, y: 60, score: 80 },
+            { id: 'lang2', type: 'lang', label: 'Rust', x: 40, y: 70, score: 70 },
+        ];
+
+        const edges = [
+            { source: 'jules', target: 'repo1', weight: 5 },
+            { source: 'jules', target: 'repo2', weight: 3 },
+            { source: 'alex', target: 'repo1', weight: 4 },
+            { source: 'sam', target: 'repo2', weight: 2 },
+            { source: 'repo1', target: 'lang1', weight: 5 },
+            { source: 'repo1', target: 'lang2', weight: 3 },
+            { source: 'repo2', target: 'lang1', weight: 4 },
+        ];
+
+        // Simulation parameters
+        let width = container.clientWidth;
+        let height = container.clientHeight;
+
+        // Initialize positions centered but spread
+        nodes.forEach(node => {
+            node.vx = (Math.random() - 0.5) * 2;
+            node.vy = (Math.random() - 0.5) * 2;
+            node.x = width / 2 + (Math.random() - 0.5) * 300;
+            node.y = height / 2 + (Math.random() - 0.5) * 300;
+        });
+
+        // Filters
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update UI
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-teal-500/10', 'text-teal-400', 'border-teal-500/50');
+                    b.classList.add('text-gray-400');
+                });
+                btn.classList.remove('text-gray-400');
+                btn.classList.add('bg-teal-500/10', 'text-teal-400', 'border-teal-500/50');
+
+                // Update State
+                activeFilter = btn.dataset.filter;
+                render();
+            });
+        });
+
+        function isEdgeVisible(edge) {
+            if (activeFilter === 'all') return true;
+
+            const sourceNode = nodes.find(n => n.id === edge.source);
+            const targetNode = nodes.find(n => n.id === edge.target);
+            if (!sourceNode || !targetNode) return false;
+
+            const types = [sourceNode.type, targetNode.type].sort().join('-');
+
+            if (activeFilter === 'dev-repo' && types === 'dev-repo') return true;
+            if (activeFilter === 'dev-dev' && types === 'dev-dev') return true;
+            if (activeFilter === 'repo-lang' && types === 'lang-repo') return true; // sorted 'lang-repo'
+
+            return false;
+        }
+
+        function render() {
+            // Keep defs
+            svg.innerHTML = '<defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter></defs>';
+
+            // Draw Edges
+            const visibleEdges = edges.filter(isEdgeVisible);
+
+            visibleEdges.forEach(edge => {
+                const source = nodes.find(n => n.id === edge.source);
+                const target = nodes.find(n => n.id === edge.target);
+                if (!source || !target) return;
+
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', source.x);
+                line.setAttribute('y1', source.y);
+                line.setAttribute('x2', target.x);
+                line.setAttribute('y2', target.y);
+                line.setAttribute('stroke', '#2dd4bf'); // Teal
+                line.setAttribute('stroke-opacity', '0.2');
+                line.setAttribute('stroke-width', edge.weight);
+                svg.appendChild(line);
+
+                // Active pulse packet
+                if (Math.random() > 0.95) {
+                    const packet = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    packet.setAttribute('r', '2');
+                    packet.setAttribute('fill', '#fff');
+                    packet.setAttribute('filter', 'url(#glow)');
+
+                    const animateX = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+                    animateX.setAttribute('attributeName', 'cx');
+                    animateX.setAttribute('from', source.x);
+                    animateX.setAttribute('to', target.x);
+                    animateX.setAttribute('dur', '1s');
+                    animateX.setAttribute('repeatCount', 'indefinite');
+
+                    const animateY = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+                    animateY.setAttribute('attributeName', 'cy');
+                    animateY.setAttribute('from', source.y);
+                    animateY.setAttribute('to', target.y);
+                    animateY.setAttribute('dur', '1s');
+                    animateY.setAttribute('repeatCount', 'indefinite');
+
+                    packet.appendChild(animateX);
+                    packet.appendChild(animateY);
+                    svg.appendChild(packet);
+                }
+            });
+
+            // Draw Nodes - Only those with visible edges or if filter is all?
+            // Let's keep all nodes visible to maintain structure, but maybe dim unconnected ones?
+            // For now, keep all nodes visible.
+            nodes.forEach(node => {
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                g.setAttribute('transform', `translate(${node.x}, ${node.y})`);
+                g.style.cursor = 'pointer';
+                g.onclick = () => showDetails(node);
+
+                // Dim unconnected nodes if filtered
+                const isConnected = visibleEdges.some(e => e.source === node.id || e.target === node.id);
+                const opacity = (activeFilter === 'all' || isConnected) ? '1' : '0.2';
+                g.style.opacity = opacity;
+
+                if (node.type === 'dev') {
+                    // Avatar circle
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('r', '20');
+                    circle.setAttribute('fill', '#161b22');
+                    circle.setAttribute('stroke', '#2dd4bf');
+                    circle.setAttribute('stroke-width', '2');
+
+                    // Image pattern
+                    const defs = svg.querySelector('defs') || document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+                    const pattern = document.createElementNS('http://www.w3.org/2000/svg', 'pattern');
+                    pattern.setAttribute('id', `img-${node.id}`);
+                    pattern.setAttribute('height', '100%');
+                    pattern.setAttribute('width', '100%');
+                    pattern.setAttribute('patternContentUnits', 'objectBoundingBox');
+
+                    const image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+                    image.setAttributeNS('http://www.w3.org/1999/xlink', 'href', node.img);
+                    image.setAttribute('height', '1');
+                    image.setAttribute('width', '1');
+                    image.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+
+                    pattern.appendChild(image);
+                    defs.appendChild(pattern);
+                    svg.appendChild(defs);
+
+                    circle.setAttribute('fill', `url(#img-${node.id})`);
+                    g.appendChild(circle);
+                } else if (node.type === 'repo') {
+                     const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    rect.setAttribute('x', '-15');
+                    rect.setAttribute('y', '-15');
+                    rect.setAttribute('width', '30');
+                    rect.setAttribute('height', '30');
+                    rect.setAttribute('rx', '4');
+                    rect.setAttribute('fill', '#0d1117');
+                    rect.setAttribute('stroke', '#f0c800'); // Gold
+                    rect.setAttribute('stroke-width', '1');
+                    g.appendChild(rect);
+
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('y', '5');
+                    text.setAttribute('text-anchor', 'middle');
+                    text.setAttribute('fill', '#f0c800');
+                    text.setAttribute('font-size', '10px');
+                    text.setAttribute('class', 'font-mono');
+                    text.textContent = '</>';
+                    g.appendChild(text);
+                } else {
+                     const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('r', '10');
+                    circle.setAttribute('fill', '#238636'); // Green
+                    g.appendChild(circle);
+                }
+
+                // Label
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('y', '35');
+                label.setAttribute('text-anchor', 'middle');
+                label.setAttribute('fill', '#fff');
+                label.setAttribute('font-size', '12px');
+                label.setAttribute('class', 'font-mono');
+                label.textContent = node.label;
+                g.appendChild(label);
+
+                svg.appendChild(g);
+            });
+
+            // Update Stats
+            document.getElementById('total-connections').textContent = visibleEdges.reduce((acc, curr) => acc + curr.weight, 0);
+        }
+
+        // Simple Force Layout Simulation
+        function tick() {
+            // Repulsion
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+                    const force = 2000 / (dist * dist);
+                    const fx = (dx / dist) * force;
+                    const fy = (dy / dist) * force;
+
+                    nodes[i].vx += fx;
+                    nodes[i].vy += fy;
+                    nodes[j].vx -= fx;
+                    nodes[j].vy -= fy;
+                }
+            }
+
+            // Attraction (Springs) - Use filtered edges for physics?
+            // Better to keep physics stable so nodes don't fly away when edges disappear.
+            // But visually if they are disconnected they should float.
+            // Let's keep physics based on ALL edges to maintain the "Matrix" shape,
+            // but simply hide the lines.
+            edges.forEach(edge => {
+                const source = nodes.find(n => n.id === edge.source);
+                const target = nodes.find(n => n.id === edge.target);
+                if (!source || !target) return;
+
+                const dx = target.x - source.x;
+                const dy = target.y - source.y;
+                const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+                const force = (dist - 150) * 0.005; // Spring length 150
+                 const fx = (dx / dist) * force;
+                const fy = (dy / dist) * force;
+
+                source.vx += fx;
+                source.vy += fy;
+                target.vx -= fx;
+                target.vy -= fy;
+            });
+
+            // Center Gravity
+            nodes.forEach(node => {
+                const dx = width/2 - node.x;
+                const dy = height/2 - node.y;
+                node.vx += dx * 0.001;
+                node.vy += dy * 0.001;
+
+                // Velocity Damping
+                node.vx *= 0.9;
+                node.vy *= 0.9;
+
+                // Update position
+                node.x += node.vx;
+                node.y += node.vy;
+
+                // Bounds
+                node.x = Math.max(20, Math.min(width - 20, node.x));
+                node.y = Math.max(20, Math.min(height - 20, node.y));
+            });
+
+            render();
+            requestAnimationFrame(tick);
+        }
+
+        function showDetails(node) {
+            panel.classList.remove('translate-x-full');
+            panelTitle.textContent = node.label;
+
+            let html = '';
+            if (node.type === 'dev') {
+                html = `
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="${node.img}" class="w-16 h-16 rounded-full border-2 border-teal-400">
+                        <div>
+                            <div class="text-xs text-gray-400 uppercase">Rank #1</div>
+                            <div class="text-xl font-bold text-white">${node.label}</div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-gray-800/50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-400">Total Ships</div>
+                            <div class="text-xl font-mono text-teal-400">8,421</div>
+                        </div>
+                         <div class="bg-gray-800/50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-400">Top Language</div>
+                            <div class="text-xl font-mono text-white">TypeScript</div>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-6 mb-2 text-sm font-bold text-white uppercase tracking-wider">Connections</h4>
+                    <div class="space-y-2">
+                `;
+                edges.filter(e => e.source === node.id || e.target === node.id).forEach(e => {
+                    const otherId = e.source === node.id ? e.target : e.source;
+                    const other = nodes.find(n => n.id === otherId);
+                    html += `
+                        <div class="flex items-center justify-between p-2 rounded hover:bg-gray-800/50 border border-transparent hover:border-gray-700">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full ${other.type === 'repo' ? 'bg-yellow-500' : 'bg-green-500'}"></span>
+                                <span class="text-sm text-gray-300">${other.label}</span>
+                            </div>
+                            <span class="text-xs font-mono text-gray-500">${e.weight} commits</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            } else {
+                 html = `
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded bg-gray-800 flex items-center justify-center border border-yellow-500 text-yellow-500">
+                            <span class="font-mono text-2xl">&lt;/&gt;</span>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-400 uppercase">Repository</div>
+                            <div class="text-xl font-bold text-white">${node.label}</div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                         <div class="bg-gray-800/50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-400">Active Devs</div>
+                            <div class="text-xl font-mono text-teal-400">12</div>
+                        </div>
+                    </div>
+                 `;
+            }
+
+            panelContent.innerHTML = html;
+        }
+
+        document.getElementById('close-panel').onclick = () => {
+            panel.classList.add('translate-x-full');
+        };
+
+        document.getElementById('total-connections').textContent = edges.reduce((acc, curr) => acc + curr.weight, 0);
+
+        // Start simulation
+        tick();
+    });
+</script>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="/api.html">API</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>

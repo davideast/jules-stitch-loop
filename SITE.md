@@ -78,6 +78,7 @@
 * [x] `stack.html.html` - Tech Stack trends page analyzing toolchain popularity.
 * [x] `review.html.html` - Code review leaderboard and velocity stats.
 * [x] quality.html.html - Code quality dashboard and technical debt metrics.
+* [x] matrix.html.html - Network graph of connections between developers and repos.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
