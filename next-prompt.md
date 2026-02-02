@@ -1,7 +1,7 @@
 ---
-page: changelog
+page: roadmap
 ---
-Platform updates and new features changelog for jules.top. A chronological timeline of releases, bug fixes, and improvements.
+Public roadmap of upcoming features for jules.top. A Kanban-style board tracking the future of the platform.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,11 @@ Platform updates and new features changelog for jules.top. A chronological timel
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Changelog" with global navigation.
-2. Layout: Centered timeline (~700px).
-3. List of updates grouped by date/version.
+1. Header: "Roadmap" with global navigation.
+2. Layout: Three distinct columns (Planned, In Progress, Shipped).
+3. Cards: Feature requests/ideas in each column.
 
 **Specific Elements:**
-- Version tags (e.g. `v1.2.0`) in monospaced font.
-- Type badges: "New" (Green), "Fix" (Yellow), "Improvement" (Blue).
-- Unordered lists for changes within each version.
+- Status Indicators: "In Progress" (Pulsing Yellow/Orange), "Planned" (Gray/Blue), "Shipped" (Green).
+- Feature Cards: Minimal dark cards with title, short description, and "Upvote" count (e.g. "▲ 42").
+- Progress Bars: Overall completion percentage for the current quarter.
