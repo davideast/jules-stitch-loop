@@ -1,7 +1,7 @@
 ---
-page: academy.html
+page: chaos.html
 ---
-"The Academy" - A competitive training ground and LMS (Learning Management System) for developers.
+"Chaos Engineering Dashboard" - Control center for injecting faults and monitoring system resilience.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,14 @@ page: academy.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "The Academy" title and user's current level/XP.
-2. Course Grid: Cards for "Git Mastery", "Clean Code", "Algorithm Arena", etc.
-3. Progress Section: "Training Montage" graph showing skill acquisition over time.
-4. "Sensei" Tips: A sidebar or section with automated code review tips.
-5. Certificate Wall: Grid of unlocked badges/certifications.
+1. Header: "Chaos Control" and current system DEFCON level.
+2. Attack Map: Visualizing active fault injections (network latency, pod kills).
+3. Resilience Score: Real-time metric of system stability under stress.
+4. "Blast Radius" Graph: Impact analysis of current experiments.
+5. Incident Log: Stream of system alerts and recovery events.
 
 **Specific Elements:**
-- "Enroll" buttons.
-- Progress bars (green/teal).
-- Locked/Unlocked status icons (padlocks vs checkmarks).
-- Terminal-style exercise preview.
+- "Inject Fault" buttons (Red/Danger).
+- Glitch effects or "unstable" visual indicators for stressed components.
+- Terminal output for chaos logs.
+- Status indicators (Healthy vs degraded).
