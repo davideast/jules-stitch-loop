@@ -1,7 +1,7 @@
 ---
-page: audit.html
+page: secrets.html
 ---
-A live security monitor tracking vulnerabilities, unauthorized access attempts, and code integrity checks.
+A secure vault page containing encrypted secrets, easter eggs, and unlockable rewards for top developers.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,14 @@ A live security monitor tracking vulnerabilities, unauthorized access attempts, 
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "Security Status: ELEVATED" and threat level indicator.
-2. "Live Threat Map": A world map or network graph showing origin of attacks (simulated).
-3. "Vulnerability Feed": Streaming log of detected CVEs and patch status.
-4. "Integrity Checks": List of core system files and their SHA-256 hash status (Pass/Fail).
-5. "Audit Log": Table of recent sensitive actions (Login, Deploy, Config Change) by user.
+1. Header "Jules Vault // TOP SECRET".
+2. "Access Terminal": A keypad or command line input for entering codes.
+3. "Locked Files": A grid of "files" with lock icons and encrypted names.
+4. "Decryption Progress": A visualization of a brute-force attack simulation.
+5. "Unlocked Artifacts": A list of rewards (wallpapers, badges) that have been unlocked.
 
 **Specific Elements:**
-- "Scanning..." animations on integrity checks.
-- Red/Green status indicators.
-- Monospaced hashes and IP addresses.
-- "Lockdown" button that triggers a visual alarm state.
+- Glitch effects on text.
+- "Access Denied" animations.
+- Sound effect toggles.
+- Hidden binary code in the background.

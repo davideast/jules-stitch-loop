@@ -75,6 +75,7 @@
 * [x] `artifacts.html.html` - Build artifacts repository with file-browser aesthetic.
 * [x] `bounties.html.html` - A terminal-styled board of open issues with XP rewards.
 * [x] `logs.html` - System log viewer showing raw platform events.
+* [x] `audit.html.html` - Security Audit & Monitor
 * [x] `status.html.html` - Real-time system status page.
 * [x] `stack.html.html` - Tech Stack trends page analyzing toolchain popularity.
 * [x] `review.html.html` - Code review leaderboard and velocity stats.
