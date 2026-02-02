@@ -65,6 +65,7 @@
 * [x] `changelog.html` - Platform updates and new features
 * [x] `roadmap.html` - Public roadmap of upcoming features
 * [x] `api.html` - API Documentation
+* [x] `cli.html` - Command Line Interface documentation
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*

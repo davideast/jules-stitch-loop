@@ -1,7 +1,7 @@
 ---
-page: cli
+page: embeds
 ---
-Documentation for the Jules CLI tool. A developer-focused terminal interface for interacting with the Jules platform.
+A page showcasing embeddable widgets and dynamic badges for developers to display their Jules stats on GitHub READMEs and personal websites.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,14 @@ Documentation for the Jules CLI tool. A developer-focused terminal interface for
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Jules CLI" with global navigation.
-2. Hero: Ascii art logo or large terminal window showing installation command.
-3. Installation: Tabs for npm, brew, curl.
-4. Commands: List of available commands (e.g., `jules ship`, `jules status`, `jules whoami`) with examples.
+1. Header: "Embeds & Widgets" with global navigation.
+2. Hero: "Show off your stats" - bold statement.
+3. Preview Area: Live interactive preview of different widget styles (Small, Card, Graph, Shield).
+4. Code Generator: Configuration controls (Theme, User, Type) and the resulting code snippet (Markdown/HTML).
+5. Gallery: Examples of badges in the wild.
 
 **Specific Elements:**
-- Terminal Window: A visual component mimicking a terminal with prompt string `user@machine:~$`.
-- Copy Buttons: For command snippets.
-- Command Reference: Table or list of flags and arguments.
+- Badge Preview: Visual representation of the badge.
+- Config Options: Toggles for "Dark/Light", "Transparent", "Include Rank".
+- Copy-to-Clipboard: One-click copy for the generated code.
+- Shields.io style badges: Simple static badges for specific stats (Rank: #1, Ships: 8421).
