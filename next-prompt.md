@@ -1,7 +1,7 @@
 ---
-page: deploy.html
+page: focus.html
 ---
-A real-time deployment pipeline visualization page.
+A minimal, terminal-style productivity timer for deep work sessions. Tracks "Flow State" duration and awards XP for uninterrupted coding blocks.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,13 @@ A real-time deployment pipeline visualization page.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "Deployments" title and pipeline summary stats (Success Rate, Active Deploys).
-2. Main Pipeline Visualizer: Horizontal swimlanes for Build -> Test -> Stage -> Prod.
-3. Deployment History Table: Version | Commit | Author | Duration | Status.
+1. Header with "Focus Mode" title and current streak stats.
+2. Main Timer Display: Large, monospaced digital clock (e.g., 25:00) in the center.
+3. Session Log: Table of completed sessions (Duration | Task | XP Earned | Time).
+4. Controls: Minimal buttons for "Start Focus", "Short Break", "Long Break".
 
 **Specific Elements:**
-- Animated progress bars for active deployments.
-- Status icons (Checkmark, X, Spinner) for pipeline stages.
-- Commit hash links in monospace.
-- "Rollback" action button for failed deployments.
+- Circular progress ring around the timer (Teal).
+- "Zen Mode" toggle that hides everything except the timer.
+- Terminal-like input for "Current Task" (e.g., `> Refactoring auth module_`).
+- XP gain animation (+50 XP) upon session completion.
