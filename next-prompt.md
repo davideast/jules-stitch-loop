@@ -1,7 +1,7 @@
 ---
-page: map
+page: terminal.html
 ---
-A real-time global command center map visualizing where code is being shipped.
+An interactive, browser-based CLI terminal environment for querying leaderboard data.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,13 @@ A real-time global command center map visualizing where code is being shipped.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Live Map" with global navigation.
-2. Main View: Large, dark vector world map with pulsing "blips" for live commits.
-3. Sidebar: "Incoming Signals" stream (scrolling terminal text of commits).
-4. Footer: "Active Regions" leaderboard (e.g., "San Francisco", "London", "Tokyo").
+1. Full-screen terminal interface (no standard header/footer).
+2. Command prompt: `jules@top:~$` with blinking cursor.
+3. Output area for command results.
+4. "Exit to GUI" button (floating or corner) to return to `index.html`.
 
 **Specific Elements:**
-- Map: Dark outline, no labels, just data points.
-- Blips: Teal for commits, Purple for PRs, growing rings for impact.
-- Signal Feed: Monospaced, raw text style (e.g., `> user shipped to repo/xyz`).
-- Stats Overlay: "Live Shippers: 421", "Commits/Min: 85".
+- Input: functional text input that accepts commands.
+- Commands: `help` (list commands), `top` (show leaderboard), `clear` (clear screen), `whoami` (show user info), `status` (show system status).
+- Visuals: Retro terminal font (Green/Amber), slight scanline effect.
+- ASCII Art: Display "JULES.TOP" logo on load.

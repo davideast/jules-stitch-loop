@@ -68,6 +68,7 @@
 * [x] `api.html` - API Documentation
 * [x] `cli.html` - Command Line Interface documentation
 * [x] `embeds.html` - Embeddable widgets and badges for GitHub READMEs
+* [x] `map.html` - Real-time global command center map
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
