@@ -1,7 +1,7 @@
 ---
-page: embeds
+page: hackathon
 ---
-A page showcasing embeddable widgets and dynamic badges for developers to display their Jules stats on GitHub READMEs and personal websites.
+A page for tracking live and upcoming coding hackathons (sprints, blitzes, marathons).
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,14 @@ A page showcasing embeddable widgets and dynamic badges for developers to displa
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Embeds & Widgets" with global navigation.
-2. Hero: "Show off your stats" - bold statement.
-3. Preview Area: Live interactive preview of different widget styles (Small, Card, Graph, Shield).
-4. Code Generator: Configuration controls (Theme, User, Type) and the resulting code snippet (Markdown/HTML).
-5. Gallery: Examples of badges in the wild.
+1. Header: "Hackathons" with global navigation.
+2. Active Event Hero: "WEEKEND WARRIOR BLITZ" with a large countdown timer.
+3. Live Leaderboard: Top shippers for the current event only.
+4. Upcoming Schedule: Calendar of future events (Blitz, Sprint, Marathon).
+5. Past Winners: Hall of fame for previous hackathons.
 
 **Specific Elements:**
-- Badge Preview: Visual representation of the badge.
-- Config Options: Toggles for "Dark/Light", "Transparent", "Include Rank".
-- Copy-to-Clipboard: One-click copy for the generated code.
-- Shields.io style badges: Simple static badges for specific stats (Rank: #1, Ships: 8421).
+- Countdown: Big, monospaced digital clock style.
+- Event Status: "LIVE", "UPCOMING", "ENDED" badges.
+- Prize Pool: Simple text indicating the stakes (e.g., "Glory + Badge").
+- Register Button: prominent call to action for upcoming events.
