@@ -1,7 +1,7 @@
 ---
-page: interview.html.html
+page: debug.html
 ---
-A competitive mock interview practice arena with timer and scoring.
+A time-attack debugging challenge arena where developers fix broken code before the system crashes.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -16,19 +16,19 @@ A competitive mock interview practice arena with timer and scoring.
 - Font: Clean sans-serif (Inter, SF Pro, or system default)
 - Avatars: Circular, ~40px, with subtle border
 - Table: No visible row borders, generous vertical padding (~20px per row)
-- Columns: RANK | DEVELOPER (avatar + name) | SCORE | STREAK
+- Columns: RANK | DEVELOPER (avatar + name) | BUGS SQUASHED | SURVIVAL TIME
 - Pagination: Circular active page indicator (teal), numbered pages
 - Layout: Centered content, max-width container, ample whitespace
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with title and current Interview Score.
-2. Interview Booth: A chat-like or card-based interface where "Interviewer" (AI) asks questions.
-3. Code/Answer Area: A text area or code editor for the user to type answers.
-4. Timer & Stress Meter: Visual indicators of pressure.
-5. Leaderboard: Top interview scores.
+1. Header with "System Status: CRITICAL" warning.
+2. The "Bug Console": A terminal-like view showing error logs streaming in.
+3. Editor Pane: The broken code snippet to fix.
+4. "Panic" Timer: A countdown bar that turns red/glitches as time runs out.
+5. Leaderboard: Top debuggers by bugs squashed.
 
 **Specific Elements:**
-- "Stress" mechanic: Visual noise or shaking as timer runs out.
-- "Hired/Rejected" stamp animation on completion.
-- Syntax highlighting for code questions.
+- "Glitch" effects on text when time is low.
+- "Compile/Run" button that gives immediate feedback (Success/Fail).
+- Red "ERROR" overlays on failure.

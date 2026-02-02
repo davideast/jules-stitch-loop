@@ -89,6 +89,7 @@
 * [x] `focus.html.html` - Minimal productivity timer with flow state tracking.
 * [x] `typing.html.html` - Developer speed typing test page.
 * [x] `quiz.html.html` - A competitive, sudden-death technical quiz page.
+* [x] `interview.html.html.html` - A competitive mock interview practice arena.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
