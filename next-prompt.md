@@ -1,7 +1,7 @@
 ---
-page: artifacts.html
+page: deploy.html
 ---
-A build artifacts repository page with a file-browser aesthetic.
+A real-time deployment pipeline visualization page.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ A build artifacts repository page with a file-browser aesthetic.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "Artifacts" title and breadcrumb navigation (e.g., "home / builds / latest").
-2. Filter/Search bar for artifact types (Docker, Binary, Source, Logs).
-3. Main File Browser Table: Filename | Size | Build ID | Date | Download Action.
+1. Header with "Deployments" title and pipeline summary stats (Success Rate, Active Deploys).
+2. Main Pipeline Visualizer: Horizontal swimlanes for Build -> Test -> Stage -> Prod.
+3. Deployment History Table: Version | Commit | Author | Duration | Status.
 
 **Specific Elements:**
-- Icons for different file types (zip, exe, iso, log).
-- Monospaced font for filenames and hashes.
-- "Download" button with hover state.
-- Status indicators (Success/Failed build) next to files.
+- Animated progress bars for active deployments.
+- Status icons (Checkmark, X, Spinner) for pipeline stages.
+- Commit hash links in monospace.
+- "Rollback" action button for failed deployments.
