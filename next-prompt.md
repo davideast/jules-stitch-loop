@@ -1,7 +1,7 @@
 ---
-page: spotlight.html
+page: events.html
 ---
-A daily spotlight page featuring a single developer. Detailed breakdown of their velocity, preferred languages, and recent "Big Ships". Magazine-style layout but keeping the terminal aesthetic.
+A central calendar and timeline for all upcoming events, hackathons, and shipping challenges.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,12 @@ A daily spotlight page featuring a single developer. Detailed breakdown of their
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with date and "Daily Spotlight" title.
-2. Large Profile Card with avatar, bio, and total stats.
-3. "Signature Move" section (Favorite language/framework).
-4. "Recent Big Ships" list with impact scores.
-5. "Contribution Heatmap" (mini version).
+1. Header with "Upcoming Events" title and date filter.
+2. "Featured Event" hero card (e.g., "Speed Run Hackathon").
+3. Chronological list of events (Upcoming vs Past).
+4. Interactive Calendar View (mini grid).
 
 **Specific Elements:**
-- Magazine-style typography for the name (big, bold).
-- "Share this profile" button.
-- Quote or "Motto" section.
+- Countdown timers for nearest events.
+- "RSVP" or "Join" buttons with git-commit style status.
+- Tags for event types (e.g., "Sprint", "Marathon", "Bug Bash").
