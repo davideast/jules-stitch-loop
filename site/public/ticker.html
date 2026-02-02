@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Ticker - Jules</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2dd4bf", // Teal/Cyan per prompt
+              "primary-dim": "#2dd4bf20",
+              "sparkline-color": "#2dd4bf",
+              "background-light": "#f6f8f7",
+              "background-dark": "#0f1419", // Deep charcoal
+              "surface-dark": "#161b22",
+              "electric-yellow": "#f0c800",
+              "trade-green": "#238636",
+              "trade-red": "#da3633",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            animation: {
+                marquee: 'marquee 25s linear infinite',
+            },
+            keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        /* Custom scrollbar for trade log */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header (Simplified/Consistent) -->
+<header class="flex flex-col items-center justify-between gap-4 border-b border-gray-800 bg-background-dark px-4 py-4 sm:flex-row sm:px-6 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<a href="/" class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></a>
+</div>
+<!-- Navigation (Horizontal Scrollable) -->
+<div class="flex w-full overflow-x-auto items-center gap-4 sm:w-auto scrollbar-hide">
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/index.html">
+<span class="material-symbols-outlined text-lg">leaderboard</span>
+<span>Rank</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md bg-primary/10 border border-primary/50 px-3 py-1.5 text-sm text-primary" href="/ticker.html">
+<span class="material-symbols-outlined text-lg">show_chart</span>
+<span>Ticker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-3 py-1.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-lg">trending_up</span>
+<span>Trends</span>
+</a>
+<!-- More links button/placeholder if needed, keeping it clean for ticker -->
+</div>
+</header>
+
+<!-- Ticker Tape -->
+<div class="w-full bg-surface-dark border-b border-gray-800 overflow-hidden py-2">
+    <div class="flex animate-marquee whitespace-nowrap gap-12 text-sm font-mono items-center">
+        <span class="text-gray-400">JULES <span class="text-trade-green">▲ 8,421</span></span>
+        <span class="text-gray-400">ALEX <span class="text-trade-green">▲ 7,988</span></span>
+        <span class="text-gray-400">JS <span class="text-trade-green">+12%</span></span>
+        <span class="text-gray-400">TS <span class="text-trade-green">+8%</span></span>
+        <span class="text-gray-400">PYTHON <span class="text-trade-red">▼ -2%</span></span>
+        <span class="text-gray-400">RUST <span class="text-trade-green">▲ 4%</span></span>
+        <span class="text-gray-400">GO <span class="text-gray-500">0%</span></span>
+        <span class="text-gray-400">TOTAL_SHIPS <span class="text-white">45,291</span></span>
+        <span class="text-gray-400">ACTIVE_DEVS <span class="text-white">1,204</span></span>
+        <span class="text-gray-400">VELOCITY <span class="text-trade-green">HIGH</span></span>
+        <!-- Duplicate for loop -->
+        <span class="text-gray-400">JULES <span class="text-trade-green">▲ 8,421</span></span>
+        <span class="text-gray-400">ALEX <span class="text-trade-green">▲ 7,988</span></span>
+        <span class="text-gray-400">JS <span class="text-trade-green">+12%</span></span>
+        <span class="text-gray-400">TS <span class="text-trade-green">+8%</span></span>
+        <span class="text-gray-400">PYTHON <span class="text-trade-red">▼ -2%</span></span>
+        <span class="text-gray-400">RUST <span class="text-trade-green">▲ 4%</span></span>
+        <span class="text-gray-400">GO <span class="text-gray-500">0%</span></span>
+        <span class="text-gray-400">TOTAL_SHIPS <span class="text-white">45,291</span></span>
+        <span class="text-gray-400">ACTIVE_DEVS <span class="text-white">1,204</span></span>
+        <span class="text-gray-400">VELOCITY <span class="text-trade-green">HIGH</span></span>
+    </div>
+</div>
+
+<main class="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full">
+    <!-- Market Summary -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-surface-dark border border-gray-800 p-4 rounded-lg">
+            <div class="text-gray-500 text-xs font-mono mb-1">MARKET CAP (SHIPS)</div>
+            <div class="text-2xl font-mono font-bold text-white">45.2K</div>
+            <div class="text-trade-green text-xs font-mono mt-1">▲ 142 today</div>
+        </div>
+        <div class="bg-surface-dark border border-gray-800 p-4 rounded-lg">
+            <div class="text-gray-500 text-xs font-mono mb-1">ACTIVE TRADERS</div>
+            <div class="text-2xl font-mono font-bold text-white">1,204</div>
+            <div class="text-trade-green text-xs font-mono mt-1">▲ 24 online</div>
+        </div>
+        <div class="bg-surface-dark border border-gray-800 p-4 rounded-lg">
+            <div class="text-gray-500 text-xs font-mono mb-1">AVG VELOCITY</div>
+            <div class="text-2xl font-mono font-bold text-white">32ms</div>
+            <div class="text-trade-red text-xs font-mono mt-1">▼ Slower than avg</div>
+        </div>
+        <div class="bg-surface-dark border border-gray-800 p-4 rounded-lg">
+            <div class="text-gray-500 text-xs font-mono mb-1">TOP MOVER</div>
+            <div class="text-xl font-mono font-bold text-white flex items-center gap-2">
+                <span class="text-trade-green">Jules</span>
+                <span class="text-xs bg-trade-green/10 text-trade-green px-1.5 py-0.5 rounded">+12%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 h-[600px]">
+        <!-- Trade Log (Left - 2 Cols) -->
+        <div class="lg:col-span-2 flex flex-col bg-surface-dark border border-gray-800 rounded-lg overflow-hidden">
+            <div class="border-b border-gray-800 p-4 flex justify-between items-center bg-gray-900/50">
+                <h2 class="font-mono text-sm text-gray-400 uppercase tracking-wider">Live Trade Log</h2>
+                <div class="flex gap-2">
+                    <span class="h-2 w-2 rounded-full bg-trade-green animate-pulse"></span>
+                    <span class="text-xs text-trade-green font-mono">LIVE</span>
+                </div>
+            </div>
+            <div class="flex-1 overflow-y-auto p-0">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-900/30 sticky top-0 text-xs font-mono text-gray-500">
+                        <tr>
+                            <th class="p-3 border-b border-gray-800">TIME</th>
+                            <th class="p-3 border-b border-gray-800">DEV</th>
+                            <th class="p-3 border-b border-gray-800">ACTION</th>
+                            <th class="p-3 border-b border-gray-800 text-right">QTY</th>
+                        </tr>
+                    </thead>
+                    <tbody class="font-mono text-sm text-gray-300 divide-y divide-gray-800/50">
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">14:02:45</td>
+                            <td class="p-3 font-bold text-white">Jules</td>
+                            <td class="p-3 text-trade-green">COMMIT</td>
+                            <td class="p-3 text-right">+124 LOC</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">14:02:42</td>
+                            <td class="p-3 font-bold text-white">Alex</td>
+                            <td class="p-3 text-trade-green">MERGE</td>
+                            <td class="p-3 text-right">PR #402</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">14:02:10</td>
+                            <td class="p-3 font-bold text-white">Sam</td>
+                            <td class="p-3 text-trade-red">REVERT</td>
+                            <td class="p-3 text-right">-45 LOC</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">14:01:55</td>
+                            <td class="p-3 font-bold text-white">Casey</td>
+                            <td class="p-3 text-trade-green">COMMIT</td>
+                            <td class="p-3 text-right">+12 LOC</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">14:01:30</td>
+                            <td class="p-3 font-bold text-white">Morgan</td>
+                            <td class="p-3 text-trade-green">DEPLOY</td>
+                            <td class="p-3 text-right">v2.1.0</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">14:00:22</td>
+                            <td class="p-3 font-bold text-white">Taylor</td>
+                            <td class="p-3 text-trade-green">COMMIT</td>
+                            <td class="p-3 text-right">+89 LOC</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">13:59:15</td>
+                            <td class="p-3 font-bold text-white">Jordan</td>
+                            <td class="p-3 text-trade-green">MERGE</td>
+                            <td class="p-3 text-right">PR #399</td>
+                        </tr>
+                         <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">13:58:45</td>
+                            <td class="p-3 font-bold text-white">Riley</td>
+                            <td class="p-3 text-trade-green">COMMIT</td>
+                            <td class="p-3 text-right">+230 LOC</td>
+                        </tr>
+                         <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">13:58:12</td>
+                            <td class="p-3 font-bold text-white">Jules</td>
+                            <td class="p-3 text-trade-green">COMMIT</td>
+                            <td class="p-3 text-right">+15 LOC</td>
+                        </tr>
+                         <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-3 text-gray-500">13:57:30</td>
+                            <td class="p-3 font-bold text-white">Alex</td>
+                            <td class="p-3 text-trade-green">REVIEW</td>
+                            <td class="p-3 text-right">ACK</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Charts / Indicators (Right - 1 Col) -->
+        <div class="flex flex-col gap-4">
+             <!-- Language Velocity -->
+            <div class="bg-surface-dark border border-gray-800 rounded-lg p-4 flex-1">
+                 <h2 class="font-mono text-sm text-gray-400 uppercase tracking-wider mb-4 border-b border-gray-800 pb-2">Language Velocity</h2>
+                 <div class="space-y-4">
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-xs font-mono text-gray-400">
+                            <span>JAVASCRIPT</span>
+                            <span class="text-trade-green">▲ 124%</span>
+                        </div>
+                        <div class="h-12 w-full">
+                            <svg class="h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 20">
+                                <path d="M0 15 L10 12 L20 16 L30 10 L40 14 L50 8 L60 12 L70 5 L80 10 L90 4 L100 8" fill="none" stroke="#238636" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                     <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-xs font-mono text-gray-400">
+                            <span>PYTHON</span>
+                            <span class="text-trade-red">▼ 8%</span>
+                        </div>
+                        <div class="h-12 w-full">
+                             <svg class="h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 20">
+                                <path d="M0 8 L10 10 L20 8 L30 12 L40 10 L50 14 L60 12 L70 16 L80 14 L90 18 L100 16" fill="none" stroke="#da3633" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                     <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-xs font-mono text-gray-400">
+                            <span>RUST</span>
+                            <span class="text-trade-green">▲ 42%</span>
+                        </div>
+                        <div class="h-12 w-full">
+                             <svg class="h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 20">
+                                <path d="M0 18 L10 16 L20 18 L30 14 L40 16 L50 12 L60 14 L70 8 L80 10 L90 6 L100 4" fill="none" stroke="#238636" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</div>
+</div>
+</body>
+</html>

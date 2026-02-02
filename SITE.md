@@ -41,6 +41,7 @@
 * [x] `index.html` - The Main Leaderboard (Global Rank).
 * [x] `profile.html` - Individual user stats (Commits vs PRs).
 * [x] `feed.html` - Real-time stream of incoming commits.
+* [x] `ticker.html` - Real-time scrolling ticker of code shipping activity.
 * [x] `about.html` - How the tracking works.
 * [x] `achievements.html` - Badges and milestones for developers.
 * [x] `streaks.html` - Hot streak tracking and flame badges for consecutive shipping days.
