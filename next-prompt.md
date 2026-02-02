@@ -1,7 +1,7 @@
 ---
-page: faq
+page: notifications
 ---
-Frequently Asked Questions (FAQ) page for jules.top. Clear, reading-focused layout with accordion-style questions.
+Notifications center for jules.top. A clean, chronological feed of alerts (new ranks, badges earned, PRs merged).
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,11 @@ Frequently Asked Questions (FAQ) page for jules.top. Clear, reading-focused layo
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "FAQ" / "Help" with global navigation.
-2. Layout: Centered column (~800px max-width) for readability.
-3. Sections: General, Scoring, Shipping, Technical.
+1. Header: "Notifications" with global navigation.
+2. Layout: Centered column (~600px max-width) for focused reading.
+3. Filter tabs: All, Mentions, System.
 
 **Specific Elements:**
-- Accordion details/summary elements for questions.
-- Clean typography, high contrast for text.
-- "Still need help?" contact section at the bottom.
+- List of notification cards.
+- Icon indicating notification type (merge, rank up, badge).
+- "Mark all as read" button.
