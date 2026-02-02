@@ -1,7 +1,7 @@
 ---
-page: debug.html
+page: audit.html
 ---
-A time-attack debugging challenge arena where developers fix broken code before the system crashes.
+A live security monitor tracking vulnerabilities, unauthorized access attempts, and code integrity checks.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,14 @@ A time-attack debugging challenge arena where developers fix broken code before 
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "System Status: CRITICAL" warning.
-2. The "Bug Console": A terminal-like view showing error logs streaming in.
-3. Editor Pane: The broken code snippet to fix.
-4. "Panic" Timer: A countdown bar that turns red/glitches as time runs out.
-5. Leaderboard: Top debuggers by bugs squashed.
+1. Header with "Security Status: ELEVATED" and threat level indicator.
+2. "Live Threat Map": A world map or network graph showing origin of attacks (simulated).
+3. "Vulnerability Feed": Streaming log of detected CVEs and patch status.
+4. "Integrity Checks": List of core system files and their SHA-256 hash status (Pass/Fail).
+5. "Audit Log": Table of recent sensitive actions (Login, Deploy, Config Change) by user.
 
 **Specific Elements:**
-- "Glitch" effects on text when time is low.
-- "Compile/Run" button that gives immediate feedback (Success/Fail).
-- Red "ERROR" overlays on failure.
+- "Scanning..." animations on integrity checks.
+- Red/Green status indicators.
+- Monospaced hashes and IP addresses.
+- "Lockdown" button that triggers a visual alarm state.
