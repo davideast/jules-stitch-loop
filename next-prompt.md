@@ -1,7 +1,7 @@
 ---
-page: onboarding.html
+page: changelog
 ---
-Onboarding guide for new users of jules.top. A step-by-step 'getting started' tutorial with terminal-style commands and code snippets.
+Platform updates and new features changelog for jules.top. A chronological timeline of releases, bug fixes, and improvements.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,11 @@ Onboarding guide for new users of jules.top. A step-by-step 'getting started' tu
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Get Started" with global navigation.
-2. Layout: Centered document (~700px) with step-by-step sections.
-3. Steps: Install, Authenticate, Ship.
+1. Header: "Changelog" with global navigation.
+2. Layout: Centered timeline (~700px).
+3. List of updates grouped by date/version.
 
 **Specific Elements:**
-- Code blocks for terminal commands (e.g. `npm install -g jules`).
-- "Copy to clipboard" buttons on code blocks.
-- Progress indicator for the onboarding steps.
+- Version tags (e.g. `v1.2.0`) in monospaced font.
+- Type badges: "New" (Green), "Fix" (Yellow), "Improvement" (Blue).
+- Unordered lists for changes within each version.
