@@ -114,6 +114,7 @@
 * [x] `fusion.html.html.html.html` - A dashboard visualizing high-impact Pull Request merges and team collaboration density.
 * [x] `vector.html.html.html` - A dashboard visualizing the direction and magnitude of development velocity.
 * [x] `pulse.html.html.html` - A real-time heartbeat visualization of platform activity.
+* [x] `collider.html.html.html` - A high-energy particle physics visualization where commits are particles colliding to form releases.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*

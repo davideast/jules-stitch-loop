@@ -1,7 +1,7 @@
 ---
-page: collider.html.html
+page: glitch.html.html
 ---
-"The Collider" - A high-energy particle physics visualization where commits are particles colliding to form releases.
+"The Glitch" - A dashboard tracking bugs, regressions, and hotfixes with a "digital decay" aesthetic.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ page: collider.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "The Collider" with a particle collision icon.
-2. The Accelerator: A large circular or linear visualization where dots (commits) speed up and collide.
-3. Energy Readings: Cards showing "Collision Rate" (Merges/hour), "Mass Generated" (Lines of code), "Luminosity" (Test coverage).
-4. Event Log: List of recent "Collision Events" (PR Merges).
+1. Header: "The Glitch" with a bug or warning icon.
+2. System Status Matrix: A grid of "services" showing status (Stable, Degraded, Critical) using blinking indicators.
+3. Bug Feed: A scrolling terminal-like list of reported issues with error codes.
+4. Patch Leaderboard: Who is fixing the most bugs.
 
 **Specific Elements:**
-- Use Neon Blue (#00f0ff) and Purple (#bd00ff) for particles.
-- Animations of particles moving and exploding (expanding circles) on impact.
-- Sound wave visualization style for energy readings.
+- Use Red (#ff0000) for critical errors and Green (#00ff00) for fixes.
+- "Matrix rain" or static noise visual effects in the background of headers.
+- Glitch text effects (random character replacement) on hover.
