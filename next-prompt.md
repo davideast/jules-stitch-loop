@@ -1,7 +1,7 @@
 ---
-page: scout.html
+page: academy.html
 ---
-A "Talent Scout" dashboard for finding undervalued developers and rising stars.
+"The Academy" - A competitive training ground and LMS (Learning Management System) for developers.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,14 @@ A "Talent Scout" dashboard for finding undervalued developers and rising stars.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Talent Scout" title and search filters.
-2. Filters: "High Velocity/Low Rank", "Sleeping Giants", "Night Owls", "Consistency Kings".
-3. Main Data Visualization: Scatter Plot (Rank vs Velocity) or similar graph to spot outliers.
-4. Scout List: Table of recommended developers matching the criteria.
-5. "Draft" Button: Action to "watch" or "draft" a developer (simulated).
+1. Header: "The Academy" title and user's current level/XP.
+2. Course Grid: Cards for "Git Mastery", "Clean Code", "Algorithm Arena", etc.
+3. Progress Section: "Training Montage" graph showing skill acquisition over time.
+4. "Sensei" Tips: A sidebar or section with automated code review tips.
+5. Certificate Wall: Grid of unlocked badges/certifications.
 
 **Specific Elements:**
-- "Signal Strength" indicator (bars like wifi).
-- "Growth Rate" percentage (green +%).
-- "Undervalued" label/tag.
+- "Enroll" buttons.
+- Progress bars (green/teal).
+- Locked/Unlocked status icons (padlocks vs checkmarks).
+- Terminal-style exercise preview.
