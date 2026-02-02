@@ -1,7 +1,7 @@
 ---
-page: ticker.html
+page: radar.html
 ---
-A real-time, financial-style scrolling ticker of code shipping activity.
+A Tech Radar visualization page showing trending technologies among top developers.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ A real-time, financial-style scrolling ticker of code shipping activity.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Large scrolling horizontal ticker tape at the top or center.
-2. Vertical list of recent "trades" (commits/ships).
-3. "Velocity" indicators (Green up arrows, Red down arrows).
-4. Market summary header (Total Ships, Active Devs).
+1. Central Radar Visualization (Concentric circles: Adopt, Trial, Assess, Hold).
+2. Four Quadrants: Languages, Frameworks, Tools, Infrastructure.
+3. Sidebar/Panel list of items in each ring.
+4. Detail view when clicking a "blip" (usage stats, top users).
 
 **Specific Elements:**
-- Ticker: Infinite scroll animation, symbols (e.g., "JS +2", "PY +1").
-- Trade Log: Monospaced list of latest events.
-- Charts: Sparklines for top languages.
+- Radar Chart: CSS/SVG based, "Sonar" aesthetic (green scanning line animation optional).
+- Blips: Small colored dots with hover states.
+- List view: For accessibility and quick scanning.
