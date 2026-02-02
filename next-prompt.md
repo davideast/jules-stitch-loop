@@ -1,7 +1,7 @@
 ---
-page: logs
+page: status.html
 ---
-A system log viewer page showing raw platform events in a terminal style.
+A real-time system status page showing service health and uptime metrics.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,13 @@ A system log viewer page showing raw platform events in a terminal style.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "System Logs" title and status indicators (e.g., "System Nominal").
-2. Filter controls (Log Level, Service, Search).
-3. A dense, monospaced table or list of log entries.
-4. Auto-scroll toggle.
+1. Header with "System Status" and overall health score (e.g., "99.99% Uptime").
+2. Service Grid: Cards for each core service (API, Database, Auth, Webhooks) with status indicators (Operational, Degraded, Down).
+3. Incident History: A timeline or list of recent outages/maintenances.
+4. Latency Charts: Small sparklines showing response times for key regions.
 
 **Specific Elements:**
-- Log Row: [Timestamp] [Level Badge] [Service] [Message] [Trace ID].
-- Level Badges: INFO (Blue), WARN (Yellow), ERROR (Red), SUCCESS (Green).
-- Font: Entire log view should be monospaced.
-- Visuals: Blinking cursor or "live" indicator.
+- Status Badges: "Operational" (Green), "Degraded Performance" (Yellow), "Major Outage" (Red).
+- Uptime Bars: 90-day history bars (like GitHub status).
+- Incident Log: Date | Impact | Description | Resolved Time.
+- Visuals: Pulsing green dots for healthy services.
