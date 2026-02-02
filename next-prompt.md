@@ -1,7 +1,7 @@
 ---
-page: velocity.html
+page: shredder.html.html
 ---
-"Velocity" - High-speed metrics and shipping momentum gauges.
+"The Shredder" - A leaderboard dedicated to code deletion and refactoring.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,11 @@ page: velocity.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Velocity" Title with a speedometer icon.
-2. Global Gauge: A large visual gauge showing the current "Global Shipping Velocity" (e.g., Commits/Hour).
-3. Momentum Table: A list of developers sorted by their current "Momentum" (acceleration of shipping).
-4. Peak Hours: A heatmap or chart showing the fastest shipping hours of the day.
+1. Header: "The Shredder" with a trash can or recycle icon.
+2. Net Negative Chart: A bar chart showing who has deleted the most code (net negative lines).
+3. Refactor Table: Developers ranked by "Code Removed" or "Debt Repaid".
 
 **Specific Elements:**
-- Radial or Linear Gauges for velocity.
-- "G-Force" metric (shipping acceleration).
-- Sparklines for individual developer velocity.
+- "Trash Compactor" metric (compression ratio).
+- Negative numbers in red (or green, since deletion is good here?). Let's use Red for deletions but frame it positively.
+- "Debt Repaid" badge.

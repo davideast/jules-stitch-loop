@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
-<head>
+<html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Shipping Insights - jules.top</title>
+<title>Velocity - Shipping Momentum</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -13,12 +12,10 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#238636",
-              "sparkline-color": "#2dd4bf",
-              "background-light": "#f6f8f7",
+              "primary": "#2dd4bf",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
-              "accent-teal": "#2dd4bf"
             },
             fontFamily: {
               "display": ["Space Grotesk", "sans-serif"],
@@ -318,136 +315,190 @@
 </div>
 </header>
 <main class="flex-1 p-2 sm:p-4">
+<div class="flex flex-col gap-6">
 
-                <!-- Header with Title and Generate Report Button -->
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-accent-teal text-4xl">insights</span>
-                        <h1 class="text-3xl font-bold tracking-tight text-white">Shipping Insights</h1>
-                    </div>
-                    <button class="flex items-center gap-2 rounded-md bg-accent-teal px-4 py-2 text-sm font-bold text-background-dark hover:bg-opacity-90 transition-colors">
-                        <span class="material-symbols-outlined text-lg">download</span>
-                        Generate Report
-                    </button>
+    <!-- Header & Global Gauge Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Header / Intro -->
+        <div class="col-span-1 md:col-span-2 rounded-lg border border-gray-800 bg-gray-900/30 p-6 flex flex-col justify-between">
+             <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="material-symbols-outlined text-4xl text-primary">speed</span>
+                    <h1 class="text-3xl font-bold text-white tracking-tight">Velocity</h1>
                 </div>
+                <p class="text-gray-400 max-w-lg">
+                    Real-time shipping momentum and acceleration metrics.
+                    Tracking the G-Force of the engineering team.
+                </p>
+             </div>
+             <div class="mt-6 flex gap-8">
+                 <div>
+                     <div class="text-xs text-gray-500 uppercase tracking-wider">Avg Speed</div>
+                     <div class="text-2xl font-mono text-white">42 <span class="text-sm text-gray-500">ships/day</span></div>
+                 </div>
+                 <div>
+                     <div class="text-xs text-gray-500 uppercase tracking-wider">Peak Velocity</div>
+                     <div class="text-2xl font-mono text-white">108 <span class="text-sm text-gray-500">ships/hr</span></div>
+                 </div>
+             </div>
+        </div>
 
-                <!-- Key Metrics Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                    <!-- Metric Card 1 -->
-                    <div class="bg-[#161b22] border border-gray-800 rounded-lg p-6 flex flex-col items-start">
-                        <span class="text-gray-500 text-xs font-medium uppercase tracking-wider mb-2">Velocity Score</span>
-                        <div class="text-3xl font-mono text-white font-bold mb-1">94.2</div>
-                        <div class="flex items-center text-green-400 text-xs gap-1">
-                            <span class="material-symbols-outlined text-sm">trending_up</span>
-                            <span>+4.2% this week</span>
-                        </div>
-                    </div>
-                    <!-- Metric Card 2 -->
-                    <div class="bg-[#161b22] border border-gray-800 rounded-lg p-6 flex flex-col items-start">
-                        <span class="text-gray-500 text-xs font-medium uppercase tracking-wider mb-2">Peak Shipping Time</span>
-                        <div class="text-3xl font-mono text-white font-bold mb-1">14:00</div>
-                        <div class="text-gray-500 text-xs">UTC Standard Time</div>
-                    </div>
-                    <!-- Metric Card 3 -->
-                    <div class="bg-[#161b22] border border-gray-800 rounded-lg p-6 flex flex-col items-start">
-                        <span class="text-gray-500 text-xs font-medium uppercase tracking-wider mb-2">Longest Streak</span>
-                        <div class="text-3xl font-mono text-white font-bold mb-1">28 Days</div>
-                        <div class="flex items-center text-accent-teal text-xs gap-1">
-                            <span class="material-symbols-outlined text-sm">local_fire_department</span>
-                            <span>Active now</span>
-                        </div>
-                    </div>
-                    <!-- Metric Card 4 -->
-                    <div class="bg-[#161b22] border border-gray-800 rounded-lg p-6 flex flex-col items-start">
-                        <span class="text-gray-500 text-xs font-medium uppercase tracking-wider mb-2">Code Quality</span>
-                        <div class="text-3xl font-mono text-white font-bold mb-1">A+</div>
-                        <div class="text-gray-500 text-xs">Top 1% of contributors</div>
-                    </div>
-                </div>
+        <!-- Global Gauge (Visual Representation) -->
+        <div class="col-span-1 rounded-lg border border-gray-800 bg-gray-900/30 p-6 flex items-center justify-center relative overflow-hidden">
+             <!-- Simple CSS Gauge -->
+             <div class="relative w-48 h-24 overflow-hidden">
+                 <div class="absolute w-48 h-48 rounded-full border-[12px] border-gray-700 border-b-0 -rotate-0 box-border origin-center"></div>
+                 <div class="absolute w-48 h-48 rounded-full border-[12px] border-transparent border-t-primary border-l-transparent border-r-transparent rotate-[45deg] origin-center z-10 box-border"></div>
+                 <div class="absolute bottom-0 left-1/2 -translate-x-1/2 text-center">
+                     <span class="text-3xl font-mono font-bold text-white">88%</span>
+                     <div class="text-xs text-gray-500 uppercase">Capacity</div>
+                 </div>
+             </div>
+        </div>
+    </div>
 
-                <!-- AI Analysis Section -->
-                <div class="bg-[#0f1419] border border-gray-800 rounded-lg p-6 mb-8 font-mono text-sm relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-teal to-transparent opacity-50"></div>
-                    <div class="flex items-center gap-2 mb-4 text-accent-teal">
-                        <span class="material-symbols-outlined text-sm">terminal</span>
-                        <span class="uppercase tracking-wider font-bold">Jules AI Analysis</span>
-                    </div>
-                    <div class="space-y-2 text-gray-300">
-                        <p class="typing-effect"> > Accessing global shipping logs...</p>
-                        <p class="typing-effect delay-100"> > Analyzing commit timestamps for pattern recognition...</p>
-                        <p class="typing-effect delay-200"> > <span class="text-white font-bold">Insight Detected:</span> "Weekend Warrior" pattern identified. 42% of high-impact ships occur between Friday 18:00 and Sunday 23:59.</p>
-                        <p class="typing-effect delay-300"> > Suggestion: Schedule critical reviews for Monday morning to maximize merge velocity.</p>
-                        <p class="typing-effect delay-400 animate-pulse"> > _</p>
-                    </div>
-                </div>
+    <!-- Momentum Table -->
+    <div class="rounded-lg border border-gray-800 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-800 bg-gray-900/20 flex justify-between items-center">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">rocket_launch</span>
+                Momentum Leaderboard
+            </h2>
+            <div class="text-xs text-gray-500 font-mono">SORTED BY: G-FORCE</div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full">
+                <thead class="bg-gray-900/50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rank</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Developer</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Velocity (Last 24h)</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">G-Force (Accel)</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#1 🥇</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                                <span class="font-bold text-white">Jules</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white">124 commits</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary">+4.2g</td>
+                        <td class="px-6 py-4 whitespace-nowrap"><span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">Supersonic</span></td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#2 🥈</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+                                <span class="font-bold text-white">Alex</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white">98 commits</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary">+3.8g</td>
+                        <td class="px-6 py-4 whitespace-nowrap"><span class="inline-flex items-center rounded-full bg-green-900/30 px-2.5 py-0.5 text-xs font-medium text-green-400">Accelerating</span></td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#3 🥉</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+                                <span class="font-bold text-white">Sam</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white">85 commits</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary">+2.1g</td>
+                        <td class="px-6 py-4 whitespace-nowrap"><span class="inline-flex items-center rounded-full bg-green-900/30 px-2.5 py-0.5 text-xs font-medium text-green-400">Steady</span></td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#4</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
+                                <span class="font-bold text-white">Casey</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white">72 commits</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-red-400">-0.5g</td>
+                        <td class="px-6 py-4 whitespace-nowrap"><span class="inline-flex items-center rounded-full bg-red-900/30 px-2.5 py-0.5 text-xs font-medium text-red-400">Decelerating</span></td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr class="hover:bg-gray-800/50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-white">#5</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 rounded-full bg-gray-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
+                                <span class="font-bold text-white">Morgan</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-white">65 commits</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-primary">+1.2g</td>
+                        <td class="px-6 py-4 whitespace-nowrap"><span class="inline-flex items-center rounded-full bg-green-900/30 px-2.5 py-0.5 text-xs font-medium text-green-400">Steady</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-                <!-- Productivity Heatmap -->
-                <div class="bg-[#161b22] border border-gray-800 rounded-lg p-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-lg font-bold text-white">Productivity Heatmap</h3>
-                        <div class="flex gap-2">
-                             <div class="flex items-center gap-1 text-xs text-gray-500">
-                                <span>Less</span>
-                                <div class="w-3 h-3 rounded bg-gray-800"></div>
-                                <div class="w-3 h-3 rounded bg-green-900"></div>
-                                <div class="w-3 h-3 rounded bg-green-700"></div>
-                                <div class="w-3 h-3 rounded bg-green-500"></div>
-                                <div class="w-3 h-3 rounded bg-green-300"></div>
-                                <span>More</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Heatmap Grid Mockup -->
-                    <div class="w-full overflow-x-auto">
-                        <div class="min-w-[600px] flex flex-col gap-1">
-                            <!-- Days Labels -->
-                            <div class="flex text-xs text-gray-500 ml-8 mb-1">
-                                <span class="flex-1">00:00</span>
-                                <span class="flex-1">04:00</span>
-                                <span class="flex-1">08:00</span>
-                                <span class="flex-1">12:00</span>
-                                <span class="flex-1">16:00</span>
-                                <span class="flex-1">20:00</span>
-                            </div>
-                            <!-- Rows (Mon-Sun) -->
-                            <!-- Using a loop of divs to simulate the grid -->
-                             <div class="flex items-center gap-2">
-                                <span class="text-xs text-gray-500 w-6">Mon</span>
-                                <div class="flex-1 flex gap-1 h-4 heatmap-row"></div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-gray-500 w-6">Tue</span>
-                                <div class="flex-1 flex gap-1 h-4 heatmap-row"></div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-gray-500 w-6">Wed</span>
-                                <div class="flex-1 flex gap-1 h-4 heatmap-row"></div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-gray-500 w-6">Thu</span>
-                                <div class="flex-1 flex gap-1 h-4 heatmap-row"></div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-gray-500 w-6">Fri</span>
-                                <div class="flex-1 flex gap-1 h-4 heatmap-row"></div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-gray-500 w-6">Sat</span>
-                                <div class="flex-1 flex gap-1 h-4 heatmap-row"></div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-gray-500 w-6">Sun</span>
-                                <div class="flex-1 flex gap-1 h-4 heatmap-row"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Peak Hours Chart -->
+    <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-6">
+        <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">schedule</span>
+            Peak Shipping Hours
+        </h2>
+        <div class="h-48 w-full flex items-end gap-1">
+            <!-- Simulated Bar Chart -->
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 10%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 15%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 10%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 5%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 5%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 20%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 45%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 60%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 75%"></div>
+            <div class="flex-1 bg-primary hover:bg-primary/80 transition-colors rounded-t-sm" style="height: 90%"></div>
+            <div class="flex-1 bg-primary hover:bg-primary/80 transition-colors rounded-t-sm" style="height: 85%"></div>
+            <div class="flex-1 bg-primary hover:bg-primary/80 transition-colors rounded-t-sm" style="height: 70%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 50%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 40%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 55%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 65%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 50%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 30%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 20%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 15%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 10%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 5%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 5%"></div>
+            <div class="flex-1 bg-gray-800 hover:bg-primary/50 transition-colors rounded-t-sm" style="height: 5%"></div>
+        </div>
+        <div class="flex justify-between text-xs text-gray-500 mt-2 font-mono">
+            <span>00:00</span>
+            <span>06:00</span>
+            <span>12:00</span>
+            <span>18:00</span>
+            <span>23:59</span>
+        </div>
+    </div>
+</div>
 </main>
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
 <a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="/api.html">API</a>
 <a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
 <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
 <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
@@ -459,20 +510,4 @@
 </div>
 </div>
 </div>
-</div>
-<script>
-    // Simple script to populate heatmap
-    const rows = document.querySelectorAll('.heatmap-row');
-    const colors = ['bg-gray-800', 'bg-green-900', 'bg-green-700', 'bg-green-500', 'bg-green-300'];
-
-    rows.forEach(row => {
-        for (let i = 0; i < 24; i++) {
-            const block = document.createElement('div');
-            block.className = `flex-1 rounded-sm ${colors[Math.floor(Math.random() * colors.length)]}`;
-            block.title = `Hour ${i}: ${Math.floor(Math.random() * 10)} ships`;
-            row.appendChild(block);
-        }
-    });
-</script>
-</body>
-</html>
+</div></body></html>
