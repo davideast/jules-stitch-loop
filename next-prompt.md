@@ -1,7 +1,7 @@
 ---
-page: search
+page: settings
 ---
-Advanced search and filtering interface for jules.top. Minimal, Data-dense, Terminal.
+User settings and preferences page for jules.top. Manage profile, notifications, and API keys.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,13 @@ Advanced search and filtering interface for jules.top. Minimal, Data-dense, Term
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Search & Filter" with stats summary.
-2. Filter Bar: Facets for Language, Timeframe, Rank Range, Organization.
-3. Query Builder: Text input with "terminal" style syntax support (e.g. `lang:ts ships:>50`).
-4. Results Grid: Dense list of matching developers/repos.
+1. Header: "Settings" with breadcrumbs.
+2. Layout: Two-column layout (Sidebar navigation vs Content area).
+3. Sections: Profile, Account, Notifications, API Access, Danger Zone.
 
 **Specific Elements:**
-- Terminal-like input field with blinking cursor style.
-- "Tag" style indicators for active filters.
-- Keyboard shortcuts hint (e.g., "Press / to search").
+- Sidebar navigation with active state indicators (teal border-left).
+- Form inputs styled like terminal command lines.
+- Toggle switches for notifications.
+- API Key section with "Copy" and "Regenerate" buttons.
+- "Danger Zone" with red border for account deletion.
