@@ -1,7 +1,7 @@
 ---
-page: vector.html.html
+page: pulse.html.html
 ---
-"Vector" - A dashboard visualizing the direction and magnitude of development velocity.
+"The Pulse" - A real-time heartbeat visualization of the platform's activity.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ page: vector.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Vector" with a direction icon.
-2. Velocity Vector Field: A canvas visualization showing development direction.
-3. Momentum Table: List of developers with high velocity.
-4. Acceleration Metrics: Graphs showing speed changes over time.
+1. Header: "Pulse" with an EKG/heartbeat icon.
+2. The Heartbeat: A large, scrolling EKG-style chart showing commit frequency.
+3. Vital Signs: Cards showing "Beats per Minute" (Commits/min), "Pressure" (PR backlog), "Temperature" (Issue heat).
+4. Activity Stream: A terminal-like log of recent "heartbeats" (events).
 
 **Specific Elements:**
-- "Magnitude" score.
-- Arrows indicating trend direction.
-- Use Orange (#f97316) for high-velocity indicators.
+- Use Red/Pink (#ef4444 or #ec4899) for the heartbeat line.
+- Animations for the pulse effect.
+- "Flatline" warning if activity drops.

@@ -114,6 +114,7 @@
 - [x] `gravity.html.html.html` - A physics-based visualization of repository mass and developer attraction.
 - [x] `supernova.html.html.html.html` - A dashboard highlighting repositories and developers experiencing explosive, viral growth.
 - [x] `fusion.html.html.html.html` - A dashboard visualizing high-impact Pull Request merges and team collaboration density.
+- [x] `vector.html.html.html` - A dashboard visualizing the direction and magnitude of development velocity.
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
 
