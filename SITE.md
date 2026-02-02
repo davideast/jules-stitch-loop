@@ -97,6 +97,7 @@
 * [x] `missions.html.html` - Gamified missions page with daily challenges and XP rewards.
 - [x] `forge.html.html.html` - The Forge // R&D Lab for crafting badges and upgrades.
 - [x] `orbit.html.html.html` - Solar system visualization of developer activity.
+- [x] `shop.html.html.html` - The Exchange // Black Market for buying items and upgrades.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
