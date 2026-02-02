@@ -1,7 +1,7 @@
 ---
-page: market.html.html
+page: artifacts.html
 ---
-A real-time stock market interface where users can 'invest' in developers based on their shipping velocity.
+A build artifacts repository page with a file-browser aesthetic.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,12 @@ A real-time stock market interface where users can 'invest' in developers based 
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "Dev Market" title and user's "Portfolio Value" display.
-2. Ticker Tape: Horizontal scrolling list of top market movers (e.g., "$JULES +5.2%").
-3. "Market Movers" Hero Section: Top Gainer and Top Loser cards.
-4. Main Market Table: Symbol (e.g. $NAME) | Price (Shipping Velocity) | 24h Change | Market Cap (Total Ships) | Actions (Buy/Sell).
+1. Header with "Artifacts" title and breadcrumb navigation (e.g., "home / builds / latest").
+2. Filter/Search bar for artifact types (Docker, Binary, Source, Logs).
+3. Main File Browser Table: Filename | Size | Build ID | Date | Download Action.
 
 **Specific Elements:**
-- Green (Teal) for positive change, Red (Rose/Pink) for negative change.
-- Sparklines for 24h price history in the table.
-- "Buy" and "Sell" buttons with hover effects.
-- Monospaced font for all financial data ($ prices).
+- Icons for different file types (zip, exe, iso, log).
+- Monospaced font for filenames and hashes.
+- "Download" button with hover state.
+- Status indicators (Success/Failed build) next to files.
