@@ -99,6 +99,7 @@
 - [x] `orbit.html.html.html` - Solar system visualization of developer activity.
 - [x] `shop.html.html.html` - The Exchange // Black Market for buying items and upgrades.
 - [x] `league.html.html` - Competitive league system with promotion/demotion zones.
+- [x] `boss.html.html` - Community Raid Boss page.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
