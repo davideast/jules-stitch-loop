@@ -1,7 +1,7 @@
 ---
-page: stack.html
+page: review.html
 ---
-A data-dense 'Tech Stack' trends page analyzing the most popular toolchains used by top shippers.
+A code review leaderboard tracking the most effective reviewers, speediest approvals, and pull request insights.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,12 @@ A data-dense 'Tech Stack' trends page analyzing the most popular toolchains used
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header "Stack Wars" or "Top Stacks".
-2. Leaderboard of Stacks (e.g., "Next.js + Tailwind + Supabase") with usage % and "Win Rate" (ships per user).
-3. "Stack Builder" interactive area (visual only) where you pick a stack and see its popularity.
-4. "Rising vs Falling" charts for specific combinations.
+1. Header "Code Review Leaderboard" or "Review Velocity".
+2. Leaderboard of Top Reviewers (Avg time to merge, comments per PR).
+3. "Nitpick Score" visualization (Bar chart of comments).
+4. "Speed Demon" list (Fastest approvals).
 
 **Specific Elements:**
-- Stack Cards: Horizontal bars showing the composition of the stack (icons for each tech).
-- "Velocity Score" for each stack (monospaced number).
-- Filtering by "Frontend", "Backend", "Fullstack", "Mobile".
-- Minimal icons for technologies (React, Vue, Rust, Go, etc).
+- Visual diff snippets as decorative elements for high ranks.
+- "Merged" purple accents for merged PR stats.
+- Filtering by "Bug Fixes", "Features", "Refactors".
