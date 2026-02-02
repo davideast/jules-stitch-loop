@@ -1,7 +1,7 @@
 ---
-page: gravity.html.html
+page: supernova.html.html.html
 ---
-"Gravity" - A physics-based visualization of repository mass and developer attraction.
+"Supernova" - A dashboard highlighting repositories and developers experiencing explosive, viral growth.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,12 @@ page: gravity.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Gravity" with a planet or magnet icon.
-2. Physics Canvas: A central area where "Heavy" repos (large circles) attract "Developer" particles.
-3. Attraction Table: Repos ranked by "Pull Factor" (contributors + stars).
+1. Header: "Supernova" with a starburst or explosion icon.
+2. "Big Bang" Chart: A central burst visualization showing trending items radiating outward.
+3. Rising Stars Table: List of entities with highest current velocity.
+4. Critical Mass Alerts: Ticker of items breaking thresholds.
 
 **Specific Elements:**
-- "Mass Index" metric.
-- "Escape Velocity" calculation.
-- Visual connection lines between developers and the repos they orbit.
+- "Velocity Multiplier" metric (e.g., "10x Growth").
+- Sparklines showing sudden vertical spikes.
+- Radiant glow effects for top items (use CSS box-shadow).
