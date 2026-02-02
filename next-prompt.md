@@ -1,7 +1,7 @@
 ---
-page: notifications
+page: onboarding.html
 ---
-Notifications center for jules.top. A clean, chronological feed of alerts (new ranks, badges earned, PRs merged).
+Onboarding guide for new users of jules.top. A step-by-step 'getting started' tutorial with terminal-style commands and code snippets.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,11 +22,11 @@ Notifications center for jules.top. A clean, chronological feed of alerts (new r
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Notifications" with global navigation.
-2. Layout: Centered column (~600px max-width) for focused reading.
-3. Filter tabs: All, Mentions, System.
+1. Header: "Get Started" with global navigation.
+2. Layout: Centered document (~700px) with step-by-step sections.
+3. Steps: Install, Authenticate, Ship.
 
 **Specific Elements:**
-- List of notification cards.
-- Icon indicating notification type (merge, rank up, badge).
-- "Mark all as read" button.
+- Code blocks for terminal commands (e.g. `npm install -g jules`).
+- "Copy to clipboard" buttons on code blocks.
+- Progress indicator for the onboarding steps.
