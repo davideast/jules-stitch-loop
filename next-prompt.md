@@ -1,7 +1,7 @@
 ---
-page: status.html
+page: stack.html
 ---
-A real-time system status page showing service health and uptime metrics.
+A data-dense 'Tech Stack' trends page analyzing the most popular toolchains used by top shippers.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,13 +22,13 @@ A real-time system status page showing service health and uptime metrics.
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header with "System Status" and overall health score (e.g., "99.99% Uptime").
-2. Service Grid: Cards for each core service (API, Database, Auth, Webhooks) with status indicators (Operational, Degraded, Down).
-3. Incident History: A timeline or list of recent outages/maintenances.
-4. Latency Charts: Small sparklines showing response times for key regions.
+1. Header "Stack Wars" or "Top Stacks".
+2. Leaderboard of Stacks (e.g., "Next.js + Tailwind + Supabase") with usage % and "Win Rate" (ships per user).
+3. "Stack Builder" interactive area (visual only) where you pick a stack and see its popularity.
+4. "Rising vs Falling" charts for specific combinations.
 
 **Specific Elements:**
-- Status Badges: "Operational" (Green), "Degraded Performance" (Yellow), "Major Outage" (Red).
-- Uptime Bars: 90-day history bars (like GitHub status).
-- Incident Log: Date | Impact | Description | Resolved Time.
-- Visuals: Pulsing green dots for healthy services.
+- Stack Cards: Horizontal bars showing the composition of the stack (icons for each tech).
+- "Velocity Score" for each stack (monospaced number).
+- Filtering by "Frontend", "Backend", "Fullstack", "Mobile".
+- Minimal icons for technologies (React, Vue, Rust, Go, etc).
