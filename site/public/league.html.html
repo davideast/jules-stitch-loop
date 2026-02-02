@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Developer Leaderboard Dashboard</title>
+<title>League Leaderboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -276,90 +276,173 @@
 
 </div>
 </header>
+
 <main class="flex-1 p-2 sm:p-4">
-<div class="flex flex-col items-center justify-center gap-8 py-10" id="focus-container">
-    <!-- Header Stats -->
-    <div id="focus-stats" class="flex w-full max-w-2xl items-center justify-between border-b border-gray-800 pb-4">
-        <h1 class="flex items-center gap-2 text-2xl font-bold text-white">
-            <span class="material-symbols-outlined text-primary">timer</span>
-            Focus Mode
-        </h1>
-        <div class="flex items-center gap-4 text-sm font-mono text-gray-400">
-            <span>Flow State: <span class="text-white">0h 0m</span></span>
-            <span>XP: <span class="text-primary" id="xp-display">+0</span></span>
+    <div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col mx-auto">
+
+        <!-- Header Section -->
+        <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex items-center gap-4">
+                <div class="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-900 to-slate-900 border border-cyan-500/30 shadow-[0_0_15px_rgba(45,212,191,0.2)]">
+                    <span class="material-symbols-outlined text-4xl text-[#2dd4bf]">diamond</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-white font-display">Diamond League</h1>
+                    <p class="text-gray-400 font-mono text-sm">Season Ends In: <span class="text-[#2dd4bf]">2d 14h 32m</span></p>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-sm text-gray-400 uppercase tracking-wider">Your Rank</div>
+                <div class="text-3xl font-bold text-white font-mono">#42</div>
+                <div class="text-xs text-green-400 flex items-center justify-end gap-1">
+                    <span class="material-symbols-outlined text-sm">trending_up</span>
+                    +3 positions
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Timer Circle -->
-    <div class="relative flex h-80 w-80 items-center justify-center rounded-full border-4 border-gray-800 bg-gray-900/30">
-        <!-- Progress Ring (SVG) -->
-        <svg class="absolute inset-0 h-full w-full -rotate-90 transform p-2">
-            <circle cx="150" cy="150" r="145" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-800 translate-x-2 translate-y-2"></circle>
-            <circle cx="150" cy="150" r="145" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-dasharray="911" stroke-dashoffset="0" class="translate-x-2 translate-y-2 text-primary transition-all duration-1000 ease-linear" id="progress-ring"></circle>
-        </svg>
-
-        <!-- Digital Timer -->
-        <div class="flex flex-col items-center z-10">
-            <div class="font-mono text-6xl font-bold text-white tracking-widest" id="timer-display">25:00</div>
-            <div class="mt-2 text-sm text-gray-500 uppercase tracking-widest" id="timer-status">Ready</div>
+        <!-- Progress Bar -->
+        <div class="mb-8 rounded-lg border border-gray-800 bg-gray-900/50 p-6">
+            <div class="mb-2 flex justify-between text-sm">
+                <span class="text-gray-400">Current Score: <span class="text-white font-mono">8,421</span></span>
+                <span class="text-[#2dd4bf]">Promotion Zone: 9,000+</span>
+            </div>
+            <div class="relative h-2 w-full overflow-hidden rounded-full bg-gray-800">
+                <div class="absolute left-0 top-0 h-full bg-[#2dd4bf]" style="width: 85%"></div>
+                <!-- Cutline Indicator -->
+                <div class="absolute top-0 h-full w-0.5 bg-red-500 z-10" style="left: 20%"></div> <!-- Demotion Line -->
+                <div class="absolute top-0 h-full w-0.5 bg-green-500 z-10" style="left: 80%"></div> <!-- Promotion Line -->
+            </div>
+            <div class="mt-2 flex justify-between text-xs text-gray-500 font-mono">
+                <span>Demotion Risk</span>
+                <span>579 points to promotion</span>
+            </div>
         </div>
-    </div>
 
-    <!-- Task Input -->
-    <div id="focus-task-container" class="w-full max-w-lg">
-        <div class="flex items-center gap-2 rounded-md border border-gray-700 bg-black px-4 py-3 font-mono text-sm">
-            <span class="text-primary">&gt;</span>
-            <input type="text" id="task-input" class="w-full bg-transparent text-white focus:outline-none placeholder-gray-600" placeholder="Enter current task..." value="Refactoring auth module_">
+        <!-- The Ladder -->
+        <div class="overflow-hidden rounded-lg border border-gray-800 bg-[#0f1419]">
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="border-b border-gray-800 bg-[#161b22]">
+                        <tr>
+                            <th class="w-24 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-[#6b7280]" scope="col">Rank</th>
+                            <th class="min-w-[200px] px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-[#6b7280]" scope="col">Developer</th>
+                            <th class="w-32 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-[#6b7280]" scope="col">Total Ships</th>
+                            <th class="w-32 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-[#6b7280]" scope="col">Last Active</th>
+                            <th class="w-24 px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-[#6b7280]" scope="col">Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800/50">
+                        <!-- Promotion Zone (Top 3) -->
+                        <tr class="bg-yellow-500/5 hover:bg-yellow-500/10 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">#1 🥇</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 rounded-full bg-gray-700 border border-gray-600"></div> <!-- Avatar Placeholder -->
+                                    <span class="font-medium text-white">Jules</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">9,842</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-[#6b7280]">2m ago</td>
+                            <td class="whitespace-nowrap px-6 py-5 text-green-400"><span class="material-symbols-outlined text-sm">arrow_upward</span></td>
+                        </tr>
+                        <tr class="bg-gray-400/5 hover:bg-gray-400/10 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">#2 🥈</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 rounded-full bg-gray-700 border border-gray-600"></div>
+                                    <span class="font-medium text-white">Alex</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">9,610</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-[#6b7280]">1h ago</td>
+                            <td class="whitespace-nowrap px-6 py-5 text-gray-500"><span class="material-symbols-outlined text-sm">remove</span></td>
+                        </tr>
+                        <tr class="bg-orange-700/5 hover:bg-orange-700/10 transition-colors border-b-2 border-green-500/20">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm font-bold text-white">#3 🥉</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 rounded-full bg-gray-700 border border-gray-600"></div>
+                                    <span class="font-medium text-white">Sam</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">9,205</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-[#6b7280]">4h ago</td>
+                            <td class="whitespace-nowrap px-6 py-5 text-green-400"><span class="material-symbols-outlined text-sm">arrow_upward</span></td>
+                        </tr>
+
+                        <!-- Middle Tier -->
+                        <tr class="hover:bg-[#161b22] transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">#4</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 rounded-full bg-gray-700 border border-gray-600"></div>
+                                    <span class="font-medium text-white">Casey</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">8,990</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-[#6b7280]">12h ago</td>
+                            <td class="whitespace-nowrap px-6 py-5 text-red-400"><span class="material-symbols-outlined text-sm">arrow_downward</span></td>
+                        </tr>
+                        <tr class="hover:bg-[#161b22] transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">#5</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 rounded-full bg-gray-700 border border-gray-600"></div>
+                                    <span class="font-medium text-white">Morgan</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">8,421</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-[#6b7280]">1d ago</td>
+                            <td class="whitespace-nowrap px-6 py-5 text-gray-500"><span class="material-symbols-outlined text-sm">remove</span></td>
+                        </tr>
+
+                        <!-- Demotion Zone Warning -->
+                         <tr class="hover:bg-[#161b22] transition-colors border-t-2 border-red-500/20">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">#40</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 rounded-full bg-gray-700 border border-gray-600"></div>
+                                    <span class="font-medium text-white">Jamie</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">4,102</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-[#6b7280]">5d ago</td>
+                            <td class="whitespace-nowrap px-6 py-5 text-red-400"><span class="material-symbols-outlined text-sm">arrow_downward</span></td>
+                        </tr>
+                         <tr class="bg-red-900/5 hover:bg-red-900/10 transition-colors">
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">#41</td>
+                            <td class="whitespace-nowrap px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 rounded-full bg-gray-700 border border-gray-600"></div>
+                                    <span class="font-medium text-white">Quinn</span>
+                                </div>
+                            </td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-white">3,800</td>
+                            <td class="whitespace-nowrap px-6 py-5 font-mono text-sm text-[#6b7280]">6d ago</td>
+                            <td class="whitespace-nowrap px-6 py-5 text-red-400"><span class="material-symbols-outlined text-sm">arrow_downward</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
-    <!-- Controls -->
-    <div class="flex gap-4">
-        <button id="btn-start" class="rounded-md bg-primary px-8 py-3 text-sm font-bold text-black hover:bg-opacity-90 transition-colors">START FOCUS</button>
-        <button id="btn-short-break" class="rounded-md border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 hover:border-gray-500 hover:text-white transition-colors">SHORT BREAK</button>
-        <button id="btn-long-break" class="rounded-md border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 hover:border-gray-500 hover:text-white transition-colors">LONG BREAK</button>
-    </div>
-
-    <!-- Zen Mode Toggle -->
-    <div class="flex items-center gap-2 mt-4">
-        <button id="btn-zen-mode" class="flex items-center gap-2 text-xs text-gray-500 hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-sm">visibility_off</span>
-            Toggle Zen Mode
-        </button>
-    </div>
-
-    <!-- Session Log -->
-    <div id="focus-log" class="mt-8 w-full max-w-3xl">
-        <h3 class="mb-4 text-sm font-medium uppercase tracking-wider text-gray-500">Session Log</h3>
-        <div class="overflow-hidden rounded-lg border border-gray-800">
-            <table class="min-w-full text-left text-sm" id="session-log">
-                <thead class="bg-gray-900/50 text-xs uppercase text-gray-500">
-                    <tr>
-                        <th class="px-6 py-3 font-medium">Duration</th>
-                        <th class="px-6 py-3 font-medium">Task</th>
-                        <th class="px-6 py-3 font-medium">XP</th>
-                        <th class="px-6 py-3 font-medium">Time</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-800 text-gray-300">
-                    <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 font-mono">25m</td>
-                        <td class="px-6 py-4">Implemented focus timer logic</td>
-                        <td class="px-6 py-4 text-primary">+50 XP</td>
-                        <td class="px-6 py-4 text-gray-500">10:30 AM</td>
-                    </tr>
-                     <tr class="hover:bg-gray-900/30">
-                        <td class="px-6 py-4 font-mono">25m</td>
-                        <td class="px-6 py-4">Fixed navigation bugs</td>
-                        <td class="px-6 py-4 text-primary">+50 XP</td>
-                        <td class="px-6 py-4 text-gray-500">09:45 AM</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Pagination -->
+        <div class="mt-8 flex justify-center gap-2">
+            <button class="h-8 w-8 rounded-full border border-gray-700 bg-transparent text-gray-400 hover:text-white flex items-center justify-center">
+                <span class="material-symbols-outlined text-sm">chevron_left</span>
+            </button>
+            <button class="h-8 w-8 rounded-full bg-[#2dd4bf] text-black font-mono text-sm font-bold flex items-center justify-center">1</button>
+            <button class="h-8 w-8 rounded-full bg-transparent text-white font-mono text-sm hover:bg-gray-800 flex items-center justify-center">2</button>
+            <button class="h-8 w-8 rounded-full bg-transparent text-white font-mono text-sm hover:bg-gray-800 flex items-center justify-center">3</button>
+            <button class="h-8 w-8 rounded-full border border-gray-700 bg-transparent text-gray-400 hover:text-white flex items-center justify-center">
+                <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </button>
         </div>
+
     </div>
-</div>
 </main>
+
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">
@@ -379,175 +462,4 @@
 </div>
 </div>
 </div>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Elements
-        const timerDisplay = document.getElementById('timer-display');
-        const timerStatus = document.getElementById('timer-status');
-        const progressRing = document.getElementById('progress-ring');
-        const btnStart = document.getElementById('btn-start');
-        const btnShortBreak = document.getElementById('btn-short-break');
-        const btnLongBreak = document.getElementById('btn-long-break');
-        const btnZenMode = document.getElementById('btn-zen-mode');
-        const taskInput = document.getElementById('task-input');
-        const sessionLog = document.getElementById('session-log').querySelector('tbody');
-        const header = document.querySelector('header');
-        const footer = document.querySelector('footer');
-        const xpDisplay = document.getElementById('xp-display');
-
-        // State
-        let timeLeft = 25 * 60;
-        let initialTime = 25 * 60;
-        let timerId = null;
-        let isRunning = false;
-        let currentMode = 'focus'; // focus, short-break, long-break
-        let totalXP = 0;
-
-        // Constants
-        const CIRCUMFERENCE = 2 * Math.PI * 145; // r=145
-
-        // Init
-        progressRing.style.strokeDasharray = `${CIRCUMFERENCE} ${CIRCUMFERENCE}`;
-        progressRing.style.strokeDashoffset = 0;
-
-        function setProgress(percent) {
-            const offset = CIRCUMFERENCE - (percent / 100) * CIRCUMFERENCE;
-            progressRing.style.strokeDashoffset = offset;
-        }
-
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        function updateDisplay() {
-            timerDisplay.textContent = formatTime(timeLeft);
-            const percent = (timeLeft / initialTime) * 100;
-            setProgress(percent);
-        }
-
-        function startTimer() {
-            if (isRunning) return;
-
-            isRunning = true;
-            timerStatus.textContent = currentMode === 'focus' ? 'Flowing...' : 'Recharging...';
-            btnStart.textContent = 'PAUSE';
-            btnStart.classList.add('bg-opacity-75');
-
-            timerId = setInterval(() => {
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    updateDisplay();
-                } else {
-                    completeSession();
-                }
-            }, 1000);
-        }
-
-        function pauseTimer() {
-            if (!isRunning) return;
-
-            isRunning = false;
-            clearInterval(timerId);
-            timerStatus.textContent = 'Paused';
-            btnStart.textContent = 'RESUME';
-            btnStart.classList.remove('bg-opacity-75');
-        }
-
-        function resetTimer(mode, minutes) {
-            pauseTimer();
-            currentMode = mode;
-            initialTime = minutes * 60;
-            timeLeft = initialTime;
-            updateDisplay();
-            timerStatus.textContent = 'Ready';
-            btnStart.textContent = 'START ' + (mode === 'focus' ? 'FOCUS' : 'BREAK');
-
-            // Update active button styles
-            [btnStart, btnShortBreak, btnLongBreak].forEach(btn => btn.classList.remove('ring-2', 'ring-primary'));
-            if (mode === 'short-break') btnShortBreak.classList.add('ring-2', 'ring-primary');
-            else if (mode === 'long-break') btnLongBreak.classList.add('ring-2', 'ring-primary');
-            else btnStart.classList.add('ring-2', 'ring-primary');
-        }
-
-        function completeSession() {
-            pauseTimer();
-            timerStatus.textContent = 'Completed!';
-
-            if (currentMode === 'focus') {
-                const earnedXP = 50;
-                totalXP += earnedXP;
-                xpDisplay.textContent = `+${totalXP}`;
-                xpDisplay.classList.add('animate-bounce');
-                setTimeout(() => xpDisplay.classList.remove('animate-bounce'), 1000);
-
-                // Add to log
-                const row = document.createElement('tr');
-                row.className = 'hover:bg-gray-900/30 border-t border-gray-800';
-                const now = new Date();
-                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-
-                const durationCell = document.createElement('td');
-                durationCell.className = 'px-6 py-4 font-mono';
-                durationCell.textContent = (initialTime / 60) + 'm';
-
-                const taskCell = document.createElement('td');
-                taskCell.className = 'px-6 py-4';
-                taskCell.textContent = taskInput.value || 'Deep Work';
-
-                const xpCell = document.createElement('td');
-                xpCell.className = 'px-6 py-4 text-primary';
-                xpCell.textContent = '+' + earnedXP + ' XP';
-
-                const timeCell = document.createElement('td');
-                timeCell.className = 'px-6 py-4 text-gray-500';
-                timeCell.textContent = timeString;
-
-                row.appendChild(durationCell);
-                row.appendChild(taskCell);
-                row.appendChild(xpCell);
-                row.appendChild(timeCell);
-                sessionLog.insertBefore(row, sessionLog.firstChild);
-
-                // Play sound or notification (simulated)
-                alert('Session Completed! +50 XP');
-            }
-        }
-
-        // Event Listeners
-        btnStart.addEventListener('click', () => {
-            if (isRunning) pauseTimer();
-            else startTimer();
-        });
-
-        btnShortBreak.addEventListener('click', () => resetTimer('short-break', 5));
-        btnLongBreak.addEventListener('click', () => resetTimer('long-break', 15));
-
-        // Zen Mode
-        btnZenMode.addEventListener('click', () => {
-            header.classList.toggle('hidden');
-            footer.classList.toggle('hidden');
-
-            const stats = document.getElementById('focus-stats');
-            const log = document.getElementById('focus-log');
-            const taskContainer = document.getElementById('focus-task-container');
-
-            if (stats) stats.classList.toggle('hidden');
-            if (log) log.classList.toggle('hidden');
-            if (taskContainer) taskContainer.classList.toggle('hidden');
-
-            const isZen = header.classList.contains('hidden');
-            btnZenMode.innerHTML = isZen ?
-                '<span class="material-symbols-outlined text-sm">visibility</span> Exit Zen Mode' :
-                '<span class="material-symbols-outlined text-sm">visibility_off</span> Toggle Zen Mode';
-        });
-
-        // Init
-        resetTimer('focus', 25);
-    });
-</script>
-
-</body></html>
+</div></body></html>

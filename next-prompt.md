@@ -1,7 +1,7 @@
 ---
-page: league.html
+page: boss.html
 ---
-A competitive league system (Bronze -> Grandmaster) where developers are promoted/demoted based on weekly shipping performance.
+A "Community Raid Boss" page where all developers work together to defeat a massive enemy by shipping code.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,13 @@ A competitive league system (Bronze -> Grandmaster) where developers are promote
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: Current League Status (e.g., "Diamond League - Rank #42").
-2. League Progress Bar: Points needed for promotion.
-3. The Ladder: List of developers in the current cohort (up/down arrows for movement).
-4. Promotion/Demotion Zones: Visual indicators for top 3 and bottom 3.
+1. Header: Boss Name (e.g., "The Monolith") and Level.
+2. Boss Visual: ASCII art or CSS shape representing the boss (animated/pulsing).
+3. Health Bar: Massive progress bar showing remaining HP (Lines of Code / Commits).
+4. Combat Log: Real-time scrolling log of "damage" (commits) being dealt by users.
+5. Leaderboard: "Top DPS" (Damage Per Second) - users who shipped the most today.
 
 **Specific Elements:**
-- League Icons (Shields/Badges) with metallic textures.
-- "Season Ends In: 2d 14h" countdown.
-- "Cutline" visual divider showing who is safe and who is at risk.
+- "Damage Numbers" popping up visually.
+- "Loot Table" showing potential rewards (badges) for defeating the boss.
+- Red/Danger color accents for the Boss UI (different from standard Teal).
