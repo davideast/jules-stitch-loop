@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Changelog - jules.top</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/search.html">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Search</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/explore.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/repos.html">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>Repos</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/languages.html">
+<span class="material-symbols-outlined text-xl">code</span>
+<span>Languages</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/rivals.html">
+<span class="material-symbols-outlined text-xl">compare_arrows</span>
+<span>Rivalry Tracker</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/settings.html">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/notifications.html">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span>Notifications</span>
+</a>
+</div>
+</header>
+<main class="flex-1 p-2 sm:p-4">
+    <div class="mx-auto max-w-3xl">
+        <h1 class="mb-8 text-3xl font-bold text-white flex items-center gap-3">
+            <span class="material-symbols-outlined text-4xl text-sparkline-color">update</span>
+            Changelog
+        </h1>
+
+        <div class="relative border-l border-gray-800 ml-4 space-y-12">
+
+            <!-- Version 1.2.0 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-sparkline-color shadow-[0_0_8px_rgba(45,212,191,0.6)]"></div>
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="font-mono text-xl font-bold text-white">v1.2.0</span>
+                    <span class="rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-400">Oct 24, 2023</span>
+                </div>
+
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 flex h-5 w-auto items-center rounded bg-green-900/30 px-2 text-[10px] font-bold uppercase tracking-wider text-green-400 border border-green-900/50">New</span>
+                        <span>Added <strong>Battle Mode</strong> ("Compare") to visualize head-to-head stats between two developers.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 flex h-5 w-auto items-center rounded bg-green-900/30 px-2 text-[10px] font-bold uppercase tracking-wider text-green-400 border border-green-900/50">New</span>
+                        <span>Introduced <strong>Rivalry Tracker</strong> to keep tabs on your closest competitors.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 flex h-5 w-auto items-center rounded bg-blue-900/30 px-2 text-[10px] font-bold uppercase tracking-wider text-blue-400 border border-blue-900/50">Improvement</span>
+                        <span>Updated the "Ship Graph" with smoother sparklines and better tooltip interactions.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Version 1.1.0 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-gray-600"></div>
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="font-mono text-xl font-bold text-white">v1.1.0</span>
+                    <span class="rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-400">Oct 10, 2023</span>
+                </div>
+
+                <ul class="space-y-4 text-gray-300">
+                     <li class="flex items-start gap-3">
+                        <span class="mt-1 flex h-5 w-auto items-center rounded bg-green-900/30 px-2 text-[10px] font-bold uppercase tracking-wider text-green-400 border border-green-900/50">New</span>
+                        <span><strong>Hall of Fame</strong> page is now live, honoring all-time top contributors.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 flex h-5 w-auto items-center rounded bg-yellow-900/30 px-2 text-[10px] font-bold uppercase tracking-wider text-yellow-400 border border-yellow-900/50">Fix</span>
+                        <span>Resolved an issue where avatar images were not lazy-loading correctly on mobile devices.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 flex h-5 w-auto items-center rounded bg-blue-900/30 px-2 text-[10px] font-bold uppercase tracking-wider text-blue-400 border border-blue-900/50">Improvement</span>
+                        <span>Global navigation now includes icons for faster visual scanning.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Version 1.0.0 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-gray-600"></div>
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="font-mono text-xl font-bold text-white">v1.0.0</span>
+                    <span class="rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-400">Sep 28, 2023</span>
+                </div>
+
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 flex h-5 w-auto items-center rounded bg-green-900/30 px-2 text-[10px] font-bold uppercase tracking-wider text-green-400 border border-green-900/50">New</span>
+                        <span><strong>Initial Release</strong> of jules.top! Tracking developer velocity, streaks, and global rankings.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>
