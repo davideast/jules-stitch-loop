@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hackathons - jules.top</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#238636",
+              "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
+              "background-dark": "#0d1117",
+              "electric-yellow": "#f0c800",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["Roboto Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col">
+<header class="flex flex-col items-center justify-between gap-4 border-b border-solid border-gray-800 px-2 py-4 sm:flex-row sm:px-6">
+<div class="flex items-center gap-4">
+<div class="text-xl font-bold tracking-tight text-white font-mono">jules.top<span class="text-primary animate-pulse">_</span></div>
+</div>
+<div class="flex w-full items-center gap-4 sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">search</span>
+<input class="w-full rounded-md border border-gray-800 bg-gray-900/50 py-2 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search developers..." type="search"/>
+</div>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/achievements.html">
+<span class="material-symbols-outlined text-xl">emoji_events</span>
+<span>Achievements</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/challenges.html">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Challenges</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hackathon.html">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span>Hackathons</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/teams.html">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span>Teams</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/feed.html">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+<span>Live Feed</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/streaks.html">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+<span>Streaks</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/milestones.html">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/hall-of-fame.html">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span>Hall of Fame</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/compare.html">
+<span class="material-symbols-outlined text-xl">swords</span>
+<span>Battle Mode</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/trends.html">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span>Trends</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/history.html">
+<span class="material-symbols-outlined text-xl">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/stats.html">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span>Insights</span>
+</a>
+</div>
+</header>
+<main class="flex-1 p-2 sm:p-4 gap-8 flex flex-col">
+
+    <!-- Header & Status -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-gray-800 pb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-white mb-2 flex items-center gap-3">
+                <span class="material-symbols-outlined text-4xl text-sparkline-color">terminal</span>
+                Hackathons
+            </h1>
+            <p class="text-gray-400">Live sprints, blitzes, and marathons for code shippers.</p>
+        </div>
+        <div class="flex items-center gap-4 bg-gray-900/50 border border-gray-800 px-6 py-3 rounded-lg">
+            <div class="flex items-center gap-2">
+                 <span class="relative flex h-3 w-3">
+                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
+                  <span class="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
+                </span>
+                <span class="font-bold text-white tracking-wider">LIVE EVENT</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Event Hero -->
+    <section class="relative overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-br from-gray-900 to-black p-8">
+        <div class="absolute top-0 right-0 p-4">
+            <span class="inline-flex items-center rounded-full bg-sparkline-color/10 px-3 py-1 text-xs font-medium text-sparkline-color ring-1 ring-inset ring-sparkline-color/20">
+                WEEKEND WARRIOR BLITZ
+            </span>
+        </div>
+        <div class="relative z-10 flex flex-col items-center justify-center text-center gap-6 py-8">
+            <h2 class="text-4xl md:text-6xl font-mono font-bold text-white tracking-tight">
+                02:14:33
+            </h2>
+            <p class="text-gray-400 max-w-xl">
+                The clock is ticking. Ship your best code before the deadline.
+                <br/>
+                <span class="text-sparkline-color">Prize Pool: Glory + Exclusive "Blitz" Badge</span>
+            </p>
+            <div class="flex gap-4">
+                 <button class="inline-flex items-center gap-2 rounded-md bg-sparkline-color px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-sparkline-color/90 transition-colors">
+                    <span class="material-symbols-outlined">code</span>
+                    Ship Now
+                </button>
+                 <button class="inline-flex items-center gap-2 rounded-md border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-semibold text-gray-300 hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">info</span>
+                    Rules
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Leaderboard -->
+    <div class="border border-gray-800 rounded-lg overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-800 bg-gray-900/30 flex justify-between items-center">
+            <h3 class="font-bold text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-sparkline-color">leaderboard</span>
+                Live Leaderboard
+            </h3>
+            <span class="text-xs text-gray-500 font-mono">UPDATING LIVE</span>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full">
+                <thead class="bg-gray-900/50">
+                    <tr>
+                        <th class="w-24 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Rank</th>
+                        <th class="min-w-[200px] px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Developer</th>
+                        <th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Total Ships</th>
+                        <th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Last Active</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800">
+                    <tr class="bg-sparkline-color/5 hover:bg-sparkline-color/10 transition-colors">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-white">#1 🥇</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 flex-shrink-0">
+                                    <div class="aspect-square w-full rounded-full bg-cover bg-center border border-electric-yellow" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                                </div>
+                                <span class="text-sm font-bold text-white">Jules</span>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-sparkline-color">42</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">Just now</td>
+                    </tr>
+                    <tr class="hover:bg-gray-900/50 transition-colors">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-white">#2 🥈</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 flex-shrink-0">
+                                    <div class="aspect-square w-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+                                </div>
+                                <span class="text-sm font-bold text-white">Alex</span>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-sparkline-color">38</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">5m ago</td>
+                    </tr>
+                    <tr class="hover:bg-gray-900/50 transition-colors">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-white">#3 🥉</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 flex-shrink-0">
+                                    <div class="aspect-square w-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+                                </div>
+                                <span class="text-sm font-bold text-white">Sam</span>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-sparkline-color">31</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">12m ago</td>
+                    </tr>
+                     <tr class="hover:bg-gray-900/50 transition-colors">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#4</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 flex-shrink-0">
+                                    <div class="aspect-square w-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
+                                </div>
+                                <span class="text-sm font-bold text-white">Casey</span>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-sparkline-color">29</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">20m ago</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="px-6 py-4 border-t border-gray-800 bg-gray-900/30 flex justify-center">
+            <nav class="flex items-center gap-2">
+                <button class="h-8 w-8 rounded-full flex items-center justify-center text-gray-500 hover:text-white">
+                    <span class="material-symbols-outlined text-sm">chevron_left</span>
+                </button>
+                <button class="h-8 w-8 rounded-full bg-sparkline-color text-gray-900 font-mono text-sm font-bold">1</button>
+                <button class="h-8 w-8 rounded-full text-white hover:bg-gray-800 font-mono text-sm">2</button>
+                <button class="h-8 w-8 rounded-full text-white hover:bg-gray-800 font-mono text-sm">3</button>
+                <button class="h-8 w-8 rounded-full flex items-center justify-center text-gray-500 hover:text-white">
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Upcoming Schedule & Past Winners -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Upcoming -->
+        <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-gray-400">calendar_month</span>
+                Upcoming Schedule
+            </h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 p-3 rounded-md hover:bg-gray-800/50 transition-colors">
+                    <div class="flex flex-col items-center justify-center w-12 h-12 bg-gray-800 rounded-lg border border-gray-700">
+                        <span class="text-xs text-gray-500 uppercase">Oct</span>
+                        <span class="text-lg font-bold text-white">15</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white">Mid-Month Marathon</h4>
+                        <span class="text-xs text-gray-400">48 Hour Endurance Event</span>
+                    </div>
+                    <button class="ml-auto text-sm text-sparkline-color hover:underline">Register</button>
+                </div>
+                <div class="flex items-center gap-4 p-3 rounded-md hover:bg-gray-800/50 transition-colors">
+                    <div class="flex flex-col items-center justify-center w-12 h-12 bg-gray-800 rounded-lg border border-gray-700">
+                        <span class="text-xs text-gray-500 uppercase">Oct</span>
+                        <span class="text-lg font-bold text-white">22</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white">Speed Sprint</h4>
+                        <span class="text-xs text-gray-400">2 Hour Rapid Fire</span>
+                    </div>
+                    <button class="ml-auto text-sm text-sparkline-color hover:underline">Register</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Past Winners -->
+        <div class="rounded-lg border border-gray-800 bg-gray-900/30 p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-gray-400">emoji_events</span>
+                Hall of Fame
+            </h3>
+             <div class="space-y-4">
+                <div class="flex items-center gap-4 p-3">
+                    <span class="text-2xl">🏆</span>
+                    <div>
+                        <h4 class="font-bold text-white">September Sprint</h4>
+                        <span class="text-xs text-gray-400">Winner: </span>
+                        <span class="text-xs font-bold text-white">Morgan</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-3">
+                    <span class="text-2xl">🥈</span>
+                    <div>
+                        <h4 class="font-bold text-white">August Blitz</h4>
+                        <span class="text-xs text-gray-400">Winner: </span>
+                        <span class="text-xs font-bold text-white">Taylor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
+<p>Built with Jules</p>
+<div class="flex items-center gap-4">
+<a class="text-gray-400 hover:text-white" href="/onboarding.html">Get Started</a>
+<a class="text-gray-400 hover:text-white" href="/about.html">About</a>
+<a class="text-gray-400 hover:text-white" href="/changelog.html">Changelog</a>
+<a class="text-gray-400 hover:text-white" href="/faq.html">FAQ</a>
+<a class="text-gray-400 hover:text-white" href="/api.html">API</a>
+<a class="text-gray-400 hover:text-white" href="https://github.com/google/jules">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div></body></html>
