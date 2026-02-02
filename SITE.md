@@ -104,6 +104,7 @@
 - [x] `league.html.html` - Competitive league system with promotion/demotion zones.
 - [x] `boss.html.html` - Community Raid Boss page.
 - [x] `scout.html.html` - Talent Scout dashboard for finding undervalued developers.
+- [x] `draft.html.html` - Fantasy Developer League Draft interface.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*
