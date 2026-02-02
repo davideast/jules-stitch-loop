@@ -1,7 +1,7 @@
 ---
-page: pulse.html.html
+page: collider.html.html
 ---
-"The Pulse" - A real-time heartbeat visualization of the platform's activity.
+"The Collider" - A high-energy particle physics visualization where commits are particles colliding to form releases.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ page: pulse.html.html
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "Pulse" with an EKG/heartbeat icon.
-2. The Heartbeat: A large, scrolling EKG-style chart showing commit frequency.
-3. Vital Signs: Cards showing "Beats per Minute" (Commits/min), "Pressure" (PR backlog), "Temperature" (Issue heat).
-4. Activity Stream: A terminal-like log of recent "heartbeats" (events).
+1. Header: "The Collider" with a particle collision icon.
+2. The Accelerator: A large circular or linear visualization where dots (commits) speed up and collide.
+3. Energy Readings: Cards showing "Collision Rate" (Merges/hour), "Mass Generated" (Lines of code), "Luminosity" (Test coverage).
+4. Event Log: List of recent "Collision Events" (PR Merges).
 
 **Specific Elements:**
-- Use Red/Pink (#ef4444 or #ec4899) for the heartbeat line.
-- Animations for the pulse effect.
-- "Flatline" warning if activity drops.
+- Use Neon Blue (#00f0ff) and Purple (#bd00ff) for particles.
+- Animations of particles moving and exploding (expanding circles) on impact.
+- Sound wave visualization style for energy readings.
