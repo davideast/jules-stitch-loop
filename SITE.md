@@ -77,6 +77,7 @@
 * [x] `status.html.html` - Real-time system status page.
 * [x] `stack.html.html` - Tech Stack trends page analyzing toolchain popularity.
 * [x] `review.html.html` - Code review leaderboard and velocity stats.
+* [x] quality.html.html - Code quality dashboard and technical debt metrics.
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here OR create something new that fits the vision.*

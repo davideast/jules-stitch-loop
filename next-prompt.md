@@ -1,7 +1,7 @@
 ---
-page: quality.html
+page: matrix.html
 ---
-A code quality dashboard tracking codebase health, technical debt, and complexity metrics.
+A visual network graph (The Matrix) showing connections between developers, repos, and languages.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,13 @@ A code quality dashboard tracking codebase health, technical debt, and complexit
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header "Code Quality Index" or "Code Health".
-2. Overall Health Score (Grade A-F, color coded).
-3. "Technical Debt" list (Files with high complexity).
-4. "Clean Coders" leaderboard (Lowest complexity per ship).
+1. Header "The Matrix" or "Network Graph".
+2. Main visual area: A canvas or SVG area representing nodes (Devs/Repos) and edges (Commits/PRs).
+3. "Node Details" sidebar or overlay.
+4. "Connection Strength" metrics.
 
 **Specific Elements:**
-- Complexity heatmaps (Red/Yellow/Green squares).
-- "Duplication" percentage ring charts.
-- Filtering by "Complexity", "Duplication", "Coverage".
+- Interactive nodes (circles) with hover states.
+- Connecting lines with varying thickness based on activity.
+- "Pulse" animations for live activity.
+- Filters for "Dev-to-Dev", "Dev-to-Repo", "Repo-to-Repo".

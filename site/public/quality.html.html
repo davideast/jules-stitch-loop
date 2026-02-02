@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Developer Leaderboard Dashboard</title>
+<title>Code Quality Dashboard | jules.top</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -154,10 +154,11 @@
 <span>Reviews</span>
 </a>
 
-<a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/quality.html.html">
-<span class="material-symbols-outlined text-xl">health_metrics</span>
+<a class="flex items-center gap-2 whitespace-nowrap rounded-md bg-gray-800 px-4 py-2 text-sm text-white border border-gray-700" href="/quality.html.html">
+<span class="material-symbols-outlined text-xl text-sparkline-color">health_metrics</span>
 <span>Quality</span>
 </a>
+
 <a class="flex items-center gap-2 whitespace-nowrap rounded-md border border-gray-800 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" href="/insights.html">
 <span class="material-symbols-outlined text-xl">insights</span>
 <span>Insights</span>
@@ -188,164 +189,184 @@
 </a>
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="overflow-hidden">
-<div class="overflow-x-auto">
-<table class="min-w-full">
-<thead class="border-b border-gray-800">
-<tr>
-<th class="w-24 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Rank</th>
-<th class="min-w-[200px] px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Developer</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Total Ships</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Streak</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Last Active</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Ship Graph</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border-b border-gray-800 bg-electric-yellow/10 text-electric-yellow hover:bg-electric-yellow/20">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold">#1 🥇</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center border-2 border-electric-yellow" data-alt="Profile picture of developer Jules" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
-</div>
-<a href="/profile.html" class="text-sm font-bold">Jules</a>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-primary">8,421</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 28</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 20 L10 18 L18 22 L26 15 L34 18 L42 25 L50 22 L58 16 L66 12 L74 18 L82 15 L90 10 L98 14 L106 20"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#2 🥈</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
-</div>
-<div class="text-sm font-bold text-white">Alex</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,988</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 14</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 hour ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 15 L10 18 L18 16 L26 20 L34 22 L42 18 L50 25 L58 20 L66 18 L74 15 L82 19 L90 23 L98 20 L106 18"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#3 🥉</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Sam" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Sam</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,501</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 12</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">5 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 25 L10 22 L18 20 L26 24 L34 20 L42 18 L50 15 L58 12 L66 18 L74 22 L82 20 L90 18 L98 15 L106 12"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#4</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Casey" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
-</div>
-<div class="text-sm font-bold text-white">Casey</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,340</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 5</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#5</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Morgan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
-</div>
-<div class="text-sm font-bold text-white">Morgan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,112</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 21</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">3 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#6</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Taylor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKd7TptbKFyq0tCAUFBIB1Z2bMaz02XGEt18pnEHsIDyx3asdQrfvtEm7JzTpMX6X9FCRTOi7a_StNVtBoVM9y2bDtUGXkdmoPxbNrk9MqvbledUMc4teDJGFP92rkKR0vRbQZI0_6qZiCYH99hMw50SNOWAqx1pudz1ULdiPLxAKBCyj-EU843TFqSJg9ztaoNDhrIeF89-rhSay7vwQM0FKXZ8FFVnUzOEY8tX1JCjjj-9T0TTSKnLasYNfMYJFJobkT9B1Kr8op");'></div>
-</div>
-<div class="text-sm font-bold text-white">Taylor</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,950</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 3</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">8 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#7</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Jordan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKy3L63_SFQFXY2VEwz92Lpm1OUR8q_4SIFCYVKFhavURQWsJpyFu_XGHQ0vFkkpnYE-sRYpLEznmwa_d9wdV94GZah0DHiWEefoQb_yS08zqupatW5ra2iECsr62WBiOZxwq-EwP8VSI7tK56qK9uAL8WFk7lriL40UwLaHcxPL0Is0MBVKd7KMGRyHXQs_RDox5iaEm6At93Ltj_E3dKtl0Bb8XS7-bZ6ZxgwQTlLDlXcMLJoA9o39btCfTtGIiRrXXJxnXj6BZQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Jordan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,873</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 2</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 days ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#8</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Riley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx");'></div>
-</div>
-<div class="text-sm font-bold text-white">Riley</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,521</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 6</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-</tbody>
-</table>
-</div>
+
+<main class="flex-1 p-4 sm:p-6 md:p-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col gap-6 mx-auto">
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b border-gray-800 pb-6">
+        <div class="flex items-center gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg border border-gray-800 bg-gray-900/50">
+                <span class="material-symbols-outlined text-2xl text-sparkline-color">health_metrics</span>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold text-white font-display">Code Quality Index</h1>
+                <p class="text-sm text-gray-500">System health, technical debt, and complexity analysis</p>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <button class="rounded-md border border-gray-800 px-3 py-1.5 text-sm text-gray-400 hover:bg-gray-800 hover:text-white transition-colors">Detailed Report</button>
+            <button class="rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/90 transition-colors">Run Audit</button>
+        </div>
+    </div>
+
+    <!-- Top Metrics Grid -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Overall Score -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/30 p-6 flex items-center justify-between">
+            <div>
+                <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Overall Health</div>
+                <div class="mt-2 text-4xl font-mono font-bold text-primary">A-</div>
+                <div class="mt-1 text-xs text-green-500 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">trending_up</span> 2.4%
+                </div>
+            </div>
+            <div class="h-16 w-16 rounded-full border-4 border-primary flex items-center justify-center bg-primary/10 relative">
+                <span class="text-xl font-bold text-white font-mono">92</span>
+            </div>
+        </div>
+
+        <!-- Technical Debt -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/30 p-6">
+             <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Technical Debt</div>
+             <div class="mt-2 text-2xl font-mono text-white font-bold">4.2%</div>
+             <div class="mt-3 h-1.5 w-full rounded-full bg-gray-800 overflow-hidden">
+                 <div class="h-full w-[4.2%] bg-electric-yellow"></div>
+             </div>
+             <div class="mt-2 text-xs text-gray-500">Target: < 5.0%</div>
+        </div>
+
+        <!-- Complexity -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/30 p-6">
+             <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Avg Complexity</div>
+             <div class="mt-2 text-2xl font-mono text-white font-bold">12.8</div>
+             <div class="flex items-end gap-1 mt-3 h-6 opacity-60">
+                 <div class="w-1.5 bg-gray-600 h-[40%] rounded-t"></div>
+                 <div class="w-1.5 bg-gray-600 h-[60%] rounded-t"></div>
+                 <div class="w-1.5 bg-sparkline-color h-[50%] rounded-t"></div>
+                 <div class="w-1.5 bg-gray-600 h-[30%] rounded-t"></div>
+                 <div class="w-1.5 bg-gray-600 h-[70%] rounded-t"></div>
+                 <div class="w-1.5 bg-gray-600 h-[45%] rounded-t"></div>
+                 <div class="w-1.5 bg-gray-600 h-[65%] rounded-t"></div>
+             </div>
+        </div>
+
+        <!-- Test Coverage -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/30 p-6">
+             <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Test Coverage</div>
+             <div class="mt-2 text-2xl font-mono text-white font-bold">88.4%</div>
+             <div class="relative mt-3 h-1.5 w-full rounded-full bg-gray-800">
+                 <div class="absolute h-full w-[88.4%] rounded-full bg-sparkline-color"></div>
+             </div>
+             <div class="mt-2 text-xs text-gray-500">Target: > 90%</div>
+        </div>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-3">
+        <!-- Debt List (Large) -->
+        <div class="lg:col-span-2 rounded-xl border border-gray-800 bg-gray-900/30 overflow-hidden flex flex-col">
+            <div class="border-b border-gray-800 px-6 py-4 flex items-center justify-between bg-gray-900/50">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-gray-400 text-lg">warning</span>
+                    <h3 class="font-bold text-white text-sm">High Complexity Files</h3>
+                </div>
+                <div class="flex gap-2">
+                    <span class="flex items-center gap-1 rounded bg-red-500/10 px-2 py-1 text-xs text-red-400 border border-red-500/20">
+                        <span class="h-1.5 w-1.5 rounded-full bg-red-500"></span> Critical
+                    </span>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-gray-900/50 text-gray-500 border-b border-gray-800">
+                        <tr>
+                            <th class="px-6 py-3 font-medium uppercase text-xs tracking-wider">File Path</th>
+                            <th class="px-6 py-3 font-medium uppercase text-xs tracking-wider">Complexity</th>
+                            <th class="px-6 py-3 font-medium uppercase text-xs tracking-wider">Issues</th>
+                            <th class="px-6 py-3 font-medium uppercase text-xs tracking-wider">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800">
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 font-mono text-gray-300">src/core/engine.ts</td>
+                            <td class="px-6 py-4 text-red-400 font-bold font-mono">42</td>
+                            <td class="px-6 py-4 font-mono">8</td>
+                            <td class="px-6 py-4"><span class="rounded bg-red-500/10 px-2 py-1 text-xs text-red-500 border border-red-500/20">Refactor</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 font-mono text-gray-300">src/utils/parser.ts</td>
+                            <td class="px-6 py-4 text-orange-400 font-bold font-mono">28</td>
+                            <td class="px-6 py-4 font-mono">3</td>
+                            <td class="px-6 py-4"><span class="rounded bg-orange-500/10 px-2 py-1 text-xs text-orange-500 border border-orange-500/20">Warning</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 font-mono text-gray-300">src/api/routes.ts</td>
+                            <td class="px-6 py-4 text-yellow-400 font-bold font-mono">21</td>
+                            <td class="px-6 py-4 font-mono">5</td>
+                            <td class="px-6 py-4"><span class="rounded bg-yellow-500/10 px-2 py-1 text-xs text-yellow-500 border border-yellow-500/20">Watch</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 font-mono text-gray-300">src/components/Table.tsx</td>
+                            <td class="px-6 py-4 text-yellow-400 font-bold font-mono">18</td>
+                            <td class="px-6 py-4 font-mono">2</td>
+                            <td class="px-6 py-4"><span class="rounded bg-yellow-500/10 px-2 py-1 text-xs text-yellow-500 border border-yellow-500/20">Watch</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 font-mono text-gray-300">src/lib/auth.ts</td>
+                            <td class="px-6 py-4 text-gray-400 font-bold font-mono">12</td>
+                            <td class="px-6 py-4 font-mono">0</td>
+                            <td class="px-6 py-4"><span class="rounded bg-green-500/10 px-2 py-1 text-xs text-green-500 border border-green-500/20">Stable</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Clean Coders -->
+        <div class="rounded-xl border border-gray-800 bg-gray-900/30 flex flex-col">
+            <div class="border-b border-gray-800 px-6 py-4 bg-gray-900/50">
+                <h3 class="font-bold text-white text-sm">Clean Coders</h3>
+                <p class="text-xs text-gray-500 mt-1">Lowest complexity per ship</p>
+            </div>
+            <div class="p-4 flex flex-col gap-2">
+                 <!-- Rank 1 -->
+                 <div class="flex items-center gap-3 p-3 hover:bg-gray-800/50 rounded-lg transition-colors border border-transparent hover:border-gray-800">
+                     <div class="font-mono text-yellow-500 font-bold text-lg">#1</div>
+                     <div class="h-10 w-10 rounded-full bg-gray-800 bg-cover border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
+                     <div class="flex-1">
+                         <div class="text-sm font-bold text-white">Jules</div>
+                         <div class="text-xs text-gray-500">0.8 avg complexity</div>
+                     </div>
+                     <div class="text-sparkline-color text-sm font-mono font-bold">98%</div>
+                 </div>
+                 <!-- Rank 2 -->
+                 <div class="flex items-center gap-3 p-3 hover:bg-gray-800/50 rounded-lg transition-colors border border-transparent hover:border-gray-800">
+                     <div class="font-mono text-gray-400 font-bold text-lg">#2</div>
+                     <div class="h-10 w-10 rounded-full bg-gray-800 bg-cover border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
+                     <div class="flex-1">
+                         <div class="text-sm font-bold text-white">Alex</div>
+                         <div class="text-xs text-gray-500">1.2 avg complexity</div>
+                     </div>
+                     <div class="text-sparkline-color text-sm font-mono font-bold">95%</div>
+                 </div>
+                 <!-- Rank 3 -->
+                 <div class="flex items-center gap-3 p-3 hover:bg-gray-800/50 rounded-lg transition-colors border border-transparent hover:border-gray-800">
+                     <div class="font-mono text-orange-700 font-bold text-lg">#3</div>
+                     <div class="h-10 w-10 rounded-full bg-gray-800 bg-cover border border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
+                     <div class="flex-1">
+                         <div class="text-sm font-bold text-white">Sam</div>
+                         <div class="text-xs text-gray-500">1.5 avg complexity</div>
+                     </div>
+                     <div class="text-sparkline-color text-sm font-mono font-bold">92%</div>
+                 </div>
+            </div>
+            <div class="p-4 border-t border-gray-800">
+                <button class="w-full rounded-md border border-gray-800 py-2 text-xs text-gray-400 hover:bg-gray-800 hover:text-white transition-colors">View All Developers</button>
+            </div>
+        </div>
+    </div>
 </div>
 </main>
+
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">
 <p>Built with Jules</p>
 <div class="flex items-center gap-4">
