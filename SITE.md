@@ -72,6 +72,7 @@
 * [x] `embeds.html` - Embeddable widgets and badges for GitHub READMEs
 * [x] `map.html` - Real-time global command center map
 * [x] `radar.html` - Tech Radar visualization showing trending technologies.
+* [x] `artifacts.html.html` - Build artifacts repository with file-browser aesthetic.
 * [x] `bounties.html.html` - A terminal-styled board of open issues with XP rewards.
 * [x] `logs.html` - System log viewer showing raw platform events.
 * [x] `status.html.html` - Real-time system status page.
