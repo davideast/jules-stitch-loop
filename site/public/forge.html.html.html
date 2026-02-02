@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Developer Leaderboard Dashboard</title>
+<title>The Forge // R&D Lab</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -12,7 +12,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#238636",
+              "primary": "#2dd4bf",
               "sparkline-color": "#2dd4bf","background-light": "#f6f8f7",
               "background-dark": "#0d1117",
               "electric-yellow": "#f0c800",
@@ -257,162 +257,224 @@
 
 </div>
 </header>
-<main class="flex-1 p-2 sm:p-4">
-<div class="overflow-hidden">
-<div class="overflow-x-auto">
-<table class="min-w-full">
-<thead class="border-b border-gray-800">
-<tr>
-<th class="w-24 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Rank</th>
-<th class="min-w-[200px] px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Developer</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Total Ships</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Streak</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Last Active</th>
-<th class="w-48 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400" scope="col">Ship Graph</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border-b border-gray-800 bg-electric-yellow/10 text-electric-yellow hover:bg-electric-yellow/20">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold">#1 🥇</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center border-2 border-electric-yellow" data-alt="Profile picture of developer Jules" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqchH84ZcbepgFyeIgllB1XikSkhZnON9w-Z7qqg5E_2I2nM32AsnKfAfcUUTQ7tsH20R_pp7Me34TAXPCf0qkXrUkP-2JEHa7unvmQTcyJct2MUPSLeqOztcJYvm5ZVNC36SMTXL1fWFlWknJasmU6w6woGo-upzddWXtCB3dhCpT4qSFOfWY_qcUQ9u8p1j6hGgjxL8ebMWUJ18z0bvQj1vkeCEOk_Ybl2rmrKXUU6mUNKu7xJgjzURWHWTK3zO8q6vR1_7Hrwhf");'></div>
-</div>
-<a href="/profile.html" class="text-sm font-bold">Jules</a>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-bold text-primary">8,421</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 28</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 20 L10 18 L18 22 L26 15 L34 18 L42 25 L50 22 L58 16 L66 12 L74 18 L82 15 L90 10 L98 14 L106 20"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#2 🥈</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaxoNyupylyQn-_LRH7Yk9h5_ae-Hk-upqJrt1IM87vpF7pYiyA-p5aZlFj6iM1Us8lhTDh4NKkF0YDhkGpnpC4WZFxYLBT6Opcq0MHHBkGY2PyrkFCgZHzaEaAH2ZmpEFBpwJiyCAy1g_Hw3HaIJGdgROiAuedLr03t9f-bkDaGJ8kotNabS2vwrRqmjf6ys8y_nrcv2ynXhroyxEEqGy_MVtzkXat6m28lmN5roGG1SgkxE-UItrxb_PwAmkHW3tWnhdg5pn3l5J");'></div>
-</div>
-<div class="text-sm font-bold text-white">Alex</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,988</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 14</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 hour ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 15 L10 18 L18 16 L26 20 L34 22 L42 18 L50 25 L58 20 L66 18 L74 15 L82 19 L90 23 L98 20 L106 18"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#3 🥉</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Sam" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmmscuVZbmfLtm-KY3EotX5EP1njJn7-E0hwJ_OFUUTX6KuhqiP4t4XQQeE3h28WXjQb-mJiWuovm2j2YAOsmD2vVgAPWOgwTIHWAEz4PVBPu0XQ9wXyv3KJCliCwDfDZPhha86wsk-eHVxjnccn3fFey1uNUnHNVkgXIWQoBAJV9_9s_7r5HqPjxbZudJzXcJVaoIOyJBadom4ksCxdzuh2vrIR-Xdwc5Z-RXJoqDGQyJCfj2OzcHlzffAOJpF8ztsup55K8JepyQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Sam</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,501</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 12</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">5 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="h-8 w-28">
-<svg class="h-full w-full" fill="none" preserveAspectRatio="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 112 32">
-<path class="text-sparkline-color" d="M2 25 L10 22 L18 20 L26 24 L34 20 L42 18 L50 15 L58 12 L66 18 L74 22 L82 20 L90 18 L98 15 L106 12"></path>
-</svg>
-</div>
-</td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#4</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Casey" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByylXyB_bmemm_ikLtnWQEJVay-8jvAbTKnQd73nZvZndvCiGKJuB7CQ7LVfDAxu1i8sA6m_wD2_uV6uPKAoj36-sXDRXXUam4uInE7nski5lzr7sGpt5gw3mBoAZO1aGSDef3hjl0Xv5mqjSNIfb04QSz367ynvtFOQPdRYKqnfkFUvRneDJ98RhhOWkurEGRqdYfkxD3tiNWlcAmzDBMO9QNyT1CEoyHcPkKAPXcYlPVhz_UPusoPSLD--X8lhTcj5V_RMbfcTUi");'></div>
-</div>
-<div class="text-sm font-bold text-white">Casey</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,340</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 5</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#5</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Morgan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBboGRzTWczgtS-coG8TyIgAeG-xbKHnQjoWiOnjtdG5lXnIJibXgx31bKIfEVWtkhiXX0C-gtnuZV4LYEvcRq6YwbMTcrAPMhsHMkncQoGjd02wS8oLjFc_snJ5_WF65EkBB6Wd-UogZqd8x1vaQ7H6qAA2eLG4EAhuLF4kW1K4qiXiz8p8Bu_YKLkwXFvY2HR34dVhFCn7yt2V2Jel6ktHn9n3nAp-Y_Fx2kBFEx_nVwDwkf2drDIkiF-iE_sqRpnaholqR6cJE0Z");'></div>
-</div>
-<div class="text-sm font-bold text-white">Morgan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">7,112</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 21</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">3 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#6</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Taylor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKd7TptbKFyq0tCAUFBIB1Z2bMaz02XGEt18pnEHsIDyx3asdQrfvtEm7JzTpMX6X9FCRTOi7a_StNVtBoVM9y2bDtUGXkdmoPxbNrk9MqvbledUMc4teDJGFP92rkKR0vRbQZI0_6qZiCYH99hMw50SNOWAqx1pudz1ULdiPLxAKBCyj-EU843TFqSJg9ztaoNDhrIeF89-rhSay7vwQM0FKXZ8FFVnUzOEY8tX1JCjjj-9T0TTSKnLasYNfMYJFJobkT9B1Kr8op");'></div>
-</div>
-<div class="text-sm font-bold text-white">Taylor</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,950</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 3</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">8 hours ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="border-b border-gray-800 hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#7</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Jordan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKy3L63_SFQFXY2VEwz92Lpm1OUR8q_4SIFCYVKFhavURQWsJpyFu_XGHQ0vFkkpnYE-sRYpLEznmwa_d9wdV94GZah0DHiWEefoQb_yS08zqupatW5ra2iECsr62WBiOZxwq-EwP8VSI7tK56qK9uAL8WFk7lriL40UwLaHcxPL0Is0MBVKd7KMGRyHXQs_RDox5iaEm6At93Ltj_E3dKtl0Bb8XS7-bZ6ZxgwQTlLDlXcMLJoA9o39btCfTtGIiRrXXJxnXj6BZQ");'></div>
-</div>
-<div class="text-sm font-bold text-white">Jordan</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,873</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 2</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">2 days ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-<tr class="hover:bg-gray-900/50">
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm font-medium text-white">#8</td>
-<td class="whitespace-nowrap px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 flex-shrink-0">
-<div class="aspect-square w-full rounded-full bg-cover bg-center" data-alt="Profile picture of developer Riley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6i8wvGBMuF-HtZL6xIfWKWQsKznP8nuv6I248avH2bDvZbrBCy0mdE3rOYZ__CjVHEnztwgGxTz82UQg5MN5QBdDSSN6yGRMkINq2zl5ywgJS5sbgq5ISLEBI25mQnnsVfoj6aGkJ9gXnGtPUw6BvwIHlBLcQupKLE0zzAKom1zTgmNSDjYmQV4hmTKZCQKaUTV-mioVnBqRzSAEhMWTJ2Amwx_niZGUnjdL8zderdeWtdnd67fYL42Pw6gso-6tRYXE6ya-o9Pfx");'></div>
-</div>
-<div class="text-sm font-bold text-white">Riley</div>
-</div>
-</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-primary">6,521</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400"><span class="material-symbols-outlined text-orange-500 mr-1 align-bottom">local_fire_department</span> 6</td>
-<td class="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-400">1 day ago</td>
-<td class="whitespace-nowrap px-6 py-4"></td>
-</tr>
-</tbody>
-</table>
-</div>
+<main class="flex-1 p-4 sm:p-6 md:p-8 relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none opacity-5 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+<div class="layout-content-container flex w-full max-w-5xl flex-1 flex-col mx-auto relative z-10">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b border-gray-800 pb-6 mb-8">
+      <div class="flex flex-col">
+          <h1 class="text-3xl font-bold font-display tracking-tight text-white flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-4xl">hardware</span>
+            The Forge <span class="text-gray-600 text-lg font-mono font-normal">// R&D LAB</span>
+          </h1>
+          <p class="text-gray-500 mt-2 text-sm font-mono max-w-md">Craft custom badges, themes, and upgrades using resources earned from missions.</p>
+      </div>
+      <div class="text-right hidden sm:block">
+        <div class="text-xs text-gray-500 font-mono uppercase tracking-widest mb-1">System Status</div>
+        <div class="text-sm text-primary font-mono animate-pulse">● OPERATIONAL</div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Resource Inventory (Left Col) -->
+        <div class="lg:col-span-4 space-y-6">
+             <div class="flex items-center justify-between">
+                <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest font-mono">Inventory</h2>
+                <span class="text-xs text-gray-600 font-mono">4/12 SLOTS</span>
+             </div>
+
+             <div class="grid grid-cols-2 gap-3">
+                <!-- Items -->
+                <div class="bg-gray-900/80 border border-gray-800 p-3 rounded-lg hover:border-primary/50 transition-all group cursor-grab active:cursor-grabbing select-none relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-1">
+                        <div class="w-1 h-1 bg-gray-700 rounded-full group-hover:bg-primary transition-colors"></div>
+                    </div>
+                    <div class="text-[10px] text-gray-500 mb-2 font-mono">RES_ID: 0XA1</div>
+                    <div class="font-bold text-white flex items-center gap-2 mb-3">
+                        <span class="text-amber-500 text-xl">🪲</span>
+                        <span class="text-sm">Bug Chitin</span>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-gray-800/50 pt-2">
+                         <span class="text-[10px] text-gray-600">Common</span>
+                         <span class="text-xs font-mono text-primary">x42</span>
+                    </div>
+                </div>
+
+                 <div class="bg-gray-900/80 border border-gray-800 p-3 rounded-lg hover:border-primary/50 transition-all group cursor-grab active:cursor-grabbing select-none">
+                    <div class="text-[10px] text-gray-500 mb-2 font-mono">RES_ID: 0XB4</div>
+                    <div class="font-bold text-white flex items-center gap-2 mb-3">
+                        <span class="text-blue-400 text-xl">🔌</span>
+                        <span class="text-sm">Logic Gates</span>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-gray-800/50 pt-2">
+                         <span class="text-[10px] text-gray-600">Rare</span>
+                         <span class="text-xs font-mono text-primary">x128</span>
+                    </div>
+                </div>
+
+                 <div class="bg-gray-900/80 border border-gray-800 p-3 rounded-lg hover:border-primary/50 transition-all group cursor-grab active:cursor-grabbing select-none">
+                    <div class="text-[10px] text-gray-500 mb-2 font-mono">RES_ID: 0XC9</div>
+                    <div class="font-bold text-white flex items-center gap-2 mb-3">
+                        <span class="text-amber-800 text-xl">☕</span>
+                        <span class="text-sm">Coffee</span>
+                    </div>
+                     <div class="flex justify-between items-end border-t border-gray-800/50 pt-2">
+                         <span class="text-[10px] text-gray-600">Fuel</span>
+                         <span class="text-xs font-mono text-primary">x1K</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900/80 border border-gray-800 p-3 rounded-lg hover:border-primary/50 transition-all group cursor-grab active:cursor-grabbing select-none">
+                    <div class="text-[10px] text-gray-500 mb-2 font-mono">RES_ID: 0XD2</div>
+                    <div class="font-bold text-white flex items-center gap-2 mb-3">
+                        <span class="text-purple-400 text-xl">💎</span>
+                        <span class="text-sm">Shard</span>
+                    </div>
+                     <div class="flex justify-between items-end border-t border-gray-800/50 pt-2">
+                         <span class="text-[10px] text-gray-600">Legendary</span>
+                         <span class="text-xs font-mono text-primary">x7</span>
+                    </div>
+                </div>
+             </div>
+
+             <!-- Stats -->
+             <div class="border border-gray-800 bg-black/40 rounded p-4 font-mono text-xs space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-gray-500">FORGE LEVEL</span>
+                    <span class="text-white">IV</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">EFFICIENCY</span>
+                    <span class="text-primary">+12.5%</span>
+                </div>
+             </div>
+        </div>
+
+        <!-- The Anvil (Center Col) -->
+        <div class="lg:col-span-4 flex flex-col items-center space-y-6">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest font-mono w-full text-center">The Anvil</h2>
+
+            <div id="anvil-zone" class="w-full aspect-square bg-gray-900/30 border-2 border-dashed border-gray-700 rounded-xl flex flex-col items-center justify-center relative overflow-hidden group hover:border-primary/70 transition-all">
+                <!-- Background Grid -->
+                <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full border border-gray-700 flex items-center justify-center bg-black/50 mb-4 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_30px_rgba(45,212,191,0.2)]">
+                         <span class="material-symbols-outlined text-5xl text-gray-600 group-hover:text-primary transition-colors">precision_manufacturing</span>
+                    </div>
+                    <p class="text-gray-500 mt-2 text-xs font-mono tracking-widest">AWAITING INPUT</p>
+                    <p class="text-gray-600 text-[10px] mt-1 font-mono">DRAG RESOURCES TO COMBINE</p>
+                </div>
+
+                <!-- Glow Effects -->
+                <div class="absolute inset-0 bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
+
+            <div class="w-full space-y-3">
+                <button class="w-full py-4 bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 text-gray-400 font-bold font-mono text-sm hover:text-white hover:border-primary/50 transition-all uppercase tracking-widest relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-lg">bolt</span>
+                        Initiate Forge Sequence
+                    </span>
+                    <div class="absolute inset-0 bg-primary/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </button>
+                <div class="flex justify-between text-[10px] text-gray-600 font-mono px-1">
+                    <span>COST: 0 XP</span>
+                    <span>READY</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schematics (Right Col) -->
+        <div class="lg:col-span-4 space-y-6">
+            <div class="flex items-center justify-between">
+                <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest font-mono">Schematics</h2>
+                <div class="flex gap-2">
+                    <button class="text-xs text-primary hover:text-white underline decoration-dashed underline-offset-4">Blueprints</button>
+                    <button class="text-xs text-gray-600 hover:text-white">History</button>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <div class="bg-gray-900/40 border border-gray-800 p-4 rounded-lg flex flex-col gap-3 group hover:border-primary/50 hover:bg-gray-900/60 cursor-pointer transition-all">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-3">
+                             <div class="w-10 h-10 rounded bg-green-900/20 border border-green-500/30 flex items-center justify-center text-green-500">
+                                <span class="material-symbols-outlined">palette</span>
+                             </div>
+                             <div>
+                                <div class="font-bold text-white text-sm">Theme: Matrix</div>
+                                <div class="text-[10px] text-gray-500 font-mono">COSMETIC // TIER 2</div>
+                             </div>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-600 text-sm group-hover:text-primary">arrow_forward</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-1 rounded-full overflow-hidden">
+                        <div class="bg-gray-600 h-full w-1/2"></div>
+                    </div>
+                    <div class="text-[10px] text-gray-500 font-mono flex justify-between">
+                        <span>REQ: 50x Chitin</span>
+                        <span class="text-yellow-500">MISSING RESOURCES</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900/40 border border-gray-800 p-4 rounded-lg flex flex-col gap-3 group hover:border-primary/50 hover:bg-gray-900/60 cursor-pointer transition-all opacity-75">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-3">
+                             <div class="w-10 h-10 rounded bg-blue-900/20 border border-blue-500/30 flex items-center justify-center text-blue-500">
+                                <span class="material-symbols-outlined">military_tech</span>
+                             </div>
+                             <div>
+                                <div class="font-bold text-white text-sm">Badge: Code Ninja</div>
+                                <div class="text-[10px] text-gray-500 font-mono">ACHIEVEMENT // TIER 3</div>
+                             </div>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-600 text-sm">lock</span>
+                    </div>
+                     <div class="text-[10px] text-gray-500 font-mono">
+                        REQ: 200x Coffee, 1x Shard
+                    </div>
+                </div>
+
+                <div class="bg-gray-900/40 border border-gray-800 p-4 rounded-lg flex flex-col gap-3 group hover:border-primary/50 hover:bg-gray-900/60 cursor-pointer transition-all opacity-75">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center gap-3">
+                             <div class="w-10 h-10 rounded bg-purple-900/20 border border-purple-500/30 flex items-center justify-center text-purple-500">
+                                <span class="material-symbols-outlined">auto_fix_high</span>
+                             </div>
+                             <div>
+                                <div class="font-bold text-white text-sm">Auto-Linter V2</div>
+                                <div class="text-[10px] text-gray-500 font-mono">TOOL // TIER 1</div>
+                             </div>
+                        </div>
+                         <span class="material-symbols-outlined text-gray-600 text-sm">lock</span>
+                    </div>
+                     <div class="text-[10px] text-gray-500 font-mono">
+                        REQ: 500x Logic, 5x Shard
+                    </div>
+                </div>
+            </div>
+
+            <!-- Probability Module -->
+             <div class="mt-6 border border-gray-800 p-4 rounded bg-black/40 relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex justify-between text-xs text-gray-400 mb-2 font-mono uppercase">
+                        <span>Success Probability</span>
+                        <span class="text-primary font-bold">84.2%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden mb-3">
+                        <div class="bg-primary h-full w-[84.2%] shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-[10px] font-mono">
+                        <div class="text-gray-500">RISK FACTOR: <span class="text-yellow-500">MODERATE</span></div>
+                        <div class="text-gray-500 text-right">ENERGY: <span class="text-white">STABLE</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 </main>
 <footer class="mt-auto flex items-center justify-between border-t border-gray-800 p-4 text-sm text-gray-500">

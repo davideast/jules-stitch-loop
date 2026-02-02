@@ -1,7 +1,7 @@
 ---
-page: forge.html.html
+page: signal.html.html
 ---
-A high-tech crafting workshop where developers spend XP and resources earned from missions to forge custom badges, profile themes, and tool upgrades.
+A high-fidelity dashboard analyzing the 'Signal-to-Noise Ratio' of developer contributions. It uses AI to filter out dependency bumps, typos, and formatting changes, highlighting only the most impactful architectural shifts and complex logic implementations.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,14 +22,14 @@ A high-tech crafting workshop where developers spend XP and resources earned fro
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header: "The Forge // R&D Lab".
-2. "Resource Inventory": Grid of collected materials (e.g., "Bug Chitin", "Logic Gates", "Coffee Beans").
-3. "Schematics": List of craftable items with requirements.
-4. "The Anvil": Central interactive area to drag items.
-5. "Forge Button": Large, dangerous-looking button to initiate crafting.
+1. Header: "Signal // Noise Analysis".
+2. "The Spectrum": A large real-time oscilloscope visualization showing code velocity vs impact.
+3. "High Signal Commits": List of recent high-impact changes (refactors, core logic).
+4. "Noise Floor": Stats on filtered low-impact activity (whitespace, deps).
+5. "Filter Array": Toggle switches for different languages or file types.
 
 **Specific Elements:**
-- Industrial/Blueprint aesthetic overlays.
-- CSS animations for heat/glow during crafting.
-- Success probability gauges (risk/reward).
-- "Molten" effects using the primary accent color or a complementary orange.
+- Animated sine waves/frequencies.
+- Neon green for Signal, dim gray/static for Noise.
+- "Gain" knobs or sliders.
+- Spectral density heatmaps.
