@@ -1,7 +1,7 @@
 ---
-page: review.html
+page: quality.html
 ---
-A code review leaderboard tracking the most effective reviewers, speediest approvals, and pull request insights.
+A code quality dashboard tracking codebase health, technical debt, and complexity metrics.
 
 **DESIGN SYSTEM (REQUIRED):**
 - Platform: Web, Desktop-first
@@ -22,12 +22,12 @@ A code review leaderboard tracking the most effective reviewers, speediest appro
 - No decorative elements, no gradients, no shadows - pure data focus
 
 **Page Structure:**
-1. Header "Code Review Leaderboard" or "Review Velocity".
-2. Leaderboard of Top Reviewers (Avg time to merge, comments per PR).
-3. "Nitpick Score" visualization (Bar chart of comments).
-4. "Speed Demon" list (Fastest approvals).
+1. Header "Code Quality Index" or "Code Health".
+2. Overall Health Score (Grade A-F, color coded).
+3. "Technical Debt" list (Files with high complexity).
+4. "Clean Coders" leaderboard (Lowest complexity per ship).
 
 **Specific Elements:**
-- Visual diff snippets as decorative elements for high ranks.
-- "Merged" purple accents for merged PR stats.
-- Filtering by "Bug Fixes", "Features", "Refactors".
+- Complexity heatmaps (Red/Yellow/Green squares).
+- "Duplication" percentage ring charts.
+- Filtering by "Complexity", "Duplication", "Coverage".
