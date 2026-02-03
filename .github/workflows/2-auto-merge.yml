@@ -1,8 +1,9 @@
 name: ⚡ Auto-Merge Keeper
 on:
-  workflow_run:
-    workflows: ["🛡️ Loop Integrity Check"]
-    types: [completed]
+  workflow_dispatch:
+  # workflow_run:
+  #   workflows: ["🛡️ Loop Integrity Check"]
+  #   types: [completed]
 jobs:
   merge:
     runs-on: ubuntu-latest
